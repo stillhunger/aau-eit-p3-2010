@@ -1,0 +1,210 @@
+\documentclass[a4paper,11pt,fleqn,twoside, openany]{memoir} 
+% twoside: indryk af indhold så der er plads til samlingen i "ryggen"
+% Openany: Chapters må starte på næste tomme side. Brug Openright for kun at starte på højreside.
+\usepackage{color}
+%%%%% PAKKER %%%%%
+
+% Tegnsætning og sprog %
+
+\usepackage[utf8]{inputenc}	
+% Understøttelse af ÆØÅ
+
+\usepackage[danish]{babel}
+% Dansk sprog med dansk orddeling
+
+\usepackage{xcolor,ragged2e,fix-cm}
+% xcolor: mulighed for at indsætte farver, skygger osv.
+% ragged2e: en rettelsespakke til funktionerne: flush, centering og raggedright
+% fix-cm: Forbedrer skrifttyper
+
+\pdfoptionpdfminorversion=6
+\usepackage{pdfpages}
+% Gør det muligt at inkludere pdf-filer med: \includepdf[pages={x-y}]{fil.pdf}
+
+\pretolerance=2500
+% Angiver afstanden mellem ord. Et højt tal giver hyppig orddeling samt større afstand mellem ord.
+
+\usepackage{ulem}
+% Gennemstregning af ord med koden \sout{}
+
+\usepackage{fixltx2e}
+% Retter forskellige bugs i LaTeX-kernen
+
+\usepackage{gensymb}
+% Tilføjer \celsius og \degree notation	
+
+\usepackage{lineno}
+% Bruges til at tilføje linjetal med: 
+% \setpagewiselinenumbers
+% \modulolinenumbers[5]
+% \linenumbers
+
+
+% Figurer, tabeller og floats %
+
+
+\usepackage{flafter}
+% Sørger for at figurer, floats, bliver så vidt muligt indsat dér hvor referencen til dem er skrevet
+
+\usepackage{multirow}
+% Gør det muligt at lave flere linjer i en tabel med funktionen: \multirow{num_rows}{width}{contents}
+
+\usepackage{hhline}
+% Dobbelte horisontale linier i tabeller etc.
+
+\usepackage{multicol}
+% Giver mulighed for flere kolonner
+
+\usepackage{colortbl}
+% Farver i tabeller med: \columncolor[rgb]{farve}[y][z] eller \rowcolor[rgb]{farve}[y][z]
+
+\usepackage{wrapfig}
+% Wrappe tekst om en figur
+
+\usepackage{graphicx}
+% Understøttelse af JPEG/PNG
+
+
+% Matematik %
+
+\usepackage{amsmath,amssymb,stmaryrd} 	
+% Bedre matematik og ekstra fonte
+
+\usepackage{textcomp}                 	
+% Adgang til tekstsymboler
+
+\usepackage{mathtools}									
+% Udvidelse af amsmath-pakken. 
+
+
+% FixMe %
+\usepackage[footnote,draft,danish,silent,nomargin]{fixme}		
+% Indsæt rettelser og lignende med \fixme{...} 
+% Med final i stedet for draft, udløses en error for hver fixme, der ikke er slettet, når rapporten bygges.
+
+
+% Referencer, bibtex og url'er %
+
+\usepackage{url}												
+% Til at sætte urler op med. Virker sammen med hyperref
+
+\usepackage[danish]{varioref}
+% Giver flere bedre mulighed for at lave krydshenvisninger
+
+\usepackage{natbib}											
+% Litteraturliste med forfatter-år og nummerede referencer
+
+\usepackage{xr}													
+% Referencer til eksternt dokument med \externaldocument{<NAVN>}
+
+\bibpunct[,]{[}{]}{;}{a}{,}{,} 					
+% Definerer de 6 parametre ved Harvard henvisning (bl.a. parantestype og seperatortegn)
+
+%%%%% SIDEOPSÆTNING %%%%%
+
+
+
+% Tabel- og figuropsætning %
+
+\captionnamefont{
+ 		\small\bfseries\itshape}						
+ 		% Opsætning af tekstdelen ("Figur" eller "Tabel")
+ 		
+  \captiontitlefont{\small}							
+  % Opsætning af nummerering
+  
+  \captiondelim{. }											
+  % Seperator mellem nummerering og figurtekst
+  
+  \hangcaption													
+  %	Venstrejusterer flere-liniers figurtekst under hinanden
+  
+  \captionwidth{\linewidth}							
+  % Bredden af figurteksten
+  
+	\setlength{\belowcaptionskip}{10pt}		
+	% Afstand under figurteksten
+
+
+% Indholdsfortegnelse %
+
+\addto\captionsdanish{
+	\renewcommand\appendixname{Bilag}
+	\renewcommand\contentsname{Indholdsfortegnelse}	
+	\renewcommand\appendixpagename{Bilag}
+	\renewcommand\cftchaptername{\chaptername~}					
+	% Skriver "Kapitel" foran kapitlerne i indholdsfortegnelsen
+	\renewcommand\cftappendixname{\appendixname~}		
+	% Skriver "Bilag" foran bilagene i indholdsfortegnelsen
+	\renewcommand\appendixtocname{Bilag}
+}
+
+
+\setsecnumdepth{subsection}		 					
+% Dybden af nummerede overkrifter (part/chapter/section/subsection)
+
+\maxsecnumdepth{subsection}							
+% Ændring af dokumentklassens grænse for nummereringsdybde
+
+\settocdepth{subsection} 
+% Dybden af indholdsfortegnelsen
+
+
+
+
+% Kapitel udseende %
+
+%\definecolor{numbercolor}{blue}{0.7}
+\newif\ifchapternonum
+
+\makechapterstyle{jenor}{									
+  \renewcommand\printchaptername{}
+  \renewcommand\printchapternum{}
+  \renewcommand\printchapternonum{\chapternonumtrue}
+  \renewcommand\chaptitlefont{\fontfamily{pbk}\fontseries{db}\fontshape{n}\fontsize{25}{35}\selectfont\raggedleft}
+  \renewcommand\chapnumfont{\fontfamily{pbk}\fontseries{m}\fontshape{n}\fontsize{1in}{0in}\selectfont\color{white}}
+  \renewcommand\printchaptertitle[1]{%
+    \noindent
+    \ifchapternonum
+    \begin{tabularx}{\textwidth}{X}
+    {\let\\\newline\chaptitlefont ##1\par} 
+    \end{tabularx}
+    \par\vskip-2.5mm\hrule
+    \else
+    \begin{tabularx}{\textwidth}{Xl}
+    {\parbox[b]{\linewidth}{\chaptitlefont ##1}} & \raisebox{-15pt}{\chapnumfont \thechapter}
+    \end{tabularx}
+    \par\vskip2mm\hrule
+		\fi
+ 	}
+}
+
+
+\chapterstyle{jenor}
+
+
+% Andet %
+
+\setlength{\parindent}{0mm}           	
+% Størrelse af indryk
+
+\setlength{\parskip}{4mm}          			
+% Afstand mellem afsnit ved brug af dobbel-enter
+
+\linespread{1,1}
+% Linjeafstand
+
+
+% Tabeller %
+
+\usepackage{threeparttable}
+\usepackage[tableposition=top]{caption}
+
+
+% listings %
+
+\usepackage{listings}
+\lstset{language=C}
+\lstset{backgroundcolor=,rulecolor=}
+\lstset{commentstyle=\textit}
+\usepackage{lastpage}
