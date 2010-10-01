@@ -7,38 +7,55 @@ Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiF
 \centering
 \begin{tabular}{l|r|l}
 \hline\hline
- & Krav & Baggrund for krav \\
+Område & Krav & Baggrund for krav \\
 \hline\hline
-Blabla & 42 & FORDI! \\
-Squash & 7 & Why not? \\
+\textbf{Generelle krav:} & & \\
+Forstærkerklasse & AB & Se ref til klasse afsnit \\
+Forvrænging & 1\% & Se \ref{krav_forvraengning} \\
+Indgange & Line og Mikrofon & Se \ref{indgange} \\
+Indgangsvælger & Flydende/Trin ? & Se \ref{krav_indgangsvaelger} \\
+Indgangsimpedans & ? & Standard eller klasse \\
+Equalizer-niveauer & ? & ? \\
+Volumenkontrol & Digital (XX niveauer) & Se \ref{krav_volumenkontrol} \\
+Udgangseffekt & 20 Watt ($\pm$ 2 Watt) i 8$\Omega$ & Se \ref{krav_udgangseffekt} \\
+Udgangssignal \fixme{Hvad hedder det?} & Mono & Se \ref{krav_udgangssignal} \\
+Udgangsimpedans & ? & Standard eller klasse \\
+Kortslutningssikring & ? & ? \\
 \hline
-Apples & Yes & \\
+\textbf{Brugerflade:} & & \\
+Volumedisplay & Ja & Se \ref{krav_volumenkontrol} \\
+Indgangsvælger på forstærkeren & Ja & Se \ref{krav_indgangsvaelger} \\
+Visualizer & Ja & ? \\
+\hline
+\textbf{Fjernbetjening:} & & \\
+Volumenkontrol & Ja & \ref{krav_fjernbetjening} \\
+Indgangsvælger & Ja & \ref{krav_fjernbetjening} \\
+Rækkevidde & ? & ? \\
 \hline\hline
 \end{tabular}
 \caption{Tabel over samlet kravspecifikation}
 \label{tab:kravspec}
 \end{table}
-\section*{Effektforstærker}
-\begin{enumerate}
-\item Udgangseffekten skal være 20 $\pm$ 2 Watt i 8$\Omega$
-\item Forvrængning? (Wiki: Forvrængning kan ikke høres under 1\%)
-\item Niveauer på equaliser?
-\item Visualiser med dioder. Antal per kanal?
-\item To lydindgange. Type?
-\item Mixer, som gør det muligt at blande lyden fra de to indgange
-\item Mono
-\item Indgangsvælger på selve forstærkeren
-\item Digital volumenkontrol med 10 niveauer
-\item 7 segment display til visning af volumen
-\item Kortslutningssikring?
-\item Klasse?
-\end{enumerate}
 
-\section*{Fjernbetjening}
-\begin{enumerate}
-\item IR
-\item Volumen
-\item Indgangsvælger
-\item Tænd/sluk
-\item Rækkevidde?
-\end{enumerate}
+\section{Udgangseffekt}
+\label{krav_udgangseffekt}
+Udregning for maks. effekt i forhold til værkstedsregler, standard for min. effekt for HiFi, 10\% som komponent tolerancer
+
+\section{Forvrængning}
+\label{krav_forvraengning}
+Klasse afhængig? Min. grænse øret kan høre
+
+\section{Indgangsvælger}
+\label{krav_indgangsvaelger}
+Skal vel begrundes ud fra et læringsmæssigt synspunkt
+
+\section{Udgangssignal}
+\label{krav_udgangssignal}
+Argumentationen skal gøre på at stereo bare vil fordoble arbejdet og ikke gøre noget for indlæringen
+
+\section{Volumenkontrol}
+\label{krav_volumenkontrol}
+Begrundes med et minimum mennesket er i stand til at skelne i forhold til hvor stor et område vi skal $"$dække$"$
+
+\section{Fjernbetjening}
+\label{krav_fjernbetjening}
