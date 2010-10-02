@@ -9,9 +9,9 @@ Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiF
 \hline\hline
 Område & Krav & Baggrund for krav \\
 \hline\hline
-\textbf{Generelle krav:} & & \\
+\textbf{Teknisk:} & & \\
 Forstærkerklasse & AB & Se ref til klasse afsnit \\
-Forvrænging & 1\% & Se \ref{krav_forvraengning} \\
+Total Harmonisk Forvrænging & <1\% & Se \ref{krav_forvraengning} \\
 Indgange & Line og Mikrofon & Se \ref{indgange} \\
 Indgangsvælger & Flydende/Trin ? & Se \ref{krav_indgangsvaelger} \\
 Indgangsimpedans & ? & Standard eller klasse \\
@@ -39,11 +39,20 @@ Rækkevidde & ? & ? \\
 
 \section{Udgangseffekt}
 \label{krav_udgangseffekt}
-Udregning for maks. effekt i forhold til værkstedsregler, standard for min. effekt for HiFi, 10\% som komponent tolerancer
+Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den maksimale effekt der er mulig er bestemt af sikkerhedsreglerne i elektronikværkstedet på Aalborg Universitet.\fixme{Kilde: elregler_b1101.doc} I disse regler angives den maksimale AC spænding der må arbejdes med til 25 V. Dermed bliver den øvre grænse som vist i udregning \ref{equ:maks_effekt}.
+
+\begin{equation}
+\label{equ:maks_effekt}
+P_{maks} = \frac{Noget}{Andet} = XX~W
+\end{equation}
+
+Den nedre grænse for udgangseffekten er bestemt af \textbf{\textit{STANDARD?!?}}, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 Watt før forstærkeren må kaldes en HiFi-forstærker.
+
+Tolerancen er valgt til 10\%, da dette er en tolerancestørrelse man tit ser i elektroniske komponenter.
 
 \section{Forvrængning}
 \label{krav_forvraengning}
-Klasse afhængig? Min. grænse øret kan høre
+Klasse afhængig? Min. grænse øret kan høre? Maks. 1\% før det er HiFi.
 
 \section{Indgangsvælger}
 \label{krav_indgangsvaelger}
