@@ -1,15 +1,50 @@
 \section{Standarder}
-Formålet med dette afsnit er at beskrive forskellige standarder der er relevante for opbygningen af en HiFi forstærker, for dernæst at det kan udmunde i en kravspecifikation på baggrund af de valgte standarder . Standarder gruppen har valgt at arbejde med er :
+Formålet med dette afsnit er at beskrive forskellige standarder der er relevante for opbygningen af en HiFi-forstærker, for dernæst at det kan udmunde i en kravspecifikation på baggrund af de valgte standarder . Standarder gruppen har valgt at arbejde med er :
 
-\begin{itemize}
-\item IEC60268-3              
-\item IEC 61938-1             
+\begin{itemize}              
+\item IEC61938-1             
 \item DIN 45500 normen    
 \end{itemize} 
 
-Der er taget udgangspunkt i IEC60268-3 og IEC 61938-1, idet de er de seneste opdaterede standarder og derfor virker mest relevant at bruge dem. IEC60268-3 er sidst opdateret i 08-2000 \ref{??}\fixme{ref to standard IEC60268-3} og IEC61938-1 er sidst opdateret i 1-12-1997 \ref{??}\fixme{ref to standard IEC 61938-1}. DIN 45500 normen er taget med i projektet selvom den er forældet, sidst opdateret i 01-1973 \ref{??}\fixme{ref to standard  DIN 45500 normen}. Det er gjort fordi der ofte refereres til den i de nyere standarder. Disse standarder er blevet undersøgt for forskellige parametre, hvorefter de nyeste eller mest relevante data er blevet valgt ud til at arbejde videre med.
+Der er taget udgangspunkt i IEC61938-1. IEC61938-1 er sidst opdateret i 1-12-1997 \ref{??}\fixme{ref to standard IEC 61938-1}. DIN 45500 normen er taget med i projektet selvom den er forældet, sidst opdateret i 01-1973 \ref{??}\fixme{ref to standard  DIN 45500 normen}. Det er gjort fordi der ofte refereres til den i de nyere standarder. Disse standarder er blevet undersøgt for forskellige parametre, hvorefter de nyeste eller mest relevante data er blevet valgt ud til at arbejde videre med.
 \newline
 \newline
-Tabel \ref{??} angiver de parametre standarderne er undersøgt for, samt hvilken specifik standard der er valgt til hver parameter.
+Tabel \ref{standarder_krav} angiver de parametre standarderne er undersøgt for, samt hvilken specifik standard der er valgt til hver parameter.
  
-Her skulle komme en tabel, men den laver nok ikke sig selv DAMM! :) 
+\begin{table}[h]
+\begin{tabular}{l|l|l|l}
+\hline\hline
+Område & Minimumskrav & Betingelser & Standard \\
+\hline\hline
+\textbf{Teknisk:} &  & \\
+Udgangseffekt&Min. 10W mono& 1 kHz sinus signal i 10 min. & DIN45500 \\
+&Min. 2x6W stereo&En omgivelse temperatur&\\
+&&paa 35°C&\\										
+\hline
+Frekvens omrade&40Hz - 16000Hz&&DIN45500\\
+\hline
+THD&Max 1\% &Forforstaerker og effektforstaerker&DIN45500\\
+&Max 0.7\%&Forforstaerker eller effektforstaerker&\\
+&&Maalt i effektbaandbredde& \\
+&&40-12500 Hz,med en &\\
+&&udgangseffekt paa mim. 10 W&\\
+\hline
+Belastningsimpedans&&Tolerance : 20\%&DIN45500\\
+Hoejtaler&4 eller 8\ohm &&\\
+Hovedtelefon&200 eller 400\ohm &&\\
+\hline
+Indgangssignal& 0.5V&&IEC 61938-1\\
+\hline
+Indgangsimpedans&Min. 22k\ohm &&IEC61938-1\\
+\hline
+Udgangsimpedans&Max. 2.2k\ohm &&IEC61938-1\\
+\hline
+Udgangsspænding&Max. 2V&&IEC61938-1\\
+&Min. 0.2V&&IEC61938-1\\
+\hline\hline
+\end{tabular}
+\caption{Tabel over minimumskrav fra standarder.}
+\label{standarder_krav}
+\end{table} 
+
+Der er i dette afsnit blevet opstillet en række krav fra de undersøgte standarder. Disse data vil blive brugt videre i kravspecifikationen.
