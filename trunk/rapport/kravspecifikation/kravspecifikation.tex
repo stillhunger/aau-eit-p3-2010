@@ -2,7 +2,7 @@
 \label{kravspec}
 Formålet med dette kapitel er at opstille en kravspecifikation for projektets HiFi-forstærker. Alle kravene i kravspecifikationen skal være målbare, så de kan testes ved projektets afslutning, og begrundede i det omfang dette er muligt. 
 
-Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiFi-forstærker. Tabellen viser desuden videre til hvilke begrundelser der er for hvert enkelt krav.
+Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiFi-forstærker. Tabellen viser desuden videre til hvilke begrundelser, der er for hvert enkelt krav.
 \begin{table}[h]
 \centering
 \begin{tabular}{l|r|l}
@@ -11,13 +11,13 @@ Område & Krav & Baggrund for krav \\
 \hline\hline
 \textbf{Teknisk:} & & \\
 Forstærkerklasse & AB & Se ref til klasse afsnit \\
-Total Harmonisk Forvrænging & <1\% & Se \ref{krav_forvraengning} \\
-Indgange & Line og Mikrofon & Se \ref{indgange} \\
-Indgangsvælger & Flydende/Trin ? & Se \ref{krav_indgangsvaelger} \\
-Indgangsimpedans & ? & Standard eller klasse \\
+Total Harmonisk Forvrænging & <1 \% & Se ref til THD afsnit \\
+Indgange & Linie og mikrofon & Se \ref{indgange} \\
+Indgangsvælger & 3 trin \tiny{(On/Off, Off/On, On/On)} & Se \ref{krav_indgangsvaelger} \\
+Indgangsimpedans & 47,5 k\ohm \tiny{($\pm$ 1 \%)}& Se \ref{krav_indgangsimpedans} \\
 Equalizer-niveauer & ? & ? \\
-Volumenkontrol & Digital (XX niveauer) & Se \ref{krav_volumenkontrol} \\
-Udgangseffekt & 20 Watt ($\pm$ 2 Watt) i 8$\Omega$ & Se \ref{krav_udgangseffekt} \\
+Volumenkontrol & Digital \tiny{(XX niveauer)} & Se \ref{krav_volumenkontrol} \\
+Udgangseffekt & 20 Watt \tiny{($\pm$ 2 Watt)} \normalsize{i 8$\Omega$} & Se \ref{krav_udgangseffekt} \\
 Udgangssignal \fixme{Hvad hedder det?} & Mono & Se \ref{krav_udgangssignal} \\
 Udgangsimpedans & ? & Standard eller klasse \\
 Kortslutningssikring & ? & ? \\
@@ -25,7 +25,7 @@ Kortslutningssikring & ? & ? \\
 \textbf{Brugerflade:} & & \\
 Volumedisplay & Ja & Se \ref{krav_volumenkontrol} \\
 Indgangsvælger på forstærkeren & Ja & Se \ref{krav_indgangsvaelger} \\
-Visualizer & Ja & ? \\
+Visualizer & Ja & Se ref til Visualizer underafsnit \\
 \hline
 \textbf{Fjernbetjening:} & & \\
 Volumenkontrol & Ja & \ref{krav_fjernbetjening} \\
@@ -39,24 +39,38 @@ Rækkevidde & ? & ? \\
 
 \section{Udgangseffekt}
 \label{krav_udgangseffekt}
-Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den maksimale effekt der er mulig er bestemt af sikkerhedsreglerne i elektronikværkstedet på Aalborg Universitet. I disse regler angives den maksimale DC spænding der må arbejdes med til 60 V. Dermed bliver den øvre grænse som vist i udregning \ref{equ:maks_effekt}.
+Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den maksimale effekt der er mulig er bestemt af sikkerhedsreglerne i elektronikværkstedet på Aalborg Universitet. I disse regler angives den maksimale DC spænding der må arbejdes med til 60 V. Til projektets forstærker deles denne spænding til en $\pm$30 V forsyning. Under udregningen af den maksimale effekt bruges RMS-værdien (Root Mean Square) af den spænding. Dermed bliver den øvre grænse som vist i udregning \ref{equ:maks_effekt}.
 
 \begin{equation}
 \label{equ:maks_effekt}
-P_{maks} = \frac{(\frac{30~V}{\sqrt{2}})^2}{8\ohm} = 56,25~W
+P_{maks} = \frac{V^2}{R}= \frac{(\frac{\hat{V}}{\sqrt{2}})^2}{R} = \frac{(\frac{30~V}{\sqrt{2}})^2}{8\ohm} = 56,25~W
 \end{equation}
 
-Den nedre grænse for udgangseffekten er bestemt af \textbf{\textit{STANDARD?!?}}, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 Watt før forstærkeren må kaldes en HiFi-forstærker.
+Den nedre grænse for udgangseffekten er defineret af standarden DIN45500, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 Watt før forstærkeren må kaldes en HiFi-forstærker.
 
-Tolerancen er valgt til 10\%, da dette er en tolerancestørrelse man tit ser i elektroniske komponenter.
-
-\section{Forvrængning}
-\label{krav_forvraengning}
-Klasse afhængig? Min. grænse øret kan høre? Maks. 1\% før det er HiFi.
+Tolerancen er valgt til 10 \%, da dette er en tolerancestørrelse man tit ser i elektroniske komponenter.
 
 \section{Indgangsvælger}
 \label{krav_indgangsvaelger}
 Skal vel begrundes ud fra et læringsmæssigt synspunkt
+
+\section{Indgangsimpedans}
+\label{krav_indgangsimpedans}
+Indgangsimpedansen er at opfatte som en impedans der, ud fra en almindelig spændingsdeling, reducerer\fixme{Hvad kalder man det?} indgangssignalet. Man er, med den begrundelse, interesseret i et stor indgangsimpedans. Den mindste tilladte indgangsimpedans for en HiFi-forstærker er i standard IEC61938-1 bestemt til 22 k\ohm. Da udgangsimpedansen samtidig er bestemt til 2,2 k\ohm~ for et liniesignal, kan betydningen af indgangsimpedansens størrelse regnes som vist i udregning \ref{equ:indgangsimpedans22}. 
+
+\begin{equation}
+\label{equ:indgangsimpedans22}
+\frac{22 k\ohm}{22 k\ohm + 2,2 k\ohm} = 0,91
+\end{equation}
+
+Det ses af udregning \ref{equ:indgangsimpedans22} at en indgangsimpedans på 22 k\ohm~ vil medføre et indgangssignal på 91 \% af det oprindelige signal. Med en større indgangsimpedans vil en større del af det oprindelige signal blive indgangssignalet. 
+
+\begin{equation}
+\label{equ:indgangsimpedans475}
+\frac{47,5 k\ohm}{47,5 k\ohm + 2,2 k\ohm} = 0,96
+\end{equation}
+
+Udregning \ref{equ:indgangsimpedans475} viser at med en indgangsimpedans på 47,5 k\ohm~ bliver indgangssignalet hele 96 \% af det oprindelige signal.
 
 \section{Udgangssignal}
 \label{krav_udgangssignal}
