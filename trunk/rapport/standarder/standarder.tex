@@ -12,39 +12,43 @@ Der er taget udgangspunkt i IEC61938-1. IEC61938-1 er sidst opdateret i 1-12-199
 Tabel \ref{standarder_krav} angiver de parametre standarderne er undersøgt for, samt hvilken specifik standard der er valgt til hver parameter.
  
 \begin{table}[h]
-\begin{tabular}{l|l|l|l}
+\centering
+\begin{threeparttable}
+\label{standarder_krav}
+\begin{tabular}{l|l|l}
 \hline\hline
-Område & Minimumskrav & Betingelser & Standard \\
+Område & Minimumskrav & Standard \\
 \hline\hline
-\textbf{Teknisk:} &  & \\
-Udgangseffekt&Min. 10W mono& 1 kHz sinus signal i 10 min. & DIN45500 \\
-&Min. 2x6W stereo&En omgivelse temperatur&\\
-&&paa 35°C&\\										
+Udgangseffekt&Min. 10W mono \textbf{*}& DIN45500 \\
+&Min. 2x6W stereo \textbf{*}&\\										
 \hline
-Frekvens omrade&40Hz - 16000Hz&&DIN45500\\
+Frekvens omrade&40Hz - 16000Hz&DIN45500\\
 \hline
-THD&Max 1\% &Forforstaerker og effektforstaerker&DIN45500\\
-&Max 0.7\%&Forforstaerker eller effektforstaerker&\\
-&&Maalt i effektbaandbredde& \\
-&&40-12500 Hz,med en &\\
-&&udgangseffekt paa mim. 10 W&\\
+THD&Max 1\%\textbf{**} &DIN45500\\
+&Max 0.7\%\textbf{***}&\\
 \hline
-Belastningsimpedans&&Tolerance : 20\%&DIN45500\\
-Hoejtaler&4 eller 8\ohm &&\\
-Hovedtelefon&200 eller 400\ohm &&\\
+Belastningsimpedans&&DIN45500\\
+Højtaler&4 eller 8\ohm \textbf{****} &\\
+Hovedtelefon&200 eller 400\ohm \textbf{****} &\\
 \hline
-Indgangssignal& 0.5V&&IEC 61938-1\\
+Indgangssignal& 0.5V&IEC 61938-1\\
 \hline
-Indgangsimpedans&Min. 22k\ohm &&IEC61938-1\\
+Indgangsimpedans&Min. 22k\ohm &IEC61938-1\\
 \hline
-Udgangsimpedans&Max. 2.2k\ohm &&IEC61938-1\\
+Udgangsimpedans&Max. 2.2k\ohm &IEC61938-1\\
 \hline
-Udgangsspænding&Max. 2V&&IEC61938-1\\
-&Min. 0.2V&&IEC61938-1\\
+Udgangsspænding&Max. 2V&IEC61938-1\\
+&Min. 0.2V&IEC61938-1\\
 \hline\hline
 \end{tabular}
 \caption{Tabel over minimumskrav fra standarder.}
-\label{standarder_krav}
+\begin{tablenotes}
+\item \textbf{*} 1000 Hz sinus signal i 10 min. Ved en omgivelse temperatur på 35°C
+\item \textbf{**} Forforstærker og effektforstærker. Målt i effektbåndbredde 40-12500 Hz,med en udgangseffekt på minimum 10 W
+\item \textbf{***} Forforstærker eller effektforstærker. Målt i effektbåndbredde 40-12500 Hz,med en udgangseffekt på minimum 10 W
+\item \textbf{****}Tolerance på 20\%
+\end{tablenotes}
+\end{threeparttable}
 \end{table} 
 
 Der er i dette afsnit blevet opstillet en række krav fra de undersøgte standarder. Disse data vil blive brugt videre i kravspecifikationen.
