@@ -18,7 +18,7 @@ Indgangsimpedans & 47,5 k\ohm \tiny{($\pm$ 1 \%)}& Se \ref{krav_indgangsimpedans
 Equalizer-niveauer & ? & ? \\
 Volumenkontrol & Digital \tiny{(XX niveauer)} & Se \ref{krav_volumenkontrol} \\
 Udgangseffekt & 20 Watt \tiny{($\pm$ 2 Watt)} \normalsize{i 8$\Omega$} & Se \ref{krav_udgangseffekt} \\
-Udgangssignaltype & Mono & Se \ref{krav_udgangssignal} \\
+Udgangssignaltype & Mono & Se \ref{krav_udgangssignaltype} \\
 Udgangsimpedans & ? & Standard eller klasse \\
 Kortslutningssikring & ? & ? \\
 \hline
@@ -39,7 +39,7 @@ Rækkevidde & ? & ? \\
 
 \section{Udgangseffekt}
 \label{krav_udgangseffekt}
-Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den maksimale effekt der er mulig er bestemt af sikkerhedsreglerne i elektronikværkstedet på Aalborg Universitet. I disse regler angives den maksimale DC spænding der må arbejdes med til 60 V. Til projektets forstærker deles denne spænding til en $\pm$30 V forsyning. Under udregningen af den maksimale effekt bruges RMS-værdien (Root Mean Square) af den spænding. Dermed bliver den øvre grænse som vist i udregning \ref{equ:maks_effekt}.
+Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den maksimale effekt der er mulig er bestemt af sikkerhedsreglerne i elektronikværkstedet på Aalborg Universitet. I disse regler angives den maksimale DC spænding der må arbejdes med til 60 V.\fixme{Kilde: elregler\_b1101.doc} Til projektets forstærker deles denne spænding til en $\pm$30 V forsyning. Under udregningen af den maksimale effekt bruges RMS-værdien (Root Mean Square) af den spænding. Dermed bliver den øvre grænse som vist i udregning \ref{equ:maks_effekt}.
 
 \begin{equation}
 \label{equ:maks_effekt}
@@ -52,11 +52,11 @@ Tolerancen er valgt til 10 \%, da dette er en tolerancestørrelse man tit ser i 
 
 \section{Indgangsvælger}
 \label{krav_indgangsvaelger}
-Skal vel begrundes ud fra et læringsmæssigt synspunkt
+I forbindelse med indgangsvælgeren er overvejelserne gået på, hvorvidt denne skal lave en trinvis eller flydende overgang mellem indgangssignalerne. Da en flydende overgang i princippet er simultan volumenkontrol af indgangene, adskiller den form for indgangsvælger sig ikke i samme grad fra en egentlig volumenkontrol, som det er tilfældet med en trinvis indgangsvælger. Eftersom der er opstillet krav om en volumenkontrol til forstærkeren sættes kravet om indgangsvælgerens art til trinvis. Dette gøres for at øge mængden af forskelligt opbyggede elementer i forstærkeren. 
 
 \section{Indgangsimpedans}
 \label{krav_indgangsimpedans}
-Indgangsimpedansen er at opfatte som en impedans der, ud fra en almindelig spændingsdeling, reducerer\fixme{Hvad kalder man det?} indgangssignalet. Man er, med den begrundelse, interesseret i et stor indgangsimpedans. Den mindste tilladte indgangsimpedans for en HiFi-forstærker er i standard IEC61938-1 bestemt til 22 k\ohm for liniesignal. Da udgangsimpedansen samtidig er bestemt til 2,2 k\ohm~ for et liniesignal, kan betydningen af indgangsimpedansens størrelse regnes som vist i udregning \ref{equ:indgangsimpedans22}. 
+Indgangsimpedansen er at opfatte som en impedans der, ud fra en almindelig spændingsdeling, reducerer indgangssignalet. Man er, med den begrundelse, interesseret i et stor indgangsimpedans. Den mindste tilladte indgangsimpedans for en HiFi-forstærker er i standard IEC61938-1 bestemt til 22 k\ohm for liniesignal. Da udgangsimpedansen samtidig er bestemt til 2,2 k\ohm~ for et liniesignal, kan betydningen af indgangsimpedansens størrelse regnes som vist i udregning \ref{equ:indgangsimpedans22}. 
 
 \begin{equation}
 \label{equ:indgangsimpedans22}
@@ -72,9 +72,9 @@ Det ses af udregning \ref{equ:indgangsimpedans22} at en indgangsimpedans på 22 
 
 Udregning \ref{equ:indgangsimpedans475} viser at med en indgangsimpedans på 47,5 k\ohm~ bliver indgangssignalet hele 96 \% af det oprindelige signal.
 
-\section{Udgangssignal}
-\label{krav_udgangssignal}
-Argumentationen skal gøre på at stereo bare vil fordoble arbejdet og ikke gøre noget for indlæringen
+\section{Udgangssignaltype}
+\label{krav_udgangssignaltype}
+Valget står for udgangssignaltypen mellem stereo og mono. Da stereo blot er et lydsignal med to kanaler i modsætning til mono, som er en kanal, vil fremstillingen af en stereoudgang på forstærkeren ikke umiddelbart være mere lærerig end fremstillingen af en monoudgang, den vil blot kræve mere tid. 
 
 \section{Volumenkontrol}
 \label{krav_volumenkontrol}
