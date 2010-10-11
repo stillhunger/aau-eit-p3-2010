@@ -16,11 +16,11 @@ Indgange & Linie og mikrofon & Se \ref{indgange} \\
 Indgangsvælger & 3 trin \tiny{(On/Off, Off/On, On/On)} & Se \ref{krav_indgangsvaelger} \\
 Indgangsimpedans & 47,5 k\ohm \tiny{($\pm$ 1 \%)}& Se \ref{krav_indgangsimpedans} \\
 Equalizer-niveauer & ? & ? \\
-Volumenkontrol & Digital \tiny{(XX niveauer)} & Se \ref{krav_volumenkontrol} \\
-Udgangseffekt & 20 Watt \tiny{($\pm$ 2 Watt)} \normalsize{i 8$\Omega$} & Se \ref{krav_udgangseffekt} \\
+Volumenkontrol & Digital & Se \ref{krav_volumenkontrol} \\
+Udgangseffekt & 20 W \tiny{($\pm$ 2 W)} \normalsize{i 8~$\Omega$} & Se \ref{krav_udgangseffekt} \\
 Udgangssignaltype & Mono & Se \ref{krav_udgangssignaltype} \\
 Udgangsimpedans & ? & Standard eller klasse \\
-Kortslutningssikring & ? & ? \\
+Kortslutningssikring & Ja & ? \\
 \hline
 \textbf{Brugerflade:} & & \\
 Volumedisplay & Ja & Se \ref{krav_volumenkontrol} \\
@@ -28,9 +28,9 @@ Indgangsvælger på forstærkeren & Ja & Se \ref{krav_indgangsvaelger} \\
 Visualizer & Ja & Se ref til Visualizer underafsnit \\
 \hline
 \textbf{Fjernbetjening:} & & \\
-Volumenkontrol & Ja & \ref{krav_fjernbetjening} \\
-Indgangsvælger & Ja & \ref{krav_fjernbetjening} \\
-Rækkevidde & ? & ? \\
+Volumenkontrol & Ja &  Se fjernbetjeningafsnit\\
+Indgangsvælger & Ja &  Se fjernbetjeningafsnit\\
+Rækkevidde & ? & Se fjernbetjeningafsnit \\
 \hline\hline
 \end{tabular}
 \caption{Tabel over samlet kravspecifikation}
@@ -43,10 +43,10 @@ Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den mak
 
 \begin{equation}
 \label{equ:maks_effekt}
-P_{maks} = \frac{V_{RMS}^2}{R}= \frac{(\frac{\hat{V}}{\sqrt{2}})^2}{R} = \frac{(\frac{30~V}{\sqrt{2}})^2}{8\ohm} = 56,25~W
+P_{maks} = \frac{(V_{RMS})^2}{R}= \frac{(\frac{\hat{V}}{\sqrt{2}})^2}{R} = \frac{(\frac{30~V}{\sqrt{2}})^2}{8\ohm} = 56,25~W
 \end{equation}
 
-Den nedre grænse for udgangseffekten er defineret af standarden DIN45500, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 Watt i mono før forstærkeren må kaldes en HiFi-forstærker.
+Den nedre grænse for udgangseffekten er defineret af standarden DIN45500, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 W i mono før forstærkeren må kaldes en HiFi-forstærker.
 
 Tolerancen er valgt til 10 \%, da dette er en tolerancestørrelse man tit ser i elektroniske komponenter.
 
@@ -78,7 +78,4 @@ Valget står for udgangssignaltypen mellem stereo og mono. Da stereo blot er et 
 
 \section{Volumenkontrol}
 \label{krav_volumenkontrol}
-Begrundes med et minimum mennesket er i stand til at skelne i forhold til hvor stor et område vi skal $"$dække$"$
-
-\section{Fjernbetjening}
-\label{krav_fjernbetjening}
+Fordi vi vil have en fjernbetjening
