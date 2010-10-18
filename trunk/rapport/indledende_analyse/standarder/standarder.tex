@@ -1,15 +1,24 @@
 \section{Standarder}
-Formålet med dette afsnit er at beskrive forskellige standarder der er relevante for opbygningen af en HiFi-forstærker, for dernæst at det kan udmunde i en kravspecifikation på baggrund af de valgte standarder. Standarder gruppen har valgt at arbejde med er :
+I dette afsnit opstilles der krav til HiFi-forstærkeren. Disse krav vil tage udgangspunkt i gældende standarder fra International Electrotechnical Commitee (IEC) og Deutsches Institut f\"{u}r Normung (DIN). Målet med standarder er at opstille nogle normer for hvad produkter skal leve op til, dette gøres for at standardisere markedet sådan at de produkter fra forskellige virksomheder kan arbejde sammen og ikke kun virker med produkter fra samme virksomhed. Kravene opstillet i standarderne er ikke lovkrav, men derimod retningslinier. Det er dog i de færreste at det ikke er bedst at overholde standarderne.
+\newline
+I dette projekt er standarderne brugt til at fremsætte nogle minimumskrav for hvad en HiFi-forstærker skal kunne levere. Standarderne gruppen har valgt at overholde er som følger.
+
 
 \begin{itemize}              
-\item IEC61938-1             
-\item DIN 45500 normen    
+\item \textbf{IEC581 Part 6 - Amplifiers (1979)}\fixme{Kilde til IEC581-6}
 \end{itemize} 
-
-Der er taget udgangspunkt i IEC61938-1. IEC61938-1 er sidst opdateret i 1-12-1997 \ref{??}\fixme{ref to standard IEC 61938-1}. DIN 45500 normen er taget med i projektet selvom den er forældet, sidst opdateret i 01-1973 \ref{??}\fixme{ref to standard  DIN 45500 normen}. Det er gjort fordi der ofte refereres til den i de nyere standarder. Disse standarder er blevet undersøgt for forskellige parametre, hvorefter de nyeste eller mest relevante data er blevet valgt ud til at arbejde videre med.
+Hele standarden IEC581 har titlen $"$High fidelity audio equipment and systems; Minimum performance requirements$"$. Del 6 af standarden er taget med i rapporten fordi den opstiller generele minimumskrav til hvad en HiFi-forstærker skal overholde.
+\begin{itemize}              
+\item \textbf{IEC61938 1 udgave (1997)} \fixme{Kilde til IEC61938}                
+\end{itemize} 
+Standarden IEC61938 har titlen $"$Audio-, video- og audiovisuelle systemer - Indbyrdes forbindelser og matchende værdier - Foretrukne matchende analoge signalværdier$"$. Standarden er brugt i rapporten til at fremstille krav til kravspecifikationen.
+\begin{itemize}                   
+\item \textbf{DIN 45500 normen (1973)}\fixme{Kilde til DIN 45500}   
+\end{itemize} 
+Denne standard er forældet. Standarden er taget med i projektet fordi den stadig opstiller mange minimumskrav til en HiFi-forstærker
 \newline
 \newline
-Tabel \ref{tab:standarder_krav} angiver de parametre standarderne er undersøgt for, samt hvilken specifik standard der er valgt til hver parameter.
+Tabel \ref{tab:standarder_krav} er en opsamling af de krav der er fundet til kravspecifikation, og i tabellen er angivet fra hvilken standard kravet er kommet.
 
 \begin{table}[h]
 \centering
@@ -17,12 +26,11 @@ Tabel \ref{tab:standarder_krav} angiver de parametre standarderne er undersøgt 
 \hline\hline
 Område & Minimumskrav & Standard \\
 \hline\hline
-Udgangseffekt & Min. 10 W mono $^{[1]}$ & DIN45500 \\
-& Min. 2x6 W stereo $^{[1]}$ & \\
+Udgangseffekt & Min. 10 W mono $^{[1]}$ & IEC581 \\
 \hline
-Frekvens omrade & 40 Hz - 16000Hz & DIN45500 \\
+Frekvens omrade & 40 Hz - 16000Hz & IEC581 \\
 \hline
-THD & Max 1 \% $^{[2]}$ & DIN45500 \\
+THD & Max 1 \% $^{[2]}$ & DIN 45500 \\
 & Max 0.7 \% $^{[3]}$ & \\
 \hline
 Belastningsimpedans & & DIN45500 \\
