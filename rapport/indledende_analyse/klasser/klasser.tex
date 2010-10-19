@@ -15,7 +15,7 @@ Et klasse A udgangstrin har en collectorstrøm, som vist på figur \ref{fig:klas
 \label{fig:klassea}
 \end{figure}
 
-Da den mindst afsatte effekt opnås når Q1 er helt lukket, altså: $ \hat{V}_o=V_{CC}=I \cdot R_L $, bliver den maksimale virkningsgrad 25\%.
+Et klasse A trins udgangsstrøm er centreret om en DC-strøm, hvilket betyder at der, i modsætning til klasse B, afsættes effekt i trinnet i hviletilstand. Dette gør at den maksimale virkningsgrad kun er 25\%. Dog er et klasse A trin det mest transparente, altså det med mindst forvrængning.
 
 Et klasse A udgangstrin kan opbygges af to NPN transistorer, Q1 og Q2, i en emitterfølgerkobling, som vist på figur \ref{fig:classa}. En konstant strøm løber gennem Q2, da $v_{BE2}$ er konstant. Inputsignalet kommer ind på Q1's base og styrer således strømmen der kan løbe gennem Q1 og loadmodstanden. 
 
@@ -26,7 +26,7 @@ Et klasse A udgangstrin kan opbygges af to NPN transistorer, Q1 og Q2, i en emit
 \label{fig:classa}
 \end{figure}
 
-Klasse A udgangstrin er et godt valg rent forvrængningsmæssigt, hele inputsignalet bliver gengivet på output, men er dog ikke et det mest benyttede i HiFi-forstærkere. Årsagen til dette er at Q2 konstant leder en strøm, som er uafhængig af inputsignalets styrke eller om der overhovedet er et inputsignal til stede. Derfor er virkningsgraden af et klasse A udgangstrin ikke særlig høj, sammenlignet med nogle af de andre typer. Den maksimale teoretiske virkningsgrad af et klasse A udgangstrin er giver ved ligning \ref{eq:classa}.
+Et klasse A trin er et godt trin forvrængningsmæssigt, men virkningsgraden er, sammenlignet med de andre trin, meget lille, hvilket også er en af grundene til at det sjældent bruges i moderne HiFi-forstærkere.
 
 \subsection{Klasse B}
 
@@ -43,8 +43,6 @@ Et klasse B trin overfører kun en halv periode af indgangssignalet til udgangen
 Et klasse B trin har en maksimal nyttevirkning på 50\%.
 
 I nedenstående eksempel er klasse B trinnet opbygget af to transistorer, en NPN (Q1) og en PNP (Q2), som vist på figur \ref{fig:classb}. Når input spændingen overstiger ca. 0,5 V vil Q1 begynde at lede strøm til loadmodstanden mens Q2 er lukket. Kommer input spændingen under -0,5 V vil Q2 lede, men da Q2 er en PNP vil den trække strøm mod -Vcc hvormed der trækkes strøm fra loadmodstanden. Når Q2 leder er Q1 lukket. 
-
-
 
 \begin{figure}[h]
 \centering
