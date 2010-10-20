@@ -1,9 +1,6 @@
 \section{Lydindgangstyper}
 \label{indgange}
-En HiFi-forstærker skal have noget input for at kunne spille. Der er flere forskellige typer af input, også kaldet indgange. Alle lydindgange kan deles ind i to grupper analog og digital.
-
-\subsection{Analog}
-Der er flere slags analoge lydindgange, med hver sine formål og fordele.
+En HiFi-forstærker skal have noget input for at kunne spille. Der er flere forskellige typer af input, også kaldet indgange. Der er flere slags analoge lydindgange, med hver sine formål og fordele.
 
 \subsubsection{Linie}
 Linie indgangen fungerer ved at lyden overføres analogt i det hørbare frekvens område. Signalet er ikke kodet på nogen måde. \fixme{Kilde: IEC61938\_1.pdf}
@@ -12,7 +9,7 @@ Linie indgangen fungerer ved at lyden overføres analogt i det hørbare frekvens
 Da signalet fra en mikrofon normalt er meget svagt i forhold til liniesignalet, skal det forstærkes inden det kan sendes videre. Dette gøres med en mikrofonforforstærker, og det er det der adskiller mikrofonindgangen fra linieindgangen. Signalet vil efter forforstærkeren være sammenligneligt med linie signalet.\fixme{Kilde: IEC61938\_1.pdf}
 
 \subsubsection{Grammofon}
-En grammofonplade er optaget med det der hedder RIAA-forbetoning\fixme{Skriv om RIAA forbetoning/efterbetoning etc.}. Dette gøres blandt andet for at forbedre lyd kvaliteten. Det betyder at en grammofonforforstærker skal have RIAA-efterbetoning. Signalet vil efter forforstærkeren være sammenligneligt med linie signalet. \fixme{Kilde: ??}
+En grammofonplade er optaget med det der hedder RIAA-forbetoning\fixme{Skriv om RIAA forbetoning/efterbetoning etc.}. Dette gøres blandt andet for at forbedre lyd kvaliteten. Det betyder at en grammofonforforstærker skal have RIAA-efterbetoning. Signalet vil efter forforstærkeren være sammenligneligt med linie signalet. \fixme{Kilde: IEC61938\_1.pdf}
 
 \subsubsection{Dolby Surround}
 Dolby Surround er meget sammenligneligt med linie signalet. Dolby Surround er dog en analog kodning af fire kanaler på to ledere. Det er altså muligt at få analogt surround sound. \fixme{Kilde: 2\_Surround\_Past.Present.pdf}
@@ -28,15 +25,15 @@ Dolby Surround er meget sammenligneligt med linie signalet. Dolby Surround er do
 
 \begin{table}[h]
 \centering
-\begin{tabular}{l|l|l|l}
+\begin{tabular}{l|l|l}
 \hline\hline
-Indgang & Type & Impedans & Frekvensgang \\
+Indgang & Impedans & Frekvensgang \\
 \hline\hline
-Linie & Analog & $\geq$22 k\ohm~ & Flad... \\
+Linie & $\geq$22 k\ohm~ & 40 Hz - 16 kHz $\pm$ 1,5 dB \fixme{Kilde: DIN45500.pdf} \\
 \hline
-Mikrofon & Analog & $\geq$22 k\ohm~ & Flad... \\
+Mikrofon & $\geq$22 k\ohm~ & 40 Hz - 16 kHz $\pm$ 1,5 dB \fixme{Kilde: DIN45500.pdf} \\
 \hline
-Grammofon & Analog & 47 k\ohm~... & RIAA-efterbetoning \\
+Grammofon & 47 k\ohm~... & RIAA-efterbetoning \\
 %\hline
 %Dolby Surround & Analog & $\geq$10 k\ohm~ & Flad... \\
 %\hline
