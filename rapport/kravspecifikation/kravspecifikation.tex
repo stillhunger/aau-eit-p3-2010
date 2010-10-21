@@ -2,7 +2,7 @@
 \label{kravspec}
 Formålet med dette kapitel er at opstille en kravspecifikation for projektets HiFi-forstærker. Alle kravene i kravspecifikationen skal være målbare, så de kan testes ved projektets afslutning, og begrundede i det omfang dette er muligt. 
 
-Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiFi-forstærker. Tabellen viser desuden videre til hvilke begrundelser, der er for hvert enkelt krav.
+Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiFi-forstærker. Tabellen viser desuden videre til hvilke begrundelser eller standard, der er for hvert enkelt krav.
 
 \begin{table}[h]
 \centering
@@ -77,11 +77,15 @@ Det ses af udregning \ref{equ:indgangsimpedans22} at en indgangsimpedans af stø
 \frac{47,5~k\ohm}{47,5~k\ohm + 2,2~k\ohm} = 0,96
 \end{equation}
 
-Udregning \ref{equ:indgangsimpedans475} viser at med en indgangsimpedans af størrelsen 47,5 k\ohm~ bliver indgangssignalet hele 96 \% af det oprindelige signal.
+Udregning \ref{equ:indgangsimpedans475} viser at med en indgangsimpedans af størrelsen 47,5 k\ohm~ bliver indgangssignalet 96 \% af det oprindelige signal.
 
 \section{Volumenkontrol}
 \label{krav_volumenkontrol}
 Kravet til styringen af volumenkontrol er sat til at dette skal foregå digitalt. Begrundelsen herfor ligger i det samtidige krav om volumenkontrol via fjernbetjening. Volumen skal desuden kunne justeres via HiFi-forstærkerens frontpanel, hvor det også skal være muligt at aflæse det øjeblikkelige volumenniveau.  
+
+\section{Udgangssignaltype}
+\label{krav_udgangssignaltype}
+Valget står for udgangssignaltypen mellem stereo og mono. Da stereo blot er et lydsignal med to kanaler i modsætning til mono, som er en kanal, vil fremstillingen af en stereoudgang på forstærkeren ikke umiddelbart være mere lærerig end fremstillingen af en monoudgang, den vil blot kræve mere tid. 
 
 \section{Udgangseffekt}
 \label{krav_udgangseffekt}
@@ -92,13 +96,9 @@ Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den mak
 P_{maks} = \frac{(V_{RMS})^2}{R}= \frac{(\frac{\hat{V}}{\sqrt{2}})^2}{R} = \frac{(\frac{30~V}{\sqrt{2}})^2}{8\ohm} = 56,25~W
 \end{equation}
 
-Den nedre grænse for udgangseffekten er defineret af standarden DIN45500, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 W i mono før forstærkeren må kaldes en HiFi-forstærker.
+Den nedre grænse for udgangseffekten er defineret af standarden DIN45500, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 W hvis der er tale om en monoudgang før forstærkeren må kaldes en HiFi-forstærker.
 
-Tolerancen er valgt til 10 \%, da dette er en tolerancestørrelse man tit ser i elektroniske komponenter.
 
-\section{Udgangssignaltype}
-\label{krav_udgangssignaltype}
-Valget står for udgangssignaltypen mellem stereo og mono. Da stereo blot er et lydsignal med to kanaler i modsætning til mono, som er en kanal, vil fremstillingen af en stereoudgang på forstærkeren ikke umiddelbart være mere lærerig end fremstillingen af en monoudgang, den vil blot kræve mere tid. 
 
 \section{Kortslutningssikring}
 \label{krav_kortslutningssikring}
