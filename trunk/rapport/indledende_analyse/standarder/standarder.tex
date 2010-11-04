@@ -1,49 +1,68 @@
 \section{Standarder}
-\label{standarder}
 I dette afsnit bliver der taget udgangspunkt i gældende standarder fra International Electrotechnical Commitee (IEC) og Deutsches Institut f\"{u}r Normung (DIN). Målet med standarder er at opstille nogle normer for hvad produkter skal leve op til, hvilket gøres for at standardisere markedet sådan at produkter fra forskellige producenter kan arbejde sammen og ikke kun virker med produkter fra samme producent. Kravene opstillet i standarderne er ikke lovkrav, men derimod retningslinier. Det er dog i de færrestes interesse ikke at overholde standarderne.
 \newline
 \newline
-I dette projekt er der valgt at arbejde med tre forskellige standarder. De tre standarder der arbejdes med er IEC581 Part 6, IEC61938 1 udgave og DIN 45500 normen.
-
+Der findes mange standarder indenfor HiFI-forstærker området, men alle vil ikke blive gennemgået. Der er istedet valgt de tre standarder ud som er mest relevante for projektet. De tre standarder der arbejdes med er IEC581 Part 6, IEC61938 1. udgave og DIN 45500 normen. 
 
 \subsection*{IEC581 Part 6 - Amplifiers}
 \label{IEC581}
-Standarden IEC581 har titlen $"$High fidelity audio equipment and systems; Minimum performance requirements$"$ og er fra 1979. I dette projekt er det valgt kun at anvende del 6 af standarden da kun denne del har relevans for projektet. Del 6 af standarden opstiller generele minimumskrav til hvad en HiFi-forstærker skal overholde. \cite{IEC581-6}%\fixme{Kilde til IEC581-6}
+Standarden IEC581 har titlen $"$High fidelity audio equipment and systems; Minimum performance requirements$"$ og er fra 1979. I dette projekt er det valgt kun at anvende del 6 af standarden da kun denne del har relevans for projektet. Del 6 af standarden opstiller minimumskrav til hvad en HiFi-forstærker skal overholde. \cite{IEC581-6}%\fixme{Kilde til IEC581-6}
 \newline
 \newline
-Den første værdi der er taget fra standarden siger hvad minimumskrav der er for udgangseffekten.
+Den første værdi der er taget fra standarden beskriver maksimum af forvrængning.
+\newline 
+\newline
+\textbf{Forvrængning}
+\begin{itemize}
+\item Forforstærker må maksimalt forvrænge 0,5 \%.
+\item Effektforstærker må maksimalt forvrænge 0,5 \%.
+\item Forforstærker og effektforstærker samlet må maksimalt forvrænge 0,7 \%.
+\item Disse værdier skal som minimum overholdes i frekvensområdet fra 40 Hz til 16 kHz. Dog ved forforstærker og effektforstærker samlet er det tilladt at outputtet falder med 3 dB i frekvensområderne fra 40 Hz til 63 Hz og 12,5 kHz til 16 kHz. 
+\item Ydermere skal alle værdier af forvrængning være overholdt ved et output højere end -26 dB.
+\end{itemize}
+
+Den Anden værdi der er taget fra standarden siger hvad minimumskrav der er for udgangseffekten.
 \newline
 \newline
 \textbf{Udgangseffekt}
 \begin{itemize}
-\item Der skal minimum være et output på 10 W per kanal og det skal overholde kravet om forvrængning
+\item Der skal minimum være et output på 10 W per kanal og det skal overholde kravet om forvrængning.
 \item Hvis forstærkeren har mere end én kanal skal alle kanaler kunne levere minimum 10 W samtidig.
 \item Forstærkeren skal kunne levere det fastsatte output indenfor THD afvigelse i mindst 10 min., med alle kanaler tændt og en temperatur mellem 15 °C og 35 °C. Relativt til 1 kHz.
 \end{itemize}
 
-Den anden værdi der er taget fra standarden fastsætter et minimum for hvilket frekvensområde forstærkeren skal arbejde indenfor.
+Den tredje værdi der er taget fra standarden fastsætter et minimum for hvilket frekvensområde forstærkeren skal arbejde indenfor.
 \newline 
 \newline
 \textbf{Frekvensområde}
 \begin{itemize}
-\item Frekvensområdet skal som minimum gå fra 40 Hz til 16 kHz
-\item Der må være en tolerance på $\pm$ 1,5 dB for signaler der ikke er kommet igennem en equalizer. Relativt til 1 kHz
-\item Der må være en tolerance på $\pm$ 2 dB for signaler der er kommet igennem en equalizer. Relativt til 1 kHz
+\item Frekvensområdet skal som minimum gå fra 40 Hz til 16 kHz.
+\item Der må være en tolerance på $\pm$ 1,5 dB for signaler der ikke er kommet igennem en equalizer. Relativt til 1 kHz.
+\item Der må være en tolerance på $\pm$ 2 dB for signaler der er kommet igennem en equalizer. Relativt til 1 kHz.
+\end{itemize}
+
+Den fjerde værdi der er taget fra standarden beskriver krav til isolering af signaler (Crosstalk Attenuation)
+\newline 
+\newline
+\textbf{Isolering af signaler}
+\begin{itemize}
+\item Isolering mellem signaler skal mindst være 40 dB fra 250 Hz til 10 kHz
+\item Ved 1 kHz skal isoleringen mindst være 50 dB
 \end{itemize}
 
 
 \subsection*{IEC61938 1. udgave}
 \label{IEC61938}
-Standarden IEC61938 har titlen $"$Audio-, video- og audiovisuelle systemer - Indbyrdes forbindelser og matchende værdier - Foretrukne matchende analoge signalværdier$"$ og er fra 1997. Standarden der er brugt i rapporten er 1. udgave. Standarden opstiller generelle minimumskrav for hvad en HiFi-forstærker skal overholde. \cite{IEC61938}%\fixme{Kilde til IEC61938} 
+Standarden IEC61938 har titlen $"$Audio-, video- og audiovisuelle systemer - Indbyrdes forbindelser og matchende værdier - Foretrukne matchende analoge signalværdier$"$ og er fra 1997. Standarden der er brugt i rapporten er 1. udgave. Standarden er taget med fordi den opsætter krav til indgangene i en HiFi-forstærker.\cite{IEC61938} 
 \newline
 \newline
-Den første værdi fra standarden fremsætter hvad der skal overholdes for en linieindgang\fixme{Jesper: Skal nok lige skrives at der vælges en linie- og en mikrofonindgang før der kommer standarder for sjovt nok lige præcis de to typer}
+Den første værdi fra standarden fremsætter hvad der skal overholdes for en linieindgang
 \newline
 \newline
 \textbf{Liniesignaler}
 \begin{itemize}
 \item Indgangsimpedansen skal være større eller lig med 22 k\ohm
-\item Signalspændingssvinget skal være mellem 0,2 V og 2 V
+\item In- og output spændingen skal være mellem 0,2 V og 2 V
 \item Udgangsimpedansen skal højst være 2,2 k\ohm
 \end{itemize}
 Anden krav fra standarden fremsætter hvad der skal overholdes for en mikrofonindgang
@@ -56,26 +75,14 @@ Anden krav fra standarden fremsætter hvad der skal overholdes for en mikrofonin
 \item Udgangsimpedansen skal højest være 2,2 k\ohm
 \end{itemize}
 
+
 \subsection*{DIN 45500 normen}
 \label{DIN45500}
-DIN 45500 normens fulde titel er Deutsches Institut f\"{u}r Normung 45500. Denne norm gælder for audioudstyr og er taget med fordi den opsætter minimumkrav til hvad en HiFi-forstærker skal overholde. Normen er fra 1973. \cite{DIN45500}%\fixme{Kilde til DIN45500}
-\newline
-\newline
-Den første værdi fra normen beskriver hvor meget en HiFi-forstærker må forvrænge.
-\newline
-\newline
-\textbf{Harmonisk forvrængning}
-\begin{itemize}
-\item Forforstærker eller effektforstærker må maksimalt forvrænge 0,7 \%
-\item Forforstærker og effektforstærker må maksimalt forvrænge 1,0 \%
-\item Dette skal være overholdt i en effektbåndbredde fra 40 Hz til 12,5 kHz
-\end{itemize}
-Den anden værdi fra normen beskriver krav til belastningsimpedansen.
+DIN 45500 normens fulde titel er Deutsches Institut f\"{u}r Normung 45500. Denne norm gælder for audioudstyr og er brugt til at bestemme et krav til belastningsimpedansen
 \newline 
 \newline
 \textbf{Belastningsimpedans}
 \begin{itemize}
-\item For højtalere skal belastningsimpedansen være enten 4 \ohm~eller 8 \ohm
-\item For hovedtelefoner skal belastningsimpendansen være enten 200 \ohm~eller 400 \ohm
-\item Tolerance på 20 \%
+\item For højtalere skal belastningsimpedansen være enten 4 \ohm~eller 8 \ohm.
+\item Tolerance på maksimum 20 \% i frekvensområdet fra 40 Hz til 16 kHz.
 \end{itemize}
