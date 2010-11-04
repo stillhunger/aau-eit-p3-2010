@@ -53,7 +53,7 @@ Et klasse B udgangstrin har en strømkarakteristik på udgangen, som vist på fi
 \end{figure}
 
 Et klasse B trin overfører kun en halv periode af indgangssignalet til udgangen, altså er strømvinklen 180°. For at kunne gengive et udgangssignal similært til indgangssignalet er det derfor nødvendigt at sammensætte to klasse B trin således at det ene tager sig af den positive halvperiode og den anden den negative. Dette giver anledning til et fænomen kaldet crossoverdistortion. Dette fænomen optræder i dette tilfælde i overgangen fra den positive halvperiode til den negative og skyldes diodekarakteristikken i transistorernes base-emitter. Crossoverdistortion for et klasse B trin er illustreret på figur \ref{fig:classbproblem}.
-Et klasse B trin har en maksimal nyttevirkning på 50\%.
+Et klasse B trin har en maksimal nyttevirkning på 78,5 \%.
 
 I eksemplet er klasse B trinnet opbygget af to transistorer, en NPN (Q1) og en PNP (Q2), som vist på figur \ref{fig:classb}. Når input spændingen overstiger ca. 0,6 V vil Q1 begynde at lede strøm til loadmodstanden mens Q2 er lukket. Kommer input spændingen under -0,6 V vil Q2 lede, men da Q2 er en PNP vil den trække strøm mod -Vcc hvormed der trækkes strøm fra loadmodstanden. Når Q2 leder er Q1 lukket. 
 
@@ -86,11 +86,8 @@ Et klasse AB udgangstrin har en strømkarakteristik på udgangen, som vist på f
 
 
 Dette trin har en strømvinkel på mellem 180 ° og 360 °. Dette bevirker at, hvis man bruger samme teknik, som ved et klasse B trin til at få en hel sinusperiode på udgangen, vil de to signaler overlappe i overgangsperioden. Dette medvirker til at crossoverdistortion, som forklaret for klasse B trinnet, elemineres. Dermed bliver forvrængningen for et klasse AB mindre end for et klasse B.
-Et klasse AB trin har en maksimal nyttevirkning på 75 \%.
+Et klasse AB trin har en nyttevirkning som ligger mellem den for et klasse A og et klasse B. \fixme{Det sagde Jan. Ved ikke med ref men jeg kan ikke finde det i nogen bøger umiddelbart}
 
 Der tages i eksemplet på et klasse AB trin på figur \ref{fig:classab} udgangspunkt i klasse B trinnet på figur \ref{fig:classb}, med den forskel at potentialet på Q1 og Q2's base er hævet til saturationspændingen når signalspændningen er 0 V. Det er denne forskel, som eleminerer crossoverdistortion.
 
-
-\subsection{Delkonklusion}
-
-Der vælges at arbejde videre med et klasse AB udgangstrin \fixme{ryk op i AB}
+Et klasse AB udgangstrin har ikke et klasse A's lave nyttevirkning eller et klasse B's crossoverdistortion og er på baggrund af dette blevet valgt, som det udgangstrin der vil blive arbejdet videre på.
