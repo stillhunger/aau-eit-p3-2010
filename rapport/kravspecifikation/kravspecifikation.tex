@@ -1,8 +1,80 @@
 \chapter{Kravspecifikation}
 \label{kravspec}
-Formålet med dette kapitel er at opstille en kravspecifikation for projektets HiFi-forstærker. Alle kravene i kravspecifikationen skal være målbare, så de kan testes ved projektets afslutning, og begrundede i det omfang dette er muligt. 
+Formålet med dette kapitel er til slut at opstille en kravspecifikation for projektets HiFi-forstærker. Alle kravene i kravspecifikationen skal være målbare, så de kan testes ved projektets afslutning, og begrundede i det omfang dette er muligt. Før det er muligt at opstille en sådan kravspecifikation, er det nødvendigt at dokumentere hvilke overvejelser som danner grundlag for de forskellige dele af kravspecifikationen. Der er i kapitel \ref{kap:indledende_analyse} ført dokumentation for en række af disse overvejelser. De resterende overvejelser er dokumenteret i de næste syv afsnit. I afsnit \ref{krav_krav} er produktet af alle disse overvejelser samlet i den endelige kravspecifikation for projektets HiFi-forstærker. 
 
-Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiFi-forstærker. Tabellen viser desuden videre til hvilke begrundelser eller standard, der er for hvert enkelt krav.
+\section{Indgangsvælger}
+\label{krav_indgangsvaelger}
+I forbindelse med indgangsvælgeren er overvejelserne gået på, hvorvidt denne skal lave en trinvis eller flydende overgang mellem indgangssignalerne. Da en flydende overgang i princippet er simultan volumenkontrol af indgangene, adskiller den form for indgangsvælger sig ikke i samme grad fra en egentlig volumenkontrol, som det er tilfældet med en trinvis indgangsvælger. Eftersom der er opstillet krav om en volumenkontrol til forstærkeren sættes kravet om indgangsvælgerens art til trinvis. \\
+Som det fremgår i afsnit \ref{standarder} skal HiFi-forstærkeren have to indgange, hvilket danner grundlag for at kravet til antallet af trin i indgangsvælgeren sættes til tre. De tre trin er vist i tabel \ref{tab:indgangsvaelgertrin}.\fixme{Jesper: Har ikke lavet det med isolation, da jeg vil vente og se hvad Jacob skriver om det - ¿ Mener jeg hørte han fandt noget med det til standarder ?}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+\hline\hline
+Trin & Indgang 1 & Indgang 2 \\
+\hline\hline
+1 & On & Off \\
+2 & Off & On \\
+3 & On & On \\
+\hline\hline
+\end{tabular}
+\caption{Indgangsvælgertrin}
+\label{tab:indgangsvaelgertrin}
+\end{table}
+
+Valget mellem de tre trin skal kunne tages af brugeren på HiFi-forstærkerens frontpanel. Det skal desuden være tydeligt hvilket trin indgangsvælgeren er sat på.
+
+\section{Indgangsimpedans}
+\label{krav_indgangsimpedans}
+Indgangsimpedansen er at opfatte som en impedans der, ud fra en almindelig spændingsdeling, reducerer indgangssignalet. Man er, med den begrundelse, interesseret i en stor indgangsimpedans. Den mindste tilladte størrelse af indgangsimpedansen for en HiFi-forstærker er i standard IEC61938-1 bestemt til 22 k\ohm~ for liniesignalsindgange, se afsnit \ref{standarder}. Da størrelsen af udgangsimpedansen samtidig er bestemt til maksimalt 2,2 k\ohm~ for en liniesignalsudgang, kan betydningen af indgangsimpedansens størrelse regnes som vist i udregningen i formel (\ref{equ:indgangsimpedans22}). 
+
+\begin{equation}
+\label{equ:indgangsimpedans22}
+\frac{22~k\ohm}{22~k\ohm + 2,2~k\ohm} = 0,91
+\end{equation}
+
+Det ses af udregningen i formel (\ref{equ:indgangsimpedans22}), at en indgangsimpedans af størrelsen 22 k\ohm~ vil medføre et indgangssignal på 91 \% af det oprindelige signal. Med en større indgangsimpedans vil en større del af det oprindelige signal blive indgangssignalet. 
+
+\begin{equation}
+\label{equ:indgangsimpedans475}
+\frac{47,5~k\ohm}{47,5~k\ohm + 2,2~k\ohm} = 0,96
+\end{equation}
+
+Udregningen i formel (\ref{equ:indgangsimpedans475}) viser at med en indgangsimpedans af størrelsen 47,5 k\ohm~ bliver indgangssignalet 96 \% af det oprindelige signal.
+
+\section{Volumenkontrol}
+\label{krav_volumenkontrol}
+Kravet til styringen af volumenkontrol er sat til at dette skal foregå digitalt. Begrundelsen herfor ligger i det samtidige krav om volumenkontrol via fjernbetjening, læs mere herom i afsnit \ref{krav_fjernbetjening}. Volumen skal desuden kunne justeres via HiFi-forstærkerens frontpanel, hvor det også skal være muligt at aflæse det øjeblikkelige volumenniveau.  
+
+\section{Udgangssignaltype}
+\label{krav_udgangssignaltype}
+Valget står for udgangssignaltypen mellem stereo og mono. Da stereo i princippet blot er et lydsignal med to kanaler i modsætning til mono, som er én kanal, vil fremstillingen af en stereoudgang på forstærkeren ikke umiddelbart være mere lærerig end fremstillingen af en monoudgang, den vil blot kræve mere tid.
+
+\section{Udgangseffekt}
+\label{krav_udgangseffekt}
+Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den maksimale effekt der er mulig er bestemt af sikkerhedsreglerne i elektronikværkstedet på Aalborg Universitet. I disse regler angives den maksimale DC spænding der må arbejdes med til 60 V \cite{elregler-b1101}. 
+Til projektets forstærker deles denne spænding til en $\pm$30 V forsyning. Under udregningen af den maksimale effekt bruges RMS-værdien (Root Mean Square) af den spænding. Dermed bliver den øvre grænse som vist i udregningen i formel (\ref{equ:maks_effekt}).
+
+\begin{equation}
+\label{equ:maks_effekt}
+P_{maks} = \frac{(V_{RMS})^2}{R}= \frac{(\frac{\hat{V}}{\sqrt{2}})^2}{R} = \frac{(\frac{30~V}{\sqrt{2}})^2}{8\ohm} = 56,25~W
+\end{equation}
+
+Den nedre grænse for udgangseffekten er defineret af standarden IEC581, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 W hvis der er tale om en monoudgang før forstærkeren må kaldes en HiFi-forstærker, se afsnit \ref{standarder}.
+
+\section{Kortslutningssikring}
+\label{krav_kortslutningssikring}
+Der er opstillet krav om en kortslutningssikring for at sikre mod skader ved eventuelle overbelastninger på udgangen af HiFi-forstærkeren.
+
+\section{Fjernbetjening}
+\label{krav_fjernbetjening}
+Fjernbetjeninger har været en del af radio- og tv-udstyr i mere end 70 år og det har i en årrække været mere eller mindre uhørt at producere produkter af den slags uden en fjernbetjening.
+Antallet af kontrolmuligheder via fjernbetjeningen er som oftest større eller som minimum det samme som på selve apparatet.\\
+Ud fra disse observationer skal dette projekts HiFi-forstærker have en fjernbetjening, med mulighed for at styre de samme ting som på selve forstærkerens frontpanel, hvilket vil sige fjernbetjeningen skal give mulighed for at vælge indgang og volumeniveau. Desuden opstilles et krav om at fjernbetjeningen skal have en rækkevidde på minimum 1 meter.
+
+\section{Endelig kravspecifikation}
+\label{krav_krav}
+Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiFi-forstærker. Tabellen viser desuden videre til hvilke overvejelser eller standarder, der danner grundlag for hvert enkelt krav.
 
 \begin{table}[h]
 \centering
@@ -13,7 +85,7 @@ Område & Krav & Baggrund for krav \\
 \textbf{Teknisk:} & & \\
 Forstærkerklasse & AB & Se afsnit \ref{klasser} \\
 Total Harmonic Distortion & \color{red}{<1 \%} & Ref til THD afsnit \\
-Indgange & Linie og mikrofon & Se afsnit \ref{indgange} \\
+Indgange & Linie og mikrofon & Se afsnit \ref{standarder} \\
 Indgangsvælger & 3 trin & Se afsnit \ref{krav_indgangsvaelger} \\
 Indgangsimpedans & 47,5 k\ohm ($\pm$ 1 \%) & IEC61938-1 samt afsnit \ref{krav_indgangsimpedans} \\
 Equalizer-niveauer & \color{red}{?} & Ref til equalizer afsnit \\
@@ -39,72 +111,4 @@ Rækkevidde & 1 m & Se afsnit \ref{krav_fjernbetjening}\\
 \label{tab:kravspec}
 \end{table}
 
-\section{Indgangsvælger}
-\label{krav_indgangsvaelger}
-I forbindelse med indgangsvælgeren er overvejelserne gået på, hvorvidt denne skal lave en trinvis eller flydende overgang mellem indgangssignalerne. Da en flydende overgang i princippet er simultan volumenkontrol af indgangene, adskiller den form for indgangsvælger sig ikke i samme grad fra en egentlig volumenkontrol, som det er tilfældet med en trinvis indgangsvælger. Eftersom der er opstillet krav om en volumenkontrol til forstærkeren sættes kravet om indgangsvælgerens art til trinvis. Dette gøres for at øge mængden af forskelligt opbyggede elementer i forstærkeren. \\
-Som det fremgår af tabel \ref{tab:kravspec} skal HiFi-forstærkeren have to indgange, hvilket danner grundlag for at kravet til antallet af trin i indgangsvælgeren sættes til tre. De tre trin er vist i tabel \ref{tab:indgangsvaelgertrin}.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{c|c|c}
-\hline\hline
-Trin & Indgang 1 & Indgang 2 \\
-\hline\hline
-1 & On & Off \\
-2 & Off & On \\
-3 & On & On \\
-\hline\hline
-\end{tabular}
-\caption{Indgangsvælgertrin}
-\label{tab:indgangsvaelgertrin}
-\end{table}
-
-Valget mellem de tre trin skal kunne tages af brugeren på HiFi-forstærkerens frontpanel. Det skal desuden være tydeligt hvilket trin indgangsvælgeren er sat på.
-
-\section{Indgangsimpedans}
-\label{krav_indgangsimpedans}
-Indgangsimpedansen er at opfatte som en impedans der, ud fra en almindelig spændingsdeling, reducerer indgangssignalet. Man er, med den begrundelse, interesseret i en stor indgangsimpedans. Den mindste tilladte størrelse af indgangsimpedansen for en HiFi-forstærker er i standard IEC61938-1 bestemt til 22 k\ohm~ for liniesignalsindgange. Da størrelsen af udgangsimpedansen samtidig er bestemt til maksimalt 2,2 k\ohm~ for en liniesignalsudgang, kan betydningen af indgangsimpedansens størrelse regnes som vist i udregning \ref{equ:indgangsimpedans22}. 
-
-\begin{equation}
-\label{equ:indgangsimpedans22}
-\frac{22~k\ohm}{22~k\ohm + 2,2~k\ohm} = 0,91
-\end{equation}
-
-Det ses af udregning \ref{equ:indgangsimpedans22} at en indgangsimpedans af størrelsen 22 k\ohm~ vil medføre et indgangssignal på 91 \% af det oprindelige signal. Med en større indgangsimpedans vil en større del af det oprindelige signal blive indgangssignalet. 
-
-\begin{equation}
-\label{equ:indgangsimpedans475}
-\frac{47,5~k\ohm}{47,5~k\ohm + 2,2~k\ohm} = 0,96
-\end{equation}
-
-Udregning \ref{equ:indgangsimpedans475} viser at med en indgangsimpedans af størrelsen 47,5 k\ohm~ bliver indgangssignalet 96 \% af det oprindelige signal.
-
-\section{Volumenkontrol}
-\label{krav_volumenkontrol}
-Kravet til styringen af volumenkontrol er sat til at dette skal foregå digitalt. Begrundelsen herfor ligger i det samtidige krav om volumenkontrol via fjernbetjening. Volumen skal desuden kunne justeres via HiFi-forstærkerens frontpanel, hvor det også skal være muligt at aflæse det øjeblikkelige volumenniveau.  
-
-\section{Udgangssignaltype}
-\label{krav_udgangssignaltype}
-Valget står for udgangssignaltypen mellem stereo og mono. Da stereo blot er et lydsignal med to kanaler i modsætning til mono, som er en kanal, vil fremstillingen af en stereoudgang på forstærkeren ikke umiddelbart være mere lærerig end fremstillingen af en monoudgang, den vil blot kræve mere tid. 
-
-\section{Udgangseffekt}
-\label{krav_udgangseffekt}
-Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den maksimale effekt der er mulig er bestemt af sikkerhedsreglerne i elektronikværkstedet på Aalborg Universitet. I disse regler angives den maksimale DC spænding der må arbejdes med til 60 V. \cite{elregler-b1101} %\fixme{Kilde: elregler\_b1101.pdf}
-Til projektets forstærker deles denne spænding til en $\pm$30 V forsyning. Under udregningen af den maksimale effekt bruges RMS-værdien (Root Mean Square) af den spænding. Dermed bliver den øvre grænse som vist i udregning \ref{equ:maks_effekt}.
-
-\begin{equation}
-\label{equ:maks_effekt}
-P_{maks} = \frac{(V_{RMS})^2}{R}= \frac{(\frac{\hat{V}}{\sqrt{2}})^2}{R} = \frac{(\frac{30~V}{\sqrt{2}})^2}{8\ohm} = 56,25~W
-\end{equation}
-
-Den nedre grænse for udgangseffekten er defineret af standarden IEC581, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 W hvis der er tale om en monoudgang før forstærkeren må kaldes en HiFi-forstærker.
-
-\section{Kortslutningssikring}
-\label{krav_kortslutningssikring}
-Der er opstillet krav om en kortslutningssikring for at sikre mod skader ved eventuelle overbelastninger på udgangen af HiFi-forstærkeren.
-
-\section{Fjernbetjening}
-\label{krav_fjernbetjening}
-Fjernbetjeninger har været en del af radio- og tv-udstyr i mere end 70 år og det har i en årrække været mere eller mindre uhørt at producere produkter af den slags uden en fjernbetjening. \cite{krav-fjernbetjening} %\fixme{kilde: http://www.philcorepairbench.com/mystery/history.htm}
-Antallet af kontrolmuligheder via fjernbetjeningen er som oftest større eller som minimum det samme som på selve apparatet.\\
-Ud fra disse observationer skal dette projekts HiFi-forstærker have en fjernbetjening, med mulighed for at styre de samme ting som på selve forstærkerens front panel. Desuden opstilles et krav om at fjernbetjeningen skal have en rækkevidde på minimum 1 meter.
+Med denne kravspecifikation er der nu grundlag for at udvikle og fremstille en HiFi-forstærker.
