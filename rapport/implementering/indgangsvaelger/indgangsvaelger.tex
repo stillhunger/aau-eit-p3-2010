@@ -12,6 +12,17 @@ Der vil i dette afsnit blive gennemgået de overvejelser gruppen har gjort sig o
 Indgangsvælgeren skal håndtere 3 liniesignaler i form af et mikrofonsignal og et liniesignal i stereo. Fra kravspecifikation ved vi at indgangsvælgeren skal være trinvis med 3 trin, og at isoleringen mellem signaler skal være mere end 60 dB. ud over dette skal indgangsvælgeren også være i stand til at samle alle inputsignaler til et udgangssignal. For at gøre det nemmere at overskue er der valgt at opdele indgangsvælgeren i to dele. Første del er isoleringen af signaler, og den anden er Summationen af signaler.
 
 \subsection*{Isolering af Signaler}
+Der er opsat krav om at når et signal er slukket i indgangsvælgeren skal det minimum være dæmpet 60 dB. For at kunne gøre det har gruppen valgt at anvende transistor i koblingen der er vist på figur \ref{indgangsvaelger-isolering}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.2]{implementering/indgangsvaelger/signal-taend-sluk.png}
+\caption{Kredsløbsdesign over isolering af signaler i indgangsvælgeren.}
+\label{indgangsvaelger-isolering}
+\end{figure}
+
+
+
 
 \subsection*{Summation af signaler}
 
