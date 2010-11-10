@@ -1,3 +1,34 @@
 \chapter{Forforstærker}
 
-Forforstærkeren har til opgave at forstærke mikrofonens rå spændningssignal til et liniesignal. Et liniesignal har en amplitude fra 200 mV til 2 V. 
+Forforstærkeren har til opgave at forstærke mikrofonens udgangssignal til et liniesignal. Et liniesignal har en amplitude fra 200 mV til 2 V og mikrofonens udgangssignal ligger, ifølge standarderne, mellem 2 mV og 200 mV \fixme{Den er jeg ikke helt sikker på}. 
+Kravene fra kravspecifikationen som har indflydelse for designet af forforstærkerne er vist i tabel \ref{tab:krav_forforstaerker}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r|l}
+\hline\hline
+Område & Krav & Baggrund for krav \\
+\hline\hline
+Total Harmonic Distortion & \color{red}{<1 \%} & Ref til THD afsnit \\
+Indgange & Linie og mikrofon & Se afsnit \ref{standarder} \\
+Indgangsvælger & 3 trin & Se afsnit \ref{krav_indgangsvaelger} \\
+Udgangssignaltype & Mono & Se afsnit \ref{krav_udgangssignaltype} \\
+\textbf{Frontpanel:} & & \\
+Indgangsvælger & Ja & Se afsnit \ref{krav_indgangsvaelger} \\
+\textbf{Fjernbetjening:} & & \\
+Indgangsvælger & Ja &  Se afsnit \ref{krav_fjernbetjening}\\
+\hline\hline
+\end{tabular}
+\caption{Krav fra kravspecifikationen som har indflydelse på forforstærkeren}
+\label{tab:krav_forforstaerker}
+\end{table}
+
+
+\section{Design}
+
+
+\section{Simulering}
+
+
+\section{Accepttest}
+
