@@ -1,6 +1,6 @@
 \chapter{Forforstærker}
 
-Forforstærkeren har til opgave at forstærke mikrofonens udgangssignal til et liniesignal. Et liniesignal har en amplitude fra 200 mV til 2 V og mikrofonens udgangssignal ligger, ifølge standarderne, mellem 2 mV og 200 mV \fixme{Den er jeg ikke helt sikker på}. 
+Forforstærkeren har til opgave at forstærke mikrofonens udgangssignal til et liniesignals niveau. Et liniesignal har en amplitude fra 200 mV til 2 V og mikrofonens udgangssignal ligger, ifølge standarderne, mellem 0.8 mV og 200 mV \fixme{Den er jeg ikke helt sikker på}. 
 Kravene fra kravspecifikationen som har indflydelse for designet af forforstærkerne er vist i tabel \ref{tab:krav_forforstaerker}.
 
 \begin{table}[h]
@@ -24,7 +24,20 @@ Indgangsvælger & Ja &  Se afsnit \ref{krav_fjernbetjening}\\
 \end{table}
 
 
+
 \section{Design}
+Forforstærkeren skal indeholde to blokke: En differensforstærker og en Common emitter (CE) forstærker med uafkoblet emittermodstand. Grunden til at forforstærkeren skal indeholde en differensforstærker er for at udnytte mikrofonens balancerede output, for derved at minimere indstrålingsstøj. CE forstærkerens opgave er, efter differensforstærkeren, at forstærke signalet således at det er på niveau med et linjesignal. På figur \ref{blok_forforstaerker} ses et blokdiagram over forforstærkerens opbygning. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{implementering/forforstaerker/blok_forforstaerker.png}
+\caption{Blokdiagram over forforstærkerens byggeblokke samt lydsignalets vej}
+\label{blok_forforstaerker}
+\end{figure}
+
+\subsection{Differensforstærker}
+
+\subsection{CE med Re forstærker}
 
 
 \section{Simulering}
