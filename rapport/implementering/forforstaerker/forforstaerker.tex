@@ -26,7 +26,7 @@ Indgangsvælger & Ja &  Se afsnit \ref{krav_fjernbetjening}\\
 
 
 \section{Design}
-Forforstærkeren skal indeholde to blokke: En differensforstærker og en Common emitter (CE) forstærker med uafkoblet emittermodstand. Grunden til at forforstærkeren skal indeholde en differensforstærker er for at udnytte mikrofonens balancerede output, for derved at minimere indstrålingsstøj. CE forstærkerens opgave er, efter differensforstærkeren, at forstærke signalet således at det er på niveau med et linjesignal. På figur \ref{blok_forforstaerker} ses et blokdiagram over forforstærkerens opbygning. 
+Mikrofon kan maksimalt levere en outputspænding på 18 mV. Forforstærkeren skal forstærke dette til linjeniveau hvormed forstærkningen bliver: $2/18*10^(-3)=111$. Derfor er der valgt at benytte to CE med uafkoblet Re trin: ét der forstærker 10 gange og ét der forstærker 11 gange. Dette er vist på figur \ref{blok_forforstaerker}.
 
 \begin{figure}[h]
 \centering
@@ -35,9 +35,7 @@ Forforstærkeren skal indeholde to blokke: En differensforstærker og en Common 
 \label{blok_forforstaerker}
 \end{figure}
 
-\subsection{Differensforstærker}
-
-\subsection{CE med Re forstærker}
+Udregningerne kan ses i vedlagt pdf (beregning_forforstaerker.pdf). 
 
 
 \section{Simulering}
