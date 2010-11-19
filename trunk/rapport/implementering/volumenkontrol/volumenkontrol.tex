@@ -17,8 +17,46 @@
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{implementering/volumenkontrol/diagram.png}
-\caption{Blokdiagram over volumenkontrollen}
-\label{fig:volumenkontrol_opbygning}
+\caption{Diagram over volumenkontrollen}
+\label{fig:volumenkontrol_diagram}
+\end{figure}
+
+\subsubsection{Konstantstrømsgenerator}
+\label{volumenkontrol-simulering-konstantstroemsgenerator}
+
+Konstantstrømsgeneratorens opgave er at leve en konstant strøm, denne strøm bruges til at oplade en kondensator (ladekondensatoren). Diagrammet er vist på figur \ref{fig:volumenkontrol_konstantstroemsgenerator_diagram}. Når en kondensator lades med en konstant strøm, vil spændingen over den stige lineært, dette fremgår også af ligning \ref{equ:konstantstroemsgenerator1}.
+
+\begin{equation}
+\label{equ:konstantstroemsgenerator1}
+V = \frac{I \cdot t}{C}
+\end{equation}
+
+Konstantstrømsgeneratoren er designet med udgangs på at der vil være et spændingsfald på $0,5 V$ over $D_2$, $D_3$, $R_{11}$ og $Q_{4_{BE}}$. I databladet for 1N4148 fremgår det at den vil have en $V_F$ spændingen på $0,5 V$ ved en $I_F$ strøm på $0,1 mA$. Spændingen over modstanden $R_{12}$ er således givet ved ligningen \ref{equ:konstantstroemsgenerator2}.
+
+\begin{equation}
+\label{equ:konstantstroemsgenerator2}
+U_{R_{12}} = \frac{V_{CC} - 2 \cdot V_F}{I_F} = \frac{5V - 2 \cdot 0,5 V}{0,1 mA} = 40 k\Omega
+\end{equation}
+
+Den kondensator som Konstantstrømsgeneratoren kaldes ladekondensatoren, denne har en kapacitet på $5 \mu F$ og den ønskede oplade tid er $3 s$. Udfra disse to ting kan den konstante strøm, $I_{konst}$, nu beregnes, se ligning \ref{equ:konstantstroemsgenerator3}.
+
+\begin{equation}
+\label{equ:konstantstroemsgenerator3}
+V_{CC} = \frac{I_{konst} \cdot t}{C} \Rightarrow 5 V = \frac{I_{konst} \cdot 3 s}{5 \mu F} \Rightarrow I_{konst} = 8,3 \mu A
+\end{equation}
+
+Spændingen over $R_{11}$ er, som tidligere nævnt, $0,5 V$ og strømmen igennem den er $I_{konst}$, der kan Ohms lov bruges til at beregne modstanden, se ligning \ref{equ:konstantstroemsgenerator4}.
+
+\begin{equation}
+\label{equ:konstantstroemsgenerator4}
+V = R \cdot I = 0,5 V = R \cdot 8,3 \mu A \Rightarrow R = 60 k\Omega
+\end{equation}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{implementering/volumenkontrol/konstantstroemsgenerator.png}
+\caption{Diagram over konstantstrømsgeneratoren}
+\label{fig:volumenkontrol_konstantstroemsgenerator_diagram}
 \end{figure}
 
 \subsection{Accepttest}
