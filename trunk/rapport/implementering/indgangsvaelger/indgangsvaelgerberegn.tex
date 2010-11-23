@@ -10,13 +10,13 @@ R_3=39.29K
 \end{equation}
 Denne er så valgt til 40.2K, for at passe med E\fixme{Hvilken række er det det passer med?}rækken.
 For at kunne afbryde de enkelte signaler, kan transistoren Q1 trække signalet til stel. for at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. Den maksimale strøm der kan løbe i systemet er summen af DC-strømmen og AC-strømmen. 
-Først findes DC-strømmen. DC spændingen i kredsløbet er sat til 5V. Hvis transistoren en direkte kobling, så der ligger stel mellem $R_3$ og $R_4$, vil $R_2$ og $R_3$ sidde i parallel til stel. Ud fra dette findes den maksimale mængde strøm, der kan løbe igennem $R_3$. Vi kan så regne os frem til, at den største strøm der vil løbe igennem $R_3$, og derfor også transistoren, er ca. 0.027 mA
+Først findes DC-strømmen. DC spændingen i kredsløbet er sat til 5V. Hvis transistoren en direkte kobling, så der ligger stel mellem $R_3$ og $R_4$, vil $R_2$ og $R_3$ sidde i parallel til stel. Ud fra dette findes den maksimale mængde strøm, der kan løbe igennem $R_3$. Ud fra dette den største strøm der vil løbe igennem $R_3$, og derfor også transistoren, udregnes til ca. 0.027 mA
 Den maksimale AC-strøm findes ved at kortslutte alle kondensatorer, og regne med det størst mulige AC-udsving. En konsekvens af, at alle kondensatorer bliver kortsluttet, er at forsyning og stel også bliver kortsluttet. Ud fra dette findes AC-strømmen til at være ca. 0.05 mA. Dette giver en samlet max strøm på ca. 0.08 mA.
 Strømmen $I_B$, som løber ind i basis på transistoren skal mindst være den samlede strøm, divideret med $H_FE$:
 \begin{equation}
 I_B = \frac{0.08 mA}{H_FE} = xx mA
 \end{equation}
-Da de benyttede flip-flops\fixme{Check at det stadig er sådan} outputter 5V, kan vi derfor finde $R_B$'s maksimale værdi:
+Da de benyttede flip-flops\fixme{Check at det stadig er sådan} outputter 5V, kan $R_B$'s maksimale værdi findes:
 \begin{equation}
 R_B = \frac{5V}{I_B} = xx K\ohm
 \end{equation}
