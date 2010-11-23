@@ -1,14 +1,13 @@
-Modstandene $R_1$ og $R_2$ er begge valgt til 100k\ohm, for at give et DC-offset på ca 7.5V, halvdelen af V1. Dog bliver offsettet ikke helt disse 7.5V, da spændingsdelingen mellem $R_1$ og $R_2$ er en belastet spændingsdeler. Den faktiske spændingsdeling kan udregnes, ved at sætte en seriekobling af $R_3$ og $R_4$ parallelt med $R_2$, da disse går til virtuelt stel ved indgangen til opampen.
-\begin{equation}
-15V-15V*\frac{R_1}{R_1+\frac{1}{\frac{1}{R_2}+\frac{1}{R_3+R_4}}=4.62V
-\end{equation}\fixme{der er noget galt her, men kan ikke lige se det, ud fra teksten bare}
-Dog er DC-offsettet underordnet, så længe det ligger indenfor et område transistoren kan arbejde med, og $DC-offset - AC-Peakværdi > 0$. DC-offsettet alligevel bliver filtreret fra gennem en kondensator, før summationsforstærkeren, så det har ikke ind
-Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på minimum 22K\ohm. Når transistoren er tændt er indgangsimpedansen mindst. $R_1$, $R_2$ og $R_3$ sidder stadig alle parallelt hvilket giver:
-\begin{equation}
-\frac{1}{\frac{1{}R_1}+\frac{1}{R_2}+\frac{1}{R_3}}=22K
-R_3=39.29K
+Modstandene $R_1$ og $R_2$ er begge valgt til 100k\ohm, for at give et DC-offset på ca 2.5V, halvdelen af V1. Dette gælder dog kun når transistoren er slukket. I det transistoren tændes, sættes $R_2$ parallelt med $R_3$, hvilket trækker DC-offsettet længere ned:
+5V*\frac\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}{R_1+\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}=1.11V
 \end{equation}
-Denne er så valgt til 40.2K, for at passe med E\fixme{Hvilken række er det det passer med?}rækken.
+Dog er det egentlige DC-offset underordnet, så længe det ligger indenfor et område transistoren kan arbejde med, og $DC-offset - AC-Peakværdi > 0$ når transistoren er slukket. DC-offsettet alligevel bliver filtreret fra gennem en kondensator, før summationsforstærkeren, så det ikke har indflydelse på det endelige signal.
+Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på minimum 22k\ohm. Når transistoren er tændt er indgangsimpedansen mindst. $R_1$, $R_2$ og $R_3$ sidder så alle parallelt hvilket giver:
+\begin{equation}
+\frac{1}{\frac{1{}R_1}+\frac{1}{R_2}+\frac{1}{R_3}}=22k\ohm
+R_3=39.29k\ohm
+\end{equation}
+Denne er så valgt til 40.2k\ohm, for at passe med E96-rækken.
 For at kunne afbryde de enkelte signaler, kan transistoren Q1 trække signalet til stel. for at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. Den maksimale strøm der kan løbe i systemet er summen af DC-strømmen og AC-strømmen. 
 Først findes DC-strømmen. DC spændingen i kredsløbet er sat til 5V. Hvis transistoren en direkte kobling, så der ligger stel mellem $R_3$ og $R_4$, vil $R_2$ og $R_3$ sidde i parallel til stel. Ud fra dette findes den maksimale mængde strøm, der kan løbe igennem $R_3$. Ud fra dette den største strøm der vil løbe igennem $R_3$, og derfor også transistoren, udregnes til ca. 0.027 mA
 Den maksimale AC-strøm findes ved at kortslutte alle kondensatorer, og regne med det størst mulige AC-udsving. En konsekvens af, at alle kondensatorer bliver kortsluttet, er at forsyning og stel også bliver kortsluttet. Ud fra dette findes AC-strømmen til at være ca. 0.05 mA. Dette giver en samlet max strøm på ca. 0.08 mA.
@@ -18,15 +17,15 @@ I_B = \frac{0.08 mA}{H_FE} = xx mA
 \end{equation}
 Da de benyttede flip-flops\fixme{Check at det stadig er sådan} outputter 5V, kan $R_B$'s maksimale værdi findes:
 \begin{equation}
-R_B = \frac{5V}{I_B} = xx K\ohm
+R_B = \frac{5V}{I_B} = xx k\ohm
 \end{equation}
 Alt under dette vil give en større strøm ind i basis, hvilket vil give en større strøm ind i collectorbenet og vil derfor også kunne trække signalet til stel.
 
-Modstanden $R_4$ har ikke nogen indvirkning på indgangsimpedansen, når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_3$, hvilket giver en højere indgangsimpedans:
+Modstanden $R_4$ har ikke nogen indvirkning på indgangsimpedansen når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_3$, hvilket giver en højere indgangsimpedans:
 \begin{equation}
 R_indgang=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3+R_4}}=30.8k\ohm
 \end{equation}
-$R_4$ er valgt til 40.2 k\ohm, det samme som $R_3$, for at gøre produceringen enklere. Ved at bruge modstande med de samme værdier sænkes antallet af benyttede komponenter, hvilket letter indkøbs- samt produceringsomkostninger \fixme{Skal der her skrottes? Kunne virkelig godt tænke mig at vi fandt en grund til at værdien skal være som den er..}.
+$R_4$ er valgt til 40.2 k\ohm, det samme som $R_3$, for at gøre produceringen enklere. Ved at bruge modstande med de samme værdier sænkes antallet af benyttede komponenter, hvilket letter indkøbs- samt produceringsomkostninger \fixme{Skal der her skrottes? Kunne virkelig godt tænke mig at vi fandt en grund til at værdien skal være som den er.}.
 Efter at have opstillet de forskellige modstandsværdier, er det muligt at udregne værdien af afkoblingskondensatorerne i kredsløbet. Disse kan udregnes som en spændingsdeling mellem en seriekoblet modstand og kondensator, seriekoblet med en modstand, som vist på figur \ref{crvd}. I dette tilfælde vil $R_U$ være udgangsimpedansen på det foregående led, og $R_I$ være indgangsimpedansen på det efterfølgende. Impedansen i en kondensator, i frekvensdomænet er $\frac{1}{s\cdotC}$. Dette kan opstilles i følge spændingsdelingsformel for udregningen:
 \begin{equation}
 \frac{V_out}{V_in}=\frac{R_I}{R_I+(R_U+\frac{1}{s\cdot C})}
