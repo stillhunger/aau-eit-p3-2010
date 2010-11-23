@@ -10,13 +10,13 @@ R_3=39.29K
 \end{equation}
 Denne er så valgt til 40.2K, for at passe med E\fixme{Hvilken række er det det passer med?}rækken.
 For at kunne afbryde de enkelte signaler, kan transistoren Q1 trække signalet til stel. for at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. Den maksimale strøm der kan løbe i systemet er summen af DC-strømmen og AC-strømmen. 
-Først findes DC-strømmen. DC spændingen i kredsløbet er sat til 15V. Hvis transistoren en direkte kobling, så der ligger stel mellem $R_3$ og $R_4$, vil $R_2$ og $R_3$ sidde i parallel til stel. På denne måde finder vi den maksimale mængde strøm, der kan løbe igennem $R_3$. Vi kan så regne os frem til, at den største strøm der vil løbe igennem $R_3$, og derfor også transistoren, er ca. 0.08 mA
-Den maksimale AC-strøm findes ved at kortslutte alle kondensatorer, og regne med det størst mulige AC-udsving. En konsekvens af, at alle kondensatorer bliver kortsluttet, er at forsyning og stel også bliver kortsluttet, da disse er forbundet med en kondensator\fixme{teoretisk? Eller faktisk?}. Dette giver at $R_1$, $R_2$ og $R_3$ alle sidder i parallel til stel. Ud fra dette findes AC-strømmen til at være ca. 0.05 mA. Dette giver en samlet max strøm på ca. 0.13 mA.
+Først findes DC-strømmen. DC spændingen i kredsløbet er sat til 5V. Hvis transistoren en direkte kobling, så der ligger stel mellem $R_3$ og $R_4$, vil $R_2$ og $R_3$ sidde i parallel til stel. Ud fra dette findes den maksimale mængde strøm, der kan løbe igennem $R_3$. Vi kan så regne os frem til, at den største strøm der vil løbe igennem $R_3$, og derfor også transistoren, er ca. 0.027 mA
+Den maksimale AC-strøm findes ved at kortslutte alle kondensatorer, og regne med det størst mulige AC-udsving. En konsekvens af, at alle kondensatorer bliver kortsluttet, er at forsyning og stel også bliver kortsluttet. Ud fra dette findes AC-strømmen til at være ca. 0.05 mA. Dette giver en samlet max strøm på ca. 0.08 mA.
 Strømmen $I_B$, som løber ind i basis på transistoren skal mindst være den samlede strøm, divideret med $H_FE$:
 \begin{equation}
-I_B = \frac{0.13 mA}{H_FE} = xx mA
+I_B = \frac{0.08 mA}{H_FE} = xx mA
 \end{equation}
-Da den styring vi benytter\fixme{mere præcist, lige nu ved jeg ikke præcist hvad vi bruger} outputter 5V, kan vi derfor finde $R_B$'s maksimale værdi:
+Da de benyttede flip-flops\fixme{Check at det stadig er sådan} outputter 5V, kan vi derfor finde $R_B$'s maksimale værdi:
 \begin{equation}
 R_B = \frac{5V}{I_B} = xx K\ohm
 \end{equation}
@@ -24,5 +24,18 @@ Alt under dette vil give en større strøm ind i basis, hvilket vil give en stø
 
 Modstanden $R_4$ har ikke nogen indvirkning på indgangsimpedansen, når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_3$, hvilket giver en højere indgangsimpedans:
 \begin{equation}
-R_indgang=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3+R_4}}
+R_indgang=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3+R_4}}=30.8k\ohm
 \end{equation}
+$R_4$ er valgt til 40.2 k\ohm, det samme som $R_3$, for at gøre produceringen enklere. Ved at bruge modstande med de samme værdier sænkes antallet af benyttede komponenter, hvilket letter indkøbs- samt produceringsomkostninger \fixme{Skal der her skrottes? Kunne virkelig godt tænke mig at vi fandt en grund til at værdien skal være som den er..}.
+Efter at have opstillet de forskellige modstandsværdier, er det muligt at udregne værdien af afkoblingskondensatorerne i kredsløbet. Disse kan udregnes som en spændingsdeling mellem en seriekoblet modstand og kondensator, seriekoblet med en modstand, som vist på figur \ref{crvd}. I dette tilfælde vil $R_U$ være udgangsimpedansen på det foregående led, og $R_I$ være indgangsimpedansen på det efterfølgende. Impedansen i en kondensator, i frekvensdomænet er $\frac{1}{s\cdotC}$. Dette kan opstilles i følge spændingsdelingsformel for udregningen:
+\begin{equation}
+\frac{V_out}{V_in}=\frac{R_I}{R_I+(R_U+\frac{1}{s\cdot C})}
+\end{equation}
+For at få en dæmpning på 3dB, som er den ønskede dæmpning i knækpunktet, skal $\frac{V_out}{V_in}=10^{\frac{-3}{20}}\approx0.7$. 
+Dette giver 2 ubekendte, s og C. s kan ses som $2\cdot\pi\cdotf$, hvor f er den ønskede frekvens ved knækket. Der opstilles et udtryk for C:
+\begin{equation}
+10^{\frac{-3}{20}}=\frac{R_I}{R_I+(R_U+\frac{1}{2\cdot\pi\cdot 2\cdot C})}
+C=\frac{-1}{2}\cdot{10^{\frac{-3}{20}}}{\pi\cdot f\cdot(10^{\frac{-3}{20}}\cdot R_I+\frac{-3}{20}}\cdot R_U - R_I)
+\end{equation}
+f bestemmes til 2hz, én dekade før den ønskede, for at opnå en lav dæmpning ved de ønskede 20hz. Ud fra dette kan de forskellige værdier for C udregnes, afhængigt af de impedanser de ser ind i.
+Indgangsimpedansen for $C_1$ er fundet til 30.8k\ohm . Indtastes dette i ovennævnte formel findes værdien for $C_1$ til mindst 8µF. Alt under dette vil give en højere knækfrekvens, hvilket ikke er at ønske. Alt højere vil dog give en større indsvingningstid, hvilket er at foretrække, dog heller ikke ønskeligt.
