@@ -38,18 +38,18 @@ Konstantstrømsgeneratoren er designet med udgangs på at der vil være et spæn
 U_{R_{12}} = \frac{V_{CC} - 2 \cdot V_F}{I_F} = \frac{5V - 2 \cdot 0,5 V}{0,1 mA} = 40 k\Omega
 \end{equation}
 
-Den kondensator som Konstantstrømsgeneratoren kaldes ladekondensatoren, denne har en kapacitet på $5 \mu F$ og den ønskede oplade tid er $3 s$. Udfra disse to ting kan den konstante strøm, $I_{konst}$, nu beregnes, se ligning \ref{equ:konstantstroemsgenerator3}.
+Den kondensator som Konstantstrømsgeneratoren kaldes ladekondensatoren, denne har en kapacitet på $5 \mu F$ og den ønskede oplade tid er $3 s$. Kondensatoren oplades fra 0 V til $V_{CC} - V_F = 4,5 V$, hvor $V_F$ er spændingen over én diode. Udfra disse to ting kan den konstante strøm, $I_{konst}$, nu beregnes, se ligning \ref{equ:konstantstroemsgenerator3}.
 
 \begin{equation}
 \label{equ:konstantstroemsgenerator3}
-V_{CC} = \frac{I_{konst} \cdot t}{C} \Rightarrow 5 V = \frac{I_{konst} \cdot 3 s}{5 \mu F} \Rightarrow I_{konst} = 8,3 \mu A
+V_{CC} - V_F = \frac{I_{konst} \cdot t}{C} \Rightarrow 4,5 V = \frac{I_{konst} \cdot 3 s}{5 \mu F} \Rightarrow I_{konst} = 7,5 \mu A
 \end{equation}
 
 Spændingen over $R_{11}$ er, som tidligere nævnt, $0,5 V$ og strømmen igennem den er $I_{konst}$, der kan Ohms lov bruges til at beregne modstanden, se ligning \ref{equ:konstantstroemsgenerator4}.
 
 \begin{equation}
 \label{equ:konstantstroemsgenerator4}
-V = R \cdot I = 0,5 V = R \cdot 8,3 \mu A \Rightarrow R = 60 k\Omega
+V = R \cdot I = 0,5 V = R \cdot 7,5 \mu A \Rightarrow R = 66,7 k\Omega
 \end{equation}
 
 \begin{figure}[h]
