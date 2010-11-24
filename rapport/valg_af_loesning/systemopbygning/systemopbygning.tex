@@ -1,4 +1,4 @@
-\section{Systemopbygning}
+\chapter{Systemopbygning}
 For at kunne finde krav til dette projekts HiFi-forstærker er det nødvendigt at vælge hvilke blokke denne skal bestå af. I dette projekt er der ikke udelukkende valgt at designe en HiFi-forstærker i sin simpleste form, men også at tilføje funktionalitetsudvidende elementer. Systemets opbygning, med adskilte funktionelle blokke, er illustreret på figur \ref{fig:hififorstaerker_opbygning}. Dette afsnit vil argumentere for og forklare den valgte opbygning. 
 
 
@@ -10,13 +10,13 @@ For at kunne finde krav til dette projekts HiFi-forstærker er det nødvendigt a
 \end{figure}
 
 
-\subsection*{Input blokke}
+\section*{Input blokke}
 Det er valgt at der skal kunne tilsluttes to typer lydkilder til HiFi-forstærkeren; en mikrofon og en kilde som afgiver et liniesignal. Kilder som afgiver et liniesignal er blandt andre computere, de fleste mobiltelefoner og medieafspillere, hvilket er grundlaget for netop at vælge denne type indgang. 
 Grundlaget for at vælge en mikrofonindgang er udelukkende for at kunne anvende en indgangsvælger og for ikke at lave to ens linieindgange. 
 
 HiFi-forstærkeren skal udstyres med et frontpanel hvorpå alle knapper til justeringsmulighederne skal placeres. På frontpanelet skal der være muligheder for at justere på equalizerbånd, volumen og valg af indgang.
 
-\subsection*{Analoge blokke}
+\section*{Analoge blokke}
 
 Udgangsspændningen fra en mikrofon er langt lavere end linieniveau. Derfor benyttes en forforstærker til at forstærke mikrofonens lave signal op på niveau med liniesignalet, således at de er sammenlignelige i resten af systemet.
 
@@ -28,11 +28,11 @@ Brugeren skal have mulighed for at kunne forme lyden, som HiFi-forstærkeren afg
 
 Effektforstærkerens opgave er at levere strøm til højtaleren således at den ønskede afsatte effekt opnås.
 
-\subsection*{Digitale blokke}
+\section*{Digitale blokke}
 Visse elementer på HiFi-forstærkeren skal styres digitalt. Dette gælder volumenkontrollen og indgangsvælgeren. De digitale blokke vil så vidt muligt, i dette projekt, være designet med gates, da det passer med pensum for det aktuelle semester. 
 
 
-\subsection*{Output blokke}
+\section*{Output blokke}
 
 For at kunne vise information om aktuelle indstillinger til brugeren vil der bliver benyttet to former for displays. 
 Den aktuelle volumen vil blive vist på 7-segment displays. Grunden til valget af 7-segment er for at kunne lave displaydriveren med gates og kunne færdiggøre den indenfor en overskuelig tidsperiode. 
