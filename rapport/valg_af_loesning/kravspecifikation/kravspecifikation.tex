@@ -1,0 +1,52 @@
+\section{Kravspecifikation}
+\label{kravspecifikation}
+Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiFi-forstærker. Tabellen viser desuden for hvilke betingelser kravene er gældende. Med denne kravspecifikation er der grundlag for at udvikle og fremstille en HiFi-forstærker.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{r|l|r|l}
+\hline\hline
+Nr. & Område & Krav & Betingelse(r) \\
+\hline\hline
+\multicolumn{4}{c}{\textbf{Teknisk:}} \\\hline
+1 & Forstærkerklasse & AB & \\[4pt]
+2 & Total Harmonic & < 1 \% & $\circ$ < 0,5\% i forforstærker \\
+& Distortion & & $\circ$ < 0,5 \% i effektforstærker \\
+& & & $\circ$ < 0,7 \% i forforstærker \\
+& & & ~~~effektforstærker \\[4pt]
+3 & Frekvensgang & 20 Hz - 20 kHz & $\circ$ Maks. dæmpning på 3 dB \\
+& & & ~~~fra 63 Hz til 20 Hz og \\
+& & & ~~~fra 12,5 kHz til 20 kHz \\
+& & & $\circ$ $\pm$ 1,5 dB før equalizer \\
+& & & $\circ$ $\pm$ 2 dB efter equalizer \\[4pt]
+4 & Indgangstyper & Linie og mikrofon & $\circ$ Med $"$MCE-4000 - Elec- \\
+& & & ~~~tret Mike Capsul$"$ mikrofon \\[4pt]
+5 & Antal trin i & 4 & \\
+& indgangsvælger & & \\[4pt]
+6 & Dæmpning af slukket & > 50 dB & $\circ$ Ved 1 kHz \\
+& indgangssignal & & \\[4pt]
+7 & Indgangsimpedans & > 22 k\ohm & $\circ$ $\pm$ 1 \% \\[4pt]
+8 & Equalizer-bånd & 3 & $\circ$ Ved bånd: 20 - 200 Hz, \\
+& & & ~~~200 - 2000 Hz og \\
+& & & ~~~2000 - 20000 Hz \\[4pt]
+9 & Styring af volumen- & Digital & \\
+& kontrol & & \\[4pt]
+10 & Dæmpningsområde i & 0 dB - 50 dB & $\circ$ 1 dB per niveau \\
+& volumenkontrol & & \\[4pt]
+11 & Udgangseffekt & 20 W & $\circ$ $\pm$ 2 W \\
+& & & $\circ$ I 8~\ohm-højtaler \\[4pt]
+12 & Udgangssignaltype & Mono & \\[4pt]
+13 & Kortslutningssikring & 3,75 A & $\circ$ Med 8~\ohm-højtaler \\\hline
+\multicolumn{4}{c}{\textbf{Frontpanel (input):}} \\\hline
+14 & Indgangsvælger & Èn trykknap & \\[4pt]
+15 & Volumenkontrol & To trykknapper & \\[4pt]
+16 & Equalizer & Èn drejeknap pr. bånd & \\\hline
+\multicolumn{4}{c}{\textbf{Frontpanel (output):}} \\\hline
+17 & Indgangsvælger & To lysdioder & $\circ$ Én per indgang\\[4pt]
+17 & Volumedisplay & To 7-segmenter & \\[4pt]
+18 & Visualizer & \textcolor{red}{XX} lysdioder \\
+\hline\hline
+\end{tabular}
+\caption{Samlet kravspecifikation}
+\label{tab:kravspec}
+\end{table}
