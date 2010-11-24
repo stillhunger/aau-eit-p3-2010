@@ -19,18 +19,21 @@ Det første område der er set på i standarden beskriver maksimum af forvrængn
 \item Effektforstærker må maksimalt forvrænge 0,5 \%.
 \item Forforstærker og effektforstærker samlet må maksimalt forvrænge 0,7 \%.
 \item Disse værdier skal som minimum overholdes i frekvensområdet fra 40 Hz til 16 kHz. Dog ved forforstærker og effektforstærker samlet er det tilladt at outputtet falder med 3 dB i frekvensområderne fra 40 Hz til 63 Hz og 12,5 kHz til 16 kHz. 
-\item Ydermere skal alle værdier af forvrængning være overholdt ved et output højere end -26 dB.
+\item Ydermere skal alle værdier af forvrængning være overholdt nominel udgangseffekt og indtil 26 dB lavere 
 \end{itemize}
+I projetet er der valgt at overholde krav om forvrængning fra standarden. 
 
-Det anden område der er kigget på i standarden siger hvad minimumskrav der er for udgangseffekten.
+Det andet område der er kigget på i standarden siger, hvilke minimumskrav der er for udgangseffekten.
 \newline
 \newline
 \textbf{Udgangseffekt}
 \begin{itemize}
 \item Der skal minimum være et output på 10 W per kanal og det skal overholde kravet om forvrængning.
 \item Hvis forstærkeren har mere end én kanal skal alle kanaler kunne levere minimum 10 W samtidig.
-\item Forstærkeren skal kunne levere det maksimale output, uden at overskride forvrængningskravene, i mindst 10 min., med alle kanaler tændt og en temperatur mellem 15 °C og 35 °C. Relativt til 1 kHz.
+\item Forstærkeren skal kunne levere det maksimale output, uden at overskride forvrængningskravene, i mindst 10 min ved 1 kHz., med alle kanaler tændt og en temperatur mellem 15 \celsius og 35 \celsius.
 \end{itemize}
+I projektet er det valgt at overholde hvad standarden angiver omkring udgangseffekt, bortset fra udgangseffekten i dette projekt skal være 20 W. 20 W er valgt frem for 10 W for at undgå at afvigelser fra 10 W kan resultere i at standarden ikke overholdes
+
 
 Det tredje område der er kigget på i standarden fastsætter et minimum for hvilket frekvensområde forstærkeren skal arbejde indenfor.
 \newline 
@@ -38,9 +41,10 @@ Det tredje område der er kigget på i standarden fastsætter et minimum for hvi
 \textbf{Frekvensområde}
 \begin{itemize}
 \item Frekvensområdet skal som minimum gå fra 40 Hz til 16 kHz.
-\item Der må være en tolerance på $\pm$ 1,5 dB for signaler der ikke er kommet igennem en equalizer. Relativt til 1 kHz.
-\item Der må være en tolerance på $\pm$ 2 dB for signaler der er kommet igennem en equalizer. Relativt til 1 kHz.
+\item Der må være en tolerance på $\pm$ 1,5 dB for signaler der ikke er kommet igennem en equalizer, målt ved 1 kHz.
+\item Der må være en tolerance på $\pm$ 2 dB for signaler der er kommet igennem en equalizer, målt ved 1 kHz.
 \end{itemize}
+I projektet er der valgt at frekvensområdet skal gå fra 20 Hz til 20 kHz. Det er valgt at overholde de tolerancer der er angivet i standarden. Udvielsen af frekvensområdet er valgt fordi den menneskelige hørelse kan høre lyde fra 20 Hz til 20 kHz\fixme{Kilde: menneskelige hørelse}
 
 Det fjerde område der er kigget på i standarden beskriver krav til isolering af signaler (Crosstalk Attenuation)
 \newline 
@@ -50,7 +54,7 @@ Det fjerde område der er kigget på i standarden beskriver krav til isolering a
 \item Isolering mellem signaler skal mindst være 40 dB fra 250 Hz til 10 kHz
 \item Ved 1 kHz skal isoleringen mindst være 50 dB
 \end{itemize}
-
+I projektet er der valgt at isoleringen af signaler skal være større end 50 dB.
 
 \subsection*{IEC61938 1. udgave}
 \label{IEC61938}
@@ -62,19 +66,23 @@ Det første område der er kigget på i standarden fremsætter hvad der skal ove
 \newline
 \textbf{Liniesignaler}
 \begin{itemize}
-\item Indgangsimpedansen skal være større eller lig med 22 k\ohm
-\item In- og output spændingen skal være mellem 0,2 V og 2 V
-\item Udgangsimpedansen skal højst være 2,2 k\ohm
+\item Indgangsimpedansen som liniesignalet bliver koblet til skal være større eller lig med 22 k\ohm 
+\item Liniesignalets peak spænding skal være mellem 0,2 V og 2 V
+\item Udgangsimpedansen for liniesignalet skal højst være 2,2 k\ohm
 \end{itemize}
-Det andet område der er kigget på i standarden fremsætter hvad der skal overholdes for en mikrofonindgang
-\newline 
-\newline
-\textbf{Mikrofonsignal}
-\begin{itemize}
-\item Indgangsimpedansen skal være større eller lig med 22 k\ohm
-\item Outputspændingen skal være mellem 0,2 V og 2 V
-\item Udgangsimpedansen skal højest være 2,2 k\ohm
-\end{itemize}
+I projektet er det valgt at overholde standarden for linieindgange.
+
+%Det andet område der er kigget på i standarden fremsætter hvad der skal overholdes for en mikrofonindgang
+%\newline 
+%\newline
+%\textbf{Mikrofonsignal}
+%\begin{itemize}
+%\item Indgangsimpedansen skal være større eller lig med 22 k\ohm
+%\item Outputspændingen skal være mellem 0,2 V og 2 V
+%\item Udgangsimpedansen skal højest være 2,2 k\ohm
+%\end{itemize}
+%I projektet er det valgt at overholde standarden for liniesignaler.
+
 Det tredje område der er kigget på fremsætter krav til mikrofonindgangen
 \newline 
 \newline
@@ -83,7 +91,7 @@ Det tredje område der er kigget på fremsætter krav til mikrofonindgangen
 \item Indgangsimpedansen skal være større eller lig med 5 k\ohm
 \item inputspændingen skal være mellem 0,8 mV og 200 mV
 \end{itemize}
-
+I projektet er det valgt at overholde standarden for mikrofonindgangen.
 
 \subsection*{DIN 45500 normen}
 \label{DIN45500}
@@ -95,3 +103,4 @@ DIN 45500 normens fulde titel er Deutsches Institut f\"{u}r Normung 45500. Denne
 \item For højtalere skal belastningsimpedansen være enten 4 \ohm~eller 8 \ohm.
 \item Tolerance på maksimum 20 \% i frekvensområdet fra 40 Hz til 16 kHz.
 \end{itemize}
+I projektet er der valgt at belastningsimpedansen skal være 8 \ohm, og en tolerance på maksimun 20\% i frekvensområde 20 Hz til 20 kHz
