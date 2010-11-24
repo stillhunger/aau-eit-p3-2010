@@ -1,5 +1,12 @@
 \subsection*{Beregninger}
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.6]{implementering/indgangsvaelger/signal-taend-sluk.png}
+\caption{Opbygning af indgangsvælgeren}
+\label{indgangsvaelger-overordnet}
+\end{figure}
+
 Modstandene $R_1$ og $R_2$ er begge valgt til 100k\ohm, for at give et DC-offset på ca 2.5V, halvdelen af V1. Dette gælder dog kun når transistoren er slukket. I det transistoren tændes, sættes $R_2$ parallelt med $R_3$, hvilket trækker DC-offsettet længere ned:
 \begin{equation}
 5V\cdot \frac{\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}{R_1+\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}=1.11 V
