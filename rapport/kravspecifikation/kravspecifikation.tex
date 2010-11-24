@@ -5,7 +5,7 @@ Formålet med dette kapitel er til slut at opstille en kravspecifikation for pro
 \section{Indgangsvælger}
 \label{valg_indgangsvaelger}
 I forbindelse med indgangsvælgeren er overvejelserne gået på, hvorvidt denne skal lave en trinvis eller flydende overgang mellem indgangssignalerne. Da en flydende overgang i princippet er simultan volumenkontrol af indgangene, adskiller den form for indgangsvælger sig ikke i samme grad fra en egentlig volumenkontrol, som det er tilfældet med en trinvis indgangsvælger. Eftersom der er opstillet krav om en volumenkontrol til forstærkeren sættes kravet om indgangsvælgerens art til trinvis. \\
-Som det fremgår i afsnit \ref{systemopbygning} skal HiFi-forstærkeren have to indgange, mikrofon og linie, hvilket danner grundlag for at kravet til antallet af trin i indgangsvælgeren sættes til fire. De fire trin er vist i tabel \ref{tab:indgangsvaelgertrin}.\fixme{Jesper: Har ikke lavet det med isolation, da jeg vil vente og se hvad Jacob skriver om det - ¿ Mener jeg hørte han fandt noget med det til standarder ?}
+Som det fremgår i afsnit \ref{systemopbygning} skal HiFi-forstærkeren have to indgange, mikrofon og linie, hvilket danner grundlag for at kravet til antallet af trin i indgangsvælgeren sættes til fire. De fire trin er vist i tabel \ref{tab:indgangsvaelgertrin}.
 
 \begin{table}[h]
 \centering
@@ -23,7 +23,7 @@ Trin & Indgang 1 & Indgang 2 \\
 \label{tab:indgangsvaelgertrin}
 \end{table}
 
-Valget mellem de fire trin skal kunne tages af brugeren på HiFi-forstærkerens frontpanel. Det skal desuden være tydeligt hvilket trin indgangsvælgeren er sat på.
+Valget mellem de fire trin skal kunne foretages af brugeren på HiFi-forstærkerens frontpanel på én trykknap. Det skal desuden fremgå med en lysdiode, per indgang, hvorvidt en indgang er tændt eller slukket.
 
 \section{Indgangsimpedans}
 \label{valg_indgangsimpedans}
@@ -34,11 +34,12 @@ Indgangsimpedansen er at opfatte som en impedans der, ud fra en almindelig spæn
 \frac{22~k\ohm}{22~k\ohm + 2,2~k\ohm} = 0,91
 \end{equation}
 
-Det ses af udregningen i formel (\ref{equ:indgangsimpedans22}), at en indgangsimpedans af størrelsen 22 k\ohm~ vil medføre et indgangssignal på 91 \% af det oprindelige signal. Med en større indgangsimpedans vil en større del af det oprindelige signal blive indgangssignalet. 
+Det ses af udregningen i formel (\ref{equ:indgangsimpedans22}), at en indgangsimpedans af størrelsen 22 k\ohm~ vil medføre et indgangssignal på 91 \% af det oprindelige signal, ved en udgangsimpedans på 2,2 k\ohm. Med en større indgangsimpedans vil en større del af det oprindelige signal blive indgangssignalet. Der vælges at overholde standarden, så kravet bliver at indgangsimpedansen skal være større end 22 k\ohm~i HiFi-forstærkeren.
 
 \section{Volumenkontrol}
 \label{valg_volumenkontrol}
-Kravet til styringen af volumenkontrol er sat til at dette skal foregå digitalt. Begrundelsen herfor ligger i projektets undertema, $"$High Fidelity (Hi-Fi) forstærker med digital styring$"$, og begrundes derfor ikke yderligere. Volumen skal kunne justeres via HiFi-forstærkerens frontpanel, hvor det også skal være muligt at aflæse det øjeblikkelige volumenniveau.  
+Kravet til styringen af volumenkontrol er sat til at dette skal foregå digitalt. Begrundelsen herfor ligger i projektets undertema, $"$High Fidelity (Hi-Fi) forstærker med digital styring$"$, og begrundes derfor ikke yderligere.Til bestemmelse af den maksimale dæmpning volumenkontrollen skal være i stand til, bruges samme krav som for slukkede signaler, altså 50 dB. Volumenkontrollen skal derfor kunne dæmpe fra  0 dB til 50 dB. Desuden vælges størrelsen af hvert niveau til 1 dB, hvilket ydermere sætter krav til at displayet, som opbygges af 7-segmenter, skal bestå af to 7-segmenter.\\
+Volumen skal kunne justeres via trykknapper på HiFi-forstærkerens frontpanel, hvor det også skal være muligt at aflæse det øjeblikkelige volumenniveau.  
 
 \section{Udgangssignaltype}
 \label{valg_udgangssignaltype}
@@ -54,7 +55,7 @@ Til projektets forstærker deles denne spænding til en $\pm$30 V forsyning. Und
 P_{max} = \frac{(V_{RMS})^2}{R_{load}}= \frac{(\frac{\hat{V}}{\sqrt{2}})^2}{R_{load}} = \frac{(\frac{30~V}{\sqrt{2}})^2}{8~\ohm} = 56,25~W
 \end{equation}
 
-Den nedre grænse for udgangseffekten er defineret af standarden IEC581, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 W, hvis der er tale om en monoudgang, før forstærkeren må kaldes en HiFi-forstærker, se afsnit \ref{standarder}. For ikke at kommer under den nedre grænse er det valgt at udgangseffekten skal være 20 W
+Den nedre grænse for udgangseffekten er defineret af standarden IEC581, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 W, hvis der er tale om en monoudgang, før forstærkeren må kaldes en HiFi-forstærker, se afsnit \ref{standarder}. Kravet for udgangseffekten vælges til 20 W for dette projekts HiFi-forstærker.
 
 \section{Kortslutningssikring}
 \label{valg_kortslutningssikring}
@@ -67,7 +68,7 @@ I_{max}=\frac{V_{CC}}{R_{load}}=\frac{30~V}{8~\ohm}=3,75~A
 
 \section{Kravspecifikation}
 \label{kravspecifikation}
-Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiFi-forstærker. Tabellen viser desuden videre til hvilke overvejelser eller standarder, der danner grundlag for hvert enkelt krav.
+Tabel \ref{tab:kravspec} viser hvilke krav der er stillet til dette projekts HiFi-forstærker. Tabellen viser desuden for hvilke betingelser kravene er gældende. Med denne kravspecifikation er der grundlag for at udvikle og fremstille en HiFi-forstærker.
 
 \begin{table}[h]
 \centering
@@ -92,25 +93,28 @@ Nr. & Område & Krav & Betingelse(r) \\
 & indgangsvælger & & \\[4pt]
 6 & Dæmpning af slukket & > 50 dB & $\circ$ Ved 1 kHz \\
 & indgangssignal & & \\[4pt]
-7 & Indgangsimpedans & > 22 k\ohm ($\pm$ 1 \%) & \\[4pt]
+7 & Indgangsimpedans & > 22 k\ohm & $\circ$ $\pm$ 1 \% \\[4pt]
 8 & Equalizer-bånd & 3 & $\circ$ Ved bånd: 20 - 200 Hz, \\
 & & & ~~~200 - 2000 Hz og \\
 & & & ~~~2000 - 20000 Hz \\[4pt]
-9 & Volumenkontrol & Digital & \\[4pt]
-10 & Udgangseffekt & 20 W ($\pm$ 2 W) & $\circ$ I 8~\ohm-højtaler \\[4pt]
-11 & Udgangssignaltype & Mono & \\[4pt]
-12 & Kortslutningssikring & 3,75 A & $\circ$ Med 8~\ohm-højtaler \\\hline
+9 & Styring af volumen- & Digital & \\
+& kontrol & & \\[4pt]
+10 & Dæmpningsområde i & 0 dB - 50 dB & $\circ$ 1 dB per niveau \\
+& volumenkontrol & & \\[4pt]
+11 & Udgangseffekt & 20 W & $\circ$ $\pm$ 2 W \\
+& & & $\circ$ I 8~\ohm-højtaler \\[4pt]
+12 & Udgangssignaltype & Mono & \\[4pt]
+13 & Kortslutningssikring & 3,75 A & $\circ$ Med 8~\ohm-højtaler \\\hline
 \multicolumn{4}{c}{\textbf{Frontpanel (input):}} \\\hline
-13 & Indgangsvælger & Trykknap & \\[4pt]
-14 & Volumenkontrol & 2 trykknapper & \\[4pt]
-15 & Equalizer & 1 drejeknap pr. bånd & \\\hline
+14 & Indgangsvælger & Èn trykknap & \\[4pt]
+15 & Volumenkontrol & To trykknapper & \\[4pt]
+16 & Equalizer & Èn drejeknap pr. bånd & \\\hline
 \multicolumn{4}{c}{\textbf{Frontpanel (output):}} \\\hline
-16 & Volumedisplay & 7-segment & \\[4pt]
-17 & Visualiser & Lysdioder \\
+17 & Indgangsvælger & To lysdioder & $\circ$ Én per indgang\\[4pt]
+17 & Volumedisplay & To 7-segmenter & \\[4pt]
+18 & Visualizer & \textcolor{red}{XX} lysdioder \\
 \hline\hline
 \end{tabular}
 \caption{Samlet kravspecifikation}
 \label{tab:kravspec}
 \end{table}
-
-Med denne kravspecifikation er der nu grundlag for at udvikle og fremstille en HiFi-forstærker.
