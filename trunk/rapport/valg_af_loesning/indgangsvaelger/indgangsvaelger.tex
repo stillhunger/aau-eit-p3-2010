@@ -1,0 +1,22 @@
+\section{Indgangsvælger}
+\label{valg_indgangsvaelger}
+I forbindelse med indgangsvælgeren er overvejelserne gået på, hvorvidt denne skal lave en trinvis eller flydende overgang mellem indgangssignalerne. Da en flydende overgang i princippet er simultan volumenkontrol af indgangene, adskiller den form for indgangsvælger sig ikke i samme grad fra en egentlig volumenkontrol, som det er tilfældet med en trinvis indgangsvælger. Eftersom der er opstillet krav om en volumenkontrol til forstærkeren sættes kravet om indgangsvælgerens art til trinvis. \\
+Som det fremgår i afsnit \ref{systemopbygning} skal HiFi-forstærkeren have to indgange, mikrofon og linie, hvilket danner grundlag for at kravet til antallet af trin i indgangsvælgeren sættes til fire. De fire trin er vist i tabel \ref{tab:indgangsvaelgertrin}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|c|c}
+\hline\hline
+Trin & Indgang 1 & Indgang 2 \\
+\hline\hline
+1 & On & On \\
+2 & On & Off \\
+3 & Off & On \\
+4 & Off & Off \\
+\hline\hline
+\end{tabular}
+\caption{Indgangsvælgertrin}
+\label{tab:indgangsvaelgertrin}
+\end{table}
+
+Valget mellem de fire trin skal kunne foretages af brugeren på HiFi-forstærkerens frontpanel på én trykknap. Det skal desuden fremgå med en lysdiode, per indgang, hvorvidt en indgang er tændt eller slukket.

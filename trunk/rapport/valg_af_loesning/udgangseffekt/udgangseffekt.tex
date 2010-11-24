@@ -1,0 +1,11 @@
+\section{Udgangseffekt}
+\label{valg_udgangseffekt}
+Fastsættelsen af udgangseffektens størrelse er bestemt af to faktorer. Den maksimale effekt der er mulig er bestemt af sikkerhedsreglerne i elektroniklaboratoriet på Aalborg Universitet. I disse regler angives den maksimale DC spænding der må arbejdes med til 60 V \cite{elregler-b1101}. 
+Til projektets forstærker deles denne spænding til en $\pm$30 V forsyning. Under udregningen af den maksimale effekt bruges RMS-værdien (Root Mean Square) af den spænding. Desuden anvendes den, i afsnit \ref{standarder} valgte, belastningsmodstand på 8~\ohm. Dermed bliver den øvre grænse som vist i udregningen i formel (\ref{equ:maks_effekt}).
+
+\begin{equation}
+\label{equ:maks_effekt}
+P_{max} = \frac{(V_{RMS})^2}{R_{load}}= \frac{(\frac{\hat{V}}{\sqrt{2}})^2}{R_{load}} = \frac{(\frac{30~V}{\sqrt{2}})^2}{8~\ohm} = 56,25~W
+\end{equation}
+
+Den nedre grænse for udgangseffekten er defineret af standarden IEC581, i hvilken det er bestemt at udgangseffekten som minimum skal være 10 W, hvis der er tale om en monoudgang, før forstærkeren må kaldes en HiFi-forstærker, se afsnit \ref{standarder}. Kravet for udgangseffekten vælges til 20 W for dette projekts HiFi-forstærker.
