@@ -3,53 +3,38 @@
 I dette afsnit bliver der taget udgangspunkt i gældende standarder fra International Electrotechnical Commitee (IEC) og Deutsches Institut f\"{u}r Normung (DIN). Målet med standarder er at opstille nogle normer for hvad produkter skal leve op til, hvilket gøres for at standardisere markedet sådan at produkter fra forskellige producenter kan arbejde sammen og ikke kun virker med produkter fra samme producent. Kravene opstillet i standarderne er ikke lovkrav, men derimod retningslinier. Det er dog i de færrestes interesse ikke at overholde standarderne.
 \newline
 \newline
-Der findes mange standarder indenfor HiFI-forstærker området, men alle vil ikke blive gennemgået. Der er istedet valgt tre standarder ud som dække det relevante for projektet. De tre standarder der arbejdes med er IEC581 Part 6, IEC61938 1. udgave og DIN 45500 normen. 
+Der findes mange standarder indenfor HiFi-forstærker-området, men alle vil ikke blive gennemgået. Der er istedet valgt tre standarder ud, som dækker det relevante for projektet. De tre standarder der arbejdes med er IEC581 Part 6, IEC61938 1. udgave og DIN 45500 normen. 
 
 \subsection*{IEC581 Part 6 - Amplifiers}
 \label{IEC581}
 Standarden IEC581 har titlen $"$High fidelity audio equipment and systems; Minimum performance requirements$"$ og er fra 1979. I dette projekt er det valgt kun at anvende del 6 af standarden da kun denne del har relevans for projektet. Del 6 af standarden opstiller minimumskrav til hvad en HiFi-forstærker skal overholde. \cite{IEC581-6}%\fixme{Kilde til IEC581-6}
-\newline
-\newline
-Det første område der er set på i standarden beskriver maksimum af forvrængning.
-\newline 
-\newline
-\textbf{Forvrængning}
+\subsubsection*{Forvrængning}
 \begin{itemize}
-\item Forforstærker må maksimalt forvrænge 0,5 \%.
-\item Effektforstærker må maksimalt forvrænge 0,5 \%.
-\item Forforstærker og effektforstærker samlet må maksimalt forvrænge 0,7 \%.
-\item Disse værdier skal som minimum overholdes i frekvensområdet fra 40 Hz til 16 kHz. Dog ved forforstærker og effektforstærker samlet er det tilladt at outputtet falder med 3 dB i frekvensområderne fra 40 Hz til 63 Hz og 12,5 kHz til 16 kHz. 
+\item Forforstærker må maksimalt forvrænge 0,5 \%
+\item Effektforstærker må maksimalt forvrænge 0,5 \%
+\item Forforstærker og effektforstærker samlet må maksimalt forvrænge 0,7 \%
+\item Disse værdier skal som minimum overholdes i frekvensområdet fra 40 Hz til 16 kHz. Dog ved forforstærker og effektforstærker samlet er det tilladt at outputtet falder med 3 dB i frekvensområderne fra 40 Hz til 63 Hz og 12,5 kHz til 16 kHz
 \item Ydermere skal alle værdier af forvrængning være overholdt nominel udgangseffekt og indtil 26 dB lavere 
 \end{itemize}
-I projetet er der valgt at overholde krav om forvrængning fra standarden. 
+I projektet er der valgt at overholde standarderne om forvrængning. Kravet om den samlede forvrængning fastsættes i afsnit \ref{thd}. 
 
-Det andet område der er kigget på i standarden siger, hvilke minimumskrav der er for udgangseffekten.
-\newline
-\newline
-\textbf{Udgangseffekt}
+\subsubsection*{Udgangseffekt}
 \begin{itemize}
 \item Der skal minimum være et output på 10 W per kanal og det skal overholde kravet om forvrængning.
-\item Hvis forstærkeren har mere end én kanal skal alle kanaler kunne levere minimum 10 W samtidig.
-\item Forstærkeren skal kunne levere det maksimale output, uden at overskride forvrængningskravene, i mindst 10 min ved 1 kHz., med alle kanaler tændt og en temperatur mellem 15 \celsius og 35 \celsius.
+\item Hvis forstærkeren har mere end én udgangskanal skal alle kanaler kunne levere minimum 10 W samtidig.
+\item Forstærkeren skal kunne levere det maksimale output, uden at overskride forvrængningskravene, i mindst 10 minutter ved 1 kHz, med alle kanaler tændt og en temperatur mellem 15 \celsius og 35 \celsius.
 \end{itemize}
-I projektet er det valgt at overholde hvad standarden angiver omkring udgangseffekt, bortset fra udgangseffekten i dette projekt skal være 20 W. 20 W er valgt frem for 10 W for at undgå at afvigelser fra 10 W kan resultere i at standarden ikke overholdes
+I projektet er det valgt at tage udgangspunkt i standardens angivelser omkring udgangseffekt. Det endelige valg af udgangseffekt er beskrevet i afsnit \ref{udgangseffekt}.
 
-
-Det tredje område der er kigget på i standarden fastsætter et minimum for hvilket frekvensområde forstærkeren skal arbejde indenfor.
-\newline 
-\newline
-\textbf{Frekvensområde}
+\subsubsection*{Frekvensområde}
 \begin{itemize}
 \item Frekvensområdet skal som minimum gå fra 40 Hz til 16 kHz.
 \item Der må være en tolerance på $\pm$ 1,5 dB for signaler der ikke er kommet igennem en equalizer, målt ved 1 kHz.
 \item Der må være en tolerance på $\pm$ 2 dB for signaler der er kommet igennem en equalizer, målt ved 1 kHz.
 \end{itemize}
-I projektet er der valgt at frekvensområdet skal gå fra 20 Hz til 20 kHz. Det er valgt at overholde de tolerancer der er angivet i standarden. Udvielsen af frekvensområdet er valgt fordi den menneskelige hørelse kan høre lyde fra 20 Hz til 20 kHz\fixme{Kilde: menneskelige hørelse}
+I projektet er der valgt at HiFi-forstærkeren skal overholde de tolerancer der er angivet i standarden. Bestemmelsen af frekvensområdet tager udgangspunkt i standarden og den menneskelige hørelse og foretages i afsnit \ref{equalizer}.
 
-Det fjerde område der er kigget på i standarden beskriver krav til isolering af signaler (Crosstalk Attenuation)
-\newline 
-\newline
-\textbf{Isolering af signaler}
+\subsubsection*{Isolering af signaler}
 \begin{itemize}
 \item Isolering mellem signaler skal mindst være 40 dB fra 250 Hz til 10 kHz
 \item Ved 1 kHz skal isoleringen mindst være 50 dB
