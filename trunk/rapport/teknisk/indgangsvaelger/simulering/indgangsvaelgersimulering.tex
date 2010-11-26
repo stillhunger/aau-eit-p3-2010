@@ -1,5 +1,5 @@
 \section*{Simuleringer}
-Efter at indgangsvælgeren er blevet designet og beregnet, er det lavet en række simuleringer for se om kredsløbet opfører sig som ønsket og, hvis der er afvigelser, give en begrundelse for hvorfor. I dette afsnit vil der blive simuleret følgende Dæmpning af signal, THD, frekvenskarakteristik, forstærkning igennem kredsløbet, tænd og sluk af signal. Det samlede diagram der er simuleret kan ses på figur \ref{diagram_simulering}. Alle simuleringen er udført med et input på 2 V peak og 1 kHz, hvis ikke andet er anført.
+Efter at indgangsvælgeren er blevet designet og beregnet, er der lavet en række simuleringer for se om kredsløbet opfører sig som ønsket og, hvis der er afvigelser, give en begrundelse for hvorfor. I dette afsnit vil der blive simuleret følgende, Dæmpning af signal, THD, frekvenskarakteristik, forstærkning igennem kredsløbet, tænd og sluk af signal. Det samlede diagram der er simuleret kan ses på figur \ref{diagram_simulering}. Alle simuleringen er udført med et input på 2 V peak og 1 kHz, hvis ikke andet er anført.
 
 \begin{figure}[h]
 \centering
@@ -9,7 +9,7 @@ Efter at indgangsvælgeren er blevet designet og beregnet, er det lavet en rækk
 \end{figure}
 
 \subsection*{Forstærkning igennem kredsløbet}
-Fra beregningerne vides det at kredsløbet er designet til at have en forstærkning på 1. Derudover vil signalet efter indgangsvælgeren også være inverteret. Det simulerede signal er vist på figur \ref{indgangsvaelger_input/output}.
+Fra beregningerne vides det at kredsløbet er designet til at have en forstærkning på 1. Derudover vil signalet efter indgangsvælgeren også være inverteret fordi der bruges en inverterende forstærker til at sumerer signalerne. Det simulerede signal er vist på figur \ref{indgangsvaelger_input/output}. Simuleringen er lavet ved en transient analyse over 10 ms med en maksimum timestep på 0,01 µV
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.3]{teknisk/indgangsvaelger/simulering/input_output.png}
@@ -21,7 +21,7 @@ Som det ses på figur \ref{indgangsvaelger_input/output} er forstærkningen på 
 
 
 \subsection*{Frekvenskarakteristik}
-På figur \ref{indgangsvaelger_frekvenskarakteristik} er simuleringen af frekvenskarakteristikken vist. Fra kravspecifikation er der opsat krav om at i frekvensområdet fra 20 Hz til 20 kHz må afvigelsen højest være $\pm$ 1.5 dB. På simuleringen ses det at fra 10 kHz til 20 kHz er der en lille afvigelse på ca. 0.06 dB, Dette skyldes at transistoren der er brugt har en passiv kapacitet der gør at ved høje frekvenser vil signalet falde af. Dette har dog ikke nogen betydning idet at forstærkeren i dette projekt ikke skal arbejde over 20 kHz.
+På figur \ref{indgangsvaelger_frekvenskarakteristik} er simuleringen af frekvenskarakteristikken vist. Simuleringen er lavet ved en transient analyse over 10 ms med en maksimum timestep på 0,01 µV Fra kravspecifikation er der opsat krav om at i frekvensområdet fra 20 Hz til 20 kHz må afvigelsen højest være $\pm$ 1.5 dB. På simuleringen ses det at fra 10 kHz til 20 kHz er der en lille afvigelse på ca. 0.06 dB. Afvigelsen skyldes at transistoren der er brugt har en passiv kapacitet, der gør at ved høje frekvenser vil signalet falde af. Dette har dog ikke nogen betydning idet at forstærkeren i dette projekt ikke skal arbejde over 20 kHz.
 
 \begin{figure}[h]
 \centering
