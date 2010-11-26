@@ -14,12 +14,25 @@ Mikrofonen som benyttes behøver, i følge databladet, en supply spænding fra 1
 Jeg arbejder stadig lige på dette kredsløb!
 
 
-\subsection*{Trin 2)
+\subsection*{Design af CE med uafkoblet Re}
 
 Den maksimale collectormodstand ($R_c$) beregnes ud fra at få så høj råforstærkning som muligt. Grunden til at der stræbes efter stor råforstærkning er at have så meget som muligt at kunne tilbagekoble for derved at sænke THD. Den maksimale $R_c$ er givet ved ligning \ref{eq:rcmaks}.
 
 
 \begin{equation}
-R_c = \sqrt{\frac{ V_{R_c} \cdot R_{sig} \cdot R_L }{ h_{FE} \cdot V_t}}
+R_c = \sqrt{\frac{ V_{R_c} \cdot R_{sig} \cdot R_L } { h_{FE} \cdot V_t}}
 \label{eq:rcmaks}
 \end{equation}
+
+Følgende er gældende:
+\begin{equation}
+V_{R_c} = V_{CC} - V_{CE,sat} - V_{R_E} - V_{out,peak}
+\end{equation}
+\begin{equation}
+h_{FE} = 250
+\end{equation}
+\begin{equation}
+V_t = 26 \cdot 10^{-3}
+\end{equation}
+
+$R_L$ og $R_{sig}$ er afhængig af hvilket trin der beregnes på. 
