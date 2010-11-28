@@ -1,5 +1,8 @@
-\section{Beregning af forforstærker}
-Forforstærkeren opbygges af to common-emitter trin med uafkoblet emittermodstand. Forstærkningen for hele forforstærkeren er bestemt af mikrofonens maksimale spændingssving samt hvad signal skal forstærkes op til; i dette tilfælde linieniveau. Linieniveau har, ifølge standarden \fixme{kilde til den korrekte standard?}, et spændingssving fra 200 mV til 2 V. Mikrofonen som benyttes, MCE-4000, har en følsomhed på 5 mV/Pa ved 1kHz. En meget kraftig lyd har et lydtryk på 20 Pa \fixme{kilde til fakta om lyd. Spørg krebs for link} hvormed den maksimale outputspænding fra mikrofonen bliver, som vist på ligning \ref{eq:mikrofonoutput}.
+\section{Designstrategi}
+Hvad skal dette afsnit gøre?:
+Forklare opbygningen af hardwaren og hvorfor lige netop CE med Re er valgt
+Forklare hvad der skal tages hensyn til og hvordan det vil blive gjort.
+Altså skal der forklares noget tilbagekoblingshalløj og hvordan CE med Re fungerer
 
 \begin{equation}
 20 Pa \cdot 5 \frac{mV}{Pa} = 100 mV_{Peak}
@@ -8,31 +11,27 @@ Forforstærkeren opbygges af to common-emitter trin med uafkoblet emittermodstan
 
 \subsection*{Kredsløb til mikrofon}
 
-Mikrofonen som benyttes behøver, i følge databladet, en supply spænding fra 1,5 til 10 V og en strøm på 0,5 mA. Desuden skal koblingskondensatorens størrelse være mellem 0,1-4,7$\mu$F. Kredsløbet til mikrofon vises på figur %\ref{fig:mikrofonkreds}. 
+Mikrofonen som benyttes behøver skal, i følge databladet, have en supply spænding fra 1,5 til 10 V og en strøm på 0,5 mA. Desuden skal koblingskondensatorens størrelse være mellem 0,1-4,7$\mu$F. Kredsløbet til mikrofon vises på figur \ref{fig:mikrofonkreds}. 
 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{teknisk/forforstaerker/mikrofonkreds.png}
+\caption{Supply kredsløb til mikrofonen}
+\label{fig:mikrofonkreds}
+\end{figure}
 
-Jeg arbejder stadig lige på dette kredsløb!
-
-
-\subsection*{Design af CE med uafkoblet Re}
-
-Den maksimale collectormodstand ($R_c$) beregnes ud fra at få så høj råforstærkning som muligt. Grunden til at der stræbes efter stor råforstærkning er at have så meget som muligt at kunne tilbagekoble for derved at sænke THD. Den maksimale $R_c$ er givet ved ligning \ref{eq:rcmaks}.
-
+Spændingsfaldet over $R_1$ varierer sammen med mikrofonens output. Da strømmen gennem $R_1$ er lavest når spændingsfaldet er på sit minimum skal modstanden dimensioneres efter dette. Dermed bliver størrelse på $R_1$ i følge Ohms lov:
 
 \begin{equation}
-R_c = \sqrt{\frac{ V_{R_c} \cdot R_{sig} \cdot R_L } { h_{FE} \cdot V_t}}
-\label{eq:rcmaks}
+R_1 =  \frac{V_{R_1,min}}{I} = \frac{5-315 \cdot 10^{-3}}{0,5 \cdot 10^{-3}} = 9,37 k\Omega
 \end{equation}
 
-Følgende er gældende:
-\begin{equation}
-V_{R_c} = V_{CC} - V_{CE,sat} - V_{R_E} - V_{out,peak}
-\end{equation}
-\begin{equation}
-h_{FE} = 250
-\end{equation}
-\begin{equation}
-V_t = 26 \cdot 10^{-3}
-\end{equation}
+Koblingskondensatorens, C1, størrelse vil være afhængig af den modstand den kigger ind i og vil derfor blive dimensioneret i sammenhæng med forforstærkerkredsløbet \fixme{ref til forforstærkerkredsløbsdesign. Laaaangt ord.}
 
-$R_L$ og $R_{sig}$ er afhængig af hvilket trin der beregnes på. 
+\subsection*{Kredsløbsdesign}
+
+Hvad skal dette afsnit gøre?:
+Forklare hvilke valg der er blevet truffet i designprocessen og hvorfor.
+
+
+
