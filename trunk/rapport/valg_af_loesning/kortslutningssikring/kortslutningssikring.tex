@@ -1,8 +1,17 @@
 \section{Kortslutningssikring}
 \label{valg_kortslutningssikring}
-Der er opstillet krav om en kortslutningssikring for at sikre mod skader ved eventuelle overbelastninger på udgangen af HiFi-forstærkeren. Sikringen skal slå fra hvis strømmen i belastningen bliver for stor. For stor er i dette tilfælde givet ved sammenhængen mellem spændingsforsyningen og belastningsmodstanden, som udtryk i udregningen i formel (\ref{equ:sikringsstroem}).
+Der er opstillet krav om en kortslutningssikring for at sikre mod skader ved eventuelle overbelastninger på udgangen af HiFi-forstærkeren. Afsættes der $20~W$ i højtaleren, kan peakstrømmen bestemmes ved beregningen vist i formel (\ref{equ:ipeak}).
 
 \begin{equation}
-\label{equ:sikringsstroem}
-I_{max}=\frac{V_{CC}}{R_{load}}=\frac{30~V}{8~\ohm}=3,75~A
+\label{equ:ipeak}
+I_{peak} = \sqrt{2 \cdot \frac{p_{RMS}}{R}} = \sqrt{2 \cdot \frac{20~W}{8~\ohm}}  = 2,24~A
 \end{equation}
+
+Denne peakstrøm fremkommer ved peakspændingen fundet i udregningen i formel (\ref{equ:vpeak}).
+
+\begin{equation}
+\label{equ:vpeak}
+V_{peak} = I_{peak} \cdot R_{load} = 2,24~A \cdot 8~\ohm = 17,9 V
+\end{equation}
+
+Ideelt vil en spændingsforsyning på 18 V altså være tilstrækkelig, dog er der rent praktisk behov for en større. Argumentationen herfor findes i afsnit \fixme{ref til udregninger ved effektforstærker}, hvor den ydermere bestemmes.
