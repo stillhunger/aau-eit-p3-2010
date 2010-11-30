@@ -6,34 +6,34 @@
 \caption{Opbygning af indgangsvælgeren}
 \label{indgangsvaelger-overordnet}
 \end{figure}
-Der valgt at benytte en transistor, til at trække signalet til stel og derfor slukke for signalet. Da vores spændingssving kan gå ned til 0.2V, er der en mulighed \fixme{skriv om} for at der vil løbe nogle små strømme. Derfor vælges en FET-transistor, da denne, modsat en BiPolær transistor, er linæer ved meget små strømme. Optimalt ville en transistor uden reverse-diode være foretrække, da dette vil tillade at source-spændingen er lavere end drainspændingen, som vil være tilfældet ved et AC-signal omkring 0V. Istedet benyttes et DC-offset, for at sørge for at DC-offset $-$ AC-Peakværdi $>$ 0 når transistoren er slukket.
+Der valgt at benytte en transistor, til at trække signalet til stel og derfor slukke for signalet. Da vores spændingssving kan gå ned til 0.2~V, er der en mulighed \fixme{skriv om} for at der vil løbe nogle små strømme. Derfor vælges en FET-transistor, da denne, modsat en BiPolær transistor, er linæer ved meget små strømme. Optimalt ville en transistor uden reverse-diode være foretrække, da dette vil tillade at source-spændingen er lavere end drainspændingen, som vil være tilfældet ved et AC-signal omkring 0~V. Istedet benyttes et DC-offset, for at sørge for at DC-offset $-$ AC-Peakværdi $>$ 0 når transistoren er slukket.
 
-Modstandene $R_1$ og $R_2$ er begge valgt til 100k\ohm, for at give et DC-offset på ca 2.5V, halvdelen af V1. Dette gælder dog kun når transistoren er slukket. I det transistoren tændes, sættes $R_2$ parallelt med $R_3$, hvilket trækker DC-offsettet længere ned.
+Modstandene $R_1$ og $R_2$ er begge valgt til 100~k\ohm, for at give et DC-offset på ca 2.5~V, halvdelen af V1. Dette gælder dog kun når transistoren er slukket. I det transistoren tændes, sættes $R_2$ parallelt med $R_3$, hvilket trækker DC-offsettet længere ned.
 %\begin{equation}
 %5V\cdot \frac{\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}{R_1+\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}=1.11 V
 %\end{equation}
 I dette tilfælde er, hvor transistoren skal tage hele signalet, er DC-offsettet dog underordnet. 
 Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på minimum 22 k\ohm. Når transistoren er tændt er indgangsimpedansen mindst. $R_1$, $R_2$ og $R_4$ sidder så alle parallelt hvilket giver:
 \begin{equation}
-\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_4}}=22 k\ohm
+\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_4}}=22~k\ohm
 \end{equation}
 \begin{equation}
-R_4=39.29 k\ohm
+R_4=39.29~k\ohm
 \end{equation}
-Denne er så valgt til 40.2k\ohm, for at passe med E96-rækken.
+Denne er så valgt til 40.2~k\ohm, for at passe med E96-rækken.
 For at kunne afbryde de enkelte signaler, kan transistoren $U_2$ trække signalet til stel. for at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. Til dette benyttes en mosfet-transistor. På en mosfet-transistor løber der ingen strøm ind i basis, den er udelukkende afhængig af basis-emitter spændingen. Ved at påtrykke en spænding på 5V, som er outputtet fra de gates vi bruger, er det muligt at tillade signalet at løbe igennem transistoren.
-Modstanden $R_5$ har ikke nogen indvirkning på indgangsimpedansen når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_4$, hvilket giver en højere indgangsimpedans. For at summationsforstærkeren efter, skal kunne fungere med en forstærkning på 1, skal tilbagekoblingsmodstanden over transistoren være lig med den modstand signalet ser, på vej til forstærkeren. Denne er afhængig af $R_4$ og $R_5$, som tilsammen skal give $R_m$. Med $R_7$ defineret til 80.4k\ohm sættes $R_5$ til 40.2k\ohm .
+Modstanden $R_5$ har ikke nogen indvirkning på indgangsimpedansen når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_4$, hvilket giver en højere indgangsimpedans. For at summationsforstærkeren efter, skal kunne fungere med en forstærkning på 1, skal tilbagekoblingsmodstanden over transistoren være lig med den modstand signalet ser, på vej til forstærkeren. Denne er afhængig af $R_4$ og $R_5$, som tilsammen skal give $R_m$. Med $R_7$ defineret til 80.4~k\ohm sættes $R_5$ til 40.2~k\ohm .
 
 %Den er valgt til 40.2 k\ohm, det samme som $R_3$, for at gøre produceringen enklere. Ved at bruge modstande med de samme værdier sænkes antallet af benyttede komponenter, hvilket letter indkøbs- samt produceringsomkostninger. Når signalet er tændt, sidder den i serie med $R_3$, hvilket giver en højere indgangsimpedans:
 \begin{equation}
-R_{indgang}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3+R_4}}=30.8 k\ohm
+R_{indgang}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3+R_4}}=30.8~k\ohm
 \end{equation}
 
 Efter at have opstillet de forskellige modstandsværdier, er det muligt at udregne værdien af afkoblingskondensatorerne i kredsløbet. Disse kan udregnes som en spændingsdeling mellem en seriekoblet modstand og kondensator, seriekoblet med en modstand, som vist på figur \ref{crvd}. I dette tilfælde vil $R_U$ være udgangsimpedansen på det foregående led, og $R_I$ være indgangsimpedansen på det efterfølgende. Impedansen i en kondensator, i frekvensdomænet er $\frac{1}{s\cdot C}$. Dette kan opstilles i følge spændingsdelingsformel for udregningen:
 \begin{equation}
 \frac{V_{out}}{V_{in}}=\frac{R_I}{R_I+(R_U+\frac{1}{s\cdot C})}
 \end{equation}
-For at få en dæmpning på 3dB, som er den ønskede dæmpning i knækpunktet, skal $\frac{V_{out}}{V_{in}}=10^{\frac{-3}{20}}\approx0.7$. 
+For at få en dæmpning på 3~dB, som er den ønskede dæmpning i knækpunktet, skal $\frac{V_{out}}{V_{in}}=10^{\frac{-3}{20}}\approx0.7$. 
 Dette giver 2 ubekendte, s og C. s kan ses som $2\cdot \pi \cdot f$, hvor f er den ønskede frekvens ved knækket. Der opstilles et udtryk for C:
 \begin{equation}
 10^{\frac{-3}{20}}=\frac{R_I}{R_I+(R_U+\frac{1}{2\cdot\pi\cdot 2\cdot C})}
@@ -41,7 +41,7 @@ Dette giver 2 ubekendte, s og C. s kan ses som $2\cdot \pi \cdot f$, hvor f er d
 \begin{equation}
 C=\frac{-1}{2}\cdot{10^{\frac{-3}{20}}}{\pi\cdot f\cdot(10^{\frac{-3}{20}}\cdot R_I+\frac{-3}{20}}\cdot R_U - R_I)
 \end{equation}
-f bestemmes til 2hz, én dekade før den ønskede, for at opnå en lav dæmpning ved de ønskede 20hz. Dæmpningen ved 20hz kan så udregnes ud fra formlen for et standard højpasfilter:
+f bestemmes til 2~hz, én dekade før den ønskede, for at opnå en lav dæmpning ved de ønskede 20~hz. Dæmpningen ved 20~hz kan så udregnes ud fra formlen for et standard højpasfilter:
 \begin{equation}
 %\tau = R\cdot C
 H(s)=\frac{s\cdot\tau}{1+s\cdot\tau}
@@ -51,12 +51,12 @@ H(s)=\frac{s\cdot\tau}{1+s\cdot\tau}
 \end{equation}
 Som i følge dekadereglen, sættes $\omega\tau = 10$:
 \begin{equation}
-\frac{1}{\sqrt{1.01}}\approx -0.043dB
+\frac{1}{\sqrt{1.01}}\approx -0.043~dB
 \end{equation}
  Ud fra dette kan de forskellige værdier for C udregnes, afhængigt af de impedanser de ser ind i.
-Indgangsimpedansen for $C_1$ er fundet til 30.8 k\ohm . Indtastes dette i ovennævnte formel findes værdien for $C_1$ til mindst 8µF. Alt under dette vil give en højere knækfrekvens, hvilket ikke er at ønske. Alt højere vil dog give en større indsvingningstid, hvilket, i forhold til en højere knækfrekvens, er at foretrække, dog heller ikke ønskeligt.
+Indgangsimpedansen for $C_1$ er fundet til 30.8~k\ohm . Indtastes dette i ovennævnte formel findes værdien for $C_1$ til mindst 8~µF. Alt under dette vil give en højere knækfrekvens, hvilket ikke er at ønske. Alt højere vil dog give en større indsvingningstid, hvilket, i forhold til en højere knækfrekvens, er at foretrække, dog heller ikke ønskeligt.
 $R_3$ skal være lig med den samlede impedans den minus porten på op-ampen kigger ind i. Denne udgøres af en parallel kobling af hver indgang og tilbagekoblingsmodstanden $R_7$.
 \begin{equation}
 R_3 = \frac{1}{\frac{1}{\frac{\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}+R_4+R_5}{3}}+\frac{1}{R_7}}
 \end{equation}
-Efter summationsforstærkeren sidder en spændingsdeler, som giver mulighed for vælge hvor stærkt signalet skal være. Denne benyttes til  at sørge for at lige gyldigt hvor mange af indgangene der er tændt for, vil signalet altid være mellem 0.2 og 2V peak. Da de niveauer der er mulige at få enten er 6, 4 eller 2V vil det, for at give 2V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist på figur \ref{outputdeler}. Efter denne sidder en buffer, for at impedansen der ses af afkoblingskondensatoren, som sidder mellem indgangsvælgeren og volumenkontrollen, vil være konstant.
+Efter summationsforstærkeren sidder en spændingsdeler, som giver mulighed for vælge hvor stærkt signalet skal være. Denne benyttes til  at sørge for at lige gyldigt hvor mange af indgangene der er tændt for, vil signalet altid være mellem 0.2 og 2~V peak. Da de niveauer der er mulige at få enten er 6, 4 eller 2~V vil det, for at give 2~V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist på figur \ref{outputdeler}. Efter denne sidder en buffer, for at impedansen der ses af afkoblingskondensatoren, som sidder mellem indgangsvælgeren og volumenkontrollen, vil være konstant.
