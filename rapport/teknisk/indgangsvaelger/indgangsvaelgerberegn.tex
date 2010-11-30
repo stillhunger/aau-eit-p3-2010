@@ -31,17 +31,17 @@ R_{indgang}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3+R_4}}=30.8~k\ohm
 
 Efter at have opstillet de forskellige modstandsværdier, er det muligt at udregne værdien af afkoblingskondensatorerne i kredsløbet. Disse kan udregnes som en spændingsdeling mellem en seriekoblet modstand og kondensator, seriekoblet med en modstand, som vist på figur \ref{crvd}. I dette tilfælde vil $R_U$ være udgangsimpedansen på det foregående led, og $R_I$ være indgangsimpedansen på det efterfølgende. Impedansen i en kondensator, i frekvensdomænet er $\frac{1}{s\cdot C}$. Dette kan opstilles i følge spændingsdelingsformel for udregningen:
 \begin{equation}
-\frac{V_{out}}{V_{in}}=\frac{R_I}{R_I+(R_U+\frac{1}{s\cdot C})}
+\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}=\frac{R_I}{R_I+(R_U+\frac{1}{s\cdot C})}
 \end{equation}
-For at få en dæmpning på 3~dB, som er den ønskede dæmpning i knækpunktet, skal $\frac{V_{out}}{V_{in}}=10^{\frac{-3}{20}}\approx0.7$. 
-Dette giver 2 ubekendte, s og C. s kan ses som $2\cdot \pi \cdot f$, hvor f er den ønskede frekvens ved knækket. Der opstilles et udtryk for C:
+For at få en dæmpning på 3~dB, som er den ønskede dæmpning i knækpunktet, skal $\frac{V_{\mathrm{out}}{V_{\mathrm{in}}}=10^{\frac{-3}{20}}\approx0.7$. 
+Dette giver 2 ubekendte, $s$ og $C$. LaPlace variablen $s$ kan ses som $2\cdot \pi \cdot f$, hvor $f$ er den ønskede frekvens ved knækket. Der opstilles et udtryk for $C$:
 \begin{equation}
 10^{\frac{-3}{20}}=\frac{R_I}{R_I+(R_U+\frac{1}{2\cdot\pi\cdot 2\cdot C})}
 \end{equation}
 \begin{equation}
 C=\frac{-1}{2}\cdot{10^{\frac{-3}{20}}}{\pi\cdot f\cdot(10^{\frac{-3}{20}}\cdot R_I+\frac{-3}{20}}\cdot R_U - R_I)
 \end{equation}
-f bestemmes til 2~hz, én dekade før den ønskede, for at opnå en lav dæmpning ved de ønskede 20~hz. Dæmpningen ved 20~hz kan så udregnes ud fra formlen for et standard højpasfilter:
+Frekvensen f bestemmes til 2~Hz, én dekade før den ønskede, for at opnå en lav dæmpning ved de ønskede 20~Hz. Dæmpningen ved 20~Hz kan så udregnes ud fra formlen for et standard højpasfilter:
 \begin{equation}
 %\tau = R\cdot C
 H(s)=\frac{s\cdot\tau}{1+s\cdot\tau}
@@ -51,9 +51,9 @@ H(s)=\frac{s\cdot\tau}{1+s\cdot\tau}
 \end{equation}
 Som i følge dekadereglen, sættes $\omega\tau = 10$:
 \begin{equation}
-\frac{1}{\sqrt{1.01}}\approx -0.043~dB
+\frac{1}{\sqrt{1.01}}\approx -0.043~\mathrm{dB}
 \end{equation}
- Ud fra dette kan de forskellige værdier for C udregnes, afhængigt af de impedanser de ser ind i.
+Ud fra dette kan de forskellige værdier for $C$ udregnes, afhængigt af de impedanser de ser ind i.
 Indgangsimpedansen for $C_1$ er fundet til 30.8~k\ohm . Indtastes dette i ovennævnte formel findes værdien for $C_1$ til mindst 8~µF. Alt under dette vil give en højere knækfrekvens, hvilket ikke er at ønske. Alt højere vil dog give en større indsvingningstid, hvilket, i forhold til en højere knækfrekvens, er at foretrække, dog heller ikke ønskeligt.
 $R_3$ skal være lig med den samlede impedans den minus porten på op-ampen kigger ind i. Denne udgøres af en parallel kobling af hver indgang og tilbagekoblingsmodstanden $R_7$.
 \begin{equation}
