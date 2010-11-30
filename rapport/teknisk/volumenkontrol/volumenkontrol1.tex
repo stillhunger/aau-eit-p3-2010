@@ -31,22 +31,22 @@ Konstantstrømsgeneratorens opgave er at levere en konstant strøm, denne strøm
 V = \frac{I \cdot t}{C}
 \end{equation}
 
-Konstantstrømsgeneratoren er designet med udgangs på at der vil være et spændingsfald på $0,5~V$ over $D_2$, $D_3$, $R_{11}$ og $Q_{4_{BE}}$. I databladet for 1N4148 fremgår det at den vil have en $V_D$ spændingen på $0,5~V$ ved en $I_F$ strøm på $0,1~mA$. Strømmen igennem dioderne er givet ved den strøm, der vil løbe igennem det der kommer efter dem, i dette tilfælde modstanden $R_{12}$. $R_{12}$ er således givet ved ligningen \ref{equ:konstantstroemsgenerator2}.
+Konstantstrømsgeneratoren er designet med udgangs på at der vil være et spændingsfald på 0,5 V over $D_2$, $D_3$, $R_{11}$ og $Q_{4_{BE}}$. I databladet for 1N4148 fremgår det at den vil have en $V_D$ spændingen på 0,5 V ved en $I_F$ strøm på 0,1 mA. Strømmen igennem dioderne er givet ved den strøm, der vil løbe igennem det der kommer efter dem, i dette tilfælde modstanden $R_{12}$. $R_{12}$ er således givet ved ligningen \ref{equ:konstantstroemsgenerator2}.
 
 \begin{equation}
 \label{equ:konstantstroemsgenerator2}
-R_{12} = \frac{V_{CC} - 2 \cdot V_D}{I_F} = \frac{5~V - 2 \cdot 0,5~V}{0,1~mA} = 40~k\ohm
+R_{12} = \frac{V_{CC} - 2 \cdot V_D}{I_F} = \mathrm{\frac{5~V - 2 \cdot 0,5~V}{0,1~mA} = 40~k\ohm}
 \end{equation}
 
 Da der nu ligger en konstant spænding over alle dioderne, kan man se dioden i transistoren som siddende parallelt, med det samme spændingsfald som $D_2$. Dette giver at der findes det samme, konstante, spændingsfald over $D_3$ og $R_{11}$, hvilket giver en konstant strøm gennem $R_{11}$.
-Den kondensator som konstantstrømsgeneratoren kaldes ladekondensatoren, denne har en kapacitet på $5~\mu F$ og den ønskede oplade tid er $3 s$. Kondensatoren oplades fra 0 V til $V_{CC} - V_F = 4,5 V$, hvor $V_F$ er spændingen over én diode. Udfra disse to ting kan den konstante strøm, $I_{konst}$, nu beregnes, se ligning \ref{equ:konstantstroemsgenerator3}.
+Den kondensator som konstantstrømsgeneratoren kaldes ladekondensatoren, denne har en kapacitet på 5 $\mu\mathrm{F}$ og den ønskede oplade tid er 3 s. Kondensatoren oplades fra 0 V til $V_{CC} - V_D$ = 4,5 V, hvor $V_D$ er spændingen over én diode. Udfra disse to ting kan den konstante strøm, $I_{konst}$, nu beregnes, se ligning \ref{equ:konstantstroemsgenerator3}.
 
 \begin{equation}
 \label{equ:konstantstroemsgenerator3}
-V_{CC} - V_F = \frac{I_{konst} \cdot t}{C} \Rightarrow 4,5~V = \frac{I_{konst} \cdot 3~s}{5~\mu F} \Rightarrow I_{konst} = 7,5~\mu A
+V_{CC} - V_D = \frac{I_{konst} \cdot t}{C} \Rightarrow 4,5~V = \frac{I_{konst} \cdot 3~s}{5~\mu F} \Rightarrow I_{konst} = 7,5~\mu A
 \end{equation}
 
-Spændingen over $R_{11}$ er, som tidligere nævnt, $0,5~V$ og strømmen igennem den er $I_{konst}$, der kan Ohms lov bruges til at beregne modstanden, se ligning \ref{equ:konstantstroemsgenerator4}.
+Spændingen over $R_{11}$ er, som tidligere nævnt, 0,5 V og strømmen igennem den er $I_{konst}$, der kan Ohms lov bruges til at beregne modstanden, se ligning \ref{equ:konstantstroemsgenerator4}.
 
 \begin{equation}
 \label{equ:konstantstroemsgenerator4}
@@ -56,7 +56,7 @@ V_D = R \cdot I_{konst} \Rightarrow 0,5~ V = R \cdot 7,5~\mu A \Rightarrow R = 6
 \subsection{Starter}
 \label{volumenkontrol-simulering-starter}
 
-Starterens opgave er at holde spændingen over ladekondensatoren på $0 V$, når der ikke trykkes på en af volumenknapperne. Dette gøres ved at lede al den strøm som konstantstrømsgeneratoren leverer til stel. Så snart der trykkes på en af volumenknapperne, vil basis på transistoren blive trukket lav, hvilket vil afbryde collector-emitter strømmen. Dette gøres for at sikre at ladekondensatoren er klar til at starte opladningen med det samme.
+Starterens opgave er at holde spændingen over ladekondensatoren på 0 V, når der ikke trykkes på en af volumenknapperne. Dette gøres ved at lede al den strøm som konstantstrømsgeneratoren leverer til stel. Så snart der trykkes på en af volumenknapperne, vil basis på transistoren blive trukket lav, hvilket vil afbryde collector-emitter strømmen. Dette gøres for at sikre at ladekondensatoren er klar til at starte opladningen med det samme.
 \subsection{Buffer med forsinkelse}
 \label{volumenkontrol-simulering-buffer}
 
