@@ -15,10 +15,10 @@ Modstandene $R_1$ og $R_2$ er begge valgt til 100~k\ohm, for at give et DC-offse
 I dette tilfælde er, hvor transistoren skal tage hele signalet, er DC-offsettet dog underordnet. 
 Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på minimum 22 k\ohm. Når transistoren er tændt er indgangsimpedansen mindst. $R_1$, $R_2$ og $R_4$ sidder så alle parallelt hvilket giver:
 \begin{equation}
-\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_4}}=22~k\ohm
+\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_4}}=22~\mathrm{k}\ohm
 \end{equation}
 \begin{equation}
-R_4=39.29~k\ohm
+R_4=39.29~\mathrm{k}\ohm
 \end{equation}
 Denne er så valgt til 40.2~k\ohm, for at passe med E96-rækken.
 For at kunne afbryde de enkelte signaler, kan transistoren $U_2$ trække signalet til stel. for at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. Til dette benyttes en mosfet-transistor. På en mosfet-transistor løber der ingen strøm ind i basis, den er udelukkende afhængig af basis-emitter spændingen. Ved at påtrykke en spænding på 5V, som er outputtet fra de gates vi bruger, er det muligt at tillade signalet at løbe igennem transistoren.
@@ -26,14 +26,14 @@ Modstanden $R_5$ har ikke nogen indvirkning på indgangsimpedansen når transist
 
 %Den er valgt til 40.2 k\ohm, det samme som $R_3$, for at gøre produceringen enklere. Ved at bruge modstande med de samme værdier sænkes antallet af benyttede komponenter, hvilket letter indkøbs- samt produceringsomkostninger. Når signalet er tændt, sidder den i serie med $R_3$, hvilket giver en højere indgangsimpedans:
 \begin{equation}
-R_{indgang}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3+R_4}}=30.8~k\ohm
+R_{\mathrm{indgang}}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3+R_4}}=30.8~\mathrm{k}\ohm
 \end{equation}
 
 Efter at have opstillet de forskellige modstandsværdier, er det muligt at udregne værdien af afkoblingskondensatorerne i kredsløbet. Disse kan udregnes som en spændingsdeling mellem en seriekoblet modstand og kondensator, seriekoblet med en modstand, som vist på figur \ref{crvd}. I dette tilfælde vil $R_U$ være udgangsimpedansen på det foregående led, og $R_I$ være indgangsimpedansen på det efterfølgende. Impedansen i en kondensator, i frekvensdomænet er $\frac{1}{s\cdot C}$. Dette kan opstilles i følge spændingsdelingsformel for udregningen:
 \begin{equation}
 \frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}=\frac{R_I}{R_I+(R_U+\frac{1}{s\cdot C})}
 \end{equation}
-For at få en dæmpning på 3~dB, som er den ønskede dæmpning i knækpunktet, skal $\frac{V_{\mathrm{out}}{V_{\mathrm{in}}}=10^{\frac{-3}{20}}\approx0.7$. 
+For at få en dæmpning på 3~dB, som er den ønskede dæmpning i knækpunktet, skal $\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}=10^{\frac{-3}{20}}\approx0.7$. 
 Dette giver 2 ubekendte, $s$ og $C$. LaPlace variablen $s$ kan ses som $2\cdot \pi \cdot f$, hvor $f$ er den ønskede frekvens ved knækket. Der opstilles et udtryk for $C$:
 \begin{equation}
 10^{\frac{-3}{20}}=\frac{R_I}{R_I+(R_U+\frac{1}{2\cdot\pi\cdot 2\cdot C})}
