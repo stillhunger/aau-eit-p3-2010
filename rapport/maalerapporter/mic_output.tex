@@ -3,13 +3,13 @@
 \begin{document}
 \chapter{Måling på Monacor MCE-4000}
 \label{mic_output}
-Denne målejournal dokumenterer en måling på en Monacor MCE-4000 mikrofon foretaget i B3-209, Fredrik Bajers Vej 7. Målingen blev foretaget den 30. november 2010 af Benjamin Krebs og Jacob Hansen.
+Denne målerapport dokumenterer en måling på en Monacor MCE-4000 mikrofon foretaget i B3-209, Fredrik Bajers Vej 7. Målingen blev foretaget den 30. november 2010 af Benjamin Krebs og Jacob Hansen.
 \section{Formål}
 \label{mic_output_formaal}
 Målingens formål er:
 \begin{itemize}
-\item At bestemme spændingsoutputtet fra en Monacor MCE-4000 mikrofon ved almindelig tale, i en afstand af $10~cm$
-\item At bestemme spændingsoutputtet fra en Monacor MCE-4000 mikrofon ved råben, i en afstand af $10~cm$.
+\item At bestemme peakspændingen på udgangen fra en Monacor MCE-4000 mikrofon ved 70 dB(A), i en afstand af 0,1 m.
+\item At bestemme peakspændingen på udgangen fra en Monacor MCE-4000 mikrofon ved 90 dB(A), i en afstand af 0,1 m.
 \end{itemize}
 \section{Testobjekt}
 \label{mic_output_testobjekt}
@@ -18,7 +18,28 @@ Det er vigtigt, at alle målepunkter er veldefinerede.\\
 
 \section{Teori}
 \label{mic_output_teori}
-Hvis de ønskede parametre fremkommer indirekte ud fra målingen, kan det være nødvendigt at beskrive teorien.\\
+Lydtrykket for almindelig tale er 60 dB(A) i en afstand af én meter\fixme{kilde: http://www.es.aau.dk/sections/acoustics/press/fakta/lidt\_om\_lyd/}. Da det ikke forventes at brugen af en mikrofon under sang foregår ved én meters  afstand, skal denne værdi regnes om før den kan give et realistisk billede af hvilket lydtryk mikrofonen bliver udsat for. De 60 dB(A) regnes først om til Pa ved udregningen i formel (\ref{equ:db-pa1})
+
+\begin{equation}
+\label{equ:db-pa1}
+p_{\mathrm{60~dB(A)}} = 10^{\frac{L_p}{20}} \cdot p_{\mathrm{ref}} = 10^{\frac{60~dB(A)}{20}} \cdot 20 \cdot 10^{-6}~\mathrm{Pa} = 0,02~\mathrm{Pa}
+\end{equation}
+
+Denne værdi er altså ved én meters afstand. Omregningen af lydtrykket til 0,1 m fra kilden foretages som i udregningen i formel (\ref{equ:distance}).
+
+\begin{equation}
+\label{equ:distance}
+p_2 = p_1 \cdot \frac{r_1}{r_2} = 0,02~\mathrm{Pa} \cdot \frac{1~\mathrm{m}}{0,1~\mathrm{m}} = 0,2~\mathrm{Pa}
+\end{equation}
+
+Lydtrykket, i Pa, bliver altså, når afstanden deles med ti, ti gange større. Da dB(A) er en logaritmisk skala bliver 60 dB(A) til 80 dB(A) når afstanden reduceres fra 1 m til 0,1 m. Som forklaret i starten af kapitel \ref{forforstaerker} bliver arbejdsområdet dermed fra 70 db(A) til 90 dB(A). De forventede peakspændinger på udgangen af mikrofonen kan derfor regnes ved formel (\ref{equ:vmicpeak}), hvor lydtrykket igen er omregnet til Pa.
+
+\begin{equation}
+\label{equ:vmicpeak}
+\hat{V}_{\mathrm{microphone}} = p \cdot 5\frac{\mathrm{mV}}{\mathrm{Pa}}
+\end{equation}
+
+Dette giver en teoretisk minimums og maksimumspeakspænding på udgangen på henholdsvis 3,16 mV og 31,6 mV.
 
 \section{Måleopstilling}
 \label{mic_output_maaleopstilling}
