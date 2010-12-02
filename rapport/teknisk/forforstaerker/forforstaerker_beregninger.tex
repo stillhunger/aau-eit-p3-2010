@@ -1,8 +1,8 @@
-\section{Designstrategi}
-Hvad skal dette afsnit gøre?:
-Forklare opbygningen af hardwaren og hvorfor lige netop CE med Re er valgt
-Forklare hvad der skal tages hensyn til og hvordan det vil blive gjort.
-Altså skal der forklares noget tilbagekoblingshalløj og hvordan CE med Re fungerer
+\section{Design}
+I dette projekt er der valgt så vidt muligt at designe alle løsninger med analog elektronik. Derfor er det valgt at forforstærkeren bygges af commonemitter trin med uafkoblet emittermodstand. 
+Argumentet for dette valg er at det er det eneste trin, blandt commonemitter, -base og -collector, hvis spændingsforstærkning ikke afhænger af transistorparametre. Da transistorparametre blandt andet er afhængige af den anvendte transistors temperatur er det en betragtelig styrke ikke at skulle tage højde for dem. Spændingsforstærkningen i commonemittertrinnet er dog kun uafhængig af transistorparametre så længe 
+
+
 
 \begin{equation}
 20 Pa \cdot 5 \frac{mV}{Pa} = 100 mV_{Peak}
