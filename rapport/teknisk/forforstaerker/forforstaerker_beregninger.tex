@@ -31,8 +31,8 @@ Det første trin skal have en forstærkning på 10 gange og det andet på 6,33 f
 
 For at opnå så lav forvrængning som muligt designes hvert trin således at DC-forstærkningen er så stor som muligt for at have meget at tilbagekoble. At AC- og DC-forstærkningen kan være forskellige muliggøres af den AC-koblede $R_e$, da denne kun vil have indflydelse på AC-forstærkningen.
 
-\subsection*{Design af trin et}
-Begge trin designes efter maksimal DC-forstærkning, som er givet ved ligning \ref{eq:dcgain}.
+\subsection*{Design af færste trin}
+Begge trin designes efter maksimal DC-forstærkning. DC-forstærkningen for et commonemittertrin er givet ved ligning \ref{eq:dcgain}.
 
 \begin{equation}
 |A_{v}|=\frac{1}{\left(\frac{V_t \cdot R_C}{V_{R_C}}+\frac{R'_S}{\beta}\right) \left(\frac{1}{R_C}+\frac{1}{R_L}\right)}
@@ -43,13 +43,19 @@ Hvor $R'_S = R'_S||R_1||R_2$ og $V_t = 26 \cdot 10^{-3}$.
 For at designe et kredsløb med maksimal DC-forstærkning justeres størrelsen af $R_C$ uden at variere spændingen over den, $V_{R_C}$. Den maksimale $R_C$ findes ved ligning \ref{eq:rcmaks}.
 
 \begin{equation}
-R_{C,maks} = 
+R_{C,maks} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_C}}{\beta \cdot V_t}}
+\label{eq:rcmaks}
 \end{equation}
+
+I ligning \ref{eq:rcmaks} er $R'_S$ defineret som $R_1||R_2||R_S$. $R_S$ er fastlagt til 2,2 k\ohm, hvilket er mikrofonens udgangsimpedans\fixme{ref til MCE4000}. Parallelforbindelsen mellem $R_1$ og $R_2$ kan ikke beregnes men skal vælges. Indgangsimpedansen i kredsløbet, som netop er $R_1||R_2$, skal som hovedregel være meget større end udgangsimpedansen i den kreds den belaster. En tommelfingerregel siger at 10 gange større er tilstrækkeligt til at være $"$meget større$"$ hvormed parallelkoblingen skal være over eller lig med 22 k\ohm. 
+Belastningen, $R_L$, for det første trin bliver indgangsimpedansen i det andet. Indgangsimpedansen i det andet trin bliver $R_3||R_4$ og kan heller ikke beregnes. Da $R_C$ i det første trin ikke kendes endnu vælges indgangsimpedansen i det andet til at være den samme som i det første, altså 22 k\ohm. 
+$V_{R_C}$ er defineret som værende $V_CC - V_{CE,sat} - V_{R_E} - V_{o,peak}$, hvor $V_CC$ vælges til 15 V, $V_{R_E}$ vælges til 3 V og $V_{CE,sat}$ aflæses i databladet for BC547b til 0,2 V ved en collectorstrøm på 1 mA. Der antages at collectorstrømmen ikke bliver større end 1 mA. $V_{o,peak}$ er peakspændingen på udgangen. Dermed bliver peakspændingen en faktor 10 højere end mikrofonens output peakspænding. $V_{o,peak}$ bliver derfor 315
+
 
 Det første forstærkertrin skal tillade et spændingsudsving på udgangen, som er en faktor 10 større end mikrofonens peak outputspænding altså 316 mV. 
 
 
-\subsection*{Design af trin to}
+\subsection*{Design af andet trin}
 
 
 
