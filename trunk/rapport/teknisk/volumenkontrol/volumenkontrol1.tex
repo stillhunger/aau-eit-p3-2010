@@ -1,7 +1,30 @@
 \chapter{Volumenkontrol}
 \label{volumenkontrol}
+Formålet med volumenkontrollen er, som beskrevet i afsnit \ref{valg_volumenkontrol}, at gøre det muligt for brugeren at justere volumeniveauet. Dette muliggøres ved to trykknapper, én til op og én til ned. Til at fortælle brugeren hvilket niveau den er indstillet på, skal der være to 7-segmenter, hvor størrelsen af dæmpningen i dB vises. Volumenkontrollen skal have 50 niveauer, så for at lette brugen vælges der, at den skal være i stand til at justere hurtigere, hvis brugeren holder en af de to volumeknapper nede. For at gøre det til en bedre oplevelse skal dette foregå ved en flydende acceleration, fremfor trinvis. Denne funktion skal dog ikke fjerne muligheden for brugeren kan trykke på knapperne med små intervaller og på den måde selv styre justeringshastigheden. \\
+De samlede krav til volumenkontrollen er opstillet i tabel \ref{tab:krav_volumenkontrol}.
 
-For at give brugeren mulighed for at skrue op og ned for lydstyrken skal HiFi-forstærkeren have en volumenkontrol. For at undgå at brugeren skal trykke mange gange på op eller ned knappen, hvis brugeren vil ændre lydstyrken meget\fixme{Jeg kan sku ikke komme på en bedre forklaring - Jonas}, skal volumenkontrollen automatisk skrue op eller ned når brugeren holder en af knapperne inde. For at sikre en glidende overgang, til ....
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r}
+\hline\hline
+Område & Krav \\
+\hline\hline
+Frekvensgang & 20 Hz - 20 kHz \\[4pt]
+Dæmpningsområde i & 0 - 50 dB ved 1 kHz \\
+volumenkontrol & \\[4pt]
+Styring af volumen- & Digital \\
+kontrol & \\[4pt]
+Antal niveauer i & 50 \\
+volumenkontrollen & \\[4pt]
+Dæmpning per & 1 dB \\
+niveau & \\[4pt]
+Input fra brugeren & To trykknapper \\[4pt]
+Output til brugeren & To 7-segmenter \\
+\hline\hline
+\end{tabular}
+\caption{Krav til volumenkontrollen}
+\label{tab:krav_volumenkontrol}
+\end{table}
 
 \section{Design}
 \label{volumenkontrol-design}
