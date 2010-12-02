@@ -43,7 +43,7 @@ Output til brugeren & To 7-segmenter \\
 \label{fig:volumenkontrol_diagram}
 \end{figure}
 
-\subsection{Konstantstrømsgenerator}
+\subsection*{Konstantstrømsgenerator}
 \label{volumenkontrol-simulering-konstantstroemsgenerator}
 
 Konstantstrømsgeneratorens opgave er at levere en konstant strøm, denne strøm bruges til at oplade en kondensator (ladekondensatoren). Når en kondensator lades med en konstant strøm, vil spændingen over den stige lineært, dette fremgår også af ligning \ref{equ:konstantstroemsgenerator1}.
@@ -75,11 +75,11 @@ Spændingen over $R_{11}$ er, som tidligere nævnt, 0,5 V og strømmen igennem d
 V_D = R_{11} \cdot I_{\mathrm{const}} \Rightarrow \mathrm{0,5~V} = R_{11} \cdot \mathrm{7,5~\mu A} \Rightarrow R_{11} = \mathrm{66,7~k\ohm}
 \end{equation}
 
-\subsection{Starter}
+\subsection*{Starter}
 \label{volumenkontrol-simulering-starter}
 
 Starterens opgave er at holde spændingen over ladekondensatoren på 0 V, når der ikke trykkes på en af volumenknapperne. Dette gøres ved at lede al den strøm som konstantstrømsgeneratoren leverer til stel. Så snart der trykkes på en af volumenknapperne, vil basis på transistoren blive trukket lav, hvilket vil afbryde collector-emitter strømmen. Dette gøres for at sikre at ladekondensatoren er klar til at starte opladningen med det samme.
-\subsection{Buffer med forsinkelse}
+\subsection*{Buffer med forsinkelse}
 \label{volumenkontrol-simulering-buffer}
 
 Bufferen sikrer at ladekondensatoren bliver lineært opladet, dette gøres ved ikke at belaste konstantstrømsgeneratoren eller ladekondensatoren. Forsinkelsen laves ved hjælp af en diode. Dioden forsinker signalet ved blot at have et spændingsfald over den, det betyder at spændingen først skal vokse op til minimum en diodespænding, før der kommer en kontrolspænding til VCO'en. Forsinkningen er derfor direkte afhængig af diodespændingen. Dette betyder, at der for at kunne indstille på forsinkelsesperioden skal indsættes en anden diode, med en anden $V_{D}$; eksempelvis en eller flere germaniumsdioder.
