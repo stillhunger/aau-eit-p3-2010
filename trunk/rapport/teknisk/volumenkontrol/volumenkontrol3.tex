@@ -11,10 +11,19 @@ Display driveren konvertere signalet fra tælleren til et signal der kan vises p
 \subsection*{Display}
 \label{volumenkontrol-simulering-display}
 
+Displayet består af to 7-segment displays, der viser hvor meget signalet er blevet dæmpet, målt i dB.
 
 \subsection*{Dæmper}
 \label{volumenkontrol-simulering-daemper}
 
+Dæmperen er en en analog attenuator, der er sammen sat af to sæt modstands rækker adskilt af en buffer. Dæmpningen indstilles ved at ændre hvor signalet tages ud af de to modstands rækker, dette styres med en analog multiplekser. Den første række består af seks modstande hvor der er en dæmpning på 8 dB mellem hver, den anden række består af syv modstande hvor der er en dæmpning på 1 dB mellem hver. Det er således muligt at kombinere de to rækker til at dæmpe signalet mellem 0 og 55 dB, med spring af 1 dB. Diagrammet er afbilledet på figur \ref{fig:volumenkontrol_daemper}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{teknisk/volumenkontrol/daemper.png}
+\caption{Diagram over dæmperen}
+\label{fig:volumenkontrol_daemper}
+\end{figure}
 
 \subsection*{Simulering}
 \label{volumenkontrol-simulering}
