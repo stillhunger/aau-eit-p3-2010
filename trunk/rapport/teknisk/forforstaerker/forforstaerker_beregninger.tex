@@ -52,7 +52,7 @@ Belastningen, $R_L$, for det første trin bliver indgangsimpedansen i det andet.
 $V_{R_C}$ er defineret som værende $V_{CC} - V_{\mathrm{CE,sat}} - V_{R_E} - V_{\mathrm{o,peak}}$, hvor $V_{CC}$ vælges til 15 V så der sikres at der er plads til det ønskede spændingsudsving, $V_{R_E}$ vælges til 3 V og $V_{\mathrm{CE,sat}}$ aflæses i databladet for BC547b til 0,2 V ved en collectorstrøm på 1 mA. Der antages at collectorstrømmen ikke bliver større end 1 mA. Ligeledes aflæses $\beta$ til 250 i databladet. $V_{\mathrm{o,peak}}$ er peakspændingen på udgangen. Dermed bliver peakspændingen en faktor 10 højere end mikrofonens output peakspænding. $V_{\mathrm{o,peak}}$ bliver derfor 316 mV. $R_C1$ beregnes hermed i ligning \ref{eq:rcforsteberegning}.
 
 \begin{equation}
-R_{\mathrm{C1}} = \sqrt{\frac{22~k\ohm || 2,2~k\ohm \cdot (15~V - 0,2~V - 3~V - 0,316~mV)}{250 \cdot 26 \cdot 10^{-3}}}=9,25~k\ohm
+R_{\mathrm{C1}} = \sqrt{\frac{22~k\ohm || 2,2~k\ohm \cdot (15~V - 0,2~V - 3~V - 0,316~mV)}{250 \cdot 26 \cdot 10^{-3}}}=8,82~k\ohm
 \label{eq:rcforsteberegning}
 \end{equation}
 
@@ -62,15 +62,37 @@ $R_{E1}$ bestemmes i ligning \ref{eq:beregningre1} under antagelse at $i_e = i_c
 i_c=\frac{V_{R_C}}{R_C}
 \end{equation}
 \begin{equation}
-R_{E1}=\frac{V_{R_{E1}}}{\frac{V_{R_{C1}}}{R_{C1}}}  \Rightarrow R_{E1}=\frac{3~V}{\frac{11,5~V}{9,25~k\ohm}}=2,42~k\ohm
+R_{E1}=\frac{V_{R_{E1}}}{\frac{V_{R_{C1}}}{R_{C1}}}  \Rightarrow R_{E1}=\frac{3~V}{\frac{11,5~V}{9,25~k\ohm}}=2,30~k\ohm
 \label{eq:beregningre1}
+\end{equation}
+
+\fixme{Skal vi beregne DC-forstærkningen på dette tidspunkt bare for at vise at den blive stor?}
+
+Dernæst beregnes $R_e1$ ud fra hvad den ønskede AC-forstærkning skal være. Ligning \ref{eq:gmbevis} benyttes til at beregne $R_e1$ i ligning \ref{eq:rlilleeberegning}.
+
+\begin{equation}
+A_v = -\frac{R'_L}{R'_e} \Rightarrow  R_{e1} =-\frac{R_L \cdot R_{C1} \cdot R_{E1}}{A_v \cdot R_{E1} \cdot R_{C1} + A_v \cdot R_{E1} \cdot R_L + R_{C1} \cdot R_L} \Rightarrow R_{e1} = 866,18~\ohm
+\end{equation}
+
+Biasnetværket, bestående af $R_1$ og $R_2$ beregnes ud fra den spænding, som er påkrævet på basen for at transistoren fungerer som ønsket. Spændingen over base-emitter, $V_{\mathrm{BE}}$ er i databladet aflæst til 0,6 V. Da potentialet på emitteren er 3 V skal potentialet på basen være 3,6 V. $R_1$ og $R_2$ kan beregnes ud fra at $V_{R_2}$ skal være 3,6 V og parallelkoblingen $R_1||R_2$. Beregningen udføres i ligning \ref{eq:r1r21} og \ref{eq:r1r22}.
+
+\begin{equation}
+V_{R_2} = V_{CC} \cdot \frac{R_2}{R_1+R_2} 
+\label{eq:r1r21}
+\end{equation}
+\begin{equation}
+R_1||R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}
+\label{eq:r1r22}
+\end{equation}
+De kendte værdier indsættes og de to ligninger med to ubekendte løses. Resultatet er vist i ligning \ref{eq:r1r2result}.
+\begin{equation}
+R_1 = 91,7~k\ohm ~ \wedge ~ R_2=28,9~k\ohm
+\label{eq:r1r2result}
 \end{equation}
 
 
 
-
-
 \subsection*{Design af andet trin}
-
+Beregning af andet trin følger samme procedure som første trin. 
 
 
