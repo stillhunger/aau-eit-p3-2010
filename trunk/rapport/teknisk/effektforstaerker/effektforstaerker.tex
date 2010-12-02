@@ -1,10 +1,6 @@
 \chapter{Effektforstærker}
 \label{effektforstaerker}
-Formålet med en effektforstærker er, som nævnt i kapitel \ref{systemopbygning}, at levere en strømforstærkning der gør det muligt at afsætte den ønskede effekt i belastningsmodstanden. Der er i denne rapport valgt at designe en effektforstærker der outputter mere end 20 W i 8 \ohm~\ref{valg_udgangseffekt} . Derudover er der i afsnit \ref{IEC581} bestemt at signalet der kommer ind ikke må forvrænges mere end 0.5 \% .   
-
- I projektet er der valgt at konstruerer en klasse AB forstærker , hvilket opsætter et krav om at nyttevirkningen i effektforstærkeren bliver højere end 25 \% \ref{klasse_ab}. Der er også valgt at der skal være en kortslutningssikring i effektforstærkeren \ref{valg_kortslutningssikring}.
-
- Indgangssignalet til effektforstærkeren er fastlagt af standard \fixme{Kilde: IEC61938} til at være mellem 0.2 V til 2 V peak. til sidst er det valgt at effektforstærkeren skal være mono \ref{valg_udgangssignaltype} . Alle kravene der er stillet til effektforstærkeren er opstillet i tabel \ref{tab:krav_effektforstaerker}.
+Formålet med en effektforstærker er, som nævnt i kapitel \ref{systemopbygning}, at levere en strømforstærkning der gør det muligt at afsætte den ønskede effekt i belastningsmodstanden. Dette skal ske uden at der afsættes en stor effekt i selve effektforstærkeren, altså uden den bliver opvarmet unødigt. Effektforstærkeren skal desuden levere denne strømforstærkning uden signalet forvrænges for meget. Alle kravene der er stillet til effektforstærkeren er opstillet i tabel \ref{tab:krav_effektforstaerker}.
 
 \begin{table}[h]
 \centering
@@ -13,13 +9,13 @@ Formålet med en effektforstærker er, som nævnt i kapitel \ref{systemopbygning
 Område & Krav \\
 \hline\hline
 Klasse & AB \\[4pt]
+Indgangssignal & 0,2 V - 2 V \\[4pt]
 Nyttevirkning & > 25 \%  \\[4pt]
 Forvrængning & < 0,5 \% \\[4pt]
 Udgangseffekt & > 20 W \\[4pt]
 Belastningsimpedans & 8 \ohm \\[4pt]
 Udgangssignaltype & Mono \\[4pt]
 Kortslutningsstrøm (peak) & 2,24 A \\
-Indgangssignal & 0.2 V - 2 V \\[4pt]
 \hline\hline
 \end{tabular}
 \caption{Krav til effektforstærkeren}
