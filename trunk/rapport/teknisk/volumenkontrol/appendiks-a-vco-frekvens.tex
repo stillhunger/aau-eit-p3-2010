@@ -11,7 +11,7 @@ Frekvensen på den VCO som anvendes i volumenkontrollen, se afsnit \ref{volumenk
 \label{fig:appendiks-vco}
 \end{figure}
 
-For at opstille et udtryk for frekvensen skal triggerniveauerne for schmidt-triggeren bestemmes, dette gøres vunder den antagelse at et højt udgangs niveau på U6 har samme spænding som forsyningen. I ligning \ref{equ:appendiks-vco1} beregnes $"$Lower triggerlevel$"$ og i ligning \ref{equ:appendiks-vco2} beregnes $"$Upper triggerlevel$"$.
+For at opstille et udtryk for frekvensen skal triggerniveauerne for schmidt-triggeren bestemmes, dette gøres vunder den antagelse at et højt udgangs niveau på U6 har samme spænding som forsyningen. Udfra ligning \ref{equ:appendiks-vco1} kan $"$Lower triggerlevel$"$ beregnes og udfra ligning \ref{equ:appendiks-vco2} kan $"$Upper triggerlevel$"$ beregnes.
 
 \begin{equation}
 \label{equ:appendiks-vco1}
@@ -19,6 +19,7 @@ V_L = \frac{\frac{1}{\frac{1}{R_7} + \frac{1}{R_6}}}{R_{10} + \frac{1}{\frac{1}{
 \end{equation}
 
 \begin{equation}
-\label{equ:appendiks-vco1}
+\label{equ:appendiks-vco2}
 V_U = \frac{R_{10}}{\frac{1}{\frac{1}{R_7} + \frac{1}{R_6}} + R_{10}} \cdot V_{CC} = \frac{R_{10} \cdot (R_7 + R_6)}{R_{10} \cdot R_6 + R_{10} \cdot R_7 + R_7 \cdot R_6} \cdot V_{CC}
 \end{equation}
+
