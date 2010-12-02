@@ -61,18 +61,18 @@ R_{12} = \frac{V_{CC} - 2 \cdot V_D}{I_F} = \mathrm{\frac{5~V - 2 \cdot 0,5~V}{0
 \end{equation}
 
 Da der nu ligger en konstant spænding over alle dioderne, kan man se dioden i transistoren som siddende parallelt, med det samme spændingsfald som $D_2$. Dette giver at der findes det samme, konstante, spændingsfald over $D_3$ og $R_{11}$, hvilket giver en konstant strøm gennem $R_{11}$.
-Den kondensator som konstantstrømsgeneratoren kaldes ladekondensatoren, denne har en kapacitet på 5 $\mu$F og den ønskede oplade tid er 3 s. Kondensatoren oplades fra 0 V til $V_{CC} - V_D$ = 4,5 V, hvor $V_D$ er spændingen over én diode. Udfra disse to ting kan den konstante strøm, $I_{const}$, nu beregnes, se ligning \ref{equ:konstantstroemsgenerator3}.
+Den kondensator som konstantstrømsgeneratoren kaldes ladekondensatoren, denne har en kapacitet på 5 $\mu$F og den ønskede oplade tid er 3 s. Kondensatoren oplades fra 0 V til $V_{CC} - V_D$ = 4,5 V, hvor $V_D$ er spændingen over én diode. Udfra disse to ting kan den konstante strøm, $I_{\mathrm{const}}$, nu beregnes, se ligning \ref{equ:konstantstroemsgenerator3}.
 
 \begin{equation}
 \label{equ:konstantstroemsgenerator3}
-V_{CC} - V_D = \frac{I_{const} \cdot t}{C_2} \Rightarrow \mathrm{4,5~V} = \frac{I_{const} \cdot 3~\mathrm{s}}{5~\mu \mathrm{F}} \Rightarrow I_{const} = \mathrm{7,5~\mu A}
+V_{CC} - V_D = \frac{I_{\mathrm{const}} \cdot t}{C_2} \Rightarrow \mathrm{4,5~V} = \frac{I_{\mathrm{const}} \cdot 3~\mathrm{s}}{5~\mu \mathrm{F}} \Rightarrow I_{\mathrm{const}} = \mathrm{7,5~\mu A}
 \end{equation}
 
-Spændingen over $R_{11}$ er, som tidligere nævnt, 0,5 V og strømmen igennem den er $I_{const}$, der kan Ohms lov bruges til at beregne modstanden, se ligning \ref{equ:konstantstroemsgenerator4}.
+Spændingen over $R_{11}$ er, som tidligere nævnt, 0,5 V og strømmen igennem den er $I_{\mathrm{const}}$, der kan Ohms lov bruges til at beregne modstanden, se ligning \ref{equ:konstantstroemsgenerator4}.
 
 \begin{equation}
 \label{equ:konstantstroemsgenerator4}
-V_D = R_{11} \cdot I_{const} \Rightarrow \mathrm{0,5~V} = R_{11} \cdot \mathrm{7,5~\mu A} \Rightarrow R_{11} = \mathrm{66,7~k\ohm}
+V_D = R_{11} \cdot I_{\mathrm{const}} \Rightarrow \mathrm{0,5~V} = R_{11} \cdot \mathrm{7,5~\mu A} \Rightarrow R_{11} = \mathrm{66,7~k\ohm}
 \end{equation}
 
 \subsection{Starter}
