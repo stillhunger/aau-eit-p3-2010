@@ -6,7 +6,10 @@
 \caption{Opbygning af indgangsvælgeren}
 \label{indgangsvaelger-overordnet}
 \end{figure}
-For at slukke signalet, er der valgt at benytte en transistor, til at trække signalet til stel. Da vores spændingssving kan gå ned til 0,2~V, er der mulighed for at der vil løbe nogle små strømme. Derfor vælges en FET-transistor, da denne, modsat en BiPolær transistor, er linæer ved meget små strømme. Optimalt ville en transistor uden reverse-diode være foretrække, da dette vil tillade at source-spændingen er lavere end drainspændingen, som vil være tilfældet ved et AC-signal omkring 0~V. Da det ikke var muligt at fremskaffe en sådan, benyttes i stedet et DC-offset, for at sørge for at DC-offset $-$ AC-Peakværdi $>$ 0 når transistoren er slukket, hvilket umuliggører at der kan løbe en reverse strøm i transistoren.
+Indgangsvælger kredsløbet kan opdeles i 3 sektioner: Dæmpningsblokke, summation og	 signaltilpasning. Dæmpningsblokkene sørger for at dæmpe signalet så meget som muligt, for at komme så tæt på en afkobling som muligt. Summations sektionen lægger værdien af de foregående blokke sammen, mens signaltilpasningssektionen skifter mellem 3 forskellige niveauer, så det endelige output altid vil have et maksimalt peak-niveau på 2 V.  
+
+For at slukke signalet, er der valgt at benytte transistorer, til at trække signalerne til stel. Da vores spændingssving kan gå ned til 0,2~V, er der mulighed for at der vil løbe nogle små strømme. Derfor vælges en FET-transistor, da denne, modsat en BiPolær transistor, er linæer ved meget små strømme. For at aktivere transistoren, sættes spændingen på Gate-benet højt. Dette opnåes ved hjælp af et gatekredsløb. To D-flipflops opsættes til, ved hjælp af et enkelt tryk på en knap, at skifte mellem fire forskellige, binære tilstande, som vist på figur \ref{fig:indgangflipflops}. Disse fire tilstande repræsenterer de fire tilstande indgangsvælgeren kan være i: Begge tændt, begge slukket eller kun det ene signal tændt.
+Optimalt ville en transistor uden reverse-diode være foretrække, da dette vil tillade at source-spændingen er lavere end drainspændingen, som vil være tilfældet ved et AC-signal omkring 0~V. Da det ikke var muligt at fremskaffe en sådan, benyttes i stedet et DC-offset, for at sørge for at DC-offset $-$ AC-Peakværdi $>$ 0 når transistoren er slukket, hvilket umuliggører at der kan løbe en reverse strøm i transistoren.
 
 Modstandene $R_1$ og $R_2$ er begge valgt til 100~k\ohm, for at give et DC-offset på ca 2,5~V, halvdelen af V1. Dette gælder dog kun når transistoren er slukket. I det transistoren tændes, sættes $R_2$ parallelt med $R_3$, hvilket trækker DC-offsettet længere ned.
 %\begin{equation}
@@ -36,7 +39,14 @@ Modstanden $R_5$ har ikke nogen indvirkning på indgangsimpedansen når transist
 R_{\mathrm{indgang}}=\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}+\frac{1}{R_3+R_4}}=30,8~\mathrm{k}\ohm
 \end{equation}
 
-Efter at have opstillet de forskellige modstandsværdier, er det muligt at udregne værdien af afkoblingskondensatorerne i kredsløbet. Disse kan udregnes som en spændingsdeling mellem en seriekoblet modstand og kondensator, seriekoblet med en modstand, som vist på figur \ref{crvd}. I dette tilfælde vil $R_U$ være udgangsimpedansen på det foregående led, og $R_I$ være indgangsimpedansen på det efterfølgende. Impedansen i en kondensator, i frekvensdomænet er $\frac{1}{s\cdot C}$. Dette kan opstilles i følge spændingsdelingsformel som ligning \ref{eq:indganghoejpas}.
+Efter at have opstillet de forskellige modstandsværdier, er det muligt at udregne værdien af afkoblingskondensatorerne i kredsløbet. Disse kan udregnes som en spændingsdeling mellem en seriekoblet modstand og kondensator, seriekoblet med en modstand, som vist på figur \ref{crvd}.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{teknisk/indgangsvaelger/hoejpasfilter.png}
+\caption{Et standard CR højpasled}
+\label{crvd}
+\end{figure}
+ I dette tilfælde vil $R_U$ være udgangsimpedansen på det foregående led, og $R_I$ være indgangsimpedansen på det efterfølgende. Impedansen i en kondensator, i frekvensdomænet er $\frac{1}{s\cdot C}$. Dette kan opstilles i følge spændingsdelingsformel som ligning \ref{eq:indganghoejpas}.
 
 \begin{equation}
 \label{eq:indganghoejpas}
@@ -85,4 +95,10 @@ $R_3$ skal være lig med den samlede impedans den minus porten på op-ampen kigg
 R_3 = \frac{1}{\frac{1}{\frac{\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}+R_4+R_5}{3}}+\frac{1}{R_7}}
 \end{equation}
 
-Efter summationsforstærkeren sidder en spændingsdeler, som giver mulighed for vælge hvor stærkt signalet skal være. Denne benyttes til  at sørge for at lige gyldigt hvor mange af indgangene der er tændt for, vil signalet altid være mellem 0,2 og 2~V peak. Da de niveauer der er mulige at få enten er 6, 4 eller 2~V vil det, for at give 2~V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist på figur \ref{outputdeler}. Efter denne sidder en buffer, for at impedansen der ses af afkoblingskondensatoren, som sidder mellem indgangsvælgeren og volumenkontrollen, vil være konstant.
+Efter summationsforstærkeren sidder signaltilpasningen. Denne benyttes til at sørge for at lige gyldigt hvor mange af indgangene der er tændt for, vil signalet altid være mellem 0,2 og 2~V peak. Da de niveauer der er mulige at få enten er 6, 4 eller 2~V vil det, for at give 2~V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist under signaltilpasningsektionen af figur \ref{indgangsvaelger-overordnet}. Værdierne af de forskellige modstande kan udregnes ud fra de givene modstandsforhold, som set i ligning \ref{eq:indgangsignal}. $R_9$ sættes til 10k, for at have en værdi at gå ud fra.
+\begin{equation}
+\label{eq:indgangsignal}
+\frac{R_9}{R_6+R_8+R_9}=\frac{1}{2} \;\;\;\;\;\;\;\;\;\;\;\;~~~~~~~~~~~~~~~~
+\frac{R_6+R_8}{R_6+R_8+R_9}=\frac{1}{3}
+\end{equation}
+Dette giver en $R_6$ på 15 k\ohm  og en $R_8$ på 5 k\ohm. Efter vælgeren sidder en buffer, for at impedansen der ses af afkoblingskondensatoren, som sidder mellem indgangsvælgeren og volumenkontrollen, vil være konstant.
