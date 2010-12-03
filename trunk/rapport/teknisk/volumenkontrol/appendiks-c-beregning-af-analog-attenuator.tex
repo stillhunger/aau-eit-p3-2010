@@ -1,0 +1,25 @@
+\chapteR_{Appendiks C}
+\label{beregning-af-analog-attenuator}
+\section*{Beregning af analog attenuator}
+
+Den analoge attenuator der benyttes i volumenkontrollen består af to attenuatorer, adskilt af en buffer. Den første dæmper i seks trin med 8 dB mellem hvert trin. Den anden dæmper i syv trin med 1 dB mellem hvert trin.
+
+\begin{equation}
+\frac{R_6}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-40 \cdot \frac{1}{20}}
+\end{equation}
+
+\begin{equation}
+\frac{R_6 + R_5}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-32 \cdot \frac{1}{20}}
+\end{equation}
+
+\begin{equation}
+\frac{R_6 + R_5 + R_4}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-24 \cdot \frac{1}{20}}
+\end{equation}
+
+\begin{equation}
+\frac{R_6 + R_5 + R_4 + R_3}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-16 \cdot \frac{1}{20}}
+\end{equation}
+
+\begin{equation}
+\frac{R_6 + R_5 + R_4 + R_3 + R_2}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-8 \cdot \frac{1}{20}}
+\end{equation}
