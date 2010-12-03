@@ -2,7 +2,7 @@
 \label{beregning-af-analog-attenuator}
 \section*{Beregning af analog attenuator}
 
-Den analoge attenuator der benyttes i volumenkontrollen består af to attenuatorer, adskilt af en buffer. Den første dæmper i seks trin med 8 dB mellem hvert trin. Den anden dæmper i syv trin med 1 dB mellem hvert trin. Bregningerne er opstillet i ligningerne \ref{beregning-af-analog-attenuator-ligning1} til \ref{beregning-af-analog-attenuator-ligning5}.
+Den analoge attenuator der benyttes i volumenkontrollen består af to attenuatorer, adskilt af en buffer. Den første dæmper i seks trin med 8 dB mellem hvert trin. Bregningerne for den første attenuatorer er opstillet i ligningerne \ref{beregning-af-analog-attenuator-ligning1} til \ref{beregning-af-analog-attenuator-ligning5}.
 
 \begin{equation}
 \label{beregning-af-analog-attenuator-ligning1}
@@ -26,9 +26,40 @@ Den analoge attenuator der benyttes i volumenkontrollen består af to attenuator
 \frac{R_6 + R_5 + R_4 + R_3 + R_2}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{\frac{-8}{20}}
 \end{equation}
 
-Da der er fem ligninger med seks ubenkendte bestemmes $R_6$ til 10 k\ohm, det resultere i løsningen i ligning \ref{beregning-af-analog-attenuator-resultat1}.
+Da der er fem ligninger med seks ubenkendte bestemmes $R_6$ til 10 k\ohm, det resultere i følgende værdier 
+$R_1 = 647 ~\mathrm{k}\ohm, R_2 = 194 ~\mathrm{k}\ohm, R_3 = 95,3 ~\mathrm{k}\ohm, R_4 = 37,9 ~\mathrm{k}\ohm, R_5 = 15,1  ~\mathrm{k}\ohm, R_6 = 10,0 ~\mathrm{k}\ohm$
+
+Den anden dæmper i syv trin med 1 dB mellem hvert trin. Bregningerne for den første attenuatorer er opstillet i ligningerne \ref{beregning-af-analog-attenuator-ligning6} til \ref{beregning-af-analog-attenuator-ligning12}.
 
 \begin{equation}
-\label{beregning-af-analog-attenuator-resultat1}
-R_1 = 647 k\ohm, R_2 = 194 k\ohm, R_3 = 95,3 k\ohm, R_4 = 37,9 k\ohm, R_5 = 15,1  k\ohm, R_6 = 10,0 k\ohm
+\label{beregning-af-analog-attenuator-ligning6}
+\frac{R_{14}}{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8} + R_{7}} = 10^{\frac{-7}{20}}
 \end{equation}
+
+\begin{equation}
+\frac{R_{14} + R_{13}}{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8} + R_{7}} = 10^{\frac{-6}{20}}
+\end{equation}
+
+\begin{equation}
+\frac{R_{14} + R_{13} + R_{12}}{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8} + R_{7}} = 10^{\frac{-5}{20}}
+\end{equation}
+
+\begin{equation}
+\frac{R_{14} + R_{13} + R_{12} + R_{11}}{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8} + R_{7}} = 10^{\frac{-4}{20}}
+\end{equation}
+
+\begin{equation}
+\frac{R_{14} + R_{13} + R_{12} + R_{11} + R_{10}}{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8} + R_{7}} = 10^{\frac{-3}{20}}
+\end{equation}
+
+\begin{equation}
+\frac{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9}}{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8} + R_{7}} = 10^{\frac{-2}{20}}
+\end{equation}
+
+\begin{equation}
+\label{beregning-af-analog-attenuator-ligning12}
+\frac{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8}}{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8} + R_{7}} = 10^{\frac{-1}{20}}
+\end{equation}
+
+Da der er seks ligninger med syv ubenkendte bestemmes $R_{14}$ til 10 k\ohm, det resultere i følgende værdier 
+$R_{7} = 2,43 ~\mathrm{k}\ohm, R_{8} = 2,16 ~\mathrm{k}\ohm, R_{9} = 1,93 ~\mathrm{k}\ohm, R_{10} = 1,72 ~\mathrm{k}\ohm, R_{11} = 1,53 ~\mathrm{k}\ohm, R_{12} = 1,36 ~\mathrm{k}\ohm, R_{13} = 1,22 ~\mathrm{k}\ohm, R_{14} = 10,0 ~\mathrm{k}\ohm$ 
