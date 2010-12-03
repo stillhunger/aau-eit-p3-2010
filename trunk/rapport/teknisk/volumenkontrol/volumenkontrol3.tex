@@ -9,12 +9,20 @@ Indstillingen af volumenkontrollen vises på to 7-segmenter. Dette er valgt, for
 
 \subsection*{Displaydriver}
 \label{volumenkontrol-simulering-display_driver}
-Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Displaydriveren er opbygget af digitale gates. Dette skyldes at projektgruppen vurderede at det var nødvendigt med et digitalt gate-kredsløb, set ud fra at læringsmæssigt synspunkt. En anden mulighed havde været, at benytte en 7-segments driver IC.
-Displaydriveren benytter boolsk algebra til at konverte et 8-bits serielt signal om til et passende output til at styre 7-segmentdisplayet. Først opstilles indgangsparametrene \fixme{lang, lang, laaaaang forklaring om alt det der pjat, når vi får lavet det.
+Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Der konverteres fra tællerens binære output til BCD, Binary-coded decimal, for så at konvertere det til et signal 7-segment displayne kan vise. For delen ved at konvertere til BCD først er at denne konvertering også deler det binære tal op i to, enere og tiere. 
 
 \subsection*{Dæmper}
 \label{volumenkontrol-simulering-daemper}
-Volumen kontrollen reguleres ved hjælp af to sæt af 10 modstande, hvor der ved hjælp af 2 skiftere, kan skiftes mellem 100 forskellige konfigurationer. Forholdet imellem de to modstande, der vil sidde serielt, kan udregnes ved hjælp af spændingsdelerformlen, $V_{\mathrm{input}}\cdot\frac{R_2}{R_1+R_2}$. Dette forhold skal ved alle 100 konfigurationer være forskelligt, og ligeligt inddelt, for at volumenkontrollen fungerer. Dettes gøres ved at \fixme{Så mangler vi bare at gøre det}.
+%Volumen kontrollen reguleres ved hjælp af to sæt af 10 modstande, hvor der ved hjælp af 2 skiftere, kan skiftes mellem 100 forskellige konfigurationer. Forholdet imellem de to modstande, der vil sidde serielt, kan udregnes ved hjælp af spændingsdelerformlen, $V_{\mathrm{input}}\cdot\frac{R_2}{R_1+R_2}$. Dette forhold skal ved alle 100 konfigurationer være forskelligt, og ligeligt inddelt, for at volumenkontrollen fungerer. Dettes gøres ved at \fixme{Så mangler vi bare at gøre det}.
+
+Dæmperen er en en analog attenuator, der er sammen sat af to sæt modstands attenuatore adskilt af en buffer. Dæmpningen indstilles ved at ændre hvor signalet tages ud af de to modstands attenuatore, dette styres med en analog multiplekser. Den første attenuatorer består af seks modstande hvor der er en dæmpning på 8 dB mellem hver, den anden attenuatorer består af syv modstande hvor der er en dæmpning på 1 dB mellem hver. Det er således muligt at kombinere de to attenuatorer til at dæmpe signalet mellem 0 og 55 dB, med spring af 1 dB. Diagrammet er afbilledet på figur \ref{fig:volumenkontrol_daemper}. Modstandene er beregnet i appendiks C??.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{teknisk/volumenkontrol/daemper.png}
+\caption{Diagram over dæmperen}
+\label{fig:volumenkontrol_daemper}
+\end{figure}
 
 \section{Simulering}
 \label{volumenkontrol-simulering}
