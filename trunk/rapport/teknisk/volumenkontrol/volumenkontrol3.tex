@@ -1,31 +1,22 @@
 \subsection*{Tæller}
 \label{volumenkontrol-simulering-taeller}
 
-Det er tællerens opgave at holde styr på hvad volumenniveauet er. Der tælles op eller ned når der trykkes på én af de to volumenknapper. Hvor hurtigt der skal tælles bestemmes af det AND'ende signal fra VCO'en og XOR-gaten. Tælleren danner også grundlag for hvad der skal stå i displayet.
-
-\subsection*{Display driver}
-\label{volumenkontrol-simulering-display_driver}
-
-Display driveren konvertere signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Display driveren er opbygget af digitale gates, for at få flere forskellige slags kredsløb i HiFi-forstærkeren.
+Det er tællerens opgave at holde styr på hvad volumenniveauet er. Der tælles op eller ned når der trykkes på én af de to volumenknapper. Hvor hurtigt der skal tælles bestemmes af det AND'ende signal fra VCO'en og XOR-gaten. VCO'en fungerer som en clock på AND-gaten, mens XOR-signalet sørger for, at det kun er den ene knap der holdes nede. Hvis begge knapper holdes nede, vil XOR-signalet være lavt, og der vil intet signal blive sendt til tælleren. Om der skal tælles op eller ned, styres af et signal fra $\mathrm{volume_{down}}$\fixme{hvad hedder den?} knappen. Hvis denne er nede, som den eneste knap, vil tælleren tælle ned af. Hvis denne ikke er nede, men XOR-signalet stadig er højt, betyder det at den anden knap er nede og tælleren vil derfor tælle op. Tælleren giver et binært output, som danner grundlag for hvad der vises i displayet og hvordan reguleringen af volumen indstilles.
 
 \subsection*{Display}
 \label{volumenkontrol-simulering-display}
+Indstillingen af volumenkontrollen vises på to 7-segmenter. Dette er valgt, fordi disse er enkle at styre med gate-kredsløb, og det derfor ikke er nødvendigt med en microcontroller, for at styre dem. 
 
-Displayet består af to 7-segment displays, der viser hvor meget signalet er blevet dæmpet, målt i dB.
+\subsection*{Displaydriver}
+\label{volumenkontrol-simulering-display_driver}
+Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Displaydriveren er opbygget af digitale gates. Dette skyldes at projektgruppen vurderede at det var nødvendigt med et digitalt gate-kredsløb, set ud fra at læringsmæssigt synspunkt. En anden mulighed havde været, at benytte en 7-segments driver IC.
+Displaydriveren benytter boolsk algebra til at konverte et 8-bits serielt signal om til et passende output til at styre 7-segmentdisplayet. Først opstilles indgangsparametrene \fixme{lang, lang, laaaaang forklaring om alt det der pjat, når vi får lavet det.
 
 \subsection*{Dæmper}
 \label{volumenkontrol-simulering-daemper}
+Volumen kontrollen reguleres ved hjælp af to sæt af 10 modstande, hvor der ved hjælp af 2 skiftere, kan skiftes mellem 100 forskellige konfigurationer. Forholdet imellem de to modstande, der vil sidde serielt, kan udregnes ved hjælp af spændingsdelerformlen, $V_{\mathrm{input}}\cdot\frac{R_2}{R_1+R_2}$. Dette forhold skal ved alle 100 konfigurationer være forskelligt, og ligeligt inddelt, for at volumenkontrollen fungerer. Dettes gøres ved at \fixme{Så mangler vi bare at gøre det}.
 
-Dæmperen er en en analog attenuator, der er sammen sat af to sæt modstands attenuatore adskilt af en buffer. Dæmpningen indstilles ved at ændre hvor signalet tages ud af de to modstands attenuatore, dette styres med en analog multiplekser. Den første attenuatorer består af seks modstande hvor der er en dæmpning på 8 dB mellem hver, den anden attenuatorer består af syv modstande hvor der er en dæmpning på 1 dB mellem hver. Det er således muligt at kombinere de to attenuatorer til at dæmpe signalet mellem 0 og 55 dB, med spring af 1 dB. Diagrammet er afbilledet på figur \ref{fig:volumenkontrol_daemper}. Modstandene er beregnet i appendiks C??.
-
-\begin{figure}[h]
-\centering
-\includegraphics[scale=1]{teknisk/volumenkontrol/daemper.png}
-\caption{Diagram over dæmperen}
-\label{fig:volumenkontrol_daemper}
-\end{figure}
-
-\subsection*{Simulering}
+\section{Simulering}
 \label{volumenkontrol-simulering}
 
 \section{Accepttest}
