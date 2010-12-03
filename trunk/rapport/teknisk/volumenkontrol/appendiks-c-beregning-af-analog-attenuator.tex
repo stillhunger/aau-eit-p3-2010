@@ -2,26 +2,28 @@
 \label{beregning-af-analog-attenuator}
 \section*{Beregning af analog attenuator}
 
-Den analoge attenuator der benyttes i volumenkontrollen består af to attenuatorer, adskilt af en buffer. Den første dæmper i seks trin med 8 dB mellem hvert trin. Den anden dæmper i syv trin med 1 dB mellem hvert trin.
+Den analoge attenuator der benyttes i volumenkontrollen består af to attenuatorer, adskilt af en buffer. Den første dæmper i seks trin med 8 dB mellem hvert trin. Den anden dæmper i syv trin med 1 dB mellem hvert trin. Bregningerne er opstillet i ligningerne \ref{beregning-af-analog-attenuator-ligning1} til \ref{beregning-af-analog-attenuator-ligning5}
 
 \begin{equation}
-\frac{R_6}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-40 \cdot \frac{1}{20}}
+\label{beregning-af-analog-attenuator-ligning1}
+\frac{R_6}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{\frac{-40}{20}}
 \end{equation}
 
 \begin{equation}
-\frac{R_6 + R_5}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-32 \cdot \frac{1}{20}}
+\frac{R_6 + R_5}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{\frac{-32}{20}}
 \end{equation}
 
 \begin{equation}
-\frac{R_6 + R_5 + R_4}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-24 \cdot \frac{1}{20}}
+\frac{R_6 + R_5 + R_4}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{\frac{-24}{20}}
 \end{equation}
 
 \begin{equation}
-\frac{R_6 + R_5 + R_4 + R_3}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-16 \cdot \frac{1}{20}}
+\frac{R_6 + R_5 + R_4 + R_3}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{\frac{-16}{20}}
 \end{equation}
 
 \begin{equation}
-\frac{R_6 + R_5 + R_4 + R_3 + R_2}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{-8 \cdot \frac{1}{20}}
+\label{beregning-af-analog-attenuator-ligning5}
+\frac{R_6 + R_5 + R_4 + R_3 + R_2}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6} = 10^{\frac{-8}{20}}
 \end{equation}
 
 Da der er fem ligninger med seks ubenkendte bestemmes $R_6$ til 10 k\ohm, det resultere i løsningen i ligning \ref{beregning-af-analog-attenuator-resultat1}
