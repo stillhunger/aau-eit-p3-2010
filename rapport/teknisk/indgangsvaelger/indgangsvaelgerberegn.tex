@@ -29,8 +29,8 @@ R_4=39,29~\mathrm{k}\ohm
 \end{equation}
 
 $R_4$ er så valgt til 40,2~k\ohm, for at passe med E96-rækken.
-For at kunne afbryde de enkelte signaler, kan transistoren $U_2$ trække signalet til stel. Den fungerer i dette tilfælde som en switch, der skal tillade maksimal forbindelse mellem collector og emitter. For at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. På en mosfet-transistor, som benyttes i dette kredsløb, løber der ingen strøm ind i basis, den er udelukkende afhængig af basis-emitter spændingen. Ved at påtrykke en spænding på 5V, som er outputtet fra de gates vi bruger, er det muligt at tillade signalet at løbe igennem transistoren.
-Modstanden $R_5$ har ikke nogen indvirkning på indgangsimpedansen når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_4$, hvilket giver en højere indgangsimpedans. For at summationsforstærkeren efter, skal kunne fungere med en forstærkning på 1, skal tilbagekoblingsmodstanden over transistoren være lig med den modstand signalet ser, på vej til forstærkeren. Denne er afhængig af $R_4$ og $R_5$, som tilsammen skal give $R_m$. Med $R_7$ defineret til 80,4 k\ohm sættes $R_5$ til 40,2 k\ohm . Indgangsimpedansen kan så udregnes, som i ligning \ref{eq:indgangrindgang}.
+For at kunne afbryde de enkelte signaler, kan transistoren $U_2$ trække signalet til stel. Den fungerer i dette tilfælde som en switch, der skal tillade maksimal forbindelse mellem collector og emitter. For at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. På en mosfet-transistor, som benyttes i dette kredsløb, løber der ingen strøm ind i gate, den er udelukkende afhængig af gate-source spændingen. Ved at påtrykke en spænding på 5V, som er outputtet fra de gates vi bruger, er det muligt at tillade signalet at løbe igennem transistoren.
+Modstanden $R_5$ har ikke nogen indvirkning på indgangsimpedansen når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_4$, hvilket giver en højere indgangsimpedans. For at summationsforstærkeren efter, skal kunne fungere med en forstærkning på 1, skal tilbagekoblingsmodstanden over transistoren være lig med den modstand signalet ser, på vej til forstærkeren. Denne er afhængig af $R_4$ og $R_5$, som tilsammen skal give $R_m$. Med $R_7$ defineret til 80,4 k\ohm sættes $R_5$ til 40,2 k\ohm . Indgangsimpedansen kan så udregnes, som i ligning (\ref{eq:indgangrindgang}).
 
 %Den er valgt til 40.2 k\ohm, det samme som $R_3$, for at gøre produceringen enklere. Ved at bruge modstande med de samme værdier sænkes antallet af benyttede komponenter, hvilket letter indkøbs- samt produceringsomkostninger. Når signalet er tændt, sidder den i serie med $R_3$, hvilket giver en højere indgangsimpedans:
 
@@ -54,7 +54,7 @@ Efter at have opstillet de forskellige modstandsværdier, er det muligt at udreg
 \end{equation}
 
 For at få en dæmpning på 3 dB, som er den ønskede dæmpning i knækpunktet, skal $\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}=10^{\frac{-3}{20}}\approx0,7$. 
-Dette giver 2 ubekendte, $s$ og $C$. LaPlace variablen $s$ kan ses som $2\cdot \pi \cdot f$, hvor $f$ er den ønskede frekvens ved knækket, som vist i ligning \ref{eq:indgang2pif}. Der opstilles et udtryk for $C$ i ligning \ref{eq:indgangcudregning}.
+Dette giver 2 ubekendte, $s$ og $C$. LaPlace variablen $s$ kan ses som $2\cdot \pi \cdot f$, hvor $f$ er den ønskede frekvens ved knækket, som vist i ligning (\ref{eq:indgang2pif}). Der opstilles et udtryk for $C$ i ligning (\ref{eq:indgangcudregning}).
 
 \begin{equation}
 \label{eq:indgang2pif}
@@ -66,7 +66,7 @@ Dette giver 2 ubekendte, $s$ og $C$. LaPlace variablen $s$ kan ses som $2\cdot \
 C=\frac{-1}{2}\cdot{10^{\frac{-3}{20}}}{\pi\cdot f\cdot(10^{\frac{-3}{20}}\cdot R_I+\frac{-3}{20}}\cdot R_U - R_I)
 \end{equation}
 
-Frekvensen f bestemmes til 2 Hz, én dekade før den ønskede, for at opnå en lav dæmpning ved de ønskede 20 Hz. Dæmpningen ved 20 Hz kan så udregnes. Formlen for et standard højpas-filter opstilles i ligning \ref{eq:indgangstandardhoejpas}. Denne omskrives så til $j\cdot\omega$ notation i ligning \ref{eq:indgangjomega}.
+Frekvensen f bestemmes til 2 Hz, én dekade før den ønskede, for at opnå en lav dæmpning ved de ønskede 20 Hz. Dæmpningen ved 20 Hz kan så udregnes. Formlen for et standard højpas-filter opstilles i ligning (\ref{eq:indgangstandardhoejpas}). Denne omskrives så til $j\cdot\omega$ notation i ligning (\ref{eq:indgangjomega}).
 
 \begin{equation}
 \label{eq:indgangstandardhoejpas}
@@ -79,7 +79,7 @@ H(s)=\frac{s\cdot\tau}{1+s\cdot\tau}
 |H(j\omega)|=\frac{\omega\cdot\tau}{\sqrt{1+(\omega\cdot\tau)^2)}}=\frac{1}{\sqrt{\frac{1}{(\omega\cdot\tau)^2}+1}}
 \end{equation}
 
-Som i følge dekadereglen, sættes $\omega\cdot\tau = 10$, som i ligning \ref{eq:indgangjomega10}.
+Som i følge dekadereglen, sættes $\omega\cdot\tau = 10$, som i ligning (\ref{eq:indgangjomega10}).
 
 \begin{equation}
 \label{eq:indgangjomega10}
@@ -95,7 +95,7 @@ Indgangsimpedansen for $C_1$ er fundet til 30,8~k\ohm . Indtastes dette i ovenn�
 %R_3 = \frac{1}{\frac{1}{\frac{\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}+R_4+R_5}{3}}+\frac{1}{R_7}}
 %\end{equation}
 
-Efter summationsforstærkeren sidder signaltilpasningen. Denne benyttes til at sørge for at lige gyldigt hvor mange af indgangene der er tændt for, vil signalet altid være mellem 0,2 og 2~V peak. Da de niveauer der er mulige at få enten er 6, 4 eller 2~V vil det, for at give 2~V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist under signaltilpasningsektionen af figur \ref{indgangsvaelger-overordnet}. Værdierne af de forskellige modstande kan udregnes ud fra de givene modstandsforhold, som set i ligning \ref{eq:indgangsignal}. $R_9$ sættes til 10k, for at have en værdi at gå ud fra.
+Efter summationsforstærkeren sidder signaltilpasningen. Denne benyttes til at sørge for at lige gyldigt hvor mange af indgangene der er tændt for, vil signalet altid være mellem 0,2 og 2~V peak. Da de niveauer der er mulige at få enten er 6, 4 eller 2~V vil det, for at give 2~V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist under signaltilpasningsektionen af figur \ref{indgangsvaelger-overordnet}. Værdierne af de forskellige modstande kan udregnes ud fra de givene modstandsforhold, som set i ligning (\ref{eq:indgangsignal}). $R_9$ sættes til 10k, for at have en værdi at gå ud fra.
 \begin{equation}
 \label{eq:indgangsignal}
 \frac{R_9}{R_6+R_8+R_9}=\frac{1}{2} \;\;\;\;\;\;\;\;\;\;\;\;~~~~~~~~~~~~~~~~
