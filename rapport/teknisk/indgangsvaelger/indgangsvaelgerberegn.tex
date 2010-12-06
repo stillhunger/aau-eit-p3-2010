@@ -88,12 +88,12 @@ Som i følge dekadereglen, sættes $\omega\cdot\tau = 10$, som i ligning \ref{eq
 
 Ud fra dette kan de forskellige værdier for $C$ udregnes, afhængigt af de impedanser de ser ind i.
 Indgangsimpedansen for $C_1$ er fundet til 30,8~k\ohm . Indtastes dette i ovennævnte formel findes værdien for $C_1$ til mindst 8~µF. Alt under dette vil give en højere knækfrekvens, hvilket ikke er at ønske. Alt højere vil dog give en større indsvingningstid, hvilket, i forhold til en højere knækfrekvens, er at foretrække, dog heller ikke ønskeligt.
-$R_3$ skal være lig med den samlede impedans den minus porten på op-ampen kigger ind i. Denne udgøres af en parallel kobling af hver indgang og tilbagekoblingsmodstanden $R_7$, som vist i ligning \ref{eq:indgangr3}
+%$R_3$ skal være lig med den samlede impedans den minus porten på op-ampen kigger ind i. Denne udgøres af en parallel kobling af hver indgang og tilbagekoblingsmodstanden $R_7$, som vist i ligning \ref{eq:indgangr3}
 
-\begin{equation}
-\label{eq:indgangr3}
-R_3 = \frac{1}{\frac{1}{\frac{\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}+R_4+R_5}{3}}+\frac{1}{R_7}}
-\end{equation}
+%\begin{equation}
+%\label{eq:indgangr3}
+%R_3 = \frac{1}{\frac{1}{\frac{\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}+R_4+R_5}{3}}+\frac{1}{R_7}}
+%\end{equation}
 
 Efter summationsforstærkeren sidder signaltilpasningen. Denne benyttes til at sørge for at lige gyldigt hvor mange af indgangene der er tændt for, vil signalet altid være mellem 0,2 og 2~V peak. Da de niveauer der er mulige at få enten er 6, 4 eller 2~V vil det, for at give 2~V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist under signaltilpasningsektionen af figur \ref{indgangsvaelger-overordnet}. Værdierne af de forskellige modstande kan udregnes ud fra de givene modstandsforhold, som set i ligning \ref{eq:indgangsignal}. $R_9$ sættes til 10k, for at have en værdi at gå ud fra.
 \begin{equation}
