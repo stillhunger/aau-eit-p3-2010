@@ -20,7 +20,7 @@ A_v =  \frac{-gm \cdot R'_L}{1+gm \cdot R'_e} \approx  -\frac{R'_L}{R'_e} \Biggr
 
 Hvor $R'_e = R_e || R_E$ og $R'_L = R_L||R_C$. Det vil sige at jo tættere $R_e$ kommer på $\frac{1}{gm}$ jo mere indflydelse vil denne have på forstærkningen.
 
-Det første trin skal have en forstærkning på 10 gange og det andet på 6,33 for at opnå den ønskede forstærkning, som vist på figur \ref{blok_forforstaerker}. Grunden til rækkefølgen af trinnene er for ikke at have størst signaludsving og den største forstærkning i samme trin.\fixme{Hvordan viser vi at det er smart?}
+Det første trin skal have en forstærkning på 10 gange og det andet på 6,33 for at opnå den ønskede forstærkning, som vist på figur \ref{blok_forforstaerker}. Grunden til rækkefølgen af trinnene er for ikke at have størst signaludsving og den største forstærkning i samme trin. Dette skyldes at der i en forstærker altid vil være forvrængning og støj. Hvis den største forstærkning kommer sidst, vil denne forvrængning blive forstærket yderligere, hvilket ikke er ønskværdigt. Hvis den største forstærkning derimod kommer først, vil der blive mindst muligt forvrængning med i det endelige signal.\fixme{Hvordan viser vi at det er smart? Frederik: Er det godt nok? Skal der skrives mere? Skal der beregninger med, der beviser det? (synes jeg ikke)}
 
 \begin{figure}[h]
 \centering
@@ -40,14 +40,14 @@ Begge trin designes efter maksimal forstærkning uden $R_e$. Denne forstærkning
 \end{equation}
 Hvor $R'_S = R_S||R_1||R_2$ og $V_t = 26 \cdot 10^{-3}$.
 
-For at designe et kredsløb med maksimal forstærkning justeres størrelsen af $R_C$ uden at variere spændingen over den, $V_{R_C}$. Den maksimale $R_C$ findes ved ligning \ref{eq:rcmaks}.
+For at designe et kredsløb med maksimal forstærkning justeres størrelsen af $R_C$ uden at variere spændingen over den, $V_{R_C}$. Den maksimale $R_C$ findes ved ligning (\ref{eq:rcmaks}).
 
 \begin{equation}
 R_{\mathrm{C,maks}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_C}}{\beta \cdot V_t}}
 \label{eq:rcmaks}
 \end{equation}
 
-I ligning \ref{eq:rcmaks} er $R'_S$ defineret som $R_1||R_2||R_S$. $R_S$ er fastlagt til 2,2 k\ohm, hvilket er mikrofonens udgangsimpedans\fixme{kilde til MCE4000}. Parallelforbindelsen mellem $R_1$ og $R_2$ kan ikke beregnes men skal vælges. Indgangsimpedansen i kredsløbet, som netop er $R_1||R_2$, skal som hovedregel være meget større end udgangsimpedansen i den kreds den belaster. En tommelfingerregel siger at 10 gange større er tilstrækkeligt til at være $"$meget større$"$ hvormed parallelkoblingen skal være over eller lig med 22 k\ohm. 
+I ligning (\ref{eq:rcmaks}) er $R'_S$ defineret som $R_1||R_2||R_S$. $R_S$ er fastlagt til 2,2 k\ohm, hvilket er mikrofonens udgangsimpedans\fixme{kilde til MCE4000}. Parallelforbindelsen mellem $R_1$ og $R_2$ kan ikke beregnes men skal vælges. Indgangsimpedansen i kredsløbet, som netop er $R_1||R_2$, skal som hovedregel være meget større end udgangsimpedansen i den kreds den belaster. En tommelfingerregel siger at 10 gange større er tilstrækkeligt til at være $"$meget større$"$ hvormed parallelkoblingen skal være over eller lig med 22 k\ohm. 
 Belastningen, $R_L$, for det første trin bliver indgangsimpedansen i det andet. Indgangsimpedansen i det andet trin bliver $R_3||R_4$ og kan heller ikke beregnes. Da $R_C$ i det første trin ikke kendes endnu vælges indgangsimpedansen i det andet til at være den samme som i det første, altså 22 k\ohm. 
 $V_{R_C}$ er defineret som værende $V_{CC} - V_{\mathrm{CE,sat}} - V_{R_E} - V_{\mathrm{o,peak}}$, hvor $V_{CC}$ vælges til 15 V så der sikres at der er plads til det ønskede spændingsudsving, $V_{R_E}$ vælges til 3 V og $V_{\mathrm{CE,sat}}$ aflæses i databladet for BC547b til 0,2 V ved en collectorstrøm på 1 mA. Der antages at collectorstrømmen cirka bliver 1 mA. Ligeledes aflæses $\beta$ til 250 ved 1 mA i databladet. $V_{\mathrm{o,peak}}$ er peakspændingen på udgangen. Dermed bliver peakspændingen en faktor 10 højere end mikrofonens output peakspænding. $V_{\mathrm{o,peak}}$ bliver derfor 316 mV. $R_C1$ beregnes hermed i ligning (\ref{eq:rcforsteberegning}).
 
@@ -56,9 +56,10 @@ R_{\mathrm{C1}} = \sqrt{\frac{22~k\ohm || 2,2~k\ohm \cdot (15~V - 0,2~V - 3~V - 
 \label{eq:rcforsteberegning}
 \end{equation}
 
-$R_{E1}$ bestemmes i ligning \ref{eq:beregningre1} under antagelse at $i_e = i_c$. 
+$R_{E1}$ bestemmes i ligning (\ref{eq:beregningre1}) under antagelse at $i_e = i_c$.  $i_c$ beregnes i ligning(\ref{eq:ff:ic}).
 
 \begin{equation}
+\label{eq:ff:ic}
 i_c=\frac{V_{R_C}}{R_C}=\frac{11,5~V}{9,25~k\ohm}=106,4~mA
 \end{equation}
 \begin{equation}
@@ -70,6 +71,7 @@ R_{E1}=\frac{V_{R_{E1}}}{\frac{V_{R_{C1}}}{R_{C1}}}  \Rightarrow R_{E1}=\frac{3~
 Dernæst beregnes $R_e1$ ud fra hvad den ønskede forstærkning skal være. Ligning (\ref{eq:gmbevis}) benyttes til at beregne $R_e1$ i ligning (\ref{eq:rlilleeberegning}).
 
 \begin{equation}
+\label{eq:rlilleeberegning}
 A_v = -\frac{R'_L}{R'_e} \Rightarrow  R_{e1} =-\frac{R_L \cdot R_{C1} \cdot R_{E1}}{A_v \cdot R_{E1} \cdot R_{C1} + A_v \cdot R_{E1} \cdot R_L + R_{C1} \cdot R_L} \Rightarrow R_{e1} = 866,18~\ohm
 \end{equation}
 
@@ -83,7 +85,7 @@ V_{R_2} = V_{CC} \cdot \frac{R_2}{R_1+R_2}
 R_1||R_2 = \frac{R_1 \cdot R_2}{R_1 + R_2}
 \label{eq:r1r22}
 \end{equation}
-De kendte værdier indsættes og de to ligninger med to ubekendte løses. Resultatet er vist i ligning \ref{eq:r1r2result}.
+De kendte værdier indsættes og de to ligninger med to ubekendte løses. Resultatet er vist i ligning (\ref{eq:r1r2result}).
 \begin{equation}
 R_1 = 91,7~k\ohm ~ \wedge ~ R_2=28,9~k\ohm
 \label{eq:r1r2result}
