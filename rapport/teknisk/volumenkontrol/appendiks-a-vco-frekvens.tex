@@ -17,7 +17,7 @@ For at opstille et udtryk for frekvensen skal triggerniveauerne for schmidt-trig
 
 \begin{equation}
 \label{equ:appendiks-vco1}
-V_L = \frac{R_7||R_6}{R_{10} + R_7||R_6} \cdot V_{CC} = \frac{R_7 \cdot R_6}{R_{10} \cdot R_6 + R_{10} \cdot R_7 + R_7 \cdot R_6} \cdot V_{CC}
+V_L = \frac{R_7||R_6}{R_{10} + R_7||R_6} \cdot V_{CC} = \frac{R_7 \cdot R_6}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot V_{CC}
 \end{equation}
 
 Hvis de tre modstande $R_6$, $R_7$ og $R_{10}$ gøres ens, kan ligningen yderligere reduceres, se ligning (\ref{equ:appendiks-vco2}).
@@ -31,17 +31,17 @@ Da operationsforstærkeren ikke er i stand til at levere forsyningsspænding som
 
 \begin{equation}
 \label{equ:appendiks-vco3a}
-V_U = \frac{R_6||R_7}{R_{10} + R_6||R_7} \cdot V_{CC} = \frac{R_{10} \cdot (R_7 + R_6)}{R_{10} \cdot R_6 + R_{10} \cdot R_7 + R_7 \cdot R_6} \cdot V_{CC}
+V_{\mathrm{supply}} = \frac{R_6||R_7}{R_{10} + R_6||R_7} \cdot V_{CC} = \frac{R_6 \cdot R_7}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot V_{CC}
 \end{equation}
 
 \begin{equation}
 \label{equ:appendiks-vco3b}
-V_U = \frac{R_{10}}{\frac{1}{\frac{1}{R_7} + \frac{1}{R_6}} + R_{10}} \cdot V_{CC} = \frac{R_{10} \cdot (R_7 + R_6)}{R_{10} \cdot R_6 + R_{10} \cdot R_7 + R_7 \cdot R_6} \cdot V_{CC}
+V_{\mathrm{opamp}} = \frac{R_7||R_{10}}{R_6 + R_7||R_{10}} \cdot (V_{CC} - 1,5) = \frac{R_6 \cdot R_7}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot V_{CC}
 \end{equation}
 
 \begin{equation}
 \label{equ:appendiks-vco3c}
-V_U = \frac{R_{10}}{\frac{1}{\frac{1}{R_7} + \frac{1}{R_6}} + R_{10}} \cdot V_{CC} = \frac{R_{10} \cdot (R_7 + R_6)}{R_{10} \cdot R_6 + R_{10} \cdot R_7 + R_7 \cdot R_6} \cdot V_{CC}
+V_U = V_{\mathrm{supply}} + V_{\mathrm{opamp}} = 
 \end{equation}
 
 Når de tre modstande $R_6$, $R_7$ og $R_{10}$ gøres ens, kan ligningen yderligere reduceres, se ligning (\ref{equ:appendiks-vco4}).
