@@ -17,7 +17,7 @@ For at opstille et udtryk for frekvensen skal triggerniveauerne for schmidt-trig
 
 \begin{equation}
 \label{equ:appendiks-vco1}
-V_L = \frac{\frac{1}{\frac{1}{R_7} + \frac{1}{R_6}}}{R_{10} + \frac{1}{\frac{1}{R_7} + \frac{1}{R_6}}} \cdot V_{CC} = \frac{R_7 \cdot R_6}{R_{10} \cdot R_6 + R_{10} \cdot R_7 + R_7 \cdot R_6} \cdot V_{CC}
+V_L = \frac{R_7||R_6}{R_{10} + R_7||R_6} \cdot V_{CC} = \frac{R_7 \cdot R_6}{R_{10} \cdot R_6 + R_{10} \cdot R_7 + R_7 \cdot R_6} \cdot V_{CC}
 \end{equation}
 
 Hvis de tre modstande $R_6$, $R_7$ og $R_{10}$ gøres ens, kan ligningen yderligere reduceres, se ligning (\ref{equ:appendiks-vco2}).
@@ -27,7 +27,7 @@ Hvis de tre modstande $R_6$, $R_7$ og $R_{10}$ gøres ens, kan ligningen yderlig
 V_L = \frac{R \cdot R}{R \cdot R + R \cdot R + R \cdot R} \cdot V_{CC} = \frac{1}{3} \cdot V_{CC}
 \end{equation}
 
-Udfra ligning (\ref{equ:appendiks-vco3}) kan $"$Upper triggerlevel$"$ beregnes.
+Da operationsforstærkeren ikke er i stand til at levere forsyningsspænding som udgangsspænding, men kun $V_{CC} - 1$ V Udfra ligning (\ref{equ:appendiks-vco3}) kan $"$Upper triggerlevel$"$ beregnes.
 
 \begin{equation}
 \label{equ:appendiks-vco3}
