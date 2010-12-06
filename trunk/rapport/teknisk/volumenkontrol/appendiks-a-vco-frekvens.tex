@@ -36,19 +36,19 @@ V_{\mathrm{supply}} = \frac{R_6||R_7}{R_{10} + R_6||R_7} \cdot V_{CC} = \frac{R_
 
 \begin{equation}
 \label{equ:appendiks-vco3b}
-V_{\mathrm{opamp}} = \frac{R_7||R_{10}}{R_6 + R_7||R_{10}} \cdot (V_{CC} - 1,5) = \frac{R_6 \cdot R_7}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot V_{CC}
+V_{\mathrm{opamp}} = \frac{R_7||R_{10}}{R_6 + R_7||R_{10}} \cdot (V_{CC} - 1,5) = \frac{R_7 \cdot R_{10}}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot (V_{CC} - 1,5)
 \end{equation}
 
 \begin{equation}
 \label{equ:appendiks-vco3c}
-V_U = V_{\mathrm{supply}} + V_{\mathrm{opamp}} = 
+V_U = V_{\mathrm{supply}} + V_{\mathrm{opamp}} = \frac{R_7 \cdot (R_{10} \cdot V_{CC} + 1,5 \cdot R_{10} + R_6 \cdot V_{CC})}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}}
 \end{equation}
 
 Når de tre modstande $R_6$, $R_7$ og $R_{10}$ gøres ens, kan ligningen yderligere reduceres, se ligning (\ref{equ:appendiks-vco4}).
 
 \begin{equation}
 \label{equ:appendiks-vco4}
-V_U = \frac{R \cdot (R + R)}{R \cdot R + R \cdot R + R \cdot R} \cdot V_{CC} = \frac{2}{3} \cdot V_{CC}
+V_U = \frac{R \cdot (R \cdot V_{CC} + 1,5 \cdot R + R \cdot V_{CC})}{R \cdot R + R \cdot R + R \cdot R} = \frac{2}{3} \cdot V_{CC} - 0,5
 \end{equation}
 
 \subsection*{Integrator}
