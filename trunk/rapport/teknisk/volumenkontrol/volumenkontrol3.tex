@@ -9,15 +9,15 @@ Indstillingen af volumenkontrollen vises på to 7-segmenter. Dette er valgt, for
 
 \subsection*{Displaydriver}
 \label{volumenkontrol-simulering-display_driver}
-Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Der konverteres fra tællerens binære output til BCD, Binary-coded decimal, for så at konvertere det til et signal 7-segment displayne kan vise. Fordelen ved at konvertere til BCD først er at denne konvertering også deler det binære tal op i to, enere og tiere. Disse to binære tal sendes igennem en 7-segmentsdriver, \fixme{vælg en}, for at få et output der fungerer med 7-segmenterne.
+Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Der konverteres fra tællerens binære output til BCD, Binary-coded decimal, for så at konvertere det til et signal 7-segment displayne kan vise. Der benyttes en SN74185A til konverteringen fra binær til BCD. Fordelen ved at konvertere til BCD først er at denne konvertering også deler det binære tal op i to, enere og tiere. Disse to binære tal sendes igennem en 7-segmentsdriver, HEF4511, for at få et output der fungerer med 7-segmenterne.
 
 \subsection*{Dæmper}
 \label{volumenkontrol-simulering-daemper}
-Dæmperen er en en analog attenuator, der er sammen sat af to sæt modstands attenuatore adskilt af en buffer. Dæmpningen indstilles ved at ændre hvor signalet tages ud af de to modstands attenuatore, dette styres med en analog multiplekser. Den første attenuatorer består af seks modstande hvor der er en dæmpning på 8 dB mellem hver, den anden attenuatorer består af syv modstande hvor der er en dæmpning på 1 dB mellem hver. Det er således muligt at kombinere de to attenuatorer til at dæmpe signalet mellem 0 og 55 dB, med spring af 1 dB. Diagrammet er afbilledet på figur \ref{fig:volumenkontrol_daemper}. Modstandene er beregnet i appendiks C??.
+Dæmperen er en en analog attenuator, der er sammen sat af to sæt modstands attenuatore hver efterfulgt af en buffer. Dæmpningen indstilles ved at ændre hvor signalet tages ud af de to modstands attenuatore, dette styres med en analog multiplekser. Den første attenuatorer består af syv modstande hvor der er en dæmpning på 8 dB mellem hver, den anden attenuatorer består af otte modstande hvor der er en dæmpning på 1 dB mellem hver. Det er således muligt at kombinere de to attenuatorer til at dæmpe signalet mellem 0 og 55 dB, med spring af 1 dB. Diagrammet er afbilledet på figur \ref{fig:volumenkontrol_daemper}. Modstandene er beregnet i appendiks C??.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=1]{teknisk/volumenkontrol/daemper.png}
+\includegraphics[width=\textwidth]{teknisk/volumenkontrol/daemper.png}
 \caption{Diagram over dæmperen}
 \label{fig:volumenkontrol_daemper}
 \end{figure}
