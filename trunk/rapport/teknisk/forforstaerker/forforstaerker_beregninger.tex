@@ -14,7 +14,7 @@ Disse antagelser vil være gældende gennem hele designet af forforstærkeren.
 Forforstærkeren bygges af to commonemittertrin for at opnå den ønskede forstærkning på 63,3 gange. Dette skyldes at forstærkningen er givet ved ligning (\ref{eq:gmbevis})\fixme{kilde sedra smith eller mm6 AEL}.
 
 \begin{equation}
-A_v =  \frac{-gm \cdot R'_L}{1+gm \cdot R'_e} \approx  -\frac{R'_L}{R'_e} \Biggr\vert _{\frac{1}{gm}<R'_e}
+A_v =  \frac{-gm \cdot R'_L}{1+gm \cdot R'_e} \approx  -\frac{R'_L}{R'_e} \Biggr\vert _{\frac{1}{gm}<<R'_e}
 \label{eq:gmbevis}
 \end{equation}
 
@@ -95,13 +95,17 @@ R_1 = 91,7~k\ohm ~ \wedge ~ R_2=28,9~k\ohm
 
 \subsection*{Design af andet trin}
 Beregning af andet trin følger samme procedure som første trin. Beregningerne kan findes i appendiks ?? \fixme{kilde appendiks}
+Indgangsmodstanden, som det sidste trin i forforstærkeren kigger ind i, 
+
+
 Modstands- og kondensatorværdier samt ændrede betingelser er vist i tabel \ref{tab:trintovalues}.
 
 \begin{table}[h]
 \centering
 \begin{tabular}{l|r}
 \hline\hline
-Komponent &  \\
+\multicolumn{2}{c}{\textbf{Ændrede variable}} \\\hline
+Komponent & Værdi \\
 \hline\hline
 $R_L$ & 30,8 k$\omega$ \\[4pt]
 Forvrængning & < 0,5 \% \\[4pt]
