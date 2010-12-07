@@ -91,7 +91,14 @@ R_1 = 91,7~k\ohm ~ \wedge ~ R_2=28,9~k\ohm
 \label{eq:r1r2result}
 \end{equation}
 
+For at opnå den ønskede frekvensgang skal $C1$, $C2$ og $C3$ dimensioneres således at den knækfrekvens de hver især frembringer. Da knækfrekvensen er det punkt hvor kurven er faldet 3 dB og frekvensgangen skal, jævnfør kravspecifikationen, være 20 Hz til 20 kHz, er det nødvendigt at knækfrekvens  ligger før 20 Hz. Det vurderes at knækfrekvensen beregnes til at ligge i 2 Hz for at knækfrekvensen ikke giver anledning til en dæmpning af signalet på mere end de tilladte 3 dB.
 
+Kondensatorerne beregnes med formel (\ref{eq:kondensatorknaek}).
+
+\begin{equation}
+C=\frac{1}{\omega \cdot R}=\frac{1}{2\cdot \pi \cdot f \cdot R}
+\label{eq:kondensatorknaek}
+\end{equation}
 
 \subsection*{Design af andet trin}
 Beregning af andet trin følger samme procedure som første trin. Beregningerne kan findes i appendiks ?? \fixme{kilde appendiks}
