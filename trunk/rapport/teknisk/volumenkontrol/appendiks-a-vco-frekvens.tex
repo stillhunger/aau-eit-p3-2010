@@ -27,7 +27,7 @@ Hvis de tre modstande $R_6$, $R_7$ og $R_{10}$ gøres ens, kan ligningen yderlig
 V_L = \frac{R \cdot R}{R \cdot R + R \cdot R + R \cdot R} \cdot V_{CC} = \frac{1}{3} \cdot V_{CC}
 \end{equation}
 
-Da operationsforstærkeren ikke er i stand til at levere forsyningsspænding som udgangsspænding, men kun $V_{CC} - 1,5$ V\fixme{Påstand?}, beregnes $"$Upper triggerlevel$"$ ved at bruges superposition. Udfra ligningerne (\ref{equ:appendiks-vco3a}), (\ref{equ:appendiks-vco3b}) og (\ref{equ:appendiks-vco3c}) kan $"$Upper triggerlevel$"$ beregnes.
+Da operationsforstærkeren ikke er i stand til at levere forsyningsspænding som udgangsspænding, men kun $V_{CC} - 1,5$ V\fixme{Kilde: LM324}, beregnes $"$Upper triggerlevel$"$ ved at bruges superposition. Udfra ligningerne (\ref{equ:appendiks-vco3a}), (\ref{equ:appendiks-vco3b}), (\ref{equ:appendiks-vco3c}) og (\ref{equ:appendiks-vco3d}) kan $"$Upper triggerlevel$"$ beregnes.
 
 \begin{equation}
 \label{equ:appendiks-vco3a}
@@ -36,19 +36,24 @@ V_{\mathrm{supply}} = \frac{R_6||R_7}{R_{10} + R_6||R_7} \cdot V_{CC} = \frac{R_
 
 \begin{equation}
 \label{equ:appendiks-vco3b}
-V_{\mathrm{opamp}} = \frac{R_7||R_{10}}{R_6 + R_7||R_{10}} \cdot (V_{CC} - 1,5) = \frac{R_7 \cdot R_{10}}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot (V_{CC} - 1,5)
+V_{\mathrm{opamp}} = \frac{R_7||R_{10}}{R_6 + R_7||R_{10}} \cdot (V_{CC} - 1,5~\mathrm{V}) \Rightarrow
 \end{equation}
 
 \begin{equation}
 \label{equ:appendiks-vco3c}
-V_U = V_{\mathrm{supply}} + V_{\mathrm{opamp}} = \frac{R_7 \cdot (R_{10} \cdot V_{CC} + 1,5 \cdot R_{10} + R_6 \cdot V_{CC})}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}}
+V_{\mathrm{opamp}} = \frac{R_7 \cdot R_{10}}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot (V_{CC} - 1,5~\mathrm{V})
+\end{equation}
+
+\begin{equation}
+\label{equ:appendiks-vco3d}
+V_U = V_{\mathrm{supply}} + V_{\mathrm{opamp}} = \frac{R_7 \cdot (R_{10} \cdot V_{CC} + 1,5~\mathrm{V} \cdot R_{10} + R_6 \cdot V_{CC})}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}}
 \end{equation}
 
 Når de tre modstande $R_6$, $R_7$ og $R_{10}$ gøres ens, kan ligningen yderligere reduceres, se ligning (\ref{equ:appendiks-vco4}).
 
 \begin{equation}
 \label{equ:appendiks-vco4}
-V_U = \frac{R \cdot (R \cdot V_{CC} + 1,5 \cdot R + R \cdot V_{CC})}{R \cdot R + R \cdot R + R \cdot R} = \frac{2}{3} \cdot V_{CC} - 0,5
+V_U = \frac{R \cdot (R \cdot V_{CC} + 1,5~\mathrm{V} \cdot R + R \cdot V_{CC})}{R \cdot R + R \cdot R + R \cdot R} = \frac{2}{3} \cdot V_{CC} - 0,5~\mathrm{V}
 \end{equation}
 
 \subsection*{Integrator}
@@ -91,7 +96,7 @@ Den spænding kondensatoren skal op- og aflade er forskellen mellem $V_U$ og $V_
 
 \begin{equation}
 \label{equ:appendiks-vco10}
-V_d = \frac{2}{3} \cdot V_{CC} - \frac{1}{3} \cdot V_{CC} = \frac{1}{3} \cdot V_{CC}
+V_d = \left(\frac{2}{3} \cdot V_{CC} - 0,5~\mathrm{V}\right) - \frac{1}{3} \cdot V_{CC} = \frac{1}{3} \cdot V_{CC} - 0,5~\mathrm{V}
 \end{equation}
 
 Tiden det tager at op og aflade kondensatoren beregnes ud fra ligning (\ref{equ:appendiks-vco11}).
@@ -105,24 +110,29 @@ Udfra ligning (\ref{equ:appendiks-vco11}) kan både op- og afladningstiden bereg
 
 \begin{equation}
 \label{equ:appendiks-vco12}
-t_{\mathrm{op}} = \frac{V_d \cdot C}{I_{\mathrm{op}}} = \frac{\frac{1}{3} \cdot V_{CC} \cdot C}{\frac{V_C}{2 \cdot R_1}} = \frac{2 \cdot V_{CC} \cdot C \cdot R_1}{3 \cdot V_C}
+t_{\mathrm{op}} = \frac{V_d \cdot C}{I_{\mathrm{op}}} = \frac{\left(\frac{1}{3} \cdot V_{CC} - 0,5~\mathrm{V}\right) \cdot C}{\frac{V_C}{2 \cdot R_1}} = \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_1}{3 \cdot V_C}
 \end{equation}
 
 \begin{equation}
 \label{equ:appendiks-vco13}
-t_{\mathrm{af}} = \frac{V_d \cdot C}{I_{\mathrm{af}}} = \frac{\frac{1}{3} \cdot V_{CC} \cdot C}{\frac{V_C}{2 \cdot R_4} - \frac{V_C}{2 \cdot R_1}} = \frac{2 \cdot V_{CC} \cdot C \cdot R_4 \cdot R_1}{3 \cdot V_C \cdot (R_1 - R_4)}
+t_{\mathrm{af}} = \frac{V_d \cdot C}{I_{\mathrm{af}}} = \frac{\left(\frac{1}{3} \cdot V_{CC} - 0,5~\mathrm{V}\right) \cdot C}{\frac{V_C}{2 \cdot R_4} - \frac{V_C}{2 \cdot R_1}} = \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_4 \cdot R_1}{3 \cdot V_C \cdot (R_1 - R_4)}
 \end{equation}
 
-Periode tiden, $T$, er summe af op- og afladningstiden, se ligning (\ref{equ:appendiks-vco14}).
+Periode tiden, $T$, er summe af op- og afladningstiden, se ligning (\ref{equ:appendiks-vco14a}) og (\ref{equ:appendiks-vco14b}).
 
 \begin{equation}
-\label{equ:appendiks-vco14}
-T = t_{\mathrm{op}} + t_{\mathrm{af}} = \frac{2 \cdot V_{CC} \cdot C \cdot R_1}{3 \cdot V_C} + \frac{2 \cdot V_{CC} \cdot C \cdot R_4 \cdot R_1}{3 \cdot V_C \cdot (R_1 - R_4)} = \frac{2 \cdot V_{CC} \cdot C \cdot R_1^2}{3 \cdot V_C \cdot (R_1 - R_4)}
+\label{equ:appendiks-vco14a}
+T = t_{\mathrm{op}} + t_{\mathrm{af}} = \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_1}{3 \cdot V_C} + \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_4 \cdot R_1}{3 \cdot V_C \cdot (R_1 - R_4)} \Rightarrow
+\end{equation}
+
+\begin{equation}
+\label{equ:appendiks-vco14b}
+T = \frac{2 \cdot V_{CC} - 3~\mathrm{V} \cdot C \cdot (R_1)^2}{3 \cdot V_C \cdot (R_1 - R_4)}
 \end{equation}
 
 Den frekvens VCO'en vil svinge med beregnes udfra at $f = \frac{1}{T}$, se ligning (\ref{equ:appendiks-vco15}).
 
 \begin{equation}
 \label{equ:appendiks-vco15}
-f = \frac{1}{T} = \frac{1}{\frac{2 \cdot V_{CC} \cdot C \cdot R_1^2}{3 \cdot V_C \cdot (R_1 - R_4)}} = \frac{3 \cdot V_C \cdot (R_1 - R_4)}{2 \cdot V_{CC} \cdot C \cdot R_1^2}
+f = \frac{1}{T} = \frac{1}{\frac{2 \cdot V_{CC} - 3~\mathrm{V} \cdot C \cdot (R_1)^2}{3 \cdot V_C \cdot (R_1 - R_4)}} = \frac{3 \cdot V_C \cdot (R_1 - R_4)}{2 \cdot V_{CC} - 3~\mathrm{V} \cdot C \cdot (R_1)^2}
 \end{equation}
