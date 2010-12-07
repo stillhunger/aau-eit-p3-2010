@@ -19,7 +19,7 @@ Størrelsen af $R_E$ bestemmes med udgangspunkt i at den skal skabe termisk stab
 \end{figure}
 
 På figur \ref{fig:term-dia} ses ekvivalentdiagrammet, hvor; temperatur er spænding, effekt er strøm og termisk modstand er modstand. Flere af komponenterne har samme benævnelser, da de også antager samme værdier og da der under udregningerne dermed ikke vil blive set på dem enkeltvis.\\
-Størrelsen af $P_D$ er effekten afsat i en enkelt udgangstransistor og er givet ved udregningen i formel (\ref{equ:pd})\fixme{kilde: Jan Mikkelsen, mm19}. Denne formel er ganske vist gældende for klasse B udgangstrin, men i dette arbejdsområde er den også gældende for klasse AB udgangstrin\fixme{kilde: Ole}.
+Størrelsen af $P_D$ er effekten afsat i en enkelt udgangstransistor og er givet ved udregningen i formel (\ref{equ:pd})\fixme{kilde: Jan Mikkelsen, mm19}. Denne formel er ganske vist givet for et klasse B udgangstrin, men den er også gældende for et klasse AB udgangstrin, da hvilestrømmem i et klasse AB udgangstrin kun er betydeligt forskellig fra nul i perioden, hvor der er et skifte i hvilken transistor, som er aktiv \fixme{kilde: klasse-ab.pdf}.
 
 \begin{equation}
 \label{equ:pd}
@@ -30,7 +30,7 @@ Fra darlingtontransistorernes datablad haves $R_{\mathrm{jc}} = 1,78~\tfrac{\cel
 
 \begin{equation}
 \label{equ:tjmax}
-T_j = T_a + P_D \cdot (R_{\mathrm{jc}} + R_{\mathrm{cs}} + R_{\mathrm{sa}})
+T_j = T_a + P_D \cdot (R_{\mathrm{jc}} + R_{\mathrm{cs}} + 2 \cdot R_{\mathrm{sa}})
 \end{equation}
 
 Desuden opstilles udfra sikkerhedshensyn\fixme{Find gerne kilde der siger dette i stedet, hvis der er tid} et krav om at kølepladen maksimalt på blive 40 \celsius, hvorved bestemmelse af $R_{\mathrm{sa}}$ også kan foregå ved brug af formel (\ref{equ:smax}). 
