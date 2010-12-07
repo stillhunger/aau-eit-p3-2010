@@ -17,7 +17,7 @@ For at opstille et udtryk for frekvensen skal triggerniveauerne for schmidt-trig
 
 \begin{equation}
 \label{equ:appendiks-vco1}
-V_L = \frac{R_7||R_6}{R_{10} + R_7||R_6} \cdot V_{CC} = \frac{R_7 \cdot R_6}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot V_{CC}
+V_L = \frac{R_7||R_6}{R_{10} + R_7||R_6} \cdot V_{CC}
 \end{equation}
 
 Hvis de tre modstande $R_6$, $R_7$ og $R_{10}$ gøres ens, kan ligningen yderligere reduceres, se ligning (\ref{equ:appendiks-vco2}).
@@ -27,21 +27,16 @@ Hvis de tre modstande $R_6$, $R_7$ og $R_{10}$ gøres ens, kan ligningen yderlig
 V_L = \frac{R \cdot R}{R \cdot R + R \cdot R + R \cdot R} \cdot V_{CC} = \frac{1}{3} \cdot V_{CC}
 \end{equation}
 
-Da operationsforstærkeren ikke er i stand til at levere forsyningsspænding som udgangsspænding, men kun $V_{CC} - 1,5$ V\fixme{Kilde: LM324}, beregnes $"$Upper triggerlevel$"$ ved at bruges superposition. Udfra ligningerne (\ref{equ:appendiks-vco3a}), (\ref{equ:appendiks-vco3b}), (\ref{equ:appendiks-vco3c}) og (\ref{equ:appendiks-vco3d}) kan $"$Upper triggerlevel$"$ beregnes.
+Da operationsforstærkeren ikke er i stand til at levere forsyningsspænding som udgangsspænding, men kun $V_{CC} - 1,5$ V\fixme{Kilde: LM324}, beregnes $"$Upper triggerlevel$"$ ved at bruges superposition. Udfra ligningerne (\ref{equ:appendiks-vco3a}), (\ref{equ:appendiks-vco3b}) og (\ref{equ:appendiks-vco3d}) kan $"$Upper triggerlevel$"$ beregnes.
 
 \begin{equation}
 \label{equ:appendiks-vco3a}
-V_{\mathrm{supply}} = \frac{R_6||R_7}{R_{10} + R_6||R_7} \cdot V_{CC} = \frac{R_6 \cdot R_7}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot V_{CC}
+V_{\mathrm{supply}} = \frac{R_6||R_7}{R_{10} + R_6||R_7} \cdot V_{CC}
 \end{equation}
 
 \begin{equation}
 \label{equ:appendiks-vco3b}
-V_{\mathrm{opamp}} = \frac{R_7||R_{10}}{R_6 + R_7||R_{10}} \cdot (V_{CC} - 1,5~\mathrm{V}) \Rightarrow
-\end{equation}
-
-\begin{equation}
-\label{equ:appendiks-vco3c}
-V_{\mathrm{opamp}} = \frac{R_7 \cdot R_{10}}{R_6 \cdot R_7 + R_6 \cdot R_{10} + R_7 \cdot R_{10}} \cdot (V_{CC} - 1,5~\mathrm{V})
+V_{\mathrm{opamp}} = \frac{R_7||R_{10}}{R_6 + R_7||R_{10}} \cdot (V_{CC} - 1,5~\mathrm{V})
 \end{equation}
 
 \begin{equation}
@@ -118,12 +113,14 @@ t_{\mathrm{op}} = \frac{V_d \cdot C}{I_{\mathrm{op}}} = \frac{\left(\frac{1}{3} 
 t_{\mathrm{af}} = \frac{V_d \cdot C}{I_{\mathrm{af}}} = \frac{\left(\frac{1}{3} \cdot V_{CC} - 0,5~\mathrm{V}\right) \cdot C}{\frac{V_C}{2 \cdot R_4} - \frac{V_C}{2 \cdot R_1}} = \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_4 \cdot R_1}{3 \cdot V_C \cdot (R_1 - R_4)}
 \end{equation}
 
-Periode tiden, $T$, er summe af op- og afladningstiden, se ligning (\ref{equ:appendiks-vco14a}) og (\ref{equ:appendiks-vco14b}).
+Periode tiden, $T$, er summen af op- og afladningstiden, se ligning (\ref{equ:appendiks-vco14a}).
 
 \begin{equation}
 \label{equ:appendiks-vco14a}
-T = t_{\mathrm{op}} + t_{\mathrm{af}} = \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_1}{3 \cdot V_C} + \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_4 \cdot R_1}{3 \cdot V_C \cdot (R_1 - R_4)} \Rightarrow
+T = t_{\mathrm{op}} + t_{\mathrm{af}} = \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_1}{3 \cdot V_C} + \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_4 \cdot R_1}{3 \cdot V_C \cdot (R_1 - R_4)}
 \end{equation}
+
+Udtrykkket i ligning (\ref{equ:appendiks-vco14a}), kan reduceres til udtrykket vist i ligning (\ref{equ:appendiks-vco14b}).
 
 \begin{equation}
 \label{equ:appendiks-vco14b}
@@ -135,4 +132,11 @@ Den frekvens VCO'en vil svinge med beregnes udfra at $f = \frac{1}{T}$, se ligni
 \begin{equation}
 \label{equ:appendiks-vco15}
 f = \frac{1}{T} = \frac{1}{\frac{2 \cdot V_{CC} - 3~\mathrm{V} \cdot C \cdot (R_1)^2}{3 \cdot V_C \cdot (R_1 - R_4)}} = \frac{3 \cdot V_C \cdot (R_1 - R_4)}{2 \cdot V_{CC} - 3~\mathrm{V} \cdot C \cdot (R_1)^2}
+\end{equation}
+
+Den duty cycle som VCO'ens output vil have er reduceret til udtrykket givet i ligning (\ref{equ:appendiks-vco16}).
+
+\begin{equation}
+\label{equ:appendiks-vco16}
+d = \frac{t_{\mathrm{af}}}{T} = \frac{R_4}{R_1}
 \end{equation}

@@ -1,19 +1,17 @@
 \subsection*{VCO}
 \label{volumenkontrol-design-vco}
 
-En VCO, Voltage Controlled Oscillator, leverer et konstant signal hvor frekvensen er afhængig af en kontrolspænding. Kontrolspændingen er spændingen over $C_2$, ladekondensatoren, minus én diodespænding. Der er taget udgangspunkt i en VCO fra databladet for en LM324. VCO'en kan deles op i to blokke; én integrator og én schmidt-trigger. Det er udgangen fra schmidt-triggeren der bestemmer hvilken af de to spændinger integrator arbejder udfra. Triggerspændingerne på schmidt-triggeren er givet ved ligning (\ref{equ:vco1}) og (\ref{equ:vco2}). 
+En VCO, Voltage Controlled Oscillator, leverer et konstant signal hvor frekvensen er afhængig af en kontrolspænding. Kontrolspændingen er spændingen over $C_2$, ladekondensatoren, minus én diodespænding. Der er taget udgangspunkt i en VCO fra databladet for en LM324. VCO'en kan deles op i to blokke; én integrator og én schmidt-trigger. Det er udgangen fra schmidt-triggeren der bestemmer hvilken af de to spændinger integrator arbejder udfra. Triggerspændingerne på schmidt-triggeren er givet ved ligning (\ref{equ:vco1}) og (\ref{equ:vco2}). Forsyningsspændingen, $V_{CC}$, er 5 V.
 
 \begin{equation}
 \label{equ:vco1}
-V_L = \mathrm{\frac{\frac{1}{\frac{1}{40~k\ohm} + \frac{1}{40~k\ohm}}}{40~k\ohm + \frac{1}{\frac{1}{40~k\ohm} + \frac{1}{40~k\ohm}}} \cdot 5~V = 1,67~V}
+V_L = \frac{1}{3} \cdot V_{CC} = 1,67~\mathrm{V}
 \end{equation}
 
 \begin{equation}
 \label{equ:vco2}
-V_U = \mathrm{\frac{40~k\ohm}{\frac{1}{\frac{1}{40~k\ohm} + \frac{1}{40~k\ohm}} + 40~k\ohm} \cdot 5~V = 3,33~V}
+V_U = \frac{2}{3} \cdot V_{CC} - 0,5~\mathrm{V} = 2,83~\mathrm{V}
 \end{equation}
-
-Spændingen angivet i ligning (\ref{equ:vco2}) er dog en tilnærmelse, da det ikke vil være muligt for operationsforstærkeren at levere forsyningsspænding som udgangsspænding.
 
 Frekvensen VCO'en vil svinge med, er givet ved ligning (\ref{equ:vco3}), udtrykket er udledt i appendiks A??.
 

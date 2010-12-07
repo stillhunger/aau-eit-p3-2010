@@ -1,7 +1,7 @@
 \subsection*{AND-gate}
 \label{volumenkontrol-design-and}
 
-De to AND-gates er designet med diskrete komponenter, fremfor en integreret kreds.
+De to AND-gates er designet med diskrete komponenter, fremfor en integreret kreds.\fixme{Jonas - Skriv noget mere}
 
 \subsection*{Tæller}
 \label{volumenkontrol-design-taeller}
@@ -29,6 +29,15 @@ Dæmperen er en en analog attenuator, der er sammen sat af to sæt modstands att
 
 \section{Simulering}
 \label{volumenkontrol-simulering}
+
+Som det ses på figur \ref{fig:vco-signal} svinger udgangen på integratoren mellem schmidt-triggerens to niveauer. Det kan også ses udfra grafen hvornår VCO'ens udgang er høj, dette er når integratorens udgang, blå kurve, er højere end $U_{6_{\mathrm{in+}}}$, rød kurve.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{teknisk/volumenkontrol/vco-signal.png}
+\caption{Integratorens udgang og $U_{6_{\mathrm{in+}}}$}
+\label{fig:vco-signal}
+\end{figure}
 
 \section{Accepttest}
 \label{volumenkontrol-accepttest}
