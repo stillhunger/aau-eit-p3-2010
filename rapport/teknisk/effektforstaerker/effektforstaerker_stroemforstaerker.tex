@@ -42,9 +42,9 @@ Desuden opstilles udfra sikkerhedshensyn\fixme{Find gerne kilde der siger dette 
 40~\celsius = 2 \cdot P_D \cdot R_{\mathrm{sa}}
 \end{equation}
 
-Det ses at formel (\ref{equ:smax}) bliver den afgørende betingelse og at $R_{\mathrm{sa}}$ maksimalt må være $2,53~\tfrac{\celsius}{\mathrm{W}}$. I databladet for kølepladen ses at en $R_{\mathrm{sa}}$ på $2,4~\tfrac{\celsius}{\mathrm{W}}$ kan opnåes ved en køleplade på 150 mm, hvilket derfor vælges. Størrelsen af $R_E$, som alt dette går ud på, kan nu bestemmes ved formel (\ref{equ:rebestem}), hvor $K = - 2~\tfrac{\mathrm{mV}}{\celsius}$, $V_{CC} = 25~V$, $V_T = 26~\mathrm{mV}$ og $I_C = 2,24~A$.
+Det ses at formel (\ref{equ:smax}) bliver den afgørende betingelse og at $R_{\mathrm{sa}}$ maksimalt må være $2,53~\tfrac{\celsius}{\mathrm{W}}$. I databladet for kølepladen ses at en $R_{\mathrm{sa}}$ på $2,4~\tfrac{\celsius}{\mathrm{W}}$ kan opnåes ved en køleplade på 150 mm, hvilket derfor vælges. Størrelsen af $R_E$ kan nu bestemmes ved formel (\ref{equ:rebestem}), hvor $K = - 2~\tfrac{\mathrm{mV}}{\celsius}$, $V_{CC} = 25~V$, $V_T = 26~\mathrm{mV}$ og $I_C = 2,24~A$.
 
 \begin{equation}
 \label{equ:rebestem}
-R_E = - K \cdot V_{CC} \cdot (R_{\mathrm{jc}} + R_{\mathrm{cs}} + R_{\mathrm{sa}}) - \frac{V_T}{I_C} = 535~m\ohm
+R_E = - 2 \cdot K \cdot V_{CC} \cdot (R_{\mathrm{jc}} + R_{\mathrm{cs}} + R_{\mathrm{sa}}) - \frac{2 \cdot V_T}{I_C} = 535~m\ohm
 \end{equation}
