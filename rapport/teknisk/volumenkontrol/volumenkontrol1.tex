@@ -26,10 +26,9 @@ Output til brugeren & To 7-segmenter \\
 \label{tab:krav_volumenkontrol}
 \end{table}
 
+\clearpage
 \section{Design}
 \label{volumenkontrol-design}
-
-For at have en accelererende volumenkontrol benyttes en VCO. VCO'en skal således have en stigende frekvens, det gøres ved at kontrolsignalet er stigende. Det lineært stigende signal laves ved at oplade en ladekondensator med en konstant strøm. Den konstante strøm generes af en konstantstrømsgenerator. Der skal også være mulighed for at nulstille VCO'en, dette gøres ved at aflade ladekondensatoren gennem en transistor der styres af volumenknapperne gennem en AND-gate. AND-gaten bruges for at sikre ladekondensatoren aflades ved både volumen op og ned. Hvis brugeren blot trykker kort én gang på en af volumenknapperne skal der ikke tælles, dette sikres ved at forsinke VCO'ens kontrolsignal. For at undgå forkert opførsels benyttes en XOR-gate til at sikre at volumenknapperne ikke er ens, resultatet af denne operation kobles sammen med VCO'en output gennem en AND-gate, for at sikre der ikke ændres på volumen medmindre brugeren trykker på volumenknapperne. Resultatet af denne AND-gate bruges som CLK-signal til en op/ned tæller, der også informere om retningen af volumen ned knappen. Tællerens output bruges både til at vise den aktuelle volumen indstilling på et display og til at styre en dæmper der dæmper lydsignalet. Blokdiagrammet er afbilledet på figur \ref{fig:volumenkontrol_opbygning}.
 
 \begin{figure}[h]
 \centering
@@ -37,6 +36,8 @@ For at have en accelererende volumenkontrol benyttes en VCO. VCO'en skal sålede
 \caption{Blokdiagram over volumenkontrollen}
 \label{fig:volumenkontrol_opbygning}
 \end{figure}
+
+For at have en accelererende volumenkontrol benyttes en VCO. VCO'en skal således have en stigende frekvens, det gøres ved at kontrolsignalet er stigende. Det lineært stigende signal laves ved at oplade en ladekondensator med en konstant strøm. Den konstante strøm generes af en konstantstrømsgenerator. Der skal også være mulighed for at nulstille VCO'en, dette gøres ved at aflade ladekondensatoren gennem en transistor der styres af volumenknapperne gennem en AND-gate. AND-gaten bruges for at sikre ladekondensatoren aflades ved både volumen op og ned. Hvis brugeren blot trykker kort én gang på en af volumenknapperne skal der ikke tælles, dette sikres ved at forsinke VCO'ens kontrolsignal. For at undgå forkert opførsels benyttes en XOR-gate til at sikre at volumenknapperne ikke er ens, resultatet af denne operation kobles sammen med VCO'en output gennem en AND-gate, for at sikre der ikke ændres på volumen medmindre brugeren trykker på volumenknapperne. Resultatet af denne AND-gate bruges som CLK-signal til en op/ned tæller, der også informere om retningen af volumen ned knappen. Tællerens output bruges både til at vise den aktuelle volumen indstilling på et display og til at styre en dæmper der dæmper lydsignalet. Blokdiagrammet er afbilledet på figur \ref{fig:volumenkontrol_opbygning}.
 
 På figur \ref{fig:volumenkontrol_diagram} er vist det elektriske diagram for volumenkontrollen.
 Der er kun vist blokkene til og med den anden AND-gate. \fixme{Jonas - Skal nok rettes når hele diagrammet er med}
@@ -49,7 +50,7 @@ Der er kun vist blokkene til og med den anden AND-gate. \fixme{Jonas - Skal nok 
 \end{figure}
 
 \subsection*{Konstantstrømsgenerator}
-\label{volumenkontrol-simulering-konstantstroemsgenerator}
+\label{volumenkontrol-design-konstantstroemsgenerator}
 
 Konstantstrømsgeneratorens opgave er at levere en konstant strøm, denne strøm bruges til at oplade en kondensator (ladekondensatoren). Når en kondensator lades med en konstant strøm, vil spændingen over den stige lineært, dette fremgår også af ligning (\ref{equ:konstantstroemsgenerator1}).
 
@@ -66,25 +67,25 @@ R_{12} = \frac{V_{CC} - 2 \cdot V_D}{I_F} = \mathrm{\frac{5~V - 2 \cdot 0,5~V}{0
 \end{equation}
 
 Da der nu ligger en konstant spænding over alle dioderne, kan man se dioden i transistoren som siddende parallelt, med det samme spændingsfald som $D_2$. Dette giver at der findes det samme, konstante, spændingsfald over $D_3$ og $R_{11}$, hvilket giver en konstant strøm gennem $R_{11}$.
-Den kondensator som konstantstrømsgeneratoren kaldes ladekondensatoren, denne har en kapacitet på 5 $\mu$F og den ønskede oplade tid er 3 s. Kondensatoren oplades fra 0 V til $V_{CC} - V_D$ = 4,5 V, hvor $V_D$ er spændingen over én diode. Udfra disse to ting kan den konstante strøm, $I_{\mathrm{const}}$, nu beregnes, se ligning (\ref{equ:konstantstroemsgenerator3}).
+Den kondensator som konstantstrømsgeneratoren kaldes ladekondensatoren, denne har en kapacitet på 5 $\mu$F og den ønskede oplade tid er 3 s. Kondensatoren oplades fra 0 V til $V_{CC} - V_D - V_{\mathrm{CEsat}}$ = 4,4 V, hvor $V_D$ er spændingen over én diode og $V_{\mathrm{CEsat}}$ er collector-emitter saturationspændingen på 0,1 V. Udfra disse to ting kan den konstante strøm, $I_{\mathrm{const}}$, nu beregnes, se ligning (\ref{equ:konstantstroemsgenerator3}).
 
 \begin{equation}
 \label{equ:konstantstroemsgenerator3}
-V_{CC} - V_D = \frac{I_{\mathrm{const}} \cdot t}{C_2} \Rightarrow \mathrm{4,5~V} = \frac{I_{\mathrm{const}} \cdot 3~\mathrm{s}}{5~\mu \mathrm{F}} \Rightarrow I_{\mathrm{const}} = \mathrm{7,5~\mu A}
+V_{CC} - V_D - V_{\mathrm{CEsat}} = \frac{I_{\mathrm{const}} \cdot t}{C_2} \Rightarrow \mathrm{4,4~V} = \frac{I_{\mathrm{const}} \cdot 3~\mathrm{s}}{5~\mu \mathrm{F}} \Rightarrow I_{\mathrm{const}} = \mathrm{7,3~\mu A}
 \end{equation}
 
 Spændingen over $R_{11}$ er, som tidligere nævnt, 0,5 V og strømmen igennem den er $I_{\mathrm{const}}$, der kan Ohms lov bruges til at beregne modstanden, se ligning (\ref{equ:konstantstroemsgenerator4}).
 
 \begin{equation}
 \label{equ:konstantstroemsgenerator4}
-V_D = R_{11} \cdot I_{\mathrm{const}} \Rightarrow \mathrm{0,5~V} = R_{11} \cdot \mathrm{7,5~\mu A} \Rightarrow R_{11} = \mathrm{66,7~k\ohm}
+V_D = R_{11} \cdot I_{\mathrm{const}} \Rightarrow \mathrm{0,5~V} = R_{11} \cdot \mathrm{7,3~\mu A} \Rightarrow R_{11} = \mathrm{68,2~k\ohm}
 \end{equation}
 
 \subsection*{Starter}
-\label{volumenkontrol-simulering-starter}
+\label{volumenkontrol-design-starter}
 
 Starterens opgave er at holde spændingen over ladekondensatoren på 0 V, når der ikke trykkes på en af volumenknapperne. Dette gøres ved at lede al den strøm som konstantstrømsgeneratoren leverer til stel. Så snart der trykkes på en af volumenknapperne, vil basis på transistoren blive trukket lav, hvilket vil afbryde collector-emitter strømmen. Dette gøres for at sikre at ladekondensatoren er klar til at starte opladningen med det samme.
 \subsection*{Buffer med forsinkelse}
-\label{volumenkontrol-simulering-buffer}
+\label{volumenkontrol-design-buffer}
 
 Bufferen sikrer at ladekondensatoren bliver lineært opladet, dette gøres ved ikke at belaste konstantstrømsgeneratoren eller ladekondensatoren. Forsinkelsen laves ved hjælp af en diode. Dioden forsinker signalet ved blot at have et spændingsfald over den, det betyder at spændingen først skal vokse op til minimum en diodespænding, før der kommer en kontrolspænding til VCO'en. Forsinkningen er derfor direkte afhængig af diodespændingen. Dette betyder, at der for at kunne indstille på forsinkelsesperioden skal indsættes en anden diode, med en anden $V_{D}$; eksempelvis en eller flere germaniumsdioder.
