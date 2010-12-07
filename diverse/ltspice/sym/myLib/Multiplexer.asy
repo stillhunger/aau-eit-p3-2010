@@ -23,8 +23,8 @@ WINDOW 3 194 -55 Left 0
 SYMATTR Value Multiplexer
 SYMATTR Prefix X
 SYMATTR SpiceModel myLib\LM324.lib
-SYMATTR Value2 LM324
-SYMATTR Description LM324 Operational Amplifier
+SYMATTR Value2 Multiplexer
+SYMATTR Description Multiplexer
 PIN 80 0 BOTTOM 15
 PINATTR PinName A
 PINATTR SpiceOrder 1

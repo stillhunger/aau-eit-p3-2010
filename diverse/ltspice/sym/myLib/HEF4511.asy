@@ -25,8 +25,8 @@ WINDOW 3 193 -37 Left 0
 SYMATTR Value HEF4511
 SYMATTR Prefix X
 SYMATTR SpiceModel myLib\LM324.lib
-SYMATTR Value2 LM324
-SYMATTR Description LM324 Operational Amplifier
+SYMATTR Value2 HEF4511
+SYMATTR Description BCD to 7-segment latch/decoder/driver
 PIN 64 0 BOTTOM 15
 PINATTR PinName _EL
 PINATTR SpiceOrder 1
