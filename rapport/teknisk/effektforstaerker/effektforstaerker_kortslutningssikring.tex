@@ -31,6 +31,23 @@ Modstandene $R_1$, $R_2$ og $R_3$ skal, som vist på figur \ref{fig:dia-kortslut
 \mathrm{720~mV} = R_3 \cdot \frac{R_1 \cdot \mathrm{3~A}}{R_ 1+ R_2 + R_3}
 \end{equation}
 
-Det vides desuden, at modstanden af en parallelkobling af modstande er mindre end modstanden af den mindste gren i parallelkoblingen. Dermed vælges $R_1$ til den mindste tilgængelige effektmodstand som er større end den beregnede $R_E$. 
+Det vides desuden, at modstanden af en parallelkobling af modstande er mindre end modstanden af den mindste gren i parallelkoblingen. Dermed vælges $R_1$ til den mindste tilgængelige effektmodstand, som er større end den beregnede $R_E$ modstand. Størrelsen på $R_1$ er derfor 0,68~\ohm, hvorved $R_2$ og $R_3$ kan bestemmes til henholdsvis 1,40~\ohm~ og 1,13~\ohm. Effekten afsat i en modstand kan bestemmes som $P = I^2 \cdot R$, hvorved effekten afsat i hver enkelt af de tre modstande $R_1$, $R_2$ og $R_3$ kan bestemmes som vist i henholdsvis formel (\ref{equ:pr1}), formel (\ref{equ:pr2}) og formel (\ref{equ:pr3}).
+
+\begin{equation}
+\label{equ:pr1}
+P_{R_1} = \left(\frac{(R_2 + R_3) \cdot \mathrm{3~A}}{R_1 + R_2 + R_3}\right)^2 \cdot R_1 = \mathrm{3,80~W}
+\end{equation}
+
+\begin{equation}
+\label{equ:pr2}
+P_{R_2} = \left(\frac{R_1 \cdot \mathrm{3~A}}{R_1 + R_2 + R_3}\right)^2 \cdot R_2 = \mathrm{0,56~W}
+\end{equation}
+
+\begin{equation}
+\label{equ:pr3}
+P_{R_3} = \left(\frac{R_1 \cdot \mathrm{3~A}}{R_1 + R_2 + R_3}\right)^2 \cdot R_3 = \mathrm{0,47~W}
+\end{equation}
+
+Da de tilgængelige effektmodstande kan holde til, at der afsættes en effekt på ??\fixme{Hvad, Frede?} W i dem kontinuerligt, betyder det, at det ikke er nødvendigt at gøre noget for at sikre dem. Alle udregninger i dette afsnit \ref{effekt_kortslutningssikring} er desuden under antagelse af, at strømmen ind i basen på transistoren, Q1, er ubetydelig lille.
 
 \subsubsection*{Simulering}
