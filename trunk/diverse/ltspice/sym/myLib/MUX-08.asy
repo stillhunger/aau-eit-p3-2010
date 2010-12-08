@@ -20,11 +20,10 @@ LINE Normal 41 -288 32 -288
 LINE Normal 144 0 144 -12
 WINDOW 0 193 -84 Left 0
 WINDOW 3 194 -55 Left 0
-SYMATTR Value Multiplexer
+SYMATTR Value MUX-08
 SYMATTR Prefix X
-SYMATTR SpiceModel myLib\LM324.lib
-SYMATTR Value2 Multiplexer
-SYMATTR Description Multiplexer
+SYMATTR Value2 MUX-08MUX-08
+SYMATTR Description 8-Chan JFET Aalog Multiplexer
 PIN 80 0 BOTTOM 15
 PINATTR PinName A
 PINATTR SpiceOrder 1

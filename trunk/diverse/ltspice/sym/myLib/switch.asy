@@ -9,10 +9,9 @@ WINDOW 0 81 -92 Left 0
 WINDOW 3 82 -63 Left 0
 SYMATTR Value Switch
 SYMATTR Prefix S
-SYMATTR SpiceModel myLib\LM324.lib
 SYMATTR Value2 Switch
 SYMATTR Description Switch
-PIN 64 -128 NONE 8
-PINATTR SpiceOrder 15
 PIN 64 -32 NONE 8
 PINATTR SpiceOrder 1
+PIN 64 -128 NONE 8
+PINATTR SpiceOrder 15
