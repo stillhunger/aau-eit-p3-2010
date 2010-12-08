@@ -35,21 +35,21 @@ For at opnå så lav forvrængning som muligt designes hvert trin således at fo
 Begge trin designes efter maksimal forstærkning uden $R_e$. Denne forstærkning er givet ved ligning (\ref{eq:dcgain}).
 
 \begin{equation}
-|A_{vs}|=\frac{1}{\left(\frac{V_t \cdot R_C}{V_{R_C}}+\frac{R'_S}{\beta}\right) \left(\frac{1}{R_C}+\frac{1}{R_L}\right)}
+|A_{vs}|=\frac{1}{\left(\frac{V_T \cdot R_C}{V_{R_C}}+\frac{R'_S}{\beta}\right) \left(\frac{1}{R_C}+\frac{1}{R_L}\right)}
 \label{eq:dcgain}
 \end{equation}
-Hvor $R'_S = R_S||R_1||R_2$ og $V_t = 26 \cdot 10^{-3}$.
+Hvor $R'_S = R_S||R_1||R_2$ og $V_T = 26 \cdot 10^{-3}$.
 
 For at designe et kredsløb med maksimal forstærkning justeres størrelsen af $R_C$ uden at variere spændingen over den, $V_{R_C}$. Den maksimale $R_C$ findes ved ligning (\ref{eq:rcmaks}).
 
 \begin{equation}
-R_{\mathrm{C,maks}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_C}}{\beta \cdot V_t}}
+R_{\mathrm{C,maks}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_C}}{\beta \cdot V_T}}
 \label{eq:rcmaks}
 \end{equation}
 
 I ligning (\ref{eq:rcmaks}) er $R'_S$ defineret som $R_1||R_2||R_S$. $R_S$ er fastlagt til 2,2 k\ohm, hvilket er mikrofonens udgangsimpedans\fixme{kilde til MCE4000}. Parallelforbindelsen mellem $R_1$ og $R_2$ kan ikke beregnes men skal vælges. Indgangsimpedansen i kredsløbet, som netop er $R_1||R_2$, skal som hovedregel være meget større end udgangsimpedansen i den kreds den belaster. En tommelfingerregel siger at 10 gange større er tilstrækkeligt til at være $"$meget større$"$ hvormed parallelkoblingen skal være over eller lig med 22 k\ohm. 
 Belastningen, $R_L$, for det første trin bliver indgangsimpedansen i det andet. Indgangsimpedansen i det andet trin bliver $R_3||R_4$ og kan heller ikke beregnes. Da $R_C$ i det første trin ikke kendes endnu vælges indgangsimpedansen i det andet til at være den samme som i det første, altså 22 k\ohm. 
-$V_{R_C}$ er defineret som værende $V_{CC} - V_{\mathrm{CE,sat}} - V_{R_E} - V_{\mathrm{o,peak}}$, hvor $V_{CC}$ vælges til 15 V så der sikres at der er plads til det ønskede spændingsudsving, $V_{R_E}$ vælges til 3 V og $V_{\mathrm{CE,sat}}$ aflæses i databladet for BC547b til 0,2 V ved en collectorstrøm på 1 mA. Der antages at collectorstrømmen cirka bliver 1 mA. Ligeledes aflæses $\beta$ til 250 ved 1 mA i databladet. $V_{\mathrm{o,peak}}$ er peakspændingen på udgangen. Dermed bliver peakspændingen en faktor 10 højere end mikrofonens output peakspænding. $V_{\mathrm{o,peak}}$ bliver derfor 316 mV. $R_C1$ beregnes hermed i ligning (\ref{eq:rcforsteberegning}).
+$V_{R_C}$ er defineret som værende $V_{CC} - V_{\mathrm{CE,sat}} - V_{R_E} - V_{\mathrm{o,peak}}$, hvor $V_{CC}$ vælges til 15 V så der sikres at der er plads til det ønskede spændingsudsving, $V_{R_E}$ vælges til 3 V og $V_{\mathrm{CE,sat}}$ aflæses i databladet for BC547b til 0,2 V ved en collectorstrøm på 1 mA. Der antages at collectorstrømmen cirka bliver 1 mA. Ligeledes aflæses $\beta$ til 250 ved 1 mA i databladet. $V_{\mathrm{o,peak}}$ er peakspændingen på udgangen. Dermed bliver peakspændingen en faktor 10 højere end mikrofonens output peakspænding. $V_{\mathrm{o,peak}}$ bliver derfor 316 mV. $R_{C1}$ beregnes hermed i ligning (\ref{eq:rcforsteberegning}).
 
 \begin{equation}
 R_{\mathrm{C1}} = \sqrt{\frac{22~k\ohm || 2,2~k\ohm \cdot (15~V - 0,2~V - 3~V - 0,316~V)}{250 \cdot 26 \cdot 10^{-3}}}=8,82~k\ohm
@@ -68,7 +68,7 @@ R_{E1}=\frac{V_{R_{E1}}}{\frac{V_{R_{C1}}}{R_{C1}}}  \Rightarrow R_{E1}=\frac{3~
 \end{equation}
 
 
-Dernæst beregnes $R_e1$ ud fra hvad den ønskede forstærkning skal være. Ligning (\ref{eq:gmbevis}) benyttes til at beregne $R_e1$ i ligning (\ref{eq:rlilleeberegning}).
+Dernæst beregnes $R_{e1}$ ud fra hvad den ønskede forstærkning skal være. Ligning (\ref{eq:gmbevis}) benyttes til at beregne $R_{e1}$ i ligning (\ref{eq:rlilleeberegning}).
 
 \begin{equation}
 \label{eq:rlilleeberegning}
@@ -107,29 +107,30 @@ $C1$ ser ind i forspændingskoblingen i det første forstærkertrin, altså 22,2
 C1=3,58~\my F~\wedge ~C2=91,9~\my F~\wedge ~C3=3,58~\my F
 \end{equation}
 
-For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. 
+
 
 \subsection*{Design af andet trin}
-Beregning af andet trin følger samme procedure som første trin. Beregningerne kan findes i appendiks ?? \fixme{kilde appendiks}
-Indgangsmodstanden, som det sidste trin i forforstærkeren kigger ind i, 
+Beregning af andet trin følger samme designprocedure som første trin. Kredsløbet til andet trin er vist på figur \ref{fig:andettrinkreds}.
 
-
-Modstands- og kondensatorværdier samt ændrede betingelser er vist i tabel \ref{tab:trintovalues}.
-
-\begin{table}[h]
+\begin{figure}[h]
 \centering
-\begin{tabular}{l|r}
-\hline\hline
-\multicolumn{2}{c}{\textbf{Ændrede variable}} \\\hline
-Komponent & Værdi \\
-\hline\hline
-$R_L$ & 30,8 k$\omega$ \\[4pt]
-Forvrængning & < 0,5 \% \\[4pt]
-Indgangsimpedans & > 5 k\ohm \\
-\hline\hline
-\end{tabular}
-\caption{Krav til forforstærkeren}
-\label{tab:krav_forforstaerker}
-\end{table}
+\includegraphics[scale=.6]{teknisk/forforstaerker/andettrinkreds.png}
+\caption{Det andet trins kredsløb}
+\label{fig:andettrinkreds}
+\end{figure}
 
+Det andet trin skal forstærke et signal med en maksimal peakspænding på 316 mV op til 2 V, altså 6,33 gange. Belastningsmodstanden for dette forstærkertrin er bestemt af indgangsvælgeren, som er det næste trin efter forforstærkeren. Indgangsvælgerens indgangsimpedans er 30,8 k\ohm \fixme{reference til indgangsvælgeren hvor det står}. $R_S$ er i dette trin givet ved udgangsmodstanden for det første forstærkertrin, som er lig med $R_{C1}$ hvilket gør at $R'_S = R_{C1} || R_3 || R_4$. Den maksimale $R_{C2}$ beregnes i ligning \ref{eq:rc2maks}.
 
+\begin{equation}
+R_{\mathrm{C2}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_C2}}{\beta \cdot V_T}} = 17096,7~\ohm
+\label{eq:rc2maks}
+\end{equation}
+
+Beregningerne af $R_{E2}$ og $R_{e2}$ samt kondensatorerne er meget ens med dem for det første forstærkertrin. Derfor er det valgt ikke at vise beregningerne i rapporten. $R_3$ og $R_2$ antager samme værdier som henholdsvis $R_1$ og $R_2$, da begge trin skal have samme indgangsimpedans. De beregnede værdier er vist i ligning (\ref{eq:valuestrin2}).
+
+\begin{equation}
+R_{E2}=5233,7~\ohm ~ \wedge ~R_{e2}=2599,4~\ohm ~ \wedge ~ C4=30,6~\my F ~ \wedge ~ C5=2,6~\my F
+\label{eq:valuestrin2}
+\end{equation}
+
+For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. De karakteristika som skal verificeres er spændingsforstærkningen, amplitudekarakteristikken samt harmonisk forvrængning. Kredsløbet der simuleres er vist på figur \ref{fig:forforstaerkersimuleringkredslob}.
