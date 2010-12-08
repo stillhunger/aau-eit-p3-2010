@@ -19,7 +19,7 @@ Udgangen af AND-gaten vil altså ikke kunne bliver højere end 0,24 V, ved lavt 
 \caption{Diagram over tælleren og displaydriveren}
 \label{fig:taeller}
 \end{figure}
-\fixme{Jonas - Tilføj tællerstyring}
+
 Tællerens opgave er at holde styr på hvad volumenniveauet er og diagrammet for den er vist på figur \ref{fig:taeller}. Der tælles op eller ned når der trykkes på én af de to volumenknapper. Hvor hurtigt der skal tælles, bestemmes af det AND'ede signal fra VCO'en og XOR-gaten. VCO'en fungerer som en clock på AND-gaten, mens XOR-signalet sørger for, at det kun er den ene knap der holdes nede. Hvis begge knapper holdes nede, vil XOR-signalet være lavt, og der vil intet signal blive sendt til tælleren. Om der skal tælles op eller ned, styres af et signal fra den knap der repræsenterer et ønske om en sænkning i volumeniveau. Hvis denne er nede, som den eneste knap, vil tælleren tælle ned af. Hvis denne ikke er nede, men XOR-signalet stadig er højt, betyder det at den anden knap er nede og tælleren vil derfor tælle op. Tælleren giver et binært output, som danner grundlag for hvad der vises i displayet og hvordan reguleringen af volumen indstilles. Tælleren der benyttes er en 4-bit tæller af typen HEF4516B\fixme{kilde: datablad}. Da fire bit ikke er nok skal der bruges to tællere. Yderligere skal der også bruges noget kontrollogik, for at sikre tælleren ikke tæller for højt eller lavt og for at styre den anden tæller.
 
 \subsection*{Display}
