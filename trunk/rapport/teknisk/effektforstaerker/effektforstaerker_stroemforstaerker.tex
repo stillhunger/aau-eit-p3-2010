@@ -1,5 +1,6 @@
 \subsection{Strømforstærker}
 \label{effekt_stroemforstaerker}
+Strømforstærkeren opbygges som vist på figur \ref{fig:blokdiagram-stroem}. Dog vil konstantstrømsgeneratoren blive bygget i diskret elektronik. Der er valgt at der benyttes en BDX33B og en BDX34B \fixme{kilde: BDX33-34.pdf} som udgangstransistorer. Dette er darlingtontransistorer, som er valgt da de har en $h_{\mathrm{FE}}$ på minimum 750 og kan klare en $I_C$ på op til 10 A. Desuden er de let tilgængelige til projektet.
 
 \begin{figure}[h]
 \centering
@@ -8,7 +9,8 @@
 \label{fig:blokdiagram-stroem}
 \end{figure}
 
-Strømforstærkeren opbygges som vist på figur \ref{fig:blokdiagram-stroem}. Dog vil konstantstrømsgeneratoren blive bygget i diskret elektronik. Der er valgt at der benyttes en BDX33B og en BDX34B \fixme{kilde: BDX33-34.pdf} som udgangstransistorer. Dette er darlingtontransistorer, som er valgt da de har en $h_{\mathrm{FE}}$ på minimum 750 og kan klare en $I_C$ på op til 10 A. Desuden er de let tilgængelige til projektet.Som vist, i afsnit \ref{valg_kortslutningssikring}, skal der igennem $R_{\mathrm{load}}$ løbe en $I_{\mathrm{peak}}$ på 2,24 A for at opnå en udgangseffekt på 20 W. Dette betyder desuden, som det også er vist i afsnit \ref{valg_kortslutningssikring}, at der skal være en $V_{\mathrm{peak}}$ på 17,9 V over belastningen. Da de valgte darlingtontransistorer har en $V_{\mathrm{BE}}$ på op til 2,5 V, vælges forsyningsspændingen til $\pm$23 V, hvormed der også er plads til et spændingsfald over $R_E$ og en transistor i konstantstrømsgeneratoren.
+Som vist, i afsnit \ref{valg_kortslutningssikring}, skal der igennem $R_{\mathrm{load}}$ løbe en $I_{\mathrm{peak}}$ på 2,24 A for at opnå en udgangseffekt på 20 W. Dette betyder desuden, som det også er vist i afsnit \ref{valg_kortslutningssikring}, at der skal være en $V_{\mathrm{peak}}$ på 17,9 V over belastningen. Da de valgte darlingtontransistorer har en $V_{\mathrm{BE}}$ på op til 2,5 V, vælges forsyningsspændingen til $\pm$23 V, hvormed der også er plads til et spændingsfald over $R_E$ og en transistor i konstantstrømsgeneratoren.
+
 \subsubsection*{Termiske forhold}
 \label{effektforstaerker_termiskeforhold}
 Størrelsen af $R_E$ bestemmes med udgangspunkt i at den skal skabe termisk stabilitet og til bestemmelsen af denne startes der derfor med at kigge på et termisk ekvivalentdiagram for de valgte darlingtontransistorer og de tilgængelige køleplader\fixme{kilde: koeleplade.pdf}. 
@@ -63,16 +65,15 @@ Til at lave opstillingen på figur \ref{fig:term-runaway} er der antaget en hvil
 
 \subsubsection*{Konstantstrømsgenerator}
 \label{effektforstaerker-konstantstroemsgenerator1}
+Konstantstrømsgeneratorens opgave er at levere en konstant strøm, denne strøm bruges til $V_{be}$-Multiplieren og til spændingsforstærkeren. I afsnit \ref{henvisning til vbe multiplier} er det beregnet at konstantstrømsgeneratoren skal leveres 6 mA. Opbygningen der er valgt til konstansstrømsgereratoren er afbildet på figur \ref{konstantstroemsgenerator_model}
 
-Konstantstrømsgeneratorens opgave er at levere en konstant strøm, denne strøm bruges til $V_{be}$-Multiplieren og til spændingsforstærkeren. I afsnit \ref{??} er det beregnet at konstantstrømsgeneratoren skal leveres 6 mA. Opbygningen der er valgt til konstansstrømsgereratoren er afbildet på figur \ref{konstantstroemsgenerator_model}
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.35]{teknisk/effektforstaerker/stoemgenerator.png}
 \caption{Diagram der viser opbygningen af konstantstrømsgeneratoren.}
 \label{konstantstroemsgenerator_model}
 \end{figure}
-\newline
-\newline
+
 Til konstantstrømsgeneratoren er der valgt at anvende en BC547B som transistor og en 1N4148 som diode. BC547B har en $V_{be}$ spænding på maksimum 720 mV \fixme{Kilde: bc547 datablad}. Deraf designes det således at der er et spændingsfald på 720 mV over $D_1$, $D_2$, $R_{2}$ og $Q_{1_{BE}}$. I databladet for 1N4148\fixme{Kilde: 1N4148 datablad} fremgår det at den  ved en $I_F$ strøm på 8 mA har en $V_D$ spændingen på 720 mV. Strømmen igennem dioderne er givet ved hvor stor en strøm der løber igennem modstanden $R_{1}$. $R_{1}$ er således givet ved ligning (\ref{equ:stroemgenerator_effektforstaerker1}).
 
 \begin{equation}
@@ -84,7 +85,7 @@ Da der nu ligger en konstant spænding over alle dioderne, kan man se dioden i t
 
 \begin{equation}
 \label{equ:stroemgenerator_effektforstaerker2}
-R_{2} = \frac{V_{D}}{I_{const}} = \mathrm{\frac{720~mV}{6~mA} = 120~\ohm}
+R_{2} = \frac{V_{D}}{I_{KONSTANT}} = \mathrm{\frac{720~mV}{6~mA} = 120\ohm}
 \end{equation}
 
-Hermed er Konstantstrømsgeneratoren designet til at levere 6 mA.
+Hermed er konstantstrømsgeneratoren designet til at levere 6 mA.
