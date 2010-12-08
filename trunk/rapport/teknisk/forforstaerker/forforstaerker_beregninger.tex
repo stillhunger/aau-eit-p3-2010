@@ -100,6 +100,15 @@ C=\frac{1}{\omega \cdot R}=\frac{1}{2\cdot \pi \cdot f \cdot R}
 \label{eq:kondensatorknaek}
 \end{equation}
 
+I ligning \ref{eq:kondensatorknaek} er $C$ kondensatorens capacitet og $R$ er den impedans kondensatoren ser ind i. 
+$C1$ ser ind i forspændingskoblingen i det første forstærkertrin, altså 22,2 k\Ohm. $C2$ ser ind i den AC-koblede emittermodstand, $Re1$. $C3$ ser ind i forspændingsnetværket i det andet forstærkertrin, altså 22,2 k\Ohm. Dermed bliver kondensatorernes værdier som følger.
+
+\begin{equation}
+C1=3,58~\my F~\wedge ~C2=91,9~\my F~\wedge ~C3=3,58~\my F
+\end{equation}
+
+For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. 
+
 \subsection*{Design af andet trin}
 Beregning af andet trin følger samme procedure som første trin. Beregningerne kan findes i appendiks ?? \fixme{kilde appendiks}
 Indgangsmodstanden, som det sidste trin i forforstærkeren kigger ind i, 
