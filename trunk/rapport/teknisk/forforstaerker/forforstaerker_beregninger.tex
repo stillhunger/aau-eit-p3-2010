@@ -60,7 +60,7 @@ $R_{E1}$ bestemmes i ligning (\ref{eq:beregningre1}) under antagelse at $i_e = i
 
 \begin{equation}
 \label{eq:ff:ic}
-i_c=\frac{V_{R_C}}{R_C}=\frac{11,5~V}{9,25~k\ohm}=106,4~mA
+i_C=\frac{V_{R_C}}{R_C}=\frac{11,5~V}{9,25~k\ohm}=106,4~mA
 \end{equation}
 \begin{equation}
 R_{E1}=\frac{V_{R_{E1}}}{\frac{V_{R_{C1}}}{R_{C1}}}  \Rightarrow R_{E1}=\frac{3~V}{106,4~mA}=2,30~k\ohm
@@ -122,7 +122,7 @@ Beregning af andet trin følger samme designprocedure som første trin. Kredslø
 Det andet trin skal forstærke et signal med en maksimal peakspænding på 316 mV op til 2 V, altså 6,33 gange. Belastningsmodstanden for dette forstærkertrin er bestemt af indgangsvælgeren, som er det næste trin efter forforstærkeren. Indgangsvælgerens indgangsimpedans er 30,8 k\ohm \fixme{reference til indgangsvælgeren hvor det står}. $R_S$ er i dette trin givet ved udgangsmodstanden for det første forstærkertrin, som er lig med $R_{C1}$ hvilket gør at $R'_S = R_{C1} || R_3 || R_4$. Den maksimale $R_{C2}$ beregnes i ligning \ref{eq:rc2maks}.
 
 \begin{equation}
-R_{\mathrm{C2}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_C2}}{\beta \cdot V_T}} = 17096,7~\ohm
+R_{\mathrm{C2}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_C2}}{\beta \cdot V_T}} = 17,1~k\ohm
 \label{eq:rc2maks}
 \end{equation}
 
@@ -133,4 +133,17 @@ R_{E2}=5233,7~\ohm ~ \wedge ~R_{e2}=2599,4~\ohm ~ \wedge ~ C4=30,6~\my F ~ \wedg
 \label{eq:valuestrin2}
 \end{equation}
 
-For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. De karakteristika som skal verificeres er spændingsforstærkningen, amplitudekarakteristikken samt harmonisk forvrængning. Kredsløbet der simuleres er vist på figur \ref{fig:forforstaerkersimuleringkredslob}.
+Det endelige kredsløb er vist på figur \ref{fig:forforstaerkersimuleringkredslob} i simuleringsafsnittet.
+
+\subsection*{Simulering}
+
+For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. De karakteristika som skal verificeres er spændingsforstærkningen, amplitudekarakteristikken samt harmonisk forvrængning. Kredsløbet der simuleres er vist på figur \ref{fig:forforstaerkersimuleringkredslob}. På figuren er der til alle komponenter angivet en beregnet værdi, som den øverste, og en tilsvarende værdi i modstandsrækken E96. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{teknisk/forforstaerker/}
+\caption{}
+\label{}
+\end{figure}
+
+
