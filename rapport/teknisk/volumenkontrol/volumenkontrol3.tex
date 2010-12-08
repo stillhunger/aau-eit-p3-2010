@@ -12,7 +12,7 @@ De to AND-gates er designet med diskrete komponenter, fremfor en integreret kred
 \caption{Diagram over tælleren og displaydriveren}
 \label{fig:taeller}
 \end{figure}
-
+\fixme{Jonas - Tilføj tællerstyring}
 Det er tællerens opgave at holde styr på hvad volumenniveauet er. Diagrammet er vist på figur \ref{fig:taeller}. Der tælles op eller ned når der trykkes på én af de to volumenknapper. Hvor hurtigt der skal tælles bestemmes af det AND'ede signal fra VCO'en og XOR-gaten. VCO'en fungerer som en clock på AND-gaten, mens XOR-signalet sørger for, at det kun er den ene knap der holdes nede. Hvis begge knapper holdes nede, vil XOR-signalet være lavt, og der vil intet signal blive sendt til tælleren. Om der skal tælles op eller ned, styres af et signal fra vol- knappen. Hvis denne er nede, som den eneste knap, vil tælleren tælle ned af. Hvis denne ikke er nede, men XOR-signalet stadig er højt, betyder det at den anden knap er nede og tælleren vil derfor tælle op. Tælleren giver et binært output, som danner grundlag for hvad der vises i displayet og hvordan reguleringen af volumen indstilles. Tælleren der benyttes er en 4-bit tæller af typen HEF4516B. Da fire bit ikke er nok skal der bruges to. Yderligere skal der også bruges noget kontrol logik, det er for at sikre tælleren ikke tæller for højt eller lavt og for at styre den anden tæller.
 
 \subsection*{Display}
@@ -45,6 +45,9 @@ Som det ses på figur \ref{fig:vco-signal} svinger udgangen på integratoren mel
 \caption{Integratorens udgang og $U_{6_{\mathrm{in+}}}$}
 \label{fig:vco-signal}
 \end{figure}
+
+\fixme{Jonas - Simulering af konstantstrømsgeneratoren}
+\fixme{Jonas - Simulering af Stress test}
 
 \section{Accepttest}
 \label{volumenkontrol-accepttest}
