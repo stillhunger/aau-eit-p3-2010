@@ -1,6 +1,6 @@
 \subsection{Spændingsforstærker}
 \label{effekt_spaendingsforstaerker}
-Spændingsforstærkerens opgave er at give en så stor spændingsforstærkning som muligt. Til dette projekts spændingsforstærkning er der valgt en BC557B PNP-transistor koblet som en commonemitter. koblingen af spændingsforstærkeren er vist på figur \ref{spaendingsforstaerker_diagram}
+Spændingsforstærkerens opgave er at give en så stor spændingsforstærkning som muligt. Til dette projekts spændingsforstærker er der valgt en BC557B PNP-transistor koblet som en commonemitter. koblingen af spændingsforstærkeren er vist på figur \ref{spaendingsforstaerker_diagram}
 
 \begin{figure}[h]
 \centering
@@ -9,34 +9,30 @@ Spændingsforstærkerens opgave er at give en så stor spændingsforstærkning s
 \label{spaendingsforstaerker_diagram}
 \end{figure}
 
-Forstærkningen i en commonemitter kobling er bestemt ved ligning (\ref{equ:spaendingsforstaerker1}) 
-
+Forstærkningen i en commonemitter kobling er bestemt ved ligning (\ref{equ:spaendingsforstaerker1}) \fixme{Kilde: Jan analog elektronik mm7} 
 \begin{equation}
 \label{equ:spaendingsforstaerker1}
 A_v = -g_m \cdot R'_L
 \end{equation}
 
-For at beregne $g_m$ bruges ligning (\ref{equ:spaendingsforstaerker2}) hvor $I_c$ er den collectorstrøm som konstantstrømsgeneratoren trækker, og $V_T$ er sat til at være konstant $26 mV$
-
+For at beregne $g_m$ bruges ligning (\ref{equ:spaendingsforstaerker2}), hvor $I_c$ er den collectorstrøm som konstantstrømsgeneratoren trækker, og $V_T$ er sat til at være konstant $26~mV$
 \begin{equation}
 \label{equ:spaendingsforstaerker2}
-g_m = \frac{I_c}{V_T} = \frac{6 mA}{26 mV} = 230,8~mS
+g_m = \frac{I_c}{V_T} = \frac{6~mA}{26mV} = 230,8~mS
 \end{equation}
 
-Nu skal $R'_L$ beregnes. $R_L$ er defineret som den load spændingsforstærkeren ser. For at gøre det nemmere at beregne $R_L$ er der lavet nogle antagelse. Første antagelse er at $V_be$-Multiplieren når der kigges på AC kan betragtes som en kortslutning. Dette leder frem til den næste antagelse at konstantstrømsgeneratoren repræsentere en uendelig stor impedans. Det vil resultere i at den er meget større end de andre impedanser og derfor kan man ses bort fra den. Den sidste antagelse der er lavet er at kortslutningskredsløbet kan ses bort fra idet dette kredsløb ikke er aktuelt hvis systemet  kører som det skal. Med disse antagelser på plads kan $R_L$ beregnes ud fra parallelkoblingen mellem de to darlingtontransistorer.
+Nu skal $R'_L$ beregnes. $R'_L$ er defineret som den load spændingsforstærkeren ser. For at gøre det nemmere at beregne $R'_L$ er der lavet nogle antagelser. Første antagelse er at $V_{be}$-Multiplieren, når der kigges på AC, kan betragtes som en kortslutning. Næste antagelse er at konstantstrømsgeneratoren repræsentere en uendelig stor impedans, dette vil resultere i at den er meget større end de andre impedanser og derfor kan ses bort fra. Den sidste antagelse der er lavet er at kortslutningskredsløbet kan ses bort fra, idet dette kredsløb ikke er aktuelt, hvis systemet  kører som det skal. Med disse antagelser på plads kan impedansen $R'_L$ beregnes ud fra parallelkoblingen mellem de to darlingtontransistorer.
 
-
-
-For at kunne bregne $R_L$ er det nødvendigt at finde den impedans som darlingtontransistoren repræsentere. Darlingtontransistorerne der er valgt til projektet er opbygget som vist på figur \ref{darlington_diagram}. I databladet for darlingtontransistorerne \fixme{Kilde: BDX33B/BDX34B datablad}  er R1 angivet til typisk at være 10 k\ohm~og R2 til 150 \ohm.
+Det er derfor nødvendigt at finde den impedans som en darlingtontransistor  repræsenterer. Darlingtontransistorerne der er valgt til projektet er opbygget som vist på figur \ref{darlington_diagram}. I databladet for darlingtontransistorerne \fixme{Kilde: BDX33B/BDX34B datablad}  er R1 angivet til typisk at være 10 k\ohm~og R2 til 150 \ohm.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{teknisk/effektforstaerker/darlingtontransistor_opbygning.png}
+\includegraphics[scale = 0.4]{teknisk/effektforstaerker/darlingtontransistor_opbygning.png}
 \caption{Diagram over opbygningen af darlingtontransistor BDX33B og BDX34B}
 \label{darlington_diagram}
 \end{figure}
 
-For at gøre det nemmere at bestemme impedansen af darlingtontransistoren er det valgt at opfatte den som en enkelt supertransistor hvor $\beta = \beta_1 \cdot \beta_2$\fixme{Kilde: sedra/smidth sixth edition side 525}. Der er også valgt at se bort fra de indre modstande i darlingtontransistoren. Når dette er valgt kan darlingtontransistoren i dette tilfælde opfattes som en transistor i en commomcollector kobling. Dernæst kan der opstilles en hybrid-$\pi$-model for transistoren som er vist i figur \ref{hybridpimodel_darlington} 
+For at gøre det nemmere at bestemme impedansen af darlingtontransistoren er det valgt at opfatte den som en enkelt supertransistor hvor $h_{fe}= h_{fe_1} \cdot h_{fe_2}$\fixme{Kilde: sedra/smidth sixth edition side 525}. Der er også valgt at se bort fra de indre modstande i darlingtontransistoren. Når dette er valgt kan darlingtontransistoren i dette tilfælde opfattes som en transistor koblet som en commomcollector. Ud fra det kan der opstilles en simpel hybrid-$\pi$-model for supertransistoren som er vist i figur \ref{hybridpimodel_darlington}. Ud fra figur \ref{hybridpimodel_darlington} kan ligning (\ref{equ:spaendingsforstaerker3}) opsættes.
 
 \begin{figure}[h]
 \centering
@@ -44,45 +40,45 @@ For at gøre det nemmere at bestemme impedansen af darlingtontransistoren er det
 \caption{Simpel småsignals hybrid-$\pi$-model  opstillet for supertransistor.}
 \label{hybridpimodel_darlington}
 \end{figure}
-
-Ud fra figur \ref{hybridpimodel_darlington} kan ligning (\ref{equ:spaendingsforstaerker3}) opsættes.
-
 \begin{equation}
 \label{equ:spaendingsforstaerker3}
-v_b = i_b (r_{\pi} + (1+\beta) \cdot r_o||R_E) 
+v_b = i_b (r_{\pi} + (1+h_{fe}) \cdot r_o||R_E) 
 \end{equation}
 
-Fra databladet over darlingtontransistoren er $\beta$ angivet til minimum at være 750. Dette gør at vi i beregning kan erstatte $1+\beta$ med $\beta$. Derudover er $r_o$ meget større end $R_e$ så denne kan også udelades af beregningen. $R_E$ er i denne sammenhæng den impedans der sidder efter darlingtontransistoren, som er en serieforbindelse af $R_e$ + $R_L$ Med disse betragtninger kan ligning (\ref{equ:spaendingsforstaerker3}) forsimples til ligning \ref{equ:spaendingsforstaerker4}
-
+Ligning (\ref{equ:spaendingsforstaerker3}) kan ved at dividere med $i_b$ på begge sider omskrives så det er indgangsimpedansen der regnes, se ligning (\ref{equ:spaendingsforstaerker4})
 \begin{equation}
 \label{equ:spaendingsforstaerker4}
-v_b = i_b (r_{\pi} + \beta \cdot (R_e + R_L))
+R_{in} = r_{\pi} + (1+h_{fe}) \cdot r_o||R_E 
 \end{equation}
-Vi ved at $r_{\pi}$ er givet ved ligningen (\ref{equ:spaendingsforstaerker5})
 
+Fra databladet over darlingtontransistoren er $h_{fe}$ angivet til minimum at være 750. Dette gør at vi i beregning kan erstatte $(1+h_{fe})$ med $h_{fe}$, fordi $h_{fe}$ >> 1. Derudover er $r_o$ meget større end $R_e$ så denne kan også udelades af beregningen. $R_E$ er den impedans der sidder efter darlingtontransistoren, som i dette tilfælde er en serieforbindelse af $R_e$ + $R_L$, hvor $R_e$ er den termiske modstand og $R_L$ er den load højtaleren repræsentere. Med disse betragtninger kan ligning (\ref{equ:spaendingsforstaerker4}) forsimples til ligning (\ref{equ:spaendingsforstaerker5}).
 \begin{equation}
 \label{equ:spaendingsforstaerker5}
-r_{\pi} = \beta \cdot \frac{1}{g_m}
+R_{in} = r_{\pi} + h_{fe} \cdot (R_e + R_L)
 \end{equation}
-Dette indsættes i ligning (\ref{equ:spaendingsforstaerker4}) og den omskrives så det er impedansen der regnes, se ligning (\ref{equ:spaendingsforstaerker6})
 
+Vi ved at $r_{\pi}$ er givet ved ligningen (\ref{equ:spaendingsforstaerker6})
 \begin{equation}
 \label{equ:spaendingsforstaerker6}
-R_{in} = \frac{\beta}{g_m} + \beta \cdot R_E = \frac{750}{230.8 mS} + 750 \cdot (0.62~\ohm + 8~\ohm) = 9,76~k\ohm  
+r_{\pi} = h_{fe} \cdot \frac{1}{g_m}
 \end{equation}
 
-I ligning (\ref{equ:spaendingsforstaerker6}) får vi impedansen for en af darlingtontransistorerne til at være 9,76 k\ohm. Idet af den load $R'_l$ som spændingsforstærkeren ser er to darlingtontransistorer i parallel er den samledes impedans spændingsforstærkeren ser givet ved ligning (\ref{equ:spaendingsforstaerker7})
-
+Ligning (\ref{equ:spaendingsforstaerker6} ) indsættes nu i ligning (\ref{equ:spaendingsforstaerker5}) og indgangsimpedansen for darlingtontransistoren beregnes.
 \begin{equation}
 \label{equ:spaendingsforstaerker7}
+R_{in} = \frac{h_{fe}}{g_m} + h_{fe} \cdot R_E = \frac{750}{230.8 mS} + 750 \cdot (0.62~\ohm + 8~\ohm) = 9,76~k\ohm  
+\end{equation}
+
+I ligning (\ref{equ:spaendingsforstaerker7}) får vi indgangsimpedansen for en darlingtontransistor til at være 9,76 k\ohm. Idet af den load $R'_L$ som spændingsforstærkeren ser er to darlingtontransistorer i parallel er den samledes impedans spændingsforstærkeren ser givet ved ligning (\ref{equ:spaendingsforstaerker8})
+\begin{equation}
+\label{equ:spaendingsforstaerker8}
 R'_L = R_{in_1}||R_{in_2} = 9,76~k\ohm||9,76~k\ohm = 4,88~k\ohm
 \end{equation}  
 
-Med $R'_L$ for spændingsforstærkeren fundet kan forstærkningen findes ved ligning (\ref{equ:spaendingsforstaerker8})
-
+Med $R'_L$ for spændingsforstærkeren fundet kan forstærkningen som før nævnt finde ved findes ved $A_v = -g_m \cdot R'_L$ og er udregnet i ligning (\ref{equ:spaendingsforstaerker9})
 \begin{equation}
-\label{equ:spaendingsforstaerker8}
+\label{equ:spaendingsforstaerker9}
 A_v = -g_m \cdot R'_L = 230,8 mS \cdot 4,88~k\ohm = -1126,15
 \end{equation}
 
-Hermed er forstærkningen i spændingsforstærkeren beregnet til at være -1126,15 WTF!!!!!!!
+Hermed er forstærkningen i spændingsforstærkeren beregnet til at være 1126,15 med et fasedrej på 180 grader.
