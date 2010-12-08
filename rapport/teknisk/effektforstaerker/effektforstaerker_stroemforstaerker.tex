@@ -12,7 +12,6 @@ Strømforstærkeren opbygges som vist på figur \ref{fig:blokdiagram-stroem}. Do
 Som vist, i afsnit \ref{valg_kortslutningssikring}, skal der igennem $R_{\mathrm{load}}$ løbe en $I_{\mathrm{peak}}$ på 2,24 A for at opnå en udgangseffekt på 20 W. Dette betyder desuden, som det også er vist i afsnit \ref{valg_kortslutningssikring}, at der skal være en $V_{\mathrm{peak}}$ på 17,9 V over belastningen. Da de valgte darlingtontransistorer har en $V_{\mathrm{BE}}$ på op til 2,5 V, vælges forsyningsspændingen til $\pm$23 V, hvormed der også er plads til et spændingsfald over $R_E$ og en transistor i konstantstrømsgeneratoren.
 
 \subsubsection*{Termiske forhold}
-\label{effektforstaerker_termiskeforhold}
 Størrelsen af $R_E$ bestemmes med udgangspunkt i at den skal skabe termisk stabilitet og til bestemmelsen af denne startes der derfor med at kigge på et termisk ekvivalentdiagram for de valgte darlingtontransistorer og de tilgængelige køleplader\fixme{kilde: koeleplade.pdf}. 
 
 \begin{figure}[h]
@@ -66,7 +65,6 @@ Til at lave opstillingen på figur \ref{fig:term-runaway} er der antaget en hvil
 
 
 \subsubsection*{Konstantstrømsgenerator}
-\label{effektforstaerker-konstantstroemsgenerator1}
 Konstantstrømsgeneratorens opgave er at levere en konstant strøm, denne strøm bruges til $V_{be}$-Multiplieren og til spændingsforstærkeren. I afsnit \ref{henvisning til vbe multiplier} er det beregnet at konstantstrømsgeneratoren skal leveres 6 mA. Opbygningen der er valgt til konstansstrømsgereratoren er afbildet på figur \ref{konstantstroemsgenerator_model}
 
 \begin{figure}[h]
