@@ -10,15 +10,14 @@ I dette projekt er der valgt så vidt muligt at designe alle løsninger med disk
 
 
 Argumentet for dette valg er at det er det eneste trin, blandt commonemitter, -base og -collector, hvis spændingsforstærkning er betydeligt over én og ikke, under korrekte omstændigheder, afhænger af transistorparametre. Da transistorparametre blandt andet er afhængige af den anvendte transistors temperatur er det en betragtelig styrke ikke at skulle tage højde for dem. Spændingsforstærkningen i commonemittertrinnet er dog kun uafhængig af transistorparametre så længe følgende er gældende: $r_o >>R_C \| R_L$, $gm \cdot R_E||R_e$ og $i_e \approx i_c$.
-Disse antagelser vil være gældende gennem hele designet af forforstærkeren. 
-Forforstærkeren bygges af to commonemittertrin for at opnå den ønskede forstærkning på 63,3 gange. Dette skyldes at forstærkningen er givet ved ligning (\ref{eq:gmbevis})\fixme{kilde sedra smith eller mm6 AEL}.
+Dette skyldes at forstærkningen er givet ved ligning (\ref{eq:gmbevis})\fixme{kilde sedra smith eller mm6 AEL}.
 
 \begin{equation}
 A_v =  \frac{-gm \cdot R'_L}{1+gm \cdot R'_e} \approx  -\frac{R'_L}{R'_e} \Biggr\vert _{\frac{1}{gm}<<R'_e}
 \label{eq:gmbevis}
 \end{equation}
 
-Hvor $R'_e = R_e || R_E$ og $R'_L = R_L||R_C$. Det vil sige at jo tættere $R_e$ kommer på $\frac{1}{gm}$ jo mere indflydelse vil denne have på forstærkningen.
+Hvor $R'_e = R_e || R_E$ og $R'_L = R_L||R_C$. Det vil sige at jo tættere $R_e$ kommer på $\frac{1}{gm}$ jo mere indflydelse vil denne have på forstærkningen. Disse antagelser vil derfor være gældende gennem hele designet af forforstærkeren. 
 
 Det første trin skal have en forstærkning på 10 gange og det andet på 6,33 for at opnå den ønskede forstærkning, som vist på figur \ref{blok_forforstaerker}. Grunden til rækkefølgen af trinnene er for ikke at have størst signaludsving og den største forstærkning i samme trin. Dette skyldes at der i en forstærker altid vil være forvrængning og støj. Hvis den største forstærkning kommer sidst, vil denne forvrængning blive forstærket yderligere, hvilket ikke er ønskværdigt. Hvis den største forstærkning derimod kommer først, vil der blive mindst muligt forvrængning med i det endelige signal.\fixme{Hvordan viser vi at det er smart? Frederik: Er det godt nok? Skal der skrives mere? Skal der beregninger med, der beviser det? (synes jeg ikke)}
 
@@ -139,11 +138,43 @@ Det endelige kredsløb er vist på figur \ref{fig:forforstaerkersimuleringkredsl
 
 For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. De karakteristika som skal verificeres er spændingsforstærkningen, amplitudekarakteristikken samt harmonisk forvrængning. Kredsløbet der simuleres er vist på figur \ref{fig:forforstaerkersimuleringkredslob}. På figuren er der til alle komponenter angivet en beregnet værdi, som den øverste, og en tilsvarende værdi i modstandsrækken E96. 
 
-%\begin{figure}[h]
-%\centering
-%\includegraphics[scale=.6]{teknisk/forforstaerker/}
-%\caption{}
-%\label{}
-%\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{teknisk/forforstaerker/forforstaerkerendeligkreds.png}
+\caption{}
+\label{}
+\end{figure}
+
+Kredsløbet simuleres med modstandsværdierne hørende til E96 rækken fordi det er de værdier der i praksis skal bruges til at bygge den endelige forforstærker. 
+Spændingsforstærkningen af hele trinnet skal være 63,3 gange svarende til 36 dB. Forstærkningen vises på figur \ref{fig:amplitude-forforstaerker} ved hjælp af en amplitudekarakteristik gående fra 0 Hz til 40 kHz, således at spændet fra 20 Hz til 20 kHz tydeligt kan ses. 
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{teknisk/forforstaerker/amplitudeforforstaerker.png}
+\caption{Forforstærkerens amplitude karakteristik}
+\label{fig:amplitude-forforstaerker}
+\end{figure}
+
+Simuleringen viser at forstærkningen ved 1 kHz, som er referencen jævnfør kravspecifikationen, er 35,2 dB hvor den skulle have være 36 dB. Dermed må der konkluderes at beregningen af forforstærkertrinnene indeholder usikkerheder. Usikkerhederne består i de antagelser som defineres før beregningerne: $r_o >>R_C \| R_L$, $gm \cdot R_E||R_e$ og $i_e \approx i_c$. For at korrigere forstærkningen i trinnene kan der, ifølge ligning \ref{eq:gmbevis}, justeres på den AC-koblede emittermodstand, $R_{e1}$ og $R_{e2}$. I ligning \ref{eq:nyerevalues} er de nye værdier for disse modstanden anvist.
+
+\begin{equation}
+2
+\end{equation}
+
+Simuleringen viser tydeligt frekvensgangen er, som den skal være fra 20 Hz til 20 kHz. Ved 20 Hz er der en dæmpning på 2 dB 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.6]{teknisk/forforstaerker/svingningforforstaerker.png}
+\caption{Forforstærkerens output ved }
+\label{fig:forforstaerkersvingning}
+\end{figure}
+
+
+
+
+
+
 
 
