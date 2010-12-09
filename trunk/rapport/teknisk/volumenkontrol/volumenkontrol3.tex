@@ -1,7 +1,7 @@
 \subsection*{AND-gate}
 \label{volumenkontrol-design-and}
 
-De to AND-gates er designet med diskrete komponenter, fremfor en integreret kreds. AND-gaten fungerer ved at holde udgangen høj, når begge indgange er høje. På AND-gaten til venstre på figur \ref{fig:volumenkontrol_diagram}, er et højt udgangsniveau $\sim$0,6 V, dette skyldes at der på udgangen af gaten er en transistors basis-emitter diode til stel. Er blot den ene af indgangene lave, vil den trække udgangen til stel gennem den tilhørende diode, BAT85 \fix{Kilde: BAT85.pdf}. Databladet for dioden beskriver en sammenhæng mellem en diode spænding på 0,24 V og en strøm gennem den på 0,1 mA, dette resultere i en Pull-up modstand beregnet i ligning (\ref{equ:and-gate1}).
+De to AND-gates er designet med diskrete komponenter, fremfor en integreret kreds. AND-gaten fungerer ved at holde udgangen høj, når begge indgange er høje. På AND-gaten til venstre på figur \ref{fig:volumenkontrol_diagram}, er et højt udgangsniveau $\sim$0,6 V, dette skyldes at der på udgangen af gaten er en transistors basis-emitter diode til stel. Er blot den ene af indgangene lave, vil den trække udgangen til stel gennem den tilhørende diode, BAT85 \fixme{Kilde: BAT85.pdf}. Databladet for dioden beskriver en sammenhæng mellem en diode spænding på 0,24 V og en strøm gennem den på 0,1 mA, dette resultere i en Pull-up modstand beregnet i ligning (\ref{equ:and-gate1}).
 
 \begin{equation}
 \label{equ:and-gate1}
