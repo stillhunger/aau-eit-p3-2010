@@ -2,14 +2,14 @@
 \label{forforstaerker}
 Forforstærkerens opgave er, som nævnt i kapitel \ref{systemopbygning}, at forstærke et mikrofonsignal op til linieniveau. Ved gennemgangen af relevante standarder i afsnit \ref{standarder} ses det, at et liniesignal ligger med peakspændinger mellem 200 mV og 2 V, mens et mikrofonsignal ligger med peakspændinger mellem 0,8 mV og 200 mV. Der er altså for et liniesignal en faktor 10 mellem den laveste og den højeste signalspænding, mens der for et mikrofonsignal er en faktor 250 mellem de to yderpunkter. Denne forskel bevirker at signalet fra en mikrofon, hvis udgangssignal ligger i området beskrevet i standarden, ikke kan forstærkes lineært til linieniveau.\\ 
 Givet at spændingen efter forforstærkeren må variere med en faktor 10, da den skal være på linieniveau, og forforstærkeren ønskes at forstærke lineært, må spændingen på indgangen af forforstærkeren også kun variere med en faktor 10. Eftersom denne spænding bestemmes af lydtrykket på mikrofonen, må lydtrykket på mikrofonen altså variere med 20 dB(A), da dB(A) er en logaritmisk skala. Det er med andre ord nødvendigt at foruddefinere et lydtryksområde for mikrofonen, der skal kobles til forforstærkeren. Dette arbejdsområde vælges sådan, at lydtrykket for almindelig tale ligger i midten. \\
-Med henblik på at lave en forforstærker med en fast lineær forstærkning, vælges en bestemt type mikrofon, hvormed spændingerne, der skal forstærkes til linieniveau, kan findes. Af tilgængelighedshensyn vælges en Monacor MCE-4000 mikrofon, som har en peakspænding på udgangen givet ved 5 $\mathrm{\tfrac{mV}{Pa}}$. I Appendiks B??, er peakspændingerne på udgangen, ved det relevante lydtryksniveau, bestemt til at svinge mellem 3,16 mV og 31,6 mV. Forstærkningen i forforstærkeren er bestemt af den maksimale peakspænding på mikrofonens udgang efter spændingsdelingen mellem mikrofonens udgangsimpedans og forforstærkerens indgangsimpedans. Mikrofonens udgangsimpedans, $R_o$ er i databladet \fixme{kilde til datablad} opgivet til 2,2 k\ohm. En tommelfingerregel \fixme{kilde til jan?} siger at indgangsmodstanden på det næste trin skal være $"$meget større$"$ end udgangsmodstanden på det foregående. $"$Meget større$"$ antages at være 10 gange større, hvormed indgangsmodstanden, $R_i$, på forforstærkeren skal være 22,2 k\ohm. Dermed kan den maksimale peakspænding på indgangen bestemmes som vist i ligning (\ref{eq:indgangspeakdeling}).
+Med henblik på at lave en forforstærker med en fast lineær forstærkning, vælges en bestemt type mikrofon, hvormed spændingerne, der skal forstærkes til linieniveau, kan findes. Af tilgængelighedshensyn vælges en Monacor MCE-4000 mikrofon, som har en peakspænding på udgangen givet ved 5 $\mathrm{\tfrac{mV}{Pa}}$. I Appendiks B??, er peakspændingerne på udgangen, ved det relevante lydtryksniveau, bestemt til at svinge mellem 3,16 mV og 31,6 mV. Forstærkningen i forforstærkeren er bestemt af den maksimale peakspænding på mikrofonens udgang efter spændingsdelingen mellem mikrofonens udgangsimpedans og forforstærkerens indgangsimpedans. Mikrofonens udgangsimpedans, $R_o$ er i databladet \fixme{kilde til datablad} opgivet til 2,2 k\ohm. En tommelfingerregel \fixme{kilde til jan?} siger at indgangsmodstanden på det næste trin skal være $"$meget større$"$ end udgangsmodstanden på det foregående. $"$Meget større$"$ antages at være 10 gange større, hvormed indgangsmodstanden, $R_i$, på forforstærkeren skal være 22 k\ohm. Dermed kan den maksimale peakspænding på indgangen bestemmes som vist i ligning (\ref{eq:indgangspeakdeling}).
 
 \begin{equation}
-V_{\mathrm{in,peak}}=V_{\mathrm{mic,peak}} \cdot \frac{R_i}{R_o + R_i} = 
+V_{\mathrm{in,peak}}=V_{\mathrm{mic,peak}} \cdot \frac{R_i}{R_o + R_i} = 28,7~mV
 \label{eq:indgangspeakdeling}
 \end{equation}
 
-Med disse spændinger på plads ses det at forforstærkeren skal forstærke indgangssignalet 63,3 gange for at få det op på liniesignalsniveau. De samlede krav til forforstærkeren er vist i tabel \ref{tab:krav_forforstaerker}
+Med spændingerne på plads ses det at forforstærkeren skal forstærke indgangssignalet 69,7 gange for at få det op på liniesignalsniveau. De samlede krav til forforstærkeren er vist i tabel \ref{tab:krav_forforstaerker}
 
 \begin{table}[h]
 \centering
@@ -17,10 +17,10 @@ Med disse spændinger på plads ses det at forforstærkeren skal forstærke indg
 \hline\hline
 Område & Krav \\
 \hline\hline
-Forstærkning & 63,3 gange \\[4pt]
+Forstærkning & 69,7 gange \\[4pt]
 Frekvensgang & $\pm$ 0,375 dB ved 20 Hz - 20 kHz \\[4pt]
 Forvrængning & < 0,5 \% \\[4pt]
-Indgangsimpedans & > 5 k\ohm \\
+Indgangsimpedans & 22 k\ohm \\
 \hline\hline
 \end{tabular}
 \caption{Krav til forforstærkeren}
