@@ -50,7 +50,7 @@ Det ses at formel (\ref{equ:smax}) bliver den afgørende betingelse og at $R_{\m
 R_E = - 2 \cdot K \cdot V_{CC} \cdot (R_{\mathrm{jc}} + R_{\mathrm{cs}} + R_{\mathrm{sa}}) - \frac{2 \cdot V_T}{I_C} = 536~m\ohm
 \end{equation}
 
-\subsubsection*{Simulering}
+\subsubsection*{Simulering af termiske forhold}
 
 På figur \ref{fig:term-runaway} er vist en graf over effekten som bliver afsat i en af udgangstransistorerne, når der på dennes emitter sidder den beregnede $R_E$. Den lige turkis linie viser hvilken effekt den samlede køling er i stand til at lede væk, når systemet står et sted hvor omgivelsestemperaturen er 35~\celsius. Den lige grønne linie viser hvilken effekt den samlede køling er i stand til at lede væk, når systemet står et sted hvor omgivelsestemperaturen er 25~\celsius. Systemet vil, når der ikke er noget signal på indgangen, opnå en hviletemperatur svarende til skæringen mellem effektkurven for darlingtontransistoren og $"$kølingslinien$"$, altså lige over 75~\celsius~ved en omgivelsestemperatur på 35~\celsius. Havde systemet ikke indeholdt en $R_E$, eller havde denne været mindre, ville effektkurven for darlingtontransistoren ligge højere, hvormed systemet ville opnå en højere hviletemperatur. 
 
@@ -70,7 +70,13 @@ Som et forsøg på at forbedre situationen beskrevet på figur \ref{fig:term-run
 \label{fig:term-runaway1}
 \end{figure}
 
-Ved en omgivelsestemperatur på 35~\celsius betyder denne ændring, at darlingtontransistoren vil opnå en hviletemperatur som er over 10~\celsius lavere, hvilket derfor er at foretrække. Til at lave opstillingerne på figur \ref{fig:term-runaway} og \ref{fig:term-runaway1} er der antaget en hvilestrøm gennem transistoren på 45 mA.
+Ved en omgivelsestemperatur på 35~\celsius betyder denne ændring, at darlingtontransistoren vil opnå en hviletemperatur som er over 10~\celsius lavere, hvilket derfor er at foretrække. Til at lave opstillingerne på figur \ref{fig:term-runaway} og \ref{fig:term-runaway1} er der antaget en hvilestrøm gennem transistoren på 45 mA. Hvilestrømmens størrelse er antaget ud fra 2\% af peakstrømmen på udgangen, som i eksempel 13.5 i Sedra-Smith \fixme{sedra smith}.
+
+
+\subsubsection*{Biasing af strømforstærker med Vbe-multiplier}
+
+For at opnå en klasse AB forstærkers karakteristika skal potentialet på basis af darlingtontransistorerne hæves således at de trække en hvilestrøm. Hvilestrømmen er antaget til 45 mA i afsnittet om termiske forhold. En Vbe multipliers typiske opbygning er som vist på figur \ref{fig:vbetypisk}
+
 
 
 \subsubsection*{Konstantstrømsgenerator}
