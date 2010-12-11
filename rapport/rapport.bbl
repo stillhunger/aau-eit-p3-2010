@@ -4,36 +4,132 @@
 Sub-Commmittee 29B, Audio Engineering, of IEC Technical Committee No. 29, Electroacoustics,
 \newblock $"$High fidelity audio equipment and systems; Minimum performance requirements$"$.
 \newblock Bilags-CD $"$IEC581-6.pdf$"$, 1979.
-\newblock 
+\newblock
 
 \bibitem{IEC61938}
 Dansk Standard,
 \newblock $"$Audio-, video- og audiovisuelle systemer - Indbyrdes forbindelser og matchende værdier - Foretrukne matchende analoge signalværdierl$"$.
 \newblock Bilags-CD $"$IEC61938\_1.pdf$"$, december 1997.
-\newblock 
+\newblock
 
-\bibitem{DIN45500}
-DIN,
-\newblock $"$Deutsches Institut f\"{u}r Normung 45500$"$.
-\newblock Bilags-CD $"$DIN45500.pdf$"$, Januar 1973.
-\newblock 
+\bibitem{lidt_om_lyd}
+Institut for Elektroniske Systemer Akustik sektionen,
+\newblock $"$Lidt om lyd - uden formler$"$.
+\newblock Bilags-CD $"$lidt\_om\_lyd.pdf$"$, juni 2010.
+\newblock
+
+\bibitem{hertz}
+http://www.hoerelse.info/,
+\newblock $"$Hertz$"$.
+\newblock Bilags-CD $"$hertz.pdf$"$, ?? ??.
+\newblock
 
 \bibitem{elregler-b1101}
 AAU,
 \newblock $"$Regler vedrørende el-sikkerhed i forbindelse med øvelses- og projektarbejder i elektroniklaboratorium B1-101$"$.
 \newblock Bilags-CD $"$elregler\_b1101.pdf$"$, Måned ?? År ??.
-\newblock 
+\newblock
 
-\bibitem{krav-fjernbetjening}
-Westridge Consulting,
-\newblock $"$MYSTERY CONTROL HISTORY$"$.
-\newblock Webside \href{http://www.philcorepairbench.com/mystery/history.htm}{http://www.philcorepairbench.com/mystery/history.htm}, 2003.
-\newblock 
+%\bibitem{krav-fjernbetjening}
+%Westridge Consulting,
+%\newblock $"$MYSTERY CONTROL HISTORY$"$.
+%\newblock Webside \href{http://www.philcorepairbench.com/mystery/history.htm}{http://www.philcorepairbench.com/mystery/history.htm}, 2003.
+%\newblock
+
+\bibitem{mic-datablad}
+Monacor,
+\newblock $"$MCE-4000 - Electret Mike Capsul$"$.
+\newblock Bilags-CD $"$mce-4000.pdf$"$, ?? ??.
+\newblock
+
+\bibitem{ael-mm6}
+Jan H. Mikkelsen,
+\newblock $"$BJT grundkoblinger - I$"$.
+\newblock Bilags-CD $"$ael\_mm6\_slides.pdf$"$, september 2010.
+\newblock
+
+\bibitem{bc547b-datablad}
+Vishay Semiconductors,
+\newblock $"$Small Signal Transistors (NPN)$"$.
+\newblock Bilags-CD $"$BC547.pdf$"$, marts 2004.
+\newblock
+
+\bibitem{1n4148-datablad}
+Fairchild Semiconductor,
+\newblock $"$Small Signal Diode$"$.
+\newblock Bilags-CD $"$1N4148.pdf$"$, ?? 2002.
+\newblock
+
+\bibitem{lm324-datablad}
+National Semiconductor,
+\newblock $"$Low Power Quad Operational Amplifiers$"$.
+\newblock Bilags-CD $"$LM324.pdf$"$, august 2000.
+\newblock
+
+\bibitem{bat85-datablad}
+Vishay Semiconductors,
+\newblock $"$Schottky Diode$"$.
+\newblock Bilags-CD $"$BAT85.pdf$"$, maj 2002.
+\newblock
+
+\bibitem{hef4516b-datablad}
+Philips,
+\newblock $"$Binary up/down counter$"$.
+\newblock Bilags-CD $"$HEF4516B.pdf$"$, januar 1995.
+\newblock
+
+\bibitem{sn74185a-datablad}
+Texas Instruments,
+\newblock $"$DUAL D-TYPE POSITIVE-EDGE-TRIGGERED FLIP-FLOPS WITH PRESET AND CLEAR$"$.
+\newblock Bilags-CD $"$SN74LS74A.pdf$"$, marts 1988.
+\newblock
+
+\bibitem{hef4511-datablad}
+Philips,
+\newblock $"$BCD to 7-segment latch/decoder/driver$"$.
+\newblock Bilags-CD $"$HEF4511.pdf$"$, januar 1995.
+\newblock
+
+\bibitem{ael-mm20}
+Jan H. Mikkelsen,
+\newblock $"$Effektforstærker – III$"$.
+\newblock Bilags-CD $"$ael\_mm20\_slides.pdf$"$, november 2010.
+\newblock
+
+\bibitem{bdx33-34-datablad}
+SGS-Thomson Microelectronics,
+\newblock $"$High gain general purpose$"$.
+\newblock Bilags-CD $"$BDX33-34.pdf$"$, december 1988.
+\newblock
+
+\bibitem{koeleplade-datablad}
+Fischer elektronik,
+\newblock $"$SK 51$"$.
+\newblock Bilags-CD $"$koeleplade.pdf$"$, ?? ??.
+\newblock
+
+\bibitem{ael-mm19}
+Jan H. Mikkelsen,
+\newblock $"$Effektforstærker – II$"$.
+\newblock Bilags-CD $"$ael\_mm19\_slides.pdf$"$, november 2010.
+\newblock
+
+\bibitem{klasse-ab}
+??,
+\newblock $"$Klasse AB forstærker$"$.
+\newblock Bilags-CD $"$klasse-ab.pdf$"$, december 2010.
+\newblock
+
+\bibitem{DIN45500}
+DIN,
+\newblock $"$Deutsches Institut f\"{u}r Normung 45500$"$.
+\newblock Bilags-CD $"$DIN45500.pdf$"$, Januar 1973.
+\newblock
 
 \bibitem{label}
 Forfatter,
 \newblock $"$Titel$"$.
 \newblock Bilags-CD $"$Filnavn$"$, Måned År.
-\newblock 
+\newblock
 
 \end{thebibliography}
