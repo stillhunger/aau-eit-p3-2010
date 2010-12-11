@@ -86,16 +86,26 @@ Ved en omgivelsestemperatur på 35~\celsius betyder denne ændring, at darlingto
 For at opnå en klasse AB forstærkers karakteristika skal potentialet på basis af darlingtontransistorerne hæves således det ikke er audiosignalet der skal generere den nødvendige basis-emitter spænding for at darlingtontransistorerne åbner. Hvis ikke potentialet hæves nok vil audiosignalet blive udsat for crossoverforvrængning idet en del af signalets spændning omkring 0 V ikke vil blive overført til højtaleren. Det korrekte potentiale på basis af U1 og U2 opnås ved hjælp af en Vbe-multiplier, hvis funktion er at opretholde et spændingsfald, $V_{BB}$, over Q1, vist på figur \ref{fig:vbemulti}. Ideelt set skal spændingsfaldet over Q1 være præcis to darlington basis-emitter spændinger, således at U1 og U2 vil åbne så snart spændingen på basis ændredes. Det anses dog ikke for at være muligt at designe kredsløbet så præcist, blandt andet på grund af tolerancerne i darlington transistorerne, som er relativt store. Derfor designes Vbe-multiplieren således at spændingsfaldet over Q1 gør at transistorerne U1 og U2 trækker en relativt lille hvilestrøm når audioinputtet er 0 V. Dermed er der sikret at U1 og U2 er åbne og at audiosignalet ikke bliver udsat for crossoverforvrængning. 
 
 
-Hvilestrømmen, $I_{\mathrm{hvile}}$, er antaget til 45 mA i afsnittet om termiske forhold. Til Q1 benyttes en BC547b transistor, grundet at det er hvad der er til rådighed. 
+Hvilestrømmen, $I_{\mathrm{hvile}}$, er antaget til 45 mA i afsnittet om termiske forhold. Til Q1 benyttes en BC547b transistor, grundet at det er hvad der er til rådighed. Da der ikke er opgivet en basis-emitterspænding for darlingtontransistorerne i databladet \fixme{kilde til datablad} er den fundet ved hjælp af LTspice og transistorernes spicemodel. Basis-emitterspændingen blev simuleret til 1,25 V. I ligning \ref{eq:vbbberegning} bestemmes $V_{BB}$, som er spændingen over Vbe-multiplieren.
 
 \begin{equation}
-V_{BB} =2 \cdot 1,25 V = 2,5 V
+V_{BB} =2 \cdot 1,25~V = 2,5~V
+\label{eq:vbbberegning}
 \end{equation}
+
+
 
 \begin{equation}
 I_S = \frac{i_C}{e^{\frac{V_{CE}}{V_T}}}
 \end{equation}
 
+\begin{equation}
+R_8 = \frac{V_{BE,Q1}}{I_R}
+\end{equation}
+
+\begin{equation}
+R_7 = \frac{V_{BB}}{I_R} - R_8
+\end{equation}
 
 \subsubsection*{Konstantstrømsgenerator}
 Konstantstrømsgeneratorens opgave er at levere en konstant strøm, denne strøm bruges til $V_{be}$-Multiplieren og til spændingsforstærkeren. I afsnit \ref{henvisning til vbe multiplier} er det beregnet at konstantstrømsgeneratoren skal leveres 6 mA. Opbygningen der er valgt til konstansstrømsgereratoren er afbildet på figur \ref{konstantstroemsgenerator_model}
