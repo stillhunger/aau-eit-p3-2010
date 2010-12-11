@@ -1,7 +1,7 @@
 \subsection*{VCO}
 \label{volumenkontrol-design-vco}
 
-En VCO, Voltage Controlled Oscillator, leverer et konstant signal hvor frekvensen er afhængig af en kontrolspænding. Kontrolspændingen er spændingen over $C_2$, ladekondensatoren, minus én diodespænding. Der er taget udgangspunkt i en VCO fra databladet for en LM324\fixme{kilde: LM324.pdf}. VCO'en kan deles op i to blokke; én integrator og én schmitt-trigger. Det er udgangen fra schmitt-triggeren der bestemmer hvilken af de to spændinger integratoren arbejder udfra. Triggerspændingerne på schmitt-triggeren er givet ved udtrykkene i formel (\ref{equ:vco1}) og formel (\ref{equ:vco2}). Forsyningsspændingen, $V_{CC}$, er 5 V.
+En VCO, Voltage Controlled Oscillator, leverer et konstant signal hvor frekvensen er afhængig af en kontrolspænding. Kontrolspændingen er spændingen over $C_2$, ladekondensatoren, minus én diodespænding. Der er taget udgangspunkt i en VCO fra databladet for en LM324 \cite{lm324-datablad}. VCO'en kan deles op i to blokke; én integrator og én schmitt-trigger. Det er udgangen fra schmitt-triggeren der bestemmer hvilken af de to spændinger integratoren arbejder udfra. Triggerspændingerne på schmitt-triggeren er givet ved udtrykkene i formel (\ref{equ:vco1}) og formel (\ref{equ:vco2}). Forsyningsspændingen, $V_{CC}$, er 5 V.
 
 \begin{equation}
 \label{equ:vco1}
