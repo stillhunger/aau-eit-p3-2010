@@ -1,6 +1,6 @@
 \subsection{Kortslutningssikring}
 \label{effekt_kortslutningssikring}
-Kortslutningssikringen tilføjes ved at indføre kredsløbet, vist på figur \ref{fig:dia-kortslut}, mellem base og emitter på darlingtontransistorerne, belastningen og tilbagekoblingen, som vist på figur \ref{fig:dia-kortslut1}. Her er dog kun vist for den halvdel af udgangstrinnet der er opbygget af en BDX33B, der skal dog indføres samme kredsløb på den halvdel der er opbygget af en BDX34B. 
+Kortslutningssikringen tilføjes ved at indføre kredsløbet, vist på figur \ref{fig:dia-kortslut}, mellem base og emitter på darlingtontransistorerne, belastningen og tilbagekoblingen, som vist på figur \ref{fig:dia-kortslut1}. 
 
 \begin{figure}[h]
 \centering
@@ -48,6 +48,7 @@ P_{R_2} = \left(\frac{R_1 \cdot \mathrm{3~A}}{R_1 + R_2 + R_3}\right)^2 \cdot R_
 P_{R_3} = \left(\frac{R_1 \cdot \mathrm{3~A}}{R_1 + R_2 + R_3}\right)^2 \cdot R_3 = \mathrm{0,47~W}
 \end{equation}
 
-Da de tilgængelige effektmodstande kan holde til, at der afsættes en effekt på ??\fixme{Hvad, Frede?} W i dem kontinuerligt, betyder det, at det ikke er nødvendigt at gøre noget for at sikre dem. Alle udregninger i dette afsnit \ref{effekt_kortslutningssikring} er desuden under antagelse af, at strømmen ind i basen på transistoren, Q1, er ubetydelig lille.
+Da de tilgængelige effektmodstande kan holde til, at der afsættes en effekt på ??\fixme{Hvad, Frede?} W i dem kontinuerligt, betyder det, at det ikke er nødvendigt at gøre noget for at sikre dem. Alle udregninger i dette afsnit \ref{effekt_kortslutningssikring} er desuden under antagelse af, at strømmen ind i basen på transistoren, Q1, er ubetydelig lille.\\
+Her er desuden kun vist for den halvdel af udgangstrinnet som håndterer den positive halvperiode af signalet, der skal dog indføres næsten samme kredsløb på den halvdel som håndterer den negative halvperiode af signalet. Eneste forskel er at transistoren, Q1, erstattes med en BC557B \fixme{kilde: bc557b.pdf}. Dette gøres da en BC547B vil blive forspændt over base-collector diodeovergangen, hvorved den vil stjæle basestrømmen fra udgangstransistoren. Skulle dette få lov til at ske, vil den negative halvperiode af signalet blive klippet, hvilket ikke vil være tilfældet når der benyttes en BC557B i kortslutningssikringen. 
 
 \subsubsection*{Simulering}
