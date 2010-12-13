@@ -11,7 +11,6 @@ Kortslutningssikringen tilføjes ved at indføre kredsløbet, vist på figur \re
 
 Strømmen på 3 A, anført på figur \ref{fig:dia-kortslut}, er den strøm, hvor kortslutningssikringen skal aktivere, hvilket blev bestemt i afsnit \ref{valg_kortslutningssikring}. At kortslutningssikringen skal aktivere betyder her, at transistoren Q1 skal åbnes. Når transistoren, Q1, åbnes vil den trække en strøm, hvormed strømmen ind i darlingtontransistorens base går mod nul og darlingtontransistoren lukker. 
 
-
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{teknisk/effektforstaerker/diagram-kortslut1.png}
@@ -49,6 +48,6 @@ P_{R_3} = \left(\frac{R_1 \cdot \mathrm{3~A}}{R_1 + R_2 + R_3}\right)^2 \cdot R_
 \end{equation}
 
 Da de tilgængelige effektmodstande kan holde til, at der afsættes en effekt på ??\fixme{Hvad, Frede?} W i dem kontinuerligt, betyder det, at det ikke er nødvendigt at gøre noget for at sikre dem. Alle udregninger i dette afsnit \ref{effekt_kortslutningssikring} er desuden under antagelse af, at strømmen ind i basen på transistoren, Q1, er ubetydelig lille.\\
-Her er desuden kun vist for den halvdel af udgangstrinnet som håndterer den positive halvperiode af signalet, der skal dog indføres næsten samme kredsløb på den halvdel som håndterer den negative halvperiode af signalet. Eneste forskel er at transistoren, Q1, erstattes med en BC557B \fixme{kilde: bc557b.pdf}. Dette gøres da en BC547B vil blive forspændt over base-collector diodeovergangen, hvorved den vil stjæle basestrømmen fra udgangstransistoren. Skulle dette få lov til at ske, vil den negative halvperiode af signalet blive klippet, hvilket ikke vil være tilfældet når der benyttes en BC557B i kortslutningssikringen. 
+Her er desuden kun vist for den halvdel af udgangstrinnet som håndterer den positive halvperiode af signalet, der skal dog indføres næsten samme kredsløb på den halvdel som håndterer den negative halvperiode af signalet. Eneste forskel er at transistoren, Q1, erstattes med en BC557B \cite{bc557b-datablad}. Dette gøres da en BC547B vil blive forspændt over base-collector diodeovergangen, hvorved den vil stjæle basestrømmen fra udgangstransistoren. Skulle dette få lov til at ske, vil den negative halvperiode af signalet blive klippet, hvilket ikke vil være tilfældet når der benyttes en BC557B i kortslutningssikringen. 
 
 \subsubsection*{Simulering}
