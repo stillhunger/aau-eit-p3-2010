@@ -1,6 +1,6 @@
 \subsection{Strømforstærker}
 \label{effekt_stroemforstaerker}
-Strømforstærkeren opbygges som vist på figur \ref{fig:blokdiagram-stroem}. Dog vil konstantstrømsgeneratoren blive bygget i diskret elektronik. Der er valgt at der benyttes en BDX33B og en BDX34B \fixme{kilde: BDX33-34.pdf} som udgangstransistorer. Dette er darlingtontransistorer, som er valgt da de har en $h_{\mathrm{FE}}$ på minimum 750 og kan klare en $I_C$ på op til 10 A. Desuden er de let tilgængelige til projektet.
+Strømforstærkeren opbygges som vist på figur \ref{fig:blokdiagram-stroem}. Dog vil konstantstrømsgeneratoren blive bygget i diskret elektronik. Der er valgt at der benyttes en BDX33B og en BDX34B \cite{bdx33-34-datablad} som udgangstransistorer. Dette er darlingtontransistorer, som er valgt da de har en $h_{\mathrm{FE}}$ på minimum 750 og kan klare en $I_C$ på op til 10 A. Desuden er de let tilgængelige til projektet.
 
 \begin{figure}[h]
 \centering
@@ -12,7 +12,7 @@ Strømforstærkeren opbygges som vist på figur \ref{fig:blokdiagram-stroem}. Do
 Som vist, i afsnit \ref{valg_kortslutningssikring}, skal der igennem $R_{\mathrm{load}}$ løbe en $I_{\mathrm{peak}}$ på 2,24 A for at opnå en udgangseffekt på 20 W. Dette betyder desuden, som det også er vist i afsnit \ref{valg_kortslutningssikring}, at der skal være en $V_{\mathrm{peak}}$ på 17,9 V over belastningen. Da de valgte darlingtontransistorer har en $V_{\mathrm{BE}}$ på op til 2,5 V, vælges forsyningsspændingen til $\pm$23 V, hvormed der også er plads til et spændingsfald over $R_E$ og en transistor i konstantstrømsgeneratoren.
 
 \subsubsection*{Termiske forhold}
-Størrelsen af $R_E$ bestemmes med udgangspunkt i at den skal skabe termisk stabilitet og til bestemmelsen af denne startes der derfor med at kigge på et termisk ekvivalentdiagram for de valgte darlingtontransistorer og de tilgængelige køleplader\fixme{kilde: koeleplade.pdf}. 
+Størrelsen af $R_E$ bestemmes med udgangspunkt i at den skal skabe termisk stabilitet og til bestemmelsen af denne startes der derfor med at kigge på et termisk ekvivalentdiagram for de valgte darlingtontransistorer og de tilgængelige køleplader \cite{koeleplade-datablad}. 
 
 \begin{figure}[h]
 \centering
@@ -22,14 +22,14 @@ Størrelsen af $R_E$ bestemmes med udgangspunkt i at den skal skabe termisk stab
 \end{figure}
 
 På figur \ref{fig:term-dia} ses ekvivalentdiagrammet, hvor; temperatur er spænding, effekt er strøm og termisk modstand er modstand. Flere af komponenterne har samme benævnelser, da de også antager samme værdier og da der under udregningerne dermed ikke vil blive set på dem enkeltvis.\\
-Størrelsen af $P_D$ er effekten afsat i en enkelt udgangstransistor og er givet ved udregningen i formel (\ref{equ:pd})\fixme{kilde: Jan Mikkelsen, mm19}. Denne formel er ganske vist givet for et klasse B udgangstrin, men den er også gældende for et klasse AB udgangstrin, da hvilestrømmem i et klasse AB udgangstrin kun er betydeligt forskellig fra nul i perioden, hvor der er et skifte i hvilken transistor, som er aktiv \fixme{kilde: klasse-ab.pdf}.
+Størrelsen af $P_D$ er effekten afsat i en enkelt udgangstransistor og er givet ved udregningen i formel (\ref{equ:pd}) \cite{ael-mm19}. Denne formel er ganske vist givet for et klasse B udgangstrin, men den er også gældende for et klasse AB udgangstrin, da hvilestrømmem i et klasse AB udgangstrin kun er betydeligt forskellig fra nul i perioden, hvor der er et skifte i hvilken transistor, som er aktiv \cite{klasse-ab}.
 
 \begin{equation}
 \label{equ:pd}
 P_D = \frac{1}{\pi^2} \cdot \frac{(V_{CC})^2}{R_{\mathrm{load}}} = \frac{1}{\pi^2} \cdot \frac{(23~\mathrm{V})^2}{8~\ohm} = 6,7~\mathrm{W}
 \end{equation}
 
-Fra darlingtontransistorernes datablad haves $R_{\mathrm{jc}} = 1,78~\tfrac{\celsius}{\mathrm{W}}$ og $T_{\mathrm{j,max}} = 150~\celsius$. Databladet for kølepladen giver $R_{\mathrm{cs}} = 1,4~\tfrac{\celsius}{\mathrm{W}}$ når der anvendes isoleringspasta. Fra DIN45500 \fixme{kilde: DIN45500.pdf} fåes at HiFi-forstærkeren skal kunne holde til en omgivelsestemperatur på 35~\celsius, hvilket er $T_a$ i ekvivalentet. Udfra dette opstilles, ved simpel kredsløbsteori på ekvivalentkredsløbet på figur \ref{fig:term-dia}, formel (\ref{equ:tjmax}) til beregning af $R_{\mathrm{sa}}$ ved $T_j$  på sin maksimale værdi. 
+Fra darlingtontransistorernes datablad haves $R_{\mathrm{jc}} = 1,78~\tfrac{\celsius}{\mathrm{W}}$ og $T_{\mathrm{j,max}} = 150~\celsius$. Databladet for kølepladen giver $R_{\mathrm{cs}} = 1,4~\tfrac{\celsius}{\mathrm{W}}$ når der anvendes isoleringspasta. Fra DIN45500 \cite{DIN45500} fåes at HiFi-forstærkeren skal kunne holde til en omgivelsestemperatur på 35~\celsius, hvilket er $T_a$ i ekvivalentet. Udfra dette opstilles, ved simpel kredsløbsteori på ekvivalentkredsløbet på figur \ref{fig:term-dia}, formel (\ref{equ:tjmax}) til beregning af $R_{\mathrm{sa}}$ ved $T_j$  på sin maksimale værdi. 
 
 \begin{equation}
 \label{equ:tjmax}
@@ -43,7 +43,8 @@ Desuden opstilles udfra sikkerhedshensyn\fixme{Find gerne kilde der siger dette 
 40~\celsius = 2 \cdot P_D \cdot R_{\mathrm{sa}}
 \end{equation}
 
-Det ses at formel (\ref{equ:smax}) bliver den afgørende betingelse og at $R_{\mathrm{sa}}$ maksimalt må være $2,99~\tfrac{\celsius}{\mathrm{W}}$. I databladet for kølepladen ses at en $R_{\mathrm{sa}}$ på $2,9~\tfrac{\celsius}{\mathrm{W}}$ kan opnåes ved en køleplade på 110 mm, hvilket derfor vælges. Størrelsen af $R_E$ kan nu bestemmes ved formel (\ref{equ:rebestem})\fixme{kilde: Jan Mikkelsen, mm19 - med et lille twist}, hvor $K = - 2~\tfrac{\mathrm{mV}}{\celsius}$, $V_{CC} = 23~V$, $V_T = 26~\mathrm{mV}$ og $I_C = 2,24~A$.
+Det ses at formel (\ref{equ:smax}) bliver den afgørende betingelse og at $R_{\mathrm{sa}}$ maksimalt må være $2,99~\tfrac{\celsius}{\mathrm{W}}$. I databladet for kølepladen ses at en $R_{\mathrm{sa}}$ på $2,9~\tfrac{\celsius}{\mathrm{W}}$ kan opnåes ved en køleplade på 110 mm, hvilket derfor vælges. Størrelsen af $R_E$ kan nu bestemmes ved formel (\ref{equ:rebestem}) \cite{ael-mm19} \fixme{kilde: Jan Mikkelsen, mm19 - med et lille twist}
+, hvor $K = - 2~\tfrac{\mathrm{mV}}{\celsius}$, $V_{CC} = 23~V$, $V_T = 26~\mathrm{mV}$ og $I_C = 2,24~A$.
 
 \begin{equation}
 \label{equ:rebestem}
@@ -86,7 +87,7 @@ Ved en omgivelsestemperatur på 35~\celsius~ betyder denne ændring, at darlingt
 For at opnå en klasse AB forstærkers karakteristika skal potentialet på basis af darlingtontransistorerne hæves således det ikke er audiosignalet der skal generere den nødvendige basis-emitter spænding for at darlingtontransistorerne åbner. Hvis ikke potentialet hæves nok vil audiosignalet blive udsat for crossoverforvrængning idet en del af signalets spændning omkring 0 V ikke vil blive overført til højtaleren. Det korrekte potentiale på basis af U1 og U2 opnås ved hjælp af en Vbe-multiplier, hvis funktion er at opretholde et spændingsfald, $V_{BB}$, over Q1, vist på figur \ref{fig:vbemulti}. Ideelt set skal spændingsfaldet over Q1 være præcis to darlington basis-emitter spændinger, således at U1 og U2 vil åbne så snart spændingen på basis ændredes. Det anses dog ikke for at være muligt at designe kredsløbet så præcist, blandt andet på grund af tolerancerne i darlington transistorerne, som er relativt store. Derfor designes Vbe-multiplieren således at spændingsfaldet over Q1 gør at transistorerne U1 og U2 trækker en relativt lille hvilestrøm når audioinputtet er 0 V. Dermed er der sikret at U1 og U2 er åbne og at audiosignalet ikke bliver udsat for crossoverforvrængning. 
 
 
-Hvilestrømmen, $I_{\mathrm{hvile}}$, er antaget til 45 mA i afsnittet om termiske forhold. Til Q1 benyttes en BC547b transistor, grundet at det er hvad der er til rådighed. Da der ikke er opgivet en basis-emitterspænding for darlingtontransistorerne ved en collectorstrøm på 45 mA i databladet \fixme{kilde til datablad} er den fundet ved hjælp af LTspice og transistorernes spicemodel. Basis-emitterspændingen blev simuleret til 1,25 V. I ligning (\ref{eq:vbbberegning}) bestemmes $V_{BB}$, som er spændingen over Vbe-multiplieren.
+Hvilestrømmen, $I_{\mathrm{hvile}}$, er antaget til 45 mA i afsnittet om termiske forhold. Til Q1 benyttes en BC547b transistor, grundet at det er hvad der er til rådighed. Da der ikke er opgivet en basis-emitterspænding for darlingtontransistorerne ved en collectorstrøm på 45 mA i databladet \cite{bdx33-34-datablad} er den fundet ved hjælp af LTspice og transistorernes spicemodel. Basis-emitterspændingen blev simuleret til 1,25 V. I ligning (\ref{eq:vbbberegning}) bestemmes $V_{BB}$, som er spændingen over Vbe-multiplieren.
 
 \begin{equation}
 V_{BB} =2 \cdot 1,25~V = 2,5~V
@@ -121,7 +122,7 @@ Konstantstrømsgeneratorens opgave er at levere en konstant strøm, denne strøm
 \label{konstantstroemsgenerator_model}
 \end{figure}
 
-Til konstantstrømsgeneratoren er der valgt at anvende en BC547B som transistor og en 1N4148 som diode. BC547B har en $V_{be}$ spænding på maksimum 720 mV \fixme{Kilde: bc547 datablad}. Deraf designes det således at der er et spændingsfald på 720 mV over $D_1$, $D_2$, $R_{2}$ og $Q_{1_{BE}}$. I databladet for 1N4148\fixme{Kilde: 1N4148 datablad} fremgår det at den  ved en $I_F$ strøm på 8 mA har en $V_D$ spændingen på 720 mV. Strømmen igennem dioderne er givet ved hvor stor en strøm der løber igennem modstanden $R_{1}$. $R_{1}$ er således givet ved ligning (\ref{equ:stroemgenerator_effektforstaerker1}).
+Til konstantstrømsgeneratoren er der valgt at anvende en BC547B som transistor og en 1N4148 som diode. BC547B har en $V_{be}$ spænding på maksimum 720 mV \cite{bc547b-datablad}. Deraf designes det således at der er et spændingsfald på 720 mV over $D_1$, $D_2$, $R_{2}$ og $Q_{1_{BE}}$. I databladet for 1N4148 \cite{1n4148-datablad} fremgår det at den  ved en $I_F$ strøm på 8 mA har en $V_D$ spændingen på 720 mV. Strømmen igennem dioderne er givet ved hvor stor en strøm der løber igennem modstanden $R_{1}$. $R_{1}$ er således givet ved ligning (\ref{equ:stroemgenerator_effektforstaerker1}).
 
 \begin{equation}
 \label{equ:stroemgenerator_effektforstaerker1}
