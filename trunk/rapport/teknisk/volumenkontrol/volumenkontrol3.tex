@@ -11,7 +11,7 @@ V_{CC} - V_D = R_{15} \cdot I_F = 5~\mathrm{V} - 0,24~\mathrm{V} = R_{15} \cdot 
 Udgangen af AND-gaten vil altså ikke kunne bliver højere end 0,24 V, ved lavt output.
 
 \clearpage
-\subsection*{Tæller}
+\subsection*{Tæller og displaydriver}
 \label{volumenkontrol-design-taeller}
 
 \begin{figure}[h]
@@ -25,13 +25,11 @@ Tællerens opgave er at holde styr på hvad volumenniveauet er og diagrammet for
 
 Yderligere skal der også bruges noget kontrollogik, for at sikre tælleren ikke tæller for højt eller lavt og for at styre den anden tæller. Til at lave et endestop i den laveste ende af tællerens område, lægges alle tællerens output bits sammen i en OR-gate. Dette resultere i et nul, hvis tælleren står på nul. Der skal dog være mulighed for at tælle opad, når tælleren står på nul. Derfor skal UP/$\overline{\mathrm{DN}}$ signalet også med i OR-gaten, udgangssignalet vil nu være lavt når tælleren ikke må tælle nedad. Til at lave endestop i den høje ende, tages der udgangspunkt i en tæller værdi på 50, $110010_\mathrm{b}$. Da dette vil være maks værdien for tælleren er det kun de høje udgange der er af betydning. Når disse og UP/$\overline{\mathrm{DN}}$ signalet bliver samlet i en NAND-gate vil resultatet kun være lavt når der ikke må tælles højere. Dette signal bliver AND'ed sammen med signalet for det lave endstop og CLK signalet, dette bevirker at der ikke kommer CLK signal til de to tællere hvis de har ramt et af endestoppene.
 
+Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Der konverteres fra tællerens binære output til BCD, Binary-coded decimal, for så at konvertere det til et signal 7-segment displaysne kan vise. Der benyttes en SN74185A\fixme{kilde: datablad} til konverteringen fra binær til BCD. Fordelen ved at konvertere til BCD først er at denne konvertering også deler det binære tal op i to, en'ere og ti'ere. Disse to binære tal sendes igennem en 7-segmentsdriver, HEF4511\fixme{kilde: datablad}, for at få et output der fungerer med 7-segmenterne. Displaydriveren er også vist på figur \ref{fig:taeller}.
+
 \subsection*{Display}
 \label{volumenkontrol-design-display}
 Indstillingen af volumenkontrollen vises på to 7-segmenter. Dette er valgt, fordi disse er enkle at styre med simple kredsløb og det derfor ikke er nødvendigt med en microcontroller for at styre dem, som tilfældet havde været, hvis et LCD-display i stedet var blevet benyttet.
-
-\subsection*{Displaydriver}
-\label{volumenkontrol-design-display_driver}
-Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Der konverteres fra tællerens binære output til BCD, Binary-coded decimal, for så at konvertere det til et signal 7-segment displaysne kan vise. Der benyttes en SN74185A\fixme{kilde: datablad} til konverteringen fra binær til BCD. Fordelen ved at konvertere til BCD først er at denne konvertering også deler det binære tal op i to, en'ere og ti'ere. Disse to binære tal sendes igennem en 7-segmentsdriver, HEF4511\fixme{kilde: datablad}, for at få et output der fungerer med 7-segmenterne. Displaydriveren er også vist på figur \ref{fig:taeller}.
 
 \subsection*{Dæmper}
 \label{volumenkontrol-design-daemper}
@@ -46,14 +44,31 @@ Dæmperen er en en analog attenuator, som er sammensat af to sæt modstandsatten
 
 \section{Simulering}
 \label{volumenkontrol-simulering}
-
-Som det ses på figur \ref{fig:vco-signal} svinger udgangen på integratoren mellem schmitt-triggerens to niveauer. Det kan også ses udfra grafen hvornår VCO'ens udgang er høj, dette er når integratorens udgang, den blå kurve, er højere end $U_{6_{\mathrm{in+}}}$, den røde kurve.
+På figur \ref{fig:vco-signal} ses resultatet af at påtrykke en konstant spænding på VCO'en. Dette resulterer i udgangen på integratoren, den blå kurve, svinger mellem schmitt-triggerens to niveauer med en fastdefineret frekvens. Det kan ses at plusindgangen på schmitt-triggeren, den røde kurve, er høj når integratorens udgang er opadgående og lav når den er nedadgående. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{teknisk/volumenkontrol/vco-signal.png}
-\caption{Integratorens udgang og $U_{6_{\mathrm{in+}}}$}
+\caption{Integratorens udgang og plusindgangen på schmitt-triggeren}
 \label{fig:vco-signal}
+\end{figure}
+
+Figur \ref{fig:stresstest} viser hvordan volumenkontrollen fungerer, når man trykker på en knap. Den blå graf, V(knap), viser knappens tilstand; når den er lav, er knappen trykket ned. Den lyseblå, V(clk) viser outputtet til clocken. Clocken på tælleren er flankestyret, hvilket vil sige, at der kun vil blive flyttet et trin, hver gang den lyseblå, V(clk) går fra lav til høj. Når knappen holdes nede, kan man se at kontrolspændingen, V(vc), stiger. Dette vil få spændingen på udgangen af integratoren, V(triangle), til at stige, indtil den rammer den høje trigger spænding. Herefter vil spændingen falde igen, og oscillere hurtigere og hurtigere, i takt med at kontrolspændingen stiger. Ca. 3 sekunder efter at knappen trykkes ned, rammer kontrolspændingen sit max, som udregnet. Her vil udgangen på integratoren, og derfor også schmitt-triggeren, svinge med en frekvens på ??.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{teknisk/volumenkontrol/stress-test.png}
+\caption{Simulering af at trykke på og holde en knap nede.}
+\label{fig:stresstest}
+\end{figure}
+
+På figur \ref{fig:konstantstroem} ses en simulering af konstantstrøms generatoren. Det er tydeligt at se, at konstantstrømsgeneratoren genererer en konstant strøm, Ic(Q4), indtil den ikke har et sted at løbe hen. Dette sker når kondensatoren er ladet op. Det er desuden tydeligt at se at kondensatoren, V(c2), bliver opladet lineært, med det samme knappen, V(knap), bliver trykket ned. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{teknisk/volumenkontrol/konstantstroem.png}
+\caption{Simulering af konstanstrømsgeneratoren}
+\label{fig:konstantstroem}
 \end{figure}
 
 \fixme{Jonas - Simulering af konstantstrømsgeneratoren}
