@@ -36,7 +36,7 @@ Fra darlingtontransistorernes datablad haves $R_{\mathrm{jc}} = 1,78~\tfrac{\cel
 T_j = T_a + P_D \cdot (R_{\mathrm{jc}} + R_{\mathrm{cs}} + 2 \cdot R_{\mathrm{sa}})
 \end{equation}
 
-Desuden opstilles udfra sikkerhedshensyn\fixme{Find gerne kilde der siger dette i stedet, hvis der er tid} et krav om at kølepladen maksimalt på blive 40 \celsius, hvorved bestemmelse af $R_{\mathrm{sa}}$ også kan foregå ved brug af formel (\ref{equ:smax}). 
+Desuden opstilles udfra sikkerhedshensyn\fixme{Find gerne kilde der siger dette i stedet, hvis der er tid} et krav om at kølepladen maksimalt på blive 40~\celsius, hvorved bestemmelse af $R_{\mathrm{sa}}$ også kan foregå ved brug af formel (\ref{equ:smax}). 
 
 \begin{equation}
 \label{equ:smax}
@@ -44,11 +44,11 @@ Desuden opstilles udfra sikkerhedshensyn\fixme{Find gerne kilde der siger dette 
 \end{equation}
 
 Det ses at formel (\ref{equ:smax}) bliver den afgørende betingelse og at $R_{\mathrm{sa}}$ maksimalt må være $2,99~\tfrac{\celsius}{\mathrm{W}}$. I databladet for kølepladen ses at en $R_{\mathrm{sa}}$ på $2,9~\tfrac{\celsius}{\mathrm{W}}$ kan opnåes ved en køleplade på 110 mm, hvilket derfor vælges. Størrelsen af $R_E$ kan nu bestemmes ved formel (\ref{equ:rebestem}) \cite{ael-mm19} \fixme{kilde: Jan Mikkelsen, mm19 - med et lille twist}
-, hvor $K = - 2~\tfrac{\mathrm{mV}}{\celsius}$, $V_{CC} = 23~V$, $V_T = 26~\mathrm{mV}$ og $I_C = 2,24~A$.
+, hvor $K = - 2~\tfrac{\mathrm{mV}}{\celsius}$, $V_{CC} = 23$ V, $V_T = 26$ mV og $I_C = 2,24$ A.
 
 \begin{equation}
 \label{equ:rebestem}
-R_E = - 2 \cdot K \cdot V_{CC} \cdot (R_{\mathrm{jc}} + R_{\mathrm{cs}} + R_{\mathrm{sa}}) - \frac{2 \cdot V_T}{I_C} = 536~m\ohm
+R_E = - 2 \cdot K \cdot V_{CC} \cdot (R_{\mathrm{jc}} + R_{\mathrm{cs}} + R_{\mathrm{sa}}) - \frac{2 \cdot V_T}{I_C} = 536~\mathrm{m}\ohm
 \end{equation}
 
 \subsubsection*{Simulering af termiske forhold}
@@ -90,30 +90,30 @@ For at opnå en klasse AB forstærkers karakteristika skal potentialet på basis
 Hvilestrømmen, $I_{\mathrm{hvile}}$, er antaget til 45 mA i afsnittet om termiske forhold. Til Q1 benyttes en BC547b transistor, grundet at det er hvad der er til rådighed. Da der ikke er opgivet en basis-emitterspænding for darlingtontransistorerne ved en collectorstrøm på 45 mA i databladet \cite{bdx33-34-datablad} er den fundet ved hjælp af LTspice og transistorernes spicemodel. Basis-emitterspændingen blev simuleret til 1,25 V. I ligning (\ref{eq:vbbberegning}) bestemmes $V_{BB}$, som er spændingen over $V_\mathrm{be}$-multiplieren.
 
 \begin{equation}
-V_{BB} =2 \cdot 1,25~V = 2,5~V
+V_{BB} =2 \cdot 1,25~\mathrm{V} = 2,5~\mathrm{V}
 \label{eq:vbbberegning}
 \end{equation}
 
-For at opnå et spændingsfald over $V_\mathrm{be}$-multiplieren skal der løbe en strøm. For at have kontrol over hvilken strøm der løber gennem $V_\mathrm{be}$-multiplieren leveres denne strøm,  $I_\mathrm{bias}$, af en konstantstrømsgenerator. Generatoren er koblet på $V_\mathrm{be}$-multiplieren som vist på figur \ref{fig:vbemulti}. Biasstrømmen skal både generere et spændingsfald over $V_\mathrm{be}$-multiplieren og levere tilstrækkeligt basisstrøm til darlington transistorerne, således at de ikke, ved maksimal spændingssving, ikke begrænses af $I_\mathrm{bias}$. Da der ikke vil være maksimalt signalsving på begge transistorer simultant vil der dermed kun være behov for at levere maksimal basisstrøm til én transistor af gangen. Da collectorstrømmen, $i_c$, i darlingtontransistorerne ved maksimalt signaludsving vides at være 2,24 A kan den maksimale basistrøm, $i_b$, beregnes, da der gælder at $i_b = \frac{i_c}{\beta}$. Den maksimale basisstrøm beregnes for en minimumtransistor til at være 3 mA. For at være sikker på at levere tilstrækkeligt strøm vælges $I_\mathrm{bias}$ til at være 6 mA, hvilket giver en minimumstrøm i $V_\mathrm{be}$-multiplieren på 3 mA. Strømmen i modstandene, $R_7$ og $R_8$, ønskes at være mindre end strømmen Q1,  $I_\mathrm{c,Q1}$. Derfor vælges det at strømmen i modstandene,  $I_R$, skal være 10 gange mindre end $I_\mathrm{c,Q1}$. Dermed bliver $I_R = 0,5~mA$ og $I_\mathrm{c,Q1} = 5,5~mA$. 
+For at opnå et spændingsfald over $V_\mathrm{be}$-multiplieren skal der løbe en strøm. For at have kontrol over hvilken strøm der løber gennem $V_\mathrm{be}$-multiplieren leveres denne strøm,  $I_\mathrm{bias}$, af en konstantstrømsgenerator. Generatoren er koblet på $V_\mathrm{be}$-multiplieren som vist på figur \ref{fig:vbemulti}. Biasstrømmen skal både generere et spændingsfald over $V_\mathrm{be}$-multiplieren og levere tilstrækkeligt basisstrøm til darlington transistorerne, således at de ikke, ved maksimal spændingssving, ikke begrænses af $I_\mathrm{bias}$. Da der ikke vil være maksimalt signalsving på begge transistorer simultant vil der dermed kun være behov for at levere maksimal basisstrøm til én transistor af gangen. Da collectorstrømmen, $i_c$, i darlingtontransistorerne ved maksimalt signaludsving vides at være 2,24 A kan den maksimale basistrøm, $i_b$, beregnes, da der gælder at $i_b = \frac{i_c}{\beta}$. Den maksimale basisstrøm beregnes for en minimumtransistor til at være 3 mA. For at være sikker på at levere tilstrækkeligt strøm vælges $I_\mathrm{bias}$ til at være 6 mA, hvilket giver en minimumstrøm i $V_\mathrm{be}$-multiplieren på 3 mA. Strømmen i modstandene, $R_7$ og $R_8$, ønskes at være mindre end strømmen Q1,  $I_\mathrm{c,Q1}$. Derfor vælges det at strømmen i modstandene,  $I_R$, skal være 10 gange mindre end $I_\mathrm{c,Q1}$. Dermed bliver $I_R = 0,5$ mA og $I_\mathrm{c,Q1} = 5,5$ mA.
 
 Spændingsfaldet over $R_8$ skal være lig basis-emitterspænding for Q1 ved en collectorstrøm på 5,5 mA. Da der i databladet for en BC547b er angivet en maksimal værdi for basis-emitterspændingen på 0,7 V ved en collectorstrøm på 2 mA og 0,72 V ved en collectorstrøm på 10 mA vælges basis-emitterspændingen til at være 0,7 V. I ligning (\ref{eq:r8beregning}) beregnes $R_8$.
 
 \begin{equation}
-R_8 = \frac{V_{BE,Q1}}{I_R} = 1,28 ~k\ohm
+R_8 = \frac{V_{BE,Q1}}{I_R} = 1,28~\mathrm{k}\ohm
 \label{eq:r8beregning}
 \end{equation}
 
 Da der skal være et spændingsfald over $V_\mathrm{be}$-multiplieren, og dermed de to modstande, på 2,5 V kan den samlede modstand $R_7$ og $R_8$ skal repræsentere beregnes hvorefter værdien af $R_7$ kan bestemmes som værende den resterende modstand når $R_8$ er trukket fra.
 
 \begin{equation}
-R_7 = \frac{V_{BB}}{I_R} - R_8 = 3,3~k\ohm
+R_7 = \frac{V_{BB}}{I_R} - R_8 = 3,3~\mathrm{k}\ohm
 \label{eq:r7beregning}
 \end{equation}
 
 En DC-analyse simulering i LTspice viser at hvilestrømmen strømgeneratoren bliver 55 mA. Dette passer ikke overens med beregningerne. Dog vil $V_\mathrm{be}$-multiplieren ikke være korrekt dimensioneret hvis strømforstærkeren forsøges bygget med diskrete komponenter da tolerancerne for darlingtontransistorerne er relativt store. Derfor vil der blive indsat et potentiometer på 5 k\ohm. Derved vil spændingen over $V_\mathrm{be}$-multiplieren kunne gå fra 
 
 \subsubsection*{Konstantstrømsgenerator}
-Konstantstrømsgeneratorens opgave er at levere en konstant strøm. Denne strøm bruges til $V_\mathrm{be}$-multiplieren og til spændingsforstærkeren. I afsnit \ref{henvisning til vbe multiplier} er det beregnet at konstantstrømsgeneratoren skal leveres 6 mA. Opbygningen der er valgt til konstansstrømsgereratoren er afbildet på figur \ref{konstantstroemsgenerator_model}
+Konstantstrømsgeneratorens opgave er at levere en konstant strøm. Denne strøm bruges til $V_\mathrm{be}$-multiplieren og til spændingsforstærkeren. Som beregnet ved beregning af $V_{\mathrm{be}}$-multiplieren skal konstantstrømsgeneratoren levere 6 mA. Opbygningen der er valgt til konstansstrømsgereratoren er afbildet på figur \ref{konstantstroemsgenerator_model}.
 
 \begin{figure}[h]
 \centering
@@ -126,14 +126,14 @@ Til konstantstrømsgeneratoren er der valgt at anvende en BC547B som transistor 
 
 \begin{equation}
 \label{equ:stroemgenerator_effektforstaerker1}
-R_{1} = \frac{V_{CC} - 2 \cdot V_D}{I_F} = \mathrm{\frac{23~V - 2 \cdot 0,72~V}{8~mA} = 2,7~k\ohm}
+R_{1} = \frac{V_{CC} - 2 \cdot V_D}{I_F} = \mathrm{\frac{23~\mathrm{V} - 2 \cdot 0,72~\mathrm{V}}{8~\mathrm{mA}} = 2,7~\mathrm{k}\ohm}
 \end{equation}
 
 Da der nu ligger en konstant spænding over alle dioderne, kan man se dioden i transistoren som siddende parallelt, med det samme spændingsfald som $D_1$. Dette giver at der findes det samme, konstante, spændingsfald over $D_2$ og $R_{1}$, hvilket giver en konstant strøm gennem $R_{2}$. Derudfra kan $R_{2}$ bestemmes når der skal løbe 6 mA i den, ved ligning (\ref{equ:stroemgenerator_effektforstaerker2}).
 
 \begin{equation}
 \label{equ:stroemgenerator_effektforstaerker2}
-R_{2} = \frac{V_{D}}{I_{KONSTANT}} = \mathrm{\frac{720~mV}{6~mA} = 120\ohm}
+R_{2} = \frac{V_{D}}{I_{\mathrm{const}}} = \mathrm{\frac{720~\mathrm{mV}}{6~\mathrm{mA}} = 120\ohm}
 \end{equation}
 
 Hermed er konstantstrømsgeneratoren designet til at levere 6 mA.
