@@ -3,7 +3,7 @@
 \chapter{Appendiks X}
 \label{maaleforforstaerker}
 \section*{Måling på forforstærker}
-Denne målerapport dokumenterer målinger foretaget på projektets forforstaerker, opbygget som beskrevet i kapitel \ref{forforstaerker}. Målingen er foretaget på Fredrik Bajers Vej 7 i lokale B1-104 på Aalborg Universitet den 14. december 2010 af gruppe 311.
+Denne målerapport dokumenterer målinger foretaget på projektets forforstaerker, opbygget som beskrevet i kapitel \ref{forforstaerker}. Målingerne er foretaget på Fredrik Bajers Vej 7 i lokale B1-104 på Aalborg Universitet den 14. december 2010 af gruppe 311.
 
 \subsection*{Formål}
 Målingernes formål er at teste om:
@@ -40,17 +40,80 @@ Målingerne foretages med to forskellige opstillinger; én til impedansmåling o
 \caption{Måleopstilling for forstærkning-, frekvensgang- og forvrængningsmåling}
 \label{fig:maaleop-thd}
 \end{figure}
+\newpage
 
 \subsection*{Anvendt udstyr}
-Alt væsentligt udstyr skal beskrives entydigt.\\
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|c|l}
+\hline\hline
+Instrument & AAU-nr. & Fabrikant, type m.v. \\
+\hline\hline
+Oscilloskop & 33866 & Agilent 54621A \\[4pt]
+Oscillator & 07995 & B\&O RC-oscillator TG7 \\[4pt]
+Spændingsforsyning & 39897 & HAMEG HM7042 \\[4pt]
+Multimeter & 33048 & Fluke and Philips FLUKE 37 \\[4pt]
+Audioanalysator & 76986 & National Instruments NI-PCI-4461 \\
+\hline\hline
+\end{tabular}
+\label{tab:maaleudstyr_forforstaerker}
+\end{table}
 
 \subsection*{Måleprocedure}
-Her beskrives klart og entydigt, hvordan målingen er foretaget inkl. alle ikke indlysende indstillinger af apparater. Eks.: \\
-1. Spændingsforsyningen tilsluttes og indstilles til 15 V (måles med voltmeteret) \\
-2. Generatoren indstilles til at give en sinusspænding med en amplitude på 14 mV (måles med oscilloskopet) \\
-3. ....\\
+Proceduren for impedansmålingen er:
+
+\begin{enumerate}
+\item Generatoren, kaldet $V_\mathrm{SINE}$ på figur \ref{fig:maaleop-imp}, indstilles til en effektivspænding på 21,1 mV (indstilles med oscilloskop) ved 1 kHz og tilsluttes
+\item Reference modstanden, kaldet $R_\mathrm{ref}$ på figur \ref{fig:maaleop-imp}, vælges til 10 k\ohm~ og tilsluttes
+\item Spændingsfaldet fra terminal A til terminal B, som på figur \ref{fig:maaleop-imp}, måles
+\item Spændingsfaldet fra terminal B til terminal C, som på figur \ref{fig:maaleop-imp}, måles
+\end{enumerate}
+
+Proceduren for forstærkning-, frekvensgang- og forvrængningsmålingen er:
+
+\begin{enumerate}
+\item Spændingsforsyningen indstilles til 15 V (indstilles med multimeteret) og tilsluttes
+\item Testobjektet tilsluttes som på figur \ref{fig:maaleop-thd}
+\item Programmet $"$Swept Sine - Linear Response and Harmonic Distortion (DAQmx)$"$ startes
+\item $"$Start frequency$"$ under Source settings sættes til 10 Hz
+\item $"$Stop frequency$"$ under Source settings sættes til 25 kHz
+\item $"$Amplitude$"$ under Source settings sættes til 31,6 mV
+\item $"$THD units$"$ sættes til \%
+\item $"$AI Range$"$ for Stimulus channel sættes til $\pm$ 0,316 V
+\item $"$AI Range$"$ for Respons channel sættes til $\pm$ 3,16 V
+\item $"$Sampling frequency$"$ sættes til 204,8 kHz
+\end{enumerate}
+
+Samme procedure gennemføres, hvor amplituden i punkt 6 i stedet sættes til 3,16 mV. Dermed opnåes resultater for både maksimums- og minimumsinput. 
 
 \subsection*{Resultater}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|c|l}
+\hline\hline
+ & Målt værdi & Enhed \\
+\hline\hline
+$V_{R_\mathrm{ref}}$ & 6,6 & mV effektiv\\[4pt]
+$V_Z$ & 14,6 & mV effektiv\\
+\hline\hline
+\end{tabular}
+\caption{Resultater af impedansmåling}
+\label{tab:resultatimpedans_forforstaerker}
+\end{table}
+
+Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:resultatimpedans_forforstaerker}. Disse spændinger bruges til at regne testobjektets indgangsimpedans, med formel (\ref{equ:zresultat-forforstaerker})\fixme{kilde: Ole Kiel Jensen, mm4 Maaleteknik}.
+
+\begin{equation}
+\label{equ:zresultat-forforstaerker}
+\vert Z \vert = \frac{\vert V_Z \vert}{\vert V_{R_\mathrm{ref}} \vert} \cdot R_\mathrm{ref}
+\end{equation} 
+
+Indgangsimpedansen fåes dermed til 22 k\ohm.\\\\
+
+Forstærkning-, frekvensgang- og forvrængningsmålingen
+
 Nogle resultater kan med fordel flyttes (eller kopieres) til rapporten – husk henvisning \\
 Ofte angives tabeller i målejournalen og grafer i rapporten \\
 Brug tabeller – resultater blandet med tekst bliver rodet\\
