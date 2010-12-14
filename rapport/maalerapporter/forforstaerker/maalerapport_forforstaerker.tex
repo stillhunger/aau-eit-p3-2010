@@ -1,6 +1,6 @@
-\input{../../../preamble/preamble_ida.tex}
-\begin{document}
-\chapter{Appendiks X}
+%\input{../../../preamble/preamble_ida.tex}
+%\begin{document}
+\chapter{Appendiks D}
 \label{maaleforforstaerker}
 \section*{Måling på forforstærker}
 Denne målerapport dokumenterer målinger foretaget på projektets forforstaerker, opbygget som beskrevet i kapitel \ref{forforstaerker}. Målingerne er foretaget på Fredrik Bajers Vej 7 i lokale B1-104 på Aalborg Universitet den 14. december 2010 af gruppe 311.
@@ -10,6 +10,8 @@ Målingernes formål er at teste om:
 \begin{itemize}
 \item Forstærkningen er 69,7 gange
 \item Frekvensgangen er $\pm$ 0,375 dB ved 20 Hz - 20 kHz i reference til 1 kHz
+\subitem ~~~~~~~~~~~~~~~~~~~~$\pm$ 0,75 dB fra 20 Hz - 63 Hz i reference til 1 kHz
+\subitem ~~~~~~~~~~~~~~~~~~~~$\pm$ 0,75 dB fra 12,5 kHz - 20 kHz i reference til 1 kHz
 \item Forvrængningen er under 0,5 \%
 \item Indgangsimpedansen er 22 k\ohm 
 \end{itemize}
@@ -19,28 +21,27 @@ Der testes i disse målinger på forforstærkeren, som beskrevet i kapitel \ref{
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.42]{testobjekt-forforstaerker.png}
+\includegraphics[scale=0.42]{maalerapporter/forforstaerker/testobjekt-forforstaerker.png}
 \caption{Forforstærker med angivelser af terminaler}
 \label{fig:testob_forforstaerker}
 \end{figure}
 
 \subsection*{Måleopstilling}
-Målingerne foretages med to forskellige opstillinger; én til impedansmåling og én til forstærkning-, frekvensgang- og forvrængningsmåling. Opstillingerne er vist på figur  og figur \ref{fig:maaleop-thd} .
+Målingerne foretages med to forskellige opstillinger; én til impedansmåling og én til forstærkning-, frekvensgang- og forvrængningsmåling. Opstillingerne er vist på figur \ref{fig:maaleop-imp} og figur \ref{fig:maaleop-thd}\fixme{kilde: Ole Kiel Jensen, mm5 maaleteknik}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{impedansopstilling-forforstaerker.png}
+\includegraphics[scale=0.4]{maalerapporter/forforstaerker/impedansopstilling-forforstaerker.png}
 \caption{Måleopstilling for impedansmåling}
 \label{fig:maaleop-imp}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{maaleopstilling-thd-forforstaerker.png}
+\includegraphics[scale=0.4]{maalerapporter/forforstaerker/maaleopstilling-thd-forforstaerker.png}
 \caption{Måleopstilling for forstærkning-, frekvensgang- og forvrængningsmåling}
 \label{fig:maaleop-thd}
 \end{figure}
-\newpage
 
 \subsection*{Anvendt udstyr}
 
@@ -89,20 +90,6 @@ Samme procedure gennemføres, hvor amplituden i punkt 6 i stedet sættes til 3,1
 
 \subsection*{Resultater}
 
-\begin{table}[h]
-\centering
-\begin{tabular}{l|c|l}
-\hline\hline
- & Målt værdi & Enhed \\
-\hline\hline
-$V_{R_\mathrm{ref}}$ & 6,6 & mV effektiv\\[4pt]
-$V_Z$ & 14,6 & mV effektiv\\
-\hline\hline
-\end{tabular}
-\caption{Resultater af impedansmåling}
-\label{tab:resultatimpedans_forforstaerker}
-\end{table}
-
 Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:resultatimpedans_forforstaerker}. Disse spændinger bruges til at regne testobjektets indgangsimpedans, med formel (\ref{equ:zresultat-forforstaerker})\fixme{kilde: Ole Kiel Jensen, mm4 Maaleteknik}.
 
 \begin{equation}
@@ -110,29 +97,39 @@ Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:resultatimpeda
 \vert Z \vert = \frac{\vert V_Z \vert}{\vert V_{R_\mathrm{ref}} \vert} \cdot R_\mathrm{ref}
 \end{equation} 
 
-Indgangsimpedansen fåes dermed til 22 k\ohm.\\\\
+\begin{table}[h]
+\centering
+\begin{tabular}{l|c|c|l}
+\hline\hline
+ & Målt værdi & Beregnet værdi & Enhed \\
+\hline\hline
+$V_{R_\mathrm{ref}}$ & 6,6 & & mV effektiv\\[4pt]
+$V_Z$ & 14,6 & & mV effektiv\\[4pt]
+$R_\mathrm{i,forforstaerker}$ & & 22,1 & k\ohm \\
+\hline\hline
+\end{tabular}
+\caption{Resultater af impedansmåling}
+\label{tab:resultatimpedans_forforstaerker}
+\end{table}
 
-Forstærkning-, frekvensgang- og forvrængningsmålingen
+Forstærkning-, frekvensgang- og forvrængningsmålingen gave resultaterne vist på figur \ref{equ:thdresultat-forforstaerker} og figur \ref{equ:fresultat-forforstaerker}.
 
-Nogle resultater kan med fordel flyttes (eller kopieres) til rapporten – husk henvisning \\
-Ofte angives tabeller i målejournalen og grafer i rapporten \\
-Brug tabeller – resultater blandet med tekst bliver rodet\\
-Datafiler bør (desuden) vedlægges rapporten på en CD – husk henvisning\\
-Præcis formulering er vigtig!!\\
-Angiv enheder - DC, RMS, amplitude, eller spids-spids værdier?\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{maalerapporter/forforstaerker/thd-forforstaerker.png}
+\caption{Forvrængningsresultat}
+\label{fig:thdresultat-forforstaerker}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{maalerapporter/forforstaerker/frekvensrespons-forforstaerker.png}
+\caption{Frekvensgangs- og forstærkningsresultater}
+\label{fig:fresultat-forforstaerker}
+\end{figure}
+
+Datafilerne for målingerne findes i bilag \fixme{bilag: 3.16mvInputTHDogFrekvensRespons} og \fixme{bilag: 31.6mvInputTHDogFrekvensRespons}.
 
 \subsection*{Måleusikkerheder}
-Her angives væsentlige fejlkilder og usikkerheder i.f.b. med målingen. \\
-Principielt skal man medtage alle usikkerheder og lave en samlet usikkerhedsberegning, men oftest nævnes kun de mest væsentlige. \\
-Det er vigtigt at forklare uoverensstemmelser mellem beregnede, simulerede og målte data, men det hører hjemme i hovedrapporten – ikke i målejournalen. \\
-I rapporten kan man evt. henvise til usikkerheder beskrevet i målejournalen.\\
-Typiske årsager til måleunøjagtighed:\\
-Måleinstrumenter påvirker (belaster) måleobjektet\\
-Aflæsningsunøjagtighed\\
-Analoge (antikke) viserinstrumenter	\\
-Oscilloscop-cursor (pas på støj i ”auto-peak-peak”)\\
-Støj, 50 Hz (100 Hz) brum, switch-mode spændingsforsyninger m.v.\\
-Instrumentets unøjagtighed: Se manualen! \\
-Multimetre: Frekvensafhængig måleusikkerhed \\
-Oscilloscop: Både horisontal (lille) og vertikal usikkerhed\\
-\end{document}
+
+%\end{document}
