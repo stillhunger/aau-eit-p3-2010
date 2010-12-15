@@ -31,14 +31,14 @@ Målingerne foretages med to forskellige opstillinger; én til impedansmåling o
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{maalerapporter/forforstaerker/impedansopstilling-forforstaerker.png}
+\includegraphics[scale=0.25]{maalerapporter/forforstaerker/impedansopstilling-forforstaerker.png}
 \caption{Måleopstilling for impedansmåling}
 \label{fig:maaleop-imp}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{maalerapporter/forforstaerker/maaleopstilling-thd-forforstaerker.png}
+\includegraphics[scale=0.3]{maalerapporter/forforstaerker/maaleopstilling-thd-forforstaerker.png}
 \caption{Måleopstilling for forstærkning-, frekvensgang- og forvrængningsmåling}
 \label{fig:maaleop-thd}
 \end{figure}
@@ -67,8 +67,9 @@ Proceduren for impedansmålingen er:
 \begin{enumerate}
 \item Generatoren, kaldet $V_\mathrm{SINE}$ på figur \ref{fig:maaleop-imp}, indstilles til en effektivspænding på 21,1 mV (indstilles med oscilloskop) ved 1 kHz og tilsluttes
 \item Reference modstanden, kaldet $R_\mathrm{ref}$ på figur \ref{fig:maaleop-imp}, vælges til 10 k\ohm~ og tilsluttes
+\item Testobjektets forsyning og stel forbindes
 \item Spændingsfaldet fra terminal A til terminal B, som på figur \ref{fig:maaleop-imp}, måles
-\item Spændingsfaldet fra terminal B til terminal C, som på figur \ref{fig:maaleop-imp}, måles
+\item Spændingsfaldet fra terminal B til stel, som på figur \ref{fig:maaleop-imp}, måles
 \end{enumerate}
 
 Proceduren for forstærkning-, frekvensgang- og forvrængningsmålingen er:
@@ -94,7 +95,7 @@ Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:resultatimpeda
 
 \begin{equation}
 \label{equ:zresultat-forforstaerker}
-\vert Z \vert = \frac{\vert V_Z \vert}{\vert V_{R_\mathrm{ref}} \vert} \cdot R_\mathrm{ref}
+\vert Z_\mathrm{DUT} \vert = \frac{\vert V_{Z_\mathrm{DUT}} \vert}{\vert V_{R_\mathrm{ref}} \vert} \cdot R_\mathrm{ref}
 \end{equation} 
 
 \begin{table}[h]
@@ -104,15 +105,15 @@ Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:resultatimpeda
  & Målt værdi & Beregnet værdi & Enhed \\
 \hline\hline
 $V_{R_\mathrm{ref}}$ & 6,6 & & mV effektiv\\[4pt]
-$V_Z$ & 14,6 & & mV effektiv\\[4pt]
-$R_\mathrm{i,forforstaerker}$ & & 22,1 & k\ohm \\
+$V_{Z_\mathrm{DUT}}$ & 14,6 & & mV effektiv\\[4pt]
+$\vert Z_\mathrm{DUT} \vert$ & & 22,1 & k\ohm \\
 \hline\hline
 \end{tabular}
 \caption{Resultater af impedansmåling}
 \label{tab:resultatimpedans_forforstaerker}
 \end{table}
 
-Forstærkning-, frekvensgang- og forvrængningsmålingen gave resultaterne vist på figur \ref{equ:thdresultat-forforstaerker} og figur \ref{equ:fresultat-forforstaerker}.
+Forstærkning-, frekvensgang- og forvrængningsmålingen gave resultaterne vist på figur \ref{fig:thdresultat-forforstaerker} og figur \ref{fig:fresultat-forforstaerker}.
 
 \begin{figure}[h]
 \centering
