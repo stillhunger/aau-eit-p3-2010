@@ -136,7 +136,7 @@ Det endelige kredsløb er vist på figur \ref{fig:forforstaerkersimuleringkredsl
 
 \subsection*{Simulering}
 
-For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. De karakteristika som skal verificeres er spændingsforstærkningen, amplitudekarakteristikken samt harmonisk forvrængning. Kredsløbet der simuleres er vist på figur \ref{fig:forforstaerkersimuleringkredslob}. På figuren er der til alle komponenter angivet en beregnet værdi, som den øverste, og en tilsvarende værdi i modstandsrækken E96. 
+For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. De karakteristika som skal verificeres er spændingsforstærkningen, amplitudekarakteristikken samt harmonisk forvrængning. Kredsløbet der simuleres er vist på figur \ref{fig:forforstaerkersimuleringkredslob}. 
 
 \begin{figure}[h]
 \centering
@@ -145,7 +145,6 @@ For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. D
 \label{}
 \end{figure}
 
-Kredsløbet simuleres med modstandsværdierne hørende til E96 rækken fordi det er de værdier der i praksis skal bruges til at bygge den endelige forforstærker. 
 Spændingsforstærkningen af hele trinnet skal være 69,7 gange svarende til 36,9 dB. Forstærkningen vises på figur \ref{fig:amplitude-forforstaerker} ved hjælp af en amplitudekarakteristik, således at spændet fra 20 Hz til 20 kHz tydeligt kan ses. 
 
 
@@ -156,7 +155,7 @@ Spændingsforstærkningen af hele trinnet skal være 69,7 gange svarende til 36,
 \label{fig:amplitude-forforstaerker}
 \end{figure}
 
-Simuleringen viser at forstærkningen ved 1 kHz, som er referencen jævnfør kravspecifikationen, er 36 dB hvor den skulle have være 36,9 dB. Dermed må der konkluderes at beregningen af forforstærkertrinnene indeholder usikkerheder. Usikkerhederne vurderes til at bestå i de antagelser som defineres før beregningerne: $r_o >>R_C \| R_L$, $gm \cdot R_E||R_e$ og $i_e \approx i_c$. For at korrigere forstærkningen i trinnene kan der, ifølge ligning \ref{eq:gmbevis}, justeres på den AC-koblede emittermodstand, $R_{e1}$ og $R_{e2}$. I ligning \ref{eq:nyerevalues} er de nye værdier for disse modstanden anvist. Disse modstanden er fundet ved først at justere $R_{e1}$ til det første trin giver den korrekte forstærkning for derefter at gøre det samme med det andet trin.
+Simuleringen viser at forstærkningen ved 1 kHz, som er referencen jævnfør kravspecifikationen, er 36 dB hvor den skulle have være 36,9 dB. Dermed må der konkluderes at beregningen af forforstærkertrinnene indeholder usikkerheder. Usikkerhederne vurderes til at bestå i de antagelser som defineres før beregningerne: $r_o >>R_C \| R_L$, $gm \cdot R_E||R_e$ og $i_e \approx i_c$. For at korrigere forstærkningen i trinnene kan der, ifølge ligning \ref{eq:gmbevis}, justeres på den AC-koblede emittermodstand, $R_{e1}$ og $R_{e2}$. I ligning \ref{eq:nyerevalues} er de nye værdier for disse modstande anvist. Modstandsværdierne er fundet ved først at justere $R_{e1}$ til det første trin giver den korrekte forstærkning for derefter at gøre det samme med det andet trin.
 
 \begin{equation}
 R_{e1}=790~\ohm~\wedge ~R_{e2}=2,1~k\ohm
