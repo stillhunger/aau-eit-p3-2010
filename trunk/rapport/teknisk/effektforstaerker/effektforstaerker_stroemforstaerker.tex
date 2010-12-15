@@ -110,7 +110,7 @@ R_7 = \frac{V_{BB}}{I_R} - R_8 = 3,3~\mathrm{k}\ohm
 \label{eq:r7beregning}
 \end{equation}
 
-En DC-analyse-simulering i LTspice viser at hvilestrømmen i strømforstærkeren bliver 55 mA. Dette passer ikke overens med beregningerne. Dog vil $V_\mathrm{be}$-multiplieren ikke være korrekt dimensioneret hvis strømforstærkeren forsøges bygget med diskrete komponenter da tolerancerne for darlingtontransistorerne er relativt store. Derfor vil der blive indsat et potentiometer på 5 k\ohm. Derved vil spændingen over $V_\mathrm{be}$-multiplieren kunne gå fra \fixme{husk lige at skrive noget mere}.
+En DC-analyse-simulering i LTspice viser at hvilestrømmen i strømforstærkeren bliver 55 mA. Dette passer ikke overens med beregningerne. Dog vil $V_\mathrm{be}$-multiplieren ikke være korrekt dimensioneret hvis strømforstærkeren forsøges bygget med diskrete komponenter da tolerancerne for darlingtontransistorerne er relativt store. Derfor vil der blive indsat et potentiometer på 5 k\ohm. Derved vil spændingen over $V_\mathrm{be}$-multiplieren kunne gå fra .
 
 \subsubsection*{Konstantstrømsgenerator}
 Konstantstrømsgeneratorens opgave er at levere en konstant strøm. Denne strøm bruges til $V_\mathrm{be}$-multiplieren og til spændingsforstærkeren. Som beregnet ved beregning af $V_{\mathrm{be}}$-multiplieren skal konstantstrømsgeneratoren levere 6 mA. Opbygningen der er valgt til konstansstrømsgereratoren er afbildet på figur \ref{konstantstroemsgenerator_model}.
