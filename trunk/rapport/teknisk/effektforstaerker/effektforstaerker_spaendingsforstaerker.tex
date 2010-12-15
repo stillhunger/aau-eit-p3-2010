@@ -71,16 +71,16 @@ Ligning (\ref{equ:spaendingsforstaerker6} ) indsættes nu i ligning (\ref{equ:sp
 R_{\mathrm{in}} = \frac{h_{\mathrm{fe}}}{g_m} + h_{\mathrm{fe}} \cdot R_E = \frac{750}{230,8~\mathrm{mS}} + 750 \cdot (0,62~\ohm + 8~\ohm) = 9,76~\mathrm{k}\ohm  
 \end{equation}
 
-I ligning (\ref{equ:spaendingsforstaerker7}) får vi indgangsimpedansen for en darlingtontransistor til at være 9,76 k\ohm. Idet af den load $R'_L$ som spændingsforstærkeren ser er to darlingtontransistorer i parallel\fixme{Ret parallel} er den samledes impedans spændingsforstærkeren ser givet ved ligning (\ref{equ:spaendingsforstaerker8})
+I ligning (\ref{equ:spaendingsforstaerker7}) får vi indgangsimpedansen for en darlingtontransistor til at være 9,76 k\ohm. Den load $R'_L$ som spændingsforstærkeren ser er den ene af de to darlingtontransistorer i parallel med konstantstrømsgeneratoren. Dette fremkommer fordi der ses bort fra hvileområdet, hvor begge darlingtontrasistorer er aktive og kun ses på situationen, hvor der er fuld udstyring på en af transistorerne. Derfor er den samledes impedans spændingsforstærkeren ser givet ved ligning (\ref{equ:spaendingsforstaerker8})
 \begin{equation}
 \label{equ:spaendingsforstaerker8}
-R'_L = R_{\mathrm{in}_1}||R_{\mathrm{in}_2} = 9,76~\mathrm{k}\ohm||9,76~\mathrm{k}\ohm = 4,88~\mathrm{k}\ohm
+R'_L = R_{\mathrm{in}}||R_{\mathrm{const}} = 9,76~\mathrm{k}\ohm||1,85~\mathrm{M}\ohm = 9,70~\mathrm{k}\ohm
 \end{equation}  
 
 Med $R'_L$ for spændingsforstærkeren fundet kan forstærkningen som før nævnt findes ved $A_v = -g_m \cdot R'_L$ og er udregnet i ligning (\ref{equ:spaendingsforstaerker9})
 \begin{equation}
 \label{equ:spaendingsforstaerker9}
-A_v = -g_m \cdot R'_L = 230,8~\mathrm{mS} \cdot 4,88~\mathrm{k}\ohm = -1126,15
+A_v = -g_m \cdot R'_L = 230,8~\mathrm{mS} \cdot 9,70~\mathrm{k}\ohm = -2240.78
 \end{equation}
 
-Hermed er forstærkningen i spændingsforstærkeren beregnet til at være 1126,15 med et fasedrej på 180\degree .
+Hermed er forstærkningen i spændingsforstærkeren beregnet til at være 2240.78 med et fasedrej på 180\degree .
