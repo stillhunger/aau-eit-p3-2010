@@ -7,9 +7,9 @@
 \label{fig:indgangsvaelger-overordnet}
 \end{figure}
 
-Indgangsvælgerkredsløbet kan opdeles i 3 sektioner: Dæmpningsblokke, summation og signaltilpasning. Diagrammet er vist på figur \ref{fig:indgangsvaelger-overordnet}. Dæmpningsblokkene sørger for at dæmpe signalet så meget som muligt, for at komme så tæt på en afkobling som muligt. Summations sektionen lægger værdien af de foregående blokke sammen, mens signaltilpasningssektionen skifter mellem 3 forskellige niveauer, så det endelige output altid vil have et maksimalt peak-niveau på 2 V.  
+Indgangsvælgerkredsløbet kan opdeles i 3 sektioner: Dæmpningsblokke, summation og signaltilpasning. Diagrammet er vist på figur \ref{fig:indgangsvaelger-overordnet}. Dæmpningsblokkene sørger for at dæmpe signalet så meget som muligt, for at komme så tæt på en afkobling som muligt. Summationssektionen lægger værdien af de foregående blokke sammen, mens signaltilpasningssektionen skifter mellem 3 forskellige niveauer, så det endelige output altid vil have et maksimalt peak-niveau på 2 V.  
 
-For at slukke signalet, er der valgt at benytte transistorer, til at trække signalerne til stel. Da vores spændingssving kan gå ned til 0,2~V, er der mulighed for at der vil løbe nogle små strømme. Derfor vælges en FET-transistor, da denne, modsat en BiPolær transistor, er linæer ved meget små strømme. For at aktivere transistoren, sættes spændingen på Gate-benet højt. Dette opnåes ved hjælp af et gatekredsløb. To D-flipflops opsættes til, ved hjælp af et enkelt tryk på en knap, at skifte mellem fire forskellige, binære tilstande, som vist på figur \ref{fig:indgangsvaelger-flipflop}. Disse fire tilstande repræsenterer de fire tilstande indgangsvælgeren kan være i: Begge tændt, begge slukket eller kun det ene signal tændt.
+For at slukke signalet, er der valgt at benytte transistorer, til at trække signalerne til stel. Da vores spændingssving kan gå ned til 0,2~V, er der mulighed for at der vil løbe nogle små strømme. Derfor vælges en FET-transistor, da denne, modsat en BiPolær transistor, er linæer ved meget små strømme\fixme{Hvor hen?}. For at aktivere transistoren, sættes spændingen på Gate-benet højt. Dette opnåes ved hjælp af et gatekredsløb. To D-flipflops opsættes til, ved hjælp af et enkelt tryk på en knap, at skifte mellem fire forskellige, binære tilstande, som vist på figur \ref{fig:indgangsvaelger-flipflop}. Disse fire tilstande repræsenterer de fire tilstande indgangsvælgeren kan være i: Begge tændt, begge slukket eller kun det ene signal tændt.
 
 \begin{figure}[h]
 \centering
@@ -18,14 +18,14 @@ For at slukke signalet, er der valgt at benytte transistorer, til at trække sig
 \label{fig:indgangsvaelger-flipflop}
 \end{figure}
 
-Optimalt ville en transistor uden reverse-diode være foretrække, da dette vil tillade at source-spændingen er lavere end drainspændingen, som vil være tilfældet ved et AC-signal omkring 0~V. Da det ikke var muligt at fremskaffe en sådan, benyttes i stedet et DC-offset, for at sørge for at DC-offset $-$ AC-Peakværdi $>$ 0 når transistoren er slukket, hvilket umuliggører at der kan løbe en reverse strøm i transistoren.
+Optimalt ville en transistor uden reverse-diode være at foretrække, da dette vil tillade at source-spændingen er lavere end drainspændingen, som vil være tilfældet ved et AC-signal uden DC-offset. Da det ikke var muligt at fremskaffe en sådan, benyttes i stedet et DC-offset, for at sørge for at forskellen mellem DC-offsettet og AC-peakværdien er større end nul når transistoren er slukket, hvilket umuliggører at der kan løbe en reverse strøm i transistoren.
 
-Modstandene $R_1$ og $R_2$ er begge valgt til 100~k\ohm, for at give et DC-offset på ca 2,5~V, halvdelen af V1. Dette gælder dog kun når transistoren er slukket. I det transistoren tændes, sættes $R_2$ parallelt med $R_4$, hvilket trækker DC-offsettet længere ned.
+Modstandene $R_1$ og $R_2$ er begge valgt til 100~k\ohm, for at give et DC-offset på ca 2,5~V, halvdelen af +5V, som vist på figur \ref{fig:indgangsvaelger-overordnet}. Dette gælder dog kun når transistoren er slukket. I det transistoren tændes, sættes $R_2$ parallelt med $R_4$, hvilket trækker DC-offsettet længere ned.
 %\begin{equation}
 %5V\cdot \frac{\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}{R_1+\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}=1.11 V
 %\end{equation}
-I dette tilfælde er, hvor transistoren skal tage hele signalet, er DC-offsettet dog underordnet. 
-Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på minimum 22 k\ohm. Når transistoren er tændt er indgangsimpedansen mindst. $R_1$, $R_2$ og $R_4$ sidder så alle parallelt, hvilket giver ligning (\ref{eq:indgangr4udregning}) og (\ref{eq:indgangr4}), forudsat at indgangsmodstanden er større end 22 k\ohm:
+I dette tilfælde, hvor transistoren skal trække signalet til stel, er DC-offsettet dog underordnet. 
+Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på minimum 22 k\ohm. Når transistoren er tændt er indgangsimpedansen mindst. $R_1$, $R_2$ og $R_4$ sidder i den situation alle parallelt, hvilket giver ligning (\ref{eq:indgangr4udregning}) og (\ref{eq:indgangr4}), forudsat at indgangsmodstanden er større end 22 k\ohm:
 
 \begin{equation}
 \label{eq:indgangr4udregning}
@@ -37,7 +37,7 @@ Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på mi
 R_4=39,29~\mathrm{k}\ohm
 \end{equation}
 
-For at kunne afbryde de enkelte signaler, kan transistoren $U_2$ trække signalet til stel. Den fungerer i dette tilfælde som en switch, der skal tillade maksimal forbindelse mellem collector og emitter. For at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. På en mosfet-transistor, som benyttes i dette kredsløb, løber der ingen strøm ind i gate, den er udelukkende afhængig af gate-source spændingen. Ved at påtrykke en spænding på 5V, som er outputtet fra de gates vi bruger, er det muligt at tillade signalet at løbe igennem transistoren.
+For at kunne afbryde de enkelte signaler, kan transistoren $U_2$ trække signalet til stel. Den fungerer i dette tilfælde som en switch, der skal tillade maksimal forbindelse mellem drain og source. For at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. På en mosfet-transistor, som benyttes i dette kredsløb, løber der ingen strøm ind i gate, den er udelukkende afhængig af gate-source spændingen. Ved at påtrykke en spænding på 5V, som er outputtet fra de gates vi bruger, er det muligt at tillade signalet at løbe igennem transistoren.
 Modstanden $R_5$ har ikke nogen indvirkning på indgangsimpedansen når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_4$, hvilket giver en højere indgangsimpedans. For at summationsforstærkeren efter, skal kunne fungere med en forstærkning på 1, skal tilbagekoblingsmodstanden over transistoren være lig med den modstand signalet ser, på vej til forstærkeren. Denne er afhængig af $R_4$ og $R_5$, som tilsammen skal give $R_m$. Med $R_7$ defineret til 80,4 k\ohm sættes $R_5$ til 40,2 k\ohm . Indgangsimpedansen kan så udregnes, som i ligning (\ref{eq:indgangrindgang}).
 
 %Den er valgt til 40.2 k\ohm, det samme som $R_3$, for at gøre produceringen enklere. Ved at bruge modstande med de samme værdier sænkes antallet af benyttede komponenter, hvilket letter indkøbs- samt produceringsomkostninger. Når signalet er tændt, sidder den i serie med $R_3$, hvilket giver en højere indgangsimpedans:

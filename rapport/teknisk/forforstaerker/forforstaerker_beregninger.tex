@@ -19,7 +19,8 @@ A_v =  \frac{-gm \cdot R'_L}{1+gm \cdot R'_e} \approx  -\frac{R'_L}{R'_e} \Biggr
 
 Hvor $R'_e = R_e || R_E$ og $R'_L = R_L||R_C$. Det vil sige at jo tættere $R_e$ kommer på $\frac{1}{gm}$ jo mere indflydelse vil denne have på forstærkningen. Disse antagelser vil derfor være gældende gennem hele designet af forforstærkeren. 
 
-Det første trin skal have en forstærkning på 10 gange og det andet på 6,97 for at opnå den ønskede forstærkning, som vist på figur \ref{blok_forforstaerker}. Grunden til rækkefølgen af trinnene er for ikke at have størst signaludsving og den største forstærkning i samme trin. Dette skyldes at der i en forstærker altid vil være forvrængning og støj. Hvis den største forstærkning kommer sidst, vil denne forvrængning blive forstærket yderligere, hvilket ikke er ønskværdigt. Hvis den største forstærkning derimod kommer først, vil der blive mindst muligt forvrængning med i det endelige signal.\fixme{Hvordan viser vi at det er smart? Frederik: Er det godt nok? Skal der skrives mere? Skal der beregninger med, der beviser det? (synes jeg ikke)}
+Det er valgt at fordele forstærkningen på to trin, da det dermed er muligt at forøge mængden af tilbagekobling hvilket nedsætter THD. Da der i dette projekt først designes ud fra maksimal forstærkning uden $R_e$, hvorefter den ønskede forstærkning opnås ved at tilbagekoble det overskydende gennem $R_e$, vil mængden af tilbagekobling være mindre i ét trin med 69,7 ganges forstærkning end i to med den samme samlede forstærkning.
+Det første trin skal have en forstærkning på 10 gange og det andet på 6,97 for at opnå den ønskede forstærkning, som vist på figur \ref{blok_forforstaerker}. Grunden til rækkefølgen af trinnene er for ikke at have størst signaludsving og den største forstærkning i samme trin. Dette skyldes at der i en forstærker altid vil være forvrængning og støj. Hvis den største forstærkning kommer sidst, vil denne forvrængning blive forstærket yderligere, hvilket ikke er ønskværdigt. Hvis den største forstærkning derimod kommer først, vil der blive mindst muligt forvrængning med i det endelige signal.
 
 \begin{figure}[h]
 \centering
@@ -28,7 +29,7 @@ Det første trin skal have en forstærkning på 10 gange og det andet på 6,97 f
 \label{blok_forforstaerker}
 \end{figure}
 
-For at opnå så lav forvrængning som muligt designes hvert trin således at forstærkningen, uden den AC-koblede emittermodstand $R_e$, er så stor som muligt for at gøre tilbagekobling muligt. For derefter at få den ønskede forstærkning tilføjes tilbagekoblingsmodstanden $R_e$.
+
 
 \subsection*{Design af første trin}
 Begge trin designes efter maksimal forstærkning uden $R_e$. Denne forstærkning er givet ved ligning (\ref{eq:dcgain}).
