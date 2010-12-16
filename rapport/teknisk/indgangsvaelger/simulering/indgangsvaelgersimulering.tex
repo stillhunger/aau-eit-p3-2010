@@ -9,7 +9,7 @@ Efter at indgangsvælgeren er blevet designet og beregnet, er der lavet en rækk
 \end{figure}
 
 \subsubsection*{Forstærkning i kredsløbet}
-Fra beregningerne vides det at kredsløbet er designet til at have en forstærkning på 1. Derudover vil signalet efter indgangsvælgeren også være inverteret fordi der bruges en inverterende forstærker til at sumerer signalerne. Det simulerede signal er vist på figur \ref{indgangsvaelger_input/output}. Simuleringen er lavet ved en transient analyse over 3 ms, med en maksimum timestep på 0,01 µs og 2 V peak 1kHz på indgangen. På figur \ref{indgangsvaelger_input/output} ses det at forstærkningen på 1 opnået og signalet er inverteret som forventet. Signalet er ikke helt 2 V peak, det skyldes at generatoren har en udgangsmodstand på 2,2 k\ohm.
+Fra beregningerne vides det at kredsløbet er designet til at have en forstærkning på 1. Derudover vil signalet efter indgangsvælgeren også være inverteret fordi der bruges en inverterende forstærker til at sumerer signalerne. Det simulerede signal er vist på figur \ref{indgangsvaelger_input/output}. Simuleringen er lavet ved en transient analyse over 3 ms, med en maksimum timestep på 0,01 µs og 2 V peak 1 kHz på indgangen. På figur \ref{indgangsvaelger_input/output} ses det at forstærkningen på 1 ikke helt er opnået, det skyldes at generatoren har en udgangsmodstand på 2,2 k\ohm. Signalet er inverteret som forventet. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{teknisk/indgangsvaelger/simulering/input_output.png}
@@ -18,7 +18,7 @@ Fra beregningerne vides det at kredsløbet er designet til at have en forstærkn
 \end{figure}
 
 \subsubsection*{Frekvenskarakteristik}
-På figur \ref{indgangsvaelger_frekvenskarakteristik} er simuleringen af frekvenskarakteristikken vist. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved en 0 V på transistoren. Fra kravspecifikation er der opsat krav om at i frekvensområdet fra 20 Hz til 20 kHz må afvigelsen højest være $\pm$ 1,5 dB. På simuleringen ses det at fra 10 kHz til 20 kHz er der en lille afvigelse på ca. 0,06 dB. Afvigelsen skyldes at transistoren der er brugt har en passiv kapacitet, der gør at ved høje frekvenser vil signalet falde af.
+På figur \ref{indgangsvaelger_frekvenskarakteristik} er simuleringen af frekvenskarakteristikken vist. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved 0 V på transistoren. Fra tabel \ref{tab:krav_indgangsvaelger} er der opsat krav om frekvensområdet På simuleringen ses det at fra 10 kHz til 20 kHz er der en lille afvigelse på ca. 0,06 dB. Afvigelsen skyldes at transistoren der er brugt har en passiv kapacitet, der gør at ved høje frekvenser vil signalet falde af.
 
 \begin{figure}[h]
 \centering
@@ -28,7 +28,7 @@ På figur \ref{indgangsvaelger_frekvenskarakteristik} er simuleringen af frekven
 \end{figure}
 
 \subsubsection*{Dæmpning af signal}
-På figur \ref{indgangsvaelger_daempniing} ses en graf over hvor stor en dæmpning er simuleret til i kredsløbet. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved en 5 V på transistoren. Fra kravspecifikationen er der opsat krav om at isoleringen af signaler skal være større end 50 dB. Dæmpningen er aflæst til minimum 89 dB.
+På figur \ref{indgangsvaelger_daempniing} ses en graf over hvor stor en dæmpning er simuleret til i kredsløbet. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved 5 V på transistoren. Fra kravspecifikationen er der opsat krav om at isoleringen af signaler skal være større end 50 dB.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{teknisk/indgangsvaelger/simulering/daempning_af_signal.png}
