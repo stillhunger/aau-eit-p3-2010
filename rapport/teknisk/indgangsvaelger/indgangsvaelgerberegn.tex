@@ -9,7 +9,7 @@
 
 Indgangsvælgerkredsløbet kan opdeles i 3 sektioner: Dæmpningsblokke, summation og signaltilpasning. Diagrammet er vist på figur \ref{fig:indgangsvaelger-overordnet}. Dæmpningsblokkene sørger for at dæmpe signalet så meget som muligt, for at komme så tæt på en afkobling som muligt. Summationssektionen lægger værdien af de foregående blokke sammen, mens signaltilpasningssektionen skifter mellem 3 forskellige niveauer, så det endelige output altid vil have et maksimalt peak-niveau på 2 V.  
 
-For at slukke signalet, er der valgt at benytte transistorer, til at trække signalerne til stel. Da vores spændingssving kan gå ned til 0,2~V, er der mulighed for at der vil løbe nogle små strømme. Derfor vælges en FET-transistor, da denne, modsat en BiPolær transistor, er linæer ved meget små strømme\fixme{Hvor hen?}. For at aktivere transistoren, sættes spændingen på Gate-benet højt. Dette opnåes ved hjælp af et gatekredsløb. To D-flipflops opsættes til, ved hjælp af et enkelt tryk på en knap, at skifte mellem fire forskellige, binære tilstande, som vist på figur \ref{fig:indgangsvaelger-flipflop}. Disse fire tilstande repræsenterer de fire tilstande indgangsvælgeren kan være i: Begge tændt, begge slukket eller kun det ene signal tændt.
+For at slukke signalet, er der valgt at benytte transistorer, til at trække signalerne til stel. Da vores spændingssving kan gå ned til 0,2~V, er der mulighed for at der vil løbe nogle små strømme i transistorerne. Derfor vælges en FET-transistor, da denne, modsat en BiPolær transistor, er linæer ved meget små collector-strømme\fixme{Hvor hen?}. For at aktivere transistoren, sættes spændingen på Gate-benet højt. Dette opnåes ved hjælp af et gatekredsløb. To D-flipflops opsættes til, ved hjælp af et enkelt tryk på en knap, at skifte mellem fire forskellige binære tilstande. opbygningen er vist på figur \ref{fig:indgangsvaelger-flipflop}. Disse fire tilstande repræsenterer de fire tilstande indgangsvælgeren kan være i: Begge tændt, begge slukket eller kun det ene signal tændt.
 
 \begin{figure}[h]
 \centering
@@ -18,14 +18,14 @@ For at slukke signalet, er der valgt at benytte transistorer, til at trække sig
 \label{fig:indgangsvaelger-flipflop}
 \end{figure}
 
-Optimalt ville en transistor uden reverse-diode være at foretrække, da dette vil tillade at source-spændingen er lavere end drainspændingen, som vil være tilfældet ved et AC-signal uden DC-offset. Da det ikke var muligt at fremskaffe en sådan, benyttes i stedet et DC-offset, for at sørge for at forskellen mellem DC-offsettet og AC-peakværdien er større end nul når transistoren er slukket, hvilket umuliggører at der kan løbe en reverse strøm i transistoren.
+Optimalt ville en transistor uden reverse-diode være at foretrække, da dette vil tillade at source-spændingen er lavere end drainspændingen, som vil være tilfældet ved et AC-signal uden DC-offset. Da det ikke var muligt at fremskaffe en sådan, benyttes i stedet et DC-offset, for at sørge for at forskellen mellem DC-offsettet og AC-peakværdien er større end nul når transistoren er slukket, hvilket umuliggør at der kan løbe en reverse strøm i transistoren.
 
-Modstandene $R_1$ og $R_2$ er begge valgt til 100~k\ohm, for at give et DC-offset på ca 2,5~V, halvdelen af +5V, som vist på figur \ref{fig:indgangsvaelger-overordnet}. Dette gælder dog kun når transistoren er slukket. I det transistoren tændes, sættes $R_2$ parallelt med $R_4$, hvilket trækker DC-offsettet længere ned.
+Modstandene $R_1$ og $R_2$ er begge valgt til 100~k\ohm, for at give et DC-offset på ca 2,5~V, halvdelen af +5~V, som vist på figur \ref{fig:indgangsvaelger-overordnet}. Dette gælder dog kun når transistoren er slukket. I det transistoren tændes, sættes $R_2$ parallelt med $R_4$, hvilket trækker DC-offsettet længere ned.
 %\begin{equation}
 %5V\cdot \frac{\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}{R_1+\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}=1.11 V
 %\end{equation}
 I dette tilfælde, hvor transistoren skal trække signalet til stel, er DC-offsettet dog underordnet. 
-Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på minimum 22 k\ohm. Når transistoren er tændt er indgangsimpedansen mindst. $R_1$, $R_2$ og $R_4$ sidder i den situation alle parallelt, hvilket giver ligning (\ref{eq:indgangr4udregning}) og (\ref{eq:indgangr4}), forudsat at indgangsmodstanden er større end 22 k\ohm:
+Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på minimum 22 k\ohm. Når transistoren er tændt er indgangsimpedansen mindst. I denne situation sidder $R_1$, $R_2$ og $R_4$ parallelt, hvilket giver ligning (\ref{eq:indgangr4udregning}) og (\ref{eq:indgangr4}), forudsat at indgangsmodstanden er større end 22 k\ohm:
 
 \begin{equation}
 \label{eq:indgangr4udregning}
@@ -37,8 +37,8 @@ Modstanden $R_3$ er valgt ud fra, at signalet skal se en indgangsimpedans på mi
 R_4=39,29~\mathrm{k}\ohm
 \end{equation}
 
-For at kunne afbryde de enkelte signaler, kan transistoren $U_2$ trække signalet til stel. Den fungerer i dette tilfælde som en switch, der skal tillade maksimal forbindelse mellem drain og source. For at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. På en mosfet-transistor, som benyttes i dette kredsløb, løber der ingen strøm ind i gate, den er udelukkende afhængig af gate-source spændingen. Ved at påtrykke en spænding på 5V, som er outputtet fra de gates vi bruger, er det muligt at tillade signalet at løbe igennem transistoren.
-Modstanden $R_5$ har ikke nogen indvirkning på indgangsimpedansen når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_4$, hvilket giver en højere indgangsimpedans. For at summationsforstærkeren efter, skal kunne fungere med en forstærkning på 1, skal tilbagekoblingsmodstanden over transistoren være lig med den modstand signalet ser, på vej til forstærkeren. Denne er afhængig af $R_4$ og $R_5$, som tilsammen skal give $R_m$. Med $R_7$ defineret til 80,4 k\ohm sættes $R_5$ til 40,2 k\ohm . Indgangsimpedansen kan så udregnes, som i ligning (\ref{eq:indgangrindgang}).
+For at kunne afbryde de enkelte signaler, kan transistoren $U_2$, på gifur \ref{fig:indgangsvaelger-overordnet}, trække signalet til stel. Den fungerer i dette tilfælde som en switch, der skal tillade maksimal forbindelse mellem drain og source. For at tillade at hele signalet bliver trukket til stel, skal hele den strøm der løber igennem systemet føres ned igennem transistoren. På en mosfet-transistor, som benyttes i dette kredsløb, løber der ingen strøm ind i gate, den er udelukkende afhængig af gate-source spændingen. Ved at påtrykke en spænding på 5V, som er outputtet fra de gates vi bruger, er det muligt at tillade signalet at løbe igennem transistoren.
+Modstanden $R_5$ har ikke nogen indvirkning på indgangsimpedansen når transistoren er tændt og signalet derfor er slukket. Når signalet er tændt, sidder den i serie med $R_4$, hvilket giver en højere indgangsimpedans. For at summationsforstærkeren efter, skal kunne fungere med en forstærkning på 1, skal tilbagekoblingsmodstanden over transistoren være lig med den modstand signalet ser, på vej til forstærkeren. Denne er afhængig af $R_4$ og $R_5$, som tilsammen skal give $R_m$. Med $R_7$ defineret til 80,4 k\ohm~sættes $R_5$ til 40,2 k\ohm. Indgangsimpedansen kan så udregnes, som i ligning (\ref{eq:indgangrindgang}).
 
 %Den er valgt til 40.2 k\ohm, det samme som $R_3$, for at gøre produceringen enklere. Ved at bruge modstande med de samme værdier sænkes antallet af benyttede komponenter, hvilket letter indkøbs- samt produceringsomkostninger. Når signalet er tændt, sidder den i serie med $R_3$, hvilket giver en højere indgangsimpedans:
 
@@ -87,7 +87,7 @@ H(s)=\frac{s\cdot\tau}{1+s\cdot\tau}
 |H(j\omega)|=\frac{\omega\cdot\tau}{\sqrt{1+(\omega\cdot\tau)^2)}}=\frac{1}{\sqrt{\frac{1}{(\omega\cdot\tau)^2}+1}}
 \end{equation}
 
-Som i følge dekadereglen, sættes $\omega\cdot\tau = 10$, som i ligning (\ref{eq:indgangjomega10}).
+Som i følge dekadereglen\fixme{måske en lille kilde ??}, sættes $\omega\cdot\tau = 10$, som i ligning (\ref{eq:indgangjomega10}).
 
 \begin{equation}
 \label{eq:indgangjomega10}
@@ -103,11 +103,11 @@ Indgangsimpedansen for $C_1$ er fundet til 30,8~k\ohm . Indtastes dette i ovenn�
 %R_3 = \frac{1}{\frac{1}{\frac{\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}+R_4+R_5}{3}}+\frac{1}{R_7}}
 %\end{equation}
 
-Efter summationsforstærkeren sidder signaltilpasningen. Denne benyttes til at sørge for at lige gyldigt hvor mange af indgangene der er tændt for, vil signalet altid være mellem 0,2 og 2~V peak. Da de niveauer der er mulige at få enten er 6, 4 eller 2~V vil det, for at give 2~V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist under signaltilpasningsektionen af figur \ref{indgangsvaelger-overordnet}. Værdierne af de forskellige modstande kan udregnes ud fra de givene modstandsforhold, som set i ligning (\ref{eq:indgangsignal}). $R_9$ sættes til 10k, for at have en værdi at gå ud fra.
+Efter summationsforstærkeren sidder signaltilpasningen. Denne benyttes til at sørge for at ligegyldigt hvor mange af indgangene der er tændt for, vil signalet altid være mellem 0,2 og 2~V peak. Da de niveauer der er mulige at få enten er 6, 4 eller 2~V vil det, for at give 2~V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist under signaltilpasningsektionen af figur \ref{fig:indgangsvaelger-overordnet}. Værdierne af de forskellige modstande kan udregnes ud fra de givene modstandsforhold, som set i ligning (\ref{eq:indgangsignal}). $R_9$ sættes til 10 k\ohm.
 \begin{equation}
 \label{eq:indgangsignal}
 \frac{R_9}{R_6+R_8+R_9}=\frac{1}{2} \;\;\;\;\;\;\;\;\;\;\;\;~~~~~~~~~~~~~~~~
 \frac{R_6+R_8}{R_6+R_8+R_9}=\frac{1}{3}
 \end{equation}
-Dette giver en $R_6$ på 15 k\ohm  og en $R_8$ på 5 k\ohm.
+Dette giver en $R_6$ på 15 k\ohm~og en $R_8$ på 5 k\ohm.
 Vælgeren består af en multiplexer. Dette valg er taget på trods af valget om at designe primært med diskrete komponenter, da dette ville kunne gøres med stort set det samme kredsløb som indgangsvælgeren. \\Efter vælgeren sidder en buffer, for at impedansen der ses af afkoblingskondensatoren, som sidder mellem indgangsvælgeren og volumenkontrollen, vil være konstant.
