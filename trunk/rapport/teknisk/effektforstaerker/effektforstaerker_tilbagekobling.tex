@@ -67,7 +67,7 @@ Tilbagekoblingskredsløbet opbygges som en spændingsdeler, som vist på figur \
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{teknisk/effektforstaerker/beta-clean.png}
+\includegraphics[scale=0.3]{teknisk/effektforstaerker/beta-clean.png}
 \caption{Opbygning af tilbagekoblingskredsløb}
 \label{fig:beta-clean}
 \end{figure} 
@@ -77,6 +77,23 @@ Tilbagekoblingskredsløbet opbygges som en spændingsdeler, som vist på figur \
 A_f = \frac{R_1 + R_2}{R_1} = 1 + \frac{R_2}{R_1}
 \end{equation}
 
-Dette er gældende så længe $A \cdot \beta >> 1$, hvilket er tilfældet. For at opnå en $A_f$ på 8,95 skal forholdet mellem $R_2$ og $R_1$ altså være 7,95. Kondensatoren, $C_1$, er indsat for at tilbagekoble hele DC-signalet. Dette sker da kondensatoren er en afbrydelse for DC
+Dette er gældende så længe $A \cdot \beta >> 1$, hvilket er tilfældet. For at opnå en $A_f$ på 8,95 skal forholdet mellem $R_2$ og $R_1$ altså være 7,95. Kondensatoren, $C_1$, er indsat for at tilbagekoble hele DC-signalet. Dette sker da kondensatoren er en afbrydelse for DC, hvormed udtrykket i formel (\ref{equ:afdc-deler}) beskriver closed-loop forstærkningen for DC.
 
-\subsubsection*{Simulering}
+\begin{equation}
+\label{equ:afdc-deler}
+A_{f_\mathrm{dc}} = 1 + \frac{R_2}{\infty} \approx 1
+\end{equation}
+
+Kondensatoren giver altså den effekt at effektforstærkeren ikke forstærker DC. Størrelsen af kondensatoren beregnes så alle revelante frekvenser ser spændingsdelingen og dens værdi regnes derfor ved én dekade før 20 Hz, altså 2 Hz. Modstanden, $R$, der skal bruges til udregningen af kondensatoren er vist i formel (\ref{equ:r-kondensator}), hvor $R_{XXXXXX}$ er den modstand differensforstærkeren belaster spændingsdeleren med, som bestemt i afsnit \ref{effekt_differensforstaerker} og $R_L$ er belastningsmodstanden på 8 \ohm.
+
+\begin{equation}
+\label{equ:r-kondensator}
+R = R_1 + R_{XXXXXX}||(R_2 + R_L) = 
+\end{equation}
+
+Her ses det at $R_2$ skal være lille hvis betydningen af $R_{XXXXXX}$ skal formindskes. Med tommelfingerreglen om omkring en faktor 10, vælges $R_2$ til 795 \ohm, hvormed $R_1$ skal være 100 \ohm. Modstanden $R$ bliver dermed XXXXXX og kondensatorens størrelse bestemmes som vist i udregningen i formel (\ref{equ:kondensator-val}).
+
+\begin{equation}
+\label{equ:kondensator-val}
+C = \frac{1}{2 \cdot \pi \cdot f \cdot R} = \frac{1}{2 \cdot \pi \cdot \mathrm{2~Hz} \cdot XXXXXX} = XXXXXX
+\end{equation}
