@@ -1,8 +1,8 @@
-\input{../../../preamble/preamble_ida.tex}
-\begin{document}
-\chapter{Appendiks X}
+%\input{../../../preamble/preamble_ida.tex}
+%\begin{document}
+\chapter{Appendiks E}
 \label{maalejournal_indgangsvaelger}
-\section*{Målerapport}
+\section*{Måling på indgangsvælger}
 Denne målerapport dokumenterer målinger foretaget på projektets indgangsvaelger, opbygget som beskrevet i kapitel \ref{forforstaerker}. Målingen er foretaget på Fredrik Bajers Vej 7 i lokale B1-104 på Aalborg Universitet den 14. december 2010 af gruppe 311.
 
 \subsection*{Formål}
@@ -22,7 +22,7 @@ Der vil i denne målerapport blive udført tests af indgangsvælgeren. indgangsi
 Til frekvensmåling 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.8]{indgangvaelger_ltspice_diagram.png}
+\includegraphics[scale=0.8]{maalerapporter/indgangsvaelger/indgangvaelger_ltspice_diagram.png}
 \caption{Diagram over kredsløbet der testes.}
 \label{diagram_simulering}
 \end{figure}
@@ -37,14 +37,14 @@ Måleopstillingerne er vist på figur \ref{fig:indgang:maaleop-thd} .
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{impedansopstilling-forforstaerker.png}
+\includegraphics[scale=0.4]{maalerapporter/indgangsvaelger/impedansopstilling-forforstaerker.png}
 \caption{Måleopstilling for impedansmåling}
 \label{fig:indgang:maaleop-imp}
 \end{figure}
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{maaleopstilling-thd-forforstaerker.png}
+\includegraphics[scale=0.4]{maalerapporter/indgangsvaelger/maaleopstilling-thd-forforstaerker.png}
 \caption{Måleopstilling for forstærkning-, frekvensgang- og forvrængningsmåling}
 \label{fig:indgang:maaleop-thd}
 \end{figure}
@@ -105,7 +105,7 @@ Samme procedure gennemføres, hvor amplituden i punkt 7 i stedet sættes til 200
 \label{maalejournal_resultater}
 
 
-Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:resultatimpedans_indgang. Disse spændinger bruges til at regne testobjektets indgangsimpedans, med formel (\ref{equ:zresultat-indgang})\fixme{kilde: Ole Kiel Jensen, mm4 Maaleteknik}.
+Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:resultatimpedans_indgang}. Disse spændinger bruges til at regne testobjektets indgangsimpedans, med formel (\ref{equ:zresultat-indgang})\fixme{kilde: Ole Kiel Jensen, mm4 Maaleteknik}.
 
 \begin{equation}
 \label{equ:zresultat-indgang}
@@ -159,52 +159,52 @@ Slukket: $R_\mathrm{i,forforstaerker}$ & & 22,62 & k\ohm \\
 \label{tab:resultatimpedans_indgang}
 \end{table}
 
-Frekvensgangen og THD blev målt for de forskellige indgange. Her er resultater vist for mikrofonindgangen ved forskellige indstillinger. Resten af resultaterne kan findes på CD'en\fixme{henvisning}. Spændingsniveauer angivet i V og mV er amplitude værdier. 
+Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vist i figur \ref{fig:apind:frek200mv} til figur \ref{fig:apind:thd2vslukket}. Resten af resultaterne kan findes på CD'en\fixme{henvisning}. Spændingsniveauer angivet i V og mV er amplitude værdier. 
 
-Mikrofonindgangens frekvensgang, ved et frekvens sweep ved 200 mV vises i figur \ref{fig:apind:frek200mv}.
+
 \begin{figure}[h]
 \centering
-\includegraphics[scale=textwidth]{Indgangsvlger mic 200mv frek.png}
+\includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger mic 200mv frek.png}
 \caption{Frekvensgangen for mikrofonindgangen på indgangsvælgeren ved 200 mV.}
 \label{fig:apind:frek200mv}
 \end{figure}
 
-Mikrofonindgangens THD, ved et frekvens sweep ved 200 mV vises i figur \ref{fig:apind:thd200mv}.
+
 \begin{figure}[h]
 \centering
-\includegraphics[scale=textwidth]{Indgangsvlger mic 200mv thd.png}
+\includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger mic 200mv thd.png}
 \caption{THD for mikrofonindgangen på indgangsvælgeren ved 200 mV.}
 \label{fig:apind:thd200mv}
 \end{figure}
 
-Mikrofonindgangens frekvensgang, ved et frekvens sweep ved 2 V vises i figur \ref{fig:apind:frek2v}.
+
 \begin{figure}[h]
 \centering
-\includegraphics[scale=textwidth]{Indgangsvlger mic 2v frek.png}
+\includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger mic 2v frek.png}
 \caption{Frekvensgangen for mikrofonindgangen på indgangsvælgeren ved 2V.}
 \label{fig:apind:frek2v}
 \end{figure}
 
-Mikrofonindgangens THD, ved et frekvens sweep ved 2 V vises i figur \ref{fig:apind:thd2v}.
+
 \begin{figure}[h]
 \centering
-\includegraphics[scale=textwidth]{Indgangsvlger mic 200mv thd.png}
+\includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger mic 2v thd.png}
 \caption{THD for mikrofonindgangen på indgangsvælgeren ved 2 V.}
 \label{fig:apind:thd2v}
 \end{figure}
 
-Mikrofonindgangens frekvensgang for et slukket signal, ved et frekvens sweep ved 2 V vises i figur \ref{fig:apind:frek2vslukket}.
+
 \begin{figure}[h]
 \centering
-\includegraphics[scale=textwidth]{Indgangsvlger mic 2v frek.png}
+\includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger mic 2v slukket frek.png}
 \caption{Frekvensgangen for mikrofonindgangen for et slukket signal, på indgangsvælgeren ved 2V.}
 \label{fig:apind:frek2vslukket}
 \end{figure}
 
-Mikrofonindgangens THD for et slukket signal, ved et frekvens sweep ved 2 V vises i figur \ref{fig:apind:thd2vslukket}.
+
 \begin{figure}[h]
 \centering
-\includegraphics[scale=textwidth]{Indgangsvlger mic 200mv thd.png}
+\includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger mic 2v slukket thd.png}
 \caption{THD for mikrofonindgangen for et slukket signal, på indgangsvælgeren ved 2 V.}
 \label{fig:apind:thd2vslukket}
 \end{figure}
@@ -219,4 +219,4 @@ De væsentligste usikkerheder er:
 \item Støj, 50 Hz brum
 \end{itemize}
 
-\end{document}
+%\end{document}
