@@ -1,0 +1,119 @@
+%\input{../../preamble/preamble_ida.tex}
+%\begin{document}
+\chapter{Appendiks X}
+\label{maalejournal_indgangsvaelger_2}
+\section*{Målerapport}
+Denne målerapport dokumenterer målinger foretaget på projektets indgangsvaelger, opbygget som beskrevet i kapitel \ref{forforstaerker}. Målingen er foretaget på Fredrik Bajers Vej 7 i lokale B1-104 på Aalborg Universitet den 15. december 2010 af gruppe 311.
+
+\subsection*{Formål}
+Målingens formål er at:
+\begin{itemize}
+\item Finde kilden til THD i indgangsvaelgeren
+\end{itemize}
+
+\subsection*{Testobjekt}
+Der vil i denne målerapport blive udført tests af indgangsvælgeren. Testen vil tage udgangspunkt i én indgang; mikrofonindgangen. Der vil blive foretaget en THD måling uden transistore og uden opamp, en THD måling med transistore og uden opamp og en THD måling med transistore og med en anden opamp; opa27.
+Til frekvensmåling 
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.8]{indgangvaelger_ltspice_diagram.png}
+\caption{Diagram over kredsløbet der testes.}
+\label{diagram_simulering}
+\end{figure}
+
+\subsection*{Måleopstilling}
+Måleopstillingerne er vist på figur \ref{fig:indgang:maaleop-thd} .
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{maaleopstilling-thd-forforstaerker.png}
+\caption{Måleopstilling for forstærkning-, frekvensgang- og forvrængningsmåling}
+\label{fig:indgang:maaleop-thd}
+\end{figure}
+
+
+\subsection*{Anvendt udstyr}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|c|l}
+\hline\hline
+Instrument & AAU-nr. & Fabrikant, type m.v. \\
+\hline\hline
+Spændingsforsyning & 39897 & HAMEG HM7042 \\[4pt]
+Spændingsforsyning & 33901 & HAMEG HM7042 \\[4pt]
+Multimeter & 08518 & Fluke and Philips FLUKE 37 \\[4pt]
+Audioanalysator & 76986 & National Instruments NI-PCI-4461 \\
+\hline\hline
+\end{tabular}
+\label{tab:indgang:maaleudstyr_forforstaerker}
+\end{table}
+
+\subsection*{Måleprocedure}
+\begin{enumerate}
+\item En spændingsforsyning indstilles til $\pm15~V$ (indstilles med multimeteret) og tilsluttes.
+\item En spændingsforsyning indstilles til 5 V (indstilles med multimeteret) og tilsluttes.
+\item Testobjektet tilsluttes som på figur \ref{fig:indgang:maaleop-thd}
+\item Kanalen der måles på, indstilles ved hjælp af trykknappen.
+\item Programmet $"$Swept Sine - Linear Response and Harmonic Distortion (DAQmx)$"$ startes
+\item $"$Start frequency$"$ under Source settings sættes til 20 Hz
+\item $"$Stop frequency$"$ under Source settings sættes til 20 kHz
+\item $"$Amplitude$"$ under Source settings sættes til 2 V
+\item $"$THD units$"$ sættes til \%
+\item $"$AI Range$"$ for Stimulus channel sættes til $\pm$ 0,316 V\fixme{Check}
+\item $"$AI Range$"$ for Respons channel sættes til $\pm$ 3,16 V\fixme{dem her}
+\item $"$Sampling frequency$"$ sættes til 204,8 kHz
+\end{enumerate}
+
+\subsection*{Resultater}
+
+THD blev målt for de forskellige opsætninger. Her er vist resultater for mikrofonindgangen ved forskellige indstillinger. Resten af resultaterne kan findes på CD'en\fixme{henvisning}. Frekvenssweep foretages ved 2 V.
+
+THD uden opamp og uden transistore vises i figur \ref{fig:apind:uoput}.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=textwidth]{maalinger/2.gang/ingen opamp 2V uden transistor thd.png}
+\caption{THD uden opamp og uden transistore}
+\label{fig:apind:uoput}
+\end{figure}
+
+THD uden opamp men med transistore vises i figur \ref{fig:apind:uopmt}.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=textwidth]{maalinger/2.gang/ingen opamp 2V med transistor thd.png}
+\caption{THD uden opamp men med transistore}
+\label{fig:apind:uopmt}
+\end{figure}
+
+THD uden opamp men med transistore vises i figur \ref{fig:apind:uopmt}.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=textwidth]{maalinger/2.gang/ingen opamp 2V med transistor thd.png}
+\caption{THD uden opamp men med transistore}
+\label{fig:apind:uopmt}
+\end{figure}
+
+
+
+Nogle resultater kan med fordel flyttes (eller kopieres) til rapporten – husk henvisning \\
+Ofte angives tabeller i målejournalen og grafer i rapporten \\
+Brug tabeller – resultater blandet med tekst bliver rodet\\
+Datafiler bør (desuden) vedlægges rapporten på en CD – husk henvisning\\
+Præcis formulering er vigtig!!\\
+Angiv enheder - DC, RMS, amplitude, eller spids-spids værdier?\\
+
+\subsection*{Måleusikkerheder}
+Her angives væsentlige fejlkilder og usikkerheder i.f.b. med målingen. \\
+Principielt skal man medtage alle usikkerheder og lave en samlet usikkerhedsberegning, men oftest nævnes kun de mest væsentlige. \\
+Det er vigtigt at forklare uoverensstemmelser mellem beregnede, simulerede og målte data, men det hører hjemme i hovedrapporten – ikke i målejournalen. \\
+I rapporten kan man evt. henvise til usikkerheder beskrevet i målejournalen.\\
+Typiske årsager til måleunøjagtighed:\\
+Måleinstrumenter påvirker (belaster) måleobjektet\\
+Aflæsningsunøjagtighed\\
+Analoge (antikke) viserinstrumenter	\\
+Oscilloscop-cursor (pas på støj i ”auto-peak-peak”)\\
+Støj, 50 Hz (100 Hz) brum, switch-mode spændingsforsyninger m.v.\\
+Instrumentets unøjagtighed: Se manualen! \\
+Multimetre: Frekvensafhængig måleusikkerhed \\
+Oscilloscop: Både horisontal (lille) og vertikal usikkerhed\\
+%\end{document}
