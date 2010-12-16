@@ -1,4 +1,9 @@
 \section{Accepttest}
-Indgangsvælgerens to funktioner er, at enten sende signalet igennem, med så lav dæmpningen som muligt, eller at dæmpe så meget som muligt. Der er i kravspecifikationen opsat et krav om en dæmpning på minimum 50dB, når signalet er slukket. Dette er det krav, indgangsvælgeren er designet omkring og den væsentligste faktor til de valg der er foretaget. Dæmpningen når signalet er tændt er ikke væsentlig, udover at den skal være så lav som muligt. Dæmpningen vil kunne forstærkes op igen og vil ikke være af betydning for slutbrugerens oplevelse.\fixme{Kan vi finde et krav?}
+Indgangsimpedansen for alle indgangene er over 22 k$\ohm$ i alle tilfælde, se figur \ref{equ:zresultat-indgang} i appendiks E, hvilket er acceptabelt. 
 
-Ved simulering findes dæmpningen, når signalet et slukket, til -94,3 dB\fixme{Wut?}, hvilket mere end opfylder kravet. Når signalet er tændt findes dæmpningen til dB\fixme{Værdi}, hvilket er acceptabelt.
+Dæmpningen for et tændt signal er fra 20 Hz til 20 kHz svinger, ved 200 mV, som giver det største udsving, under -0.08 dB, som set på figur \ref{fig:apind:frek200mv} i appendiks E, hvilket er acceptabelt.
+
+Ved simulering findes dæmpningen, når signalet et slukket, til -94,3 dB\fixme{Wut?}, hvilket mere end opfylder kravet.
+Målingerne viser, på figur \ref{fig:apind:frek2vslukket} i appendiks E, at dæmpning ved 1 kHz er på ca. -114 dB, hvilket er acceptabelt.
+
+Det kan dog konkluderes at THD ikke er optimal. Dette kan delvist løses ved at benytte en anden opamp, Opa27 istedet for LM324. Det er dog tydeligt, ud fra appendiks F, at transistorerne ikke afbryder helt, når signalet ikke skal slukkes og at de derfor har en indflydelse. Dette er ikke optimalt og det ville derfor være smart at benytte en transistor, som afkobler bedre i slukket tilstand.
