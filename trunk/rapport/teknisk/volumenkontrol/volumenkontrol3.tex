@@ -40,7 +40,7 @@ UP/$\overline{\mathrm{DN}}$ & F & E & D & C & B & A & CLK & CP \\ \hline
 \label{tab:taeller}
 \end{table}
 
-Tæller to, U5, skal kunne tælle når tæller et, U1, har værdien 15, $1111_b$, og UP/$\overline{\mathrm{DN}}$ er høj. Ved den næste puls på CP vil tæller et gå til nul og tæller to vil tælle én op. Når tæller et er nul og UP/$\overline{\mathrm{DN}}$ er lav, skal tæller to også kunne tælle. Ved næste puls på CP vil tæller et gå til 15 og tæller to vil tælle én ned. I tabel \ref{tab:taeller2} er sandhedstabellen for kontrollogikken til den anden tæller opstillet.
+Tæller to, U5, skal kunne tælle når tæller ét, U1, har værdien 15, $1111_\mathrm{b}$, og UP/$\overline{\mathrm{DN}}$ er høj. Ved den næste puls på CP vil tæller ét gå til nul og tæller to vil tælle én op. Når tæller ét er nul og UP/$\overline{\mathrm{DN}}$ er lav, skal tæller to også kunne tælle. Ved næste puls på CP vil tæller ét gå til 15 og tæller to vil tælle én ned. I tabel \ref{tab:taeller2} er sandhedstabellen for kontrollogikken til den anden tæller opstillet.
 
 \begin{table}[h]
 \centering
@@ -57,8 +57,7 @@ UP/$\overline{\mathrm{DN}}$ & D & C & B & A & $\overline{\mathrm{CE}}$ \\ \hline
 \label{tab:taeller2}
 \end{table}
 
-
-Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Der konverteres fra tællerens binære output til BCD, Binary-coded decimal, for så at konvertere det til et signal 7-segment displaysne kan vise. Der benyttes en SN74185A \cite{sn74185a-datablad} til konverteringen fra binær til BCD. Fordelen ved at konvertere til BCD først er at denne konvertering også deler det binære tal op i to, en'ere og ti'ere. Disse to binære tal sendes igennem en 7-segmentsdriver, HEF4511 \cite{hef4511-datablad}, for at få et output der fungerer med 7-segmenterne. Displaydriveren er også vist på figur \ref{fig:taeller}.
+Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Der konverteres fra tællerens binære output til BCD, Binary-coded decimal, for så at konvertere det til et signal de to 7-segment displays kan vise. Der benyttes en SN74185A \cite{sn74185a-datablad} til konverteringen fra binær til BCD. Fordelen ved at konvertere til BCD først er at denne konvertering også deler det binære tal op i to, en'ere og ti'ere. Disse to binære tal sendes igennem en 7-segmentsdriver, HEF4511 \cite{hef4511-datablad}, for at få et output der fungerer med 7-segmenterne. Displaydriveren er også vist på figur \ref{fig:taeller}.
 
 \subsection*{Display}
 \label{volumenkontrol-design-display}
