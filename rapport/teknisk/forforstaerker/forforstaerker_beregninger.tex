@@ -140,9 +140,9 @@ For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. D
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=.6]{teknisk/forforstaerker/forforstaerkerendeligkreds.png}
-\caption{}
-\label{}
+\includegraphics[width=\textwidth]{teknisk/forforstaerker/forforstaerkerendeligkreds.png}
+\caption{Forforstærkerens kredsløb med de værdier som vil blive implementeret}
+\label{fig:forforstaerkersimuleringkredslob}
 \end{figure}
 
 Spændingsforstærkningen af hele trinnet skal være 69,7 gange svarende til 36,9 dB. Forstærkningen vises på figur \ref{fig:amplitude-forforstaerker} ved hjælp af en amplitudekarakteristik, således at spændet fra 20 Hz til 20 kHz tydeligt kan ses. 
@@ -150,12 +150,12 @@ Spændingsforstærkningen af hele trinnet skal være 69,7 gange svarende til 36,
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=.6]{teknisk/forforstaerker/amplitudeforforstaerker.png}
-\caption{Forforstærkerens amplitude karakteristik}
+\includegraphics[width=\textwidth]{teknisk/forforstaerker/amplitudeforforstaerker.png}
+\caption{Forforstærkerens amplitude karakteristik med modstandsværdier fra figur \ref{fig:forforstaerkersimuleringkredslob}}
 \label{fig:amplitude-forforstaerker}
 \end{figure}
 
-Simuleringen viser at forstærkningen ved 1 kHz, som er referencen jævnfør kravspecifikationen, er 36 dB hvor den skulle have være 36,9 dB. Dermed må der konkluderes at beregningen af forforstærkertrinnene indeholder usikkerheder. Usikkerhederne vurderes til at bestå i de antagelser som defineres før beregningerne: $r_o >>R_C \| R_L$, $gm \cdot R_E||R_e$ og $i_e \approx i_c$. For at korrigere forstærkningen i trinnene kan der, ifølge ligning \ref{eq:gmbevis}, justeres på den AC-koblede emittermodstand, $R_{e1}$ og $R_{e2}$. I ligning \ref{eq:nyerevalues} er de nye værdier for disse modstande anvist. Modstandsværdierne er fundet ved først at justere $R_{e1}$ til det første trin giver den korrekte forstærkning for derefter at gøre det samme med det andet trin.
+Simuleringen viser at forstærkningen ved 1 kHz, som er referencen jævnfør kravspecifikationen, er 35 dB hvor den skulle have være 36,9 dB. Dermed må der konkluderes at beregningen af forforstærkertrinnene indeholder usikkerheder. Usikkerhederne vurderes til at bestå i de antagelser som defineres før beregningerne: $r_o >>R_C \| R_L$, $gm \cdot R_E||R_e$ og $i_e \approx i_c$. For at korrigere forstærkningen i trinnene kan der, ifølge ligning \ref{eq:gmbevis}, justeres på den AC-koblede emittermodstand, $R_{e1}$ og $R_{e2}$. I ligning \ref{eq:nyerevalues} er de nye værdier for disse modstande anvist. Modstandsværdierne er fundet ved først at justere $R_{e1}$ til det første trin giver den korrekte forstærkning for derefter at gøre det samme med det andet trin.
 
 \begin{equation}
 R_{e1}=790~\ohm~\wedge ~R_{e2}=2,1~k\ohm
@@ -166,14 +166,14 @@ Med de nye modstandsværdier bliver amplituden som vist på figur \ref{fig:rigti
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=.6]{teknisk/forforstaerker/rigtigamplitude.png}
+\includegraphics[width=\textwidth]{teknisk/forforstaerker/rigtigamplitude.png}
 \caption{Forforstærkerens amplitudekarakteristik efter korrektion af forstærkning}
 \label{fig:rigtigamplitudeforforstaerker}
 \end{figure}
 
 På figur \ref{fig:rigtigamplitudeforforstaerker} ses det at forstærkningen nu er korrigeret. Derudover fremgår det at dæmpningen fra 20 kHz til 20 Hz er 0,2 dB. Dermed overholdes kravet om at dæmpningen i dette område, som skal være under 0,375 dB. 
 
-Den harmoniske forvrængning skal ifølge kravspecifikationen være under 0,5 \%. Ifølge LTspice er den harmoniske forvrængning ved 1 kHz og maksimal peakspænding på indgangen 0,18 \%. Forvrængningsmålingen er udført ved maksimal peakspænding da forvrængningen i trinnet vil være mest kritisk i den situation. 
+Den harmoniske forvrængning skal ifølge kravspecifikationen være under 0,5 \%. Ifølge LTspice er den harmoniske forvrængning ved 1 kHz og maksimal peakspænding på indgangen 0,2 \%. Forvrængningsmålingen er udført ved maksimal peakspænding da forvrængningen i trinnet vil være mest kritisk i den situation. 
 
 
 
