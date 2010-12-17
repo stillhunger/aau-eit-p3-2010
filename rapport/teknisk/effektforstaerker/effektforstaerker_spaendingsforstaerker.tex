@@ -12,13 +12,19 @@ Spændingsforstærkerens opgave er at give en så stor spændingsforstærkning s
 Forstærkningen i en commonemitter kobling er bestemt ved ligning (\ref{equ:spaendingsforstaerker1}) \cite{ael-mm7}%\fixme{Kilde: Jan analog elektronik mm7}
 \begin{equation}
 \label{equ:spaendingsforstaerker1}
-A_v = -g_m \cdot R'_L
+A_v = -g_m \cdot || R'_L
 \end{equation}
 
 For at beregne $g_m$ bruges ligning (\ref{equ:spaendingsforstaerker2})\kilde{analog elektronik mm5}, hvor $I_c$ er den collectorstrøm som konstantstrømsgeneratoren trækker, og $V_T$ er sat til at være konstant $26~\mathrm{mV}$
 \begin{equation}
 \label{equ:spaendingsforstaerker2}
 g_m = \frac{I_c}{V_T} = \frac{6~\mathrm{mA}}{26~\mathrm{mV}} = 230,8~\mathrm{mS}
+\end{equation}
+
+Modstanden $r_o$ kan beregnes ud fra ligning \ref{equ:spaendingsforstaerker50},  hvor $h_{\mathrm{oe}}$ og $h_{\mathrm{re}}$ er transistor parametre aflæst fra databladet.
+\begin{equation}
+\label{equ:spaendingsforstaerker50}
+r_o = \frac{1}{h_{\mathrm{oe}} - g_m \cdot h_{\mathrm{re}}} = \frac{1}{60~\mathrm{\mu S} - 230,8~\mathrm{mS} \cdot 2 \cdot 10^{-4}} = 72,2~\mathrm{k}\ohm
 \end{equation}
 
 Nu skal $R'_L$ beregnes. $R'_L$ er defineret som den load spændingsforstærkeren ser. For at gøre det nemmere at beregne $R'_L$, er der lavet nogle antagelser. Første antagelse er at $V_\mathrm{be}$-multiplieren kan betragtes som en kortslutning, det kan gøres fordi $V_\mathrm{be}$-multiplieren fungere som et batteri der laver et DC-offset, mens AC potentialet  forbliver det samme på begge sider. Næste antagelse er at kortslutningskredsløbet kan ses bort fra, idet kredsløb ikke er aktuelt, når udgangen ikke er kortsluttet. Sidste antagelse er at den load $R'_L$ som spændingsforstærkeren ser er den ene af de to darlingtontransistorer i parallel med konstantstrømsgeneratoren. Dette fremkommer fordi der ses bort fra hvileområdet, hvor begge darlingtontrasistorer er aktive og kun ses på situationen, hvor der er fuld udstyring på en af transistorerne.
@@ -87,7 +93,7 @@ R'_L = R_{\mathrm{in}}||R_{\mathrm{const}} = 9,77~\mathrm{k}\ohm || 796~\mathrm{
 Med $R'_L$ for spændingsforstærkeren fundet er forstærkningen udregnet i ligning (\ref{equ:spaendingsforstaerker11})
 \begin{equation}
 \label{equ:spaendingsforstaerker11}
-A_v = -g_m \cdot R'_L = 230,8~\mathrm{mS} \cdot 9,65~\mathrm{k}\ohm = -2226,79
+A_v = -g_m \cdot r_o || R'_L = 230,8~\mathrm{mS} \cdot 9,65~\mathrm{k}\ohm || 72.2~\mathrm{k}\ohm = -1964,44
 \end{equation}
 
-Hermed er forstærkningen i spændingsforstærkeren beregnet til at være 2226,79 med et fasedrej på 180\degree .
+Hermed er forstærkningen i spændingsforstærkeren beregnet til at være 1964,44 med et fasedrej på 180\degree .
