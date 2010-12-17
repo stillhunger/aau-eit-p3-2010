@@ -4,7 +4,7 @@ Spændingsforstærkerens opgave er at give en så stor spændingsforstærkning s
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.2]{teknisk/effektforstaerker/spaendingsforstaerker_diagram.png}
+\includegraphics[scale=0.3]{teknisk/effektforstaerker/spaendingsforstaerker_diagram.png}
 \caption{Diagram over opbygningen af spændingsforstærkeren.}
 \label{spaendingsforstaerker_diagram}
 \end{figure}
@@ -33,13 +33,12 @@ R_{\mathrm{oc}} = r_o + R'_e + h_{\mathrm{fe}} \cdot r_o \cdot \frac{R'_e}{r_{\p
 I ligning (\ref{equ:spaendingsforstaerker3}) er modstanden $R_s$ tilstede men i konstantstrømsgeneratoren er der ingen signalmodstand på basen. Modstanden $R'_e$ er 120 \ohm~og $r_o$ er givet ved ligning (\ref{equ:spaendingsforstaerker4}), hvor $h_{\mathrm{oe}}$ og $h_{\mathrm{re}}$ er transistor parametre aflæst fra databladet.
 \begin{equation}
 \label{equ:spaendingsforstaerker4}
-r_o = \frac{1}{h_{\mathrm{oe}} - g_m \cdot h_{\mathrm{re}}} = \frac{1}{60~\mathrm{\mu S} - 230,8~\mathrm{mS} \cdot 2 \cdot 10^{-4}} = 72,25~\mathrm{k}\ohm
+r_o = \frac{1}{h_{\mathrm{oe}} - g_m \cdot h_{\mathrm{re}}} = \frac{1}{60~\mathrm{\mu S} - 230,8~\mathrm{mS} \cdot 2 \cdot 10^{-4}} = 72,2~\mathrm{k}\ohm
 \end{equation}
 
-Dernæst er potentialet fundet på basen af transistoren ved at tage den negative forsyning -23 V og trække de to diodespændingsfald fra og strømmen ud af basen er bestemt af dioderne til at være 8 mA så derfor bliver $R_b = \frac{-21,56}{-8~mA} = 2695~\ohm$. Modstanden $r_{\pi}$ er bestemt ved $\frac{h_{\mathrm{fe}}}{g_m} = \frac{330}{230~\mathrm{mS}} = 1430~\ohm$. Den samlede impedans konstantstrømsgeneratoren repræsentere er beregnet i ligning (\ref{equ:spaendingsforstaerker5}). 
-\begin{equation}
+Dernæst er potentialet fundet på basen af transistoren ved at tage den negative forsyning -23 V og trække de to diodespændingsfald fra og kortslutningsstrømmen er betsemt ved $\frac{23~\mathrm{V}}{2,7~\mathrm{k}\ohm}$ til 8,5 mA så derfor bliver $R_b = \frac{-21,56}{-8,5~mA} = 2,53~\mathrm{k}\ohm$. Modstanden $r_{\pi}$ er bestemt ved $\frac{h_{\mathrm{fe}}}{g_m} = \frac{330}{230,8~\mathrm{mS}} = 1,43~\mathrm{k}\ohm$. Den samlede impedans konstantstrømsgeneratoren repræsentere er beregnet i ligning (\ref{equ:spaendingsforstaerker5}). 
 \label{equ:spaendingsforstaerker5}
-R_{\mathrm{oc}} = 72,25~\mathrm{k}\ohm + 120~\ohm + 330 \cdot 72,25~\mathrm{k}\ohm \cdot \frac{120~\ohm}{1430~\ohm + 2695~\ohm} = 766,05~\mathrm{k}\ohm
+R_{\mathrm{oc}} = 72,2~\mathrm{k}\ohm + 120~\ohm + 330 \cdot 72,2~\mathrm{k}\ohm \cdot \frac{120~\ohm}{1,43~\mathrm{k}\ohm + 2,7~\mathrm{k}\ohm} = 796,~\mathrm{k}\ohm
 \end{equation}
 
 
@@ -75,19 +74,19 @@ R_{\mathrm{in}} = r_{\pi} + (1+h_{\mathrm{fe}}) \cdot r_o||R_E
 Fra databladet over darlingtontransistoren er $h_{\mathrm{fe}}$ angivet til minimum at være 750.  $R_E$ er den impedans der sidder efter darlingtontransistoren, som i dette tilfælde er en serieforbindelse af $R_e + R_L$, hvor $R_e$ er den termiske modstand og $R_L$ er den load højtaleren repræsentere. Transistorparameteren $r_{\pi}$ er givet ved $\frac{h_{\mathrm{fe}}}{g_m}$. Herefter opsættes Ligning (\ref{equ:spaendingsforstaerker9}) for at beregne indgangsimpedansen af darlingtontransistoren.
 \begin{equation}
 \label{equ:spaendingsforstaerker9}
-R_{\mathrm{in}} = \frac{750}{230,8~\mathrm{mS}} + ( 1 + 750 ) \cdot 72,25~\mathrm{k}\ohm || (0,62~\ohm + 8~\ohm) = 9,77~\mathrm{k}\ohm  
+R_{\mathrm{in}} = \frac{750}{230,8~\mathrm{mS}} + ( 1 + 750 ) \cdot 72,2~\mathrm{k}\ohm || (0,62~\ohm + 8~\ohm) = 9,77~\mathrm{k}\ohm  
 \end{equation}
 
-I ligning (\ref{equ:spaendingsforstaerker7}) får vi indgangsimpedansen for en darlingtontransistor til at være 9,77 k\ohm~og i ligning (\ref{equ:spaendingsforstaerker5}) får vi konstantstrømsgeneratoren impedans til $766,05~\mathrm{k}\ohm$. Derfor er den samledes impedans spændingsforstærkeren ser givet ved ligning (\ref{equ:spaendingsforstaerker10})
+I ligning (\ref{equ:spaendingsforstaerker7}) får vi indgangsimpedansen for en darlingtontransistor til at være 9,77 k\ohm~og i ligning (\ref{equ:spaendingsforstaerker5}) får vi konstantstrømsgeneratoren impedans til $796~\mathrm{k}\ohm$. Derfor er den samledes impedans spændingsforstærkeren ser givet ved ligning (\ref{equ:spaendingsforstaerker10})
 \begin{equation}
 \label{equ:spaendingsforstaerker10}
-R'_L = R_{\mathrm{in}}||R_{\mathrm{const}} = 9,77~\mathrm{k}\ohm || 766,05~\mathrm{k}\ohm = 9,64~\mathrm{k}\ohm
+R'_L = R_{\mathrm{in}}||R_{\mathrm{const}} = 9,77~\mathrm{k}\ohm || 796~\mathrm{k}\ohm = 9,65~\mathrm{k}\ohm
 \end{equation}  
 
 Med $R'_L$ for spændingsforstærkeren fundet er forstærkningen udregnet i ligning (\ref{equ:spaendingsforstaerker11})
 \begin{equation}
 \label{equ:spaendingsforstaerker11}
-A_v = -g_m \cdot R'_L = 230,8~\mathrm{mS} \cdot 9,70~\mathrm{k}\ohm = -2225,75
+A_v = -g_m \cdot R'_L = 230,8~\mathrm{mS} \cdot 9,65~\mathrm{k}\ohm = -2226,79
 \end{equation}
 
-Hermed er forstærkningen i spændingsforstærkeren beregnet til at være 2225,75 med et fasedrej på 180\degree .
+Hermed er forstærkningen i spændingsforstærkeren beregnet til at være 2226,79 med et fasedrej på 180\degree .
