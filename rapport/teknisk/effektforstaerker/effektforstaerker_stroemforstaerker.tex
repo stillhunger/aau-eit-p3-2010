@@ -129,18 +129,18 @@ Konstantstrømsgeneratorens opgave er at levere en konstant strøm. Denne strøm
 \label{konstantstroemsgenerator_model}
 \end{figure}
 
-Til konstantstrømsgeneratoren er der valgt at anvende en BC547B som transistor og en 1N4148 som diode. BC547B har en $V_{be}$ spænding på maksimum 720 mV \cite{bc547b-datablad}. Deraf designes det således at der er et spændingsfald på 720 mV over $D_1$, $D_2$, $R_{2}$ og $Q_{1_{BE}}$. I databladet for 1N4148 \cite{1n4148-datablad} fremgår det at den  ved en $I_F$ strøm på 8 mA har en $V_D$ spændingen på 720 mV. Strømmen igennem dioderne er givet ved hvor stor en strøm der løber igennem modstanden $R_{1}$. $R_{1}$ er således givet ved ligning (\ref{equ:stroemgenerator_effektforstaerker1}).
+Til konstantstrømsgeneratoren er der valgt at anvende en BC547B som transistor og en 1N4148 som diode. BC547B har en $V_{be}$ spænding på maksimum 720 mV \cite{bc547b-datablad}. Deraf designes det således at der er et spændingsfald på 720 mV over $D_1$, $D_2$, $R_{\mathrm{11}}$ og $Q_{9_{BE}}$. I databladet for 1N4148 \cite{1n4148-datablad} fremgår det at den  ved en $I_F$ strøm på 8 mA har en $V_D$ spændingen på 720 mV. Strømmen igennem dioderne er givet ved hvor stor en strøm der løber igennem modstanden $R_{\mathrm{10}}$, ved den antagelse at der ses bort fra strømmen der løber ind i basen på $Q_9$. $R_{\mathrm{10}}$ er således givet ved ligning (\ref{equ:stroemgenerator_effektforstaerker1}).
 
 \begin{equation}
 \label{equ:stroemgenerator_effektforstaerker1}
-R_{1} = \frac{V_{CC} - 2 \cdot V_D}{I_F} = \mathrm{\frac{23~\mathrm{V} - 2 \cdot 0,72~\mathrm{V}}{8~\mathrm{mA}} = 2,7~\mathrm{k}\ohm}
+R_{\mathrm{10}} = \frac{V_{CC} - 2 \cdot V_D}{I_F} = \mathrm{\frac{23~\mathrm{V} - 2 \cdot 0,72~\mathrm{V}}{8~\mathrm{mA}} = 2,7~\mathrm{k}\ohm}
 \end{equation}
 
-Da der nu ligger en konstant spænding over alle dioderne, kan man se dioden i transistoren som siddende parallelt, med det samme spændingsfald som $D_1$. Dette giver at der findes det samme, konstante, spændingsfald over $D_2$ og $R_{1}$, hvilket giver en konstant strøm gennem $R_{2}$. Derudfra kan $R_{2}$ bestemmes når der skal løbe 6 mA i den, ved ligning (\ref{equ:stroemgenerator_effektforstaerker2}).
+Da der nu ligger en konstant spænding over alle dioderne, kan man se dioden i transistoren som siddende parallelt, med det samme spændingsfald som $D_1$. Dette giver at der findes det samme, konstante, spændingsfald over $D_2$ og $R_{\mathrm{10}}$, hvilket giver en konstant strøm gennem $R_{\mathrm{11}}$. Derudfra kan $R_{\mathrm{11}}$ bestemmes når der skal løbe 6 mA i den, ved ligning (\ref{equ:stroemgenerator_effektforstaerker2}).
 
 \begin{equation}
 \label{equ:stroemgenerator_effektforstaerker2}
-R_{2} = \frac{V_{D}}{I_{\mathrm{const}}} = \mathrm{\frac{720~\mathrm{mV}}{6~\mathrm{mA}} = 120\ohm}
+R_{\mathrm{11}} = \frac{V_{D}}{I_{\mathrm{const}}} = \mathrm{\frac{720~\mathrm{mV}}{6~\mathrm{mA}} = 120\ohm}
 \end{equation}
 
 Hermed er konstantstrømsgeneratoren designet til at levere 6 mA.
