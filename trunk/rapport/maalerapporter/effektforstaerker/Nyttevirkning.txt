@@ -1,0 +1,28 @@
+
+
+spændingfald over load 17,5 V peak
+
+1 kHz
+
+Spændingfald over Re 0.68 ohm 1,5 V
+
+Load 8,2 ohm
+
+Oscilloscope
+
+1: 33843
+
+2: 33845
+
+RC tg7
+
+1: 07995
+
+Hameg forsyning
+
+1: 33896
+
+Load
+
+1: 215901
+
