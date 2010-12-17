@@ -9,7 +9,7 @@ Efter at indgangsvælgeren er blevet designet og beregnet, er der lavet en rækk
 \end{figure}
 
 \subsubsection*{Forstærkning i kredsløbet}
-Fra beregningerne vides det at kredsløbet er designet til at have en forstærkning på 1. Derudover vil signalet efter indgangsvælgeren også være inverteret fordi der bruges en inverterende forstærker til at sumerer signalerne. Det simulerede signal er vist på figur \ref{indgangsvaelger_input/output}. Simuleringen er lavet ved en transient analyse over 3 ms, med en maksimum timestep på 0,01 µs og 2 V peak 1 kHz på indgangen. På figur \ref{indgangsvaelger_input/output} ses det at forstærkningen på 1 ikke helt er opnået, det skyldes at generatoren har en udgangsmodstand på 2,2 k\ohm. Signalet er inverteret som forventet. 
+Fra beregningerne vides det at kredsløbet er designet til at have en forstærkning på 1. Derudover vil signalet efter indgangsvælgeren også være inverteret fordi der bruges en inverterende forstærker til at summere signalerne. Det simulerede signal er vist på figur \ref{indgangsvaelger_input/output}. Simuleringen er lavet ved en transient analyse over 3 ms, med en maksimum timestep på 0,01 µs og 2 V peak 1 kHz på indgangen. På figur \ref{indgangsvaelger_input/output} ses det at forstærkningen på 1 ikke helt er opnået, det skyldes at generatoren har en udgangsmodstand på 2,2 k\ohm. Signalet er inverteret som forventet. 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{teknisk/indgangsvaelger/simulering/input_output.png}
@@ -18,7 +18,7 @@ Fra beregningerne vides det at kredsløbet er designet til at have en forstærkn
 \end{figure}
 
 \subsubsection*{Frekvenskarakteristik}
-På figur \ref{indgangsvaelger_frekvenskarakteristik} er simuleringen af frekvenskarakteristikken vist. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved 0 V på transistoren. Fra tabel \ref{tab:krav_indgangsvaelger} er der opsat krav om frekvensområdet På simuleringen ses det at fra 10 kHz til 20 kHz er der en lille afvigelse på ca. 0,06 dB. Afvigelsen skyldes at transistoren der er brugt har en passiv kapacitet, der gør at ved høje frekvenser vil signalet falde af.
+På figur \ref{indgangsvaelger_frekvenskarakteristik} er simuleringen af frekvenskarakteristikken vist. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved 0 V på transistoren. Fra tabel \ref{tab:krav_indgangsvaelger} er der opsat krav om frekvensområdet. På simuleringen ses det at fra 10 kHz til 20 kHz er der en lille afvigelse på ca. 0,06 dB. Afvigelsen skyldes at transistoren der er brugt har en passiv kapacitet, der gør at ved høje frekvenser vil signalet falde af.
 
 \begin{figure}[h]
 \centering
@@ -28,7 +28,7 @@ På figur \ref{indgangsvaelger_frekvenskarakteristik} er simuleringen af frekven
 \end{figure}
 
 \subsubsection*{Dæmpning af signal}
-På figur \ref{indgangsvaelger_daempniing} ses en graf over hvor stor en dæmpning er simuleret til i kredsløbet. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved 5 V på transistoren. Fra kravspecifikationen er der opsat krav om at isoleringen af signaler skal være større end 50 dB.
+På figur \ref{indgangsvaelger_daempniing} ses en graf over den simulerede dæmpning i kredsløbet. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved 5 V på transistoren. Fra kravspecifikationen er der opsat krav om at isoleringen af signaler skal være større end 50 dB, hvilket altså opnåes i simuleringen.
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{teknisk/indgangsvaelger/simulering/daempning_af_signal.png}
@@ -38,7 +38,7 @@ På figur \ref{indgangsvaelger_daempniing} ses en graf over hvor stor en dæmpni
 \fixme{Ret den jf. Jans kommentarer}
 
 \subsubsection*{Tænd og sluk af signal}
-På figur \ref{indgangsvaelger_taendsluk} er der simuleret at en signal bliver tændt og slukket. Simuleringen er lavet ved en transient analyse over 1,4 s, med en maksimum timestep på 0,1 µs og 2 V peak 100 Hz på indgangen. Først er signalet slukket i 100 ms, dernæst er signalet tændt i 700 ms og til sidst er signalet slukket i 600 ms. Som det ses er signalet når det bliver tændt først oppe på niveau efter det har været tændt i 700 ms. Det skyldes at der er brugt kondensatorer i kredsløbet, hvilket giver en længere indsvingningstid.
+På figur \ref{indgangsvaelger_taendsluk} er der simuleret at et signal bliver tændt og slukket. Simuleringen er lavet ved en transient analyse over 1,4 s, med en maksimum timestep på 0,1 µs og en peakspænding 2 V ved 100 Hz på indgangen. Først er signalet slukket i 100 ms, dernæst er signalet tændt i 700 ms og til sidst er signalet slukket i 600 ms. Som det ses er signalet når det bliver tændt først oppe på niveau efter det har været tændt i 700 ms. Det skyldes at der er brugt kondensatorer i kredsløbet, hvilket giver en længere indsvingningstid.\fixme{Jesper: Der skal ses på hvad denne graf egentlig betyder}
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{teknisk/indgangsvaelger/simulering/taend_sluk.png}
@@ -48,4 +48,4 @@ På figur \ref{indgangsvaelger_taendsluk} er der simuleret at en signal bliver t
 
 \textbf{THD}
 \newline
-Simuleringen er lavet ved en fourier-analyse, og giver en THD på 0.062\%.
+Simuleringen er lavet ved en fourier-analyse og giver en THD på 0,062 \%. Der er dog ikke noget sammenligningsgrundlag fra beregningerne, hvormed der først kan laves udtalelser på denne værdi under accepttesten.
