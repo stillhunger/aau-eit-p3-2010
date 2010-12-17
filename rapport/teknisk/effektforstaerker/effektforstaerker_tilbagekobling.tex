@@ -1,5 +1,7 @@
 \subsection{Tilbagekobling}
 \label{effekt_tilbagekobling}
+Tilbagekoblingen har flere opgaver i effektforstærkeren. Den sikrer at den ønskede spændingsforstærkning opnåes i effektforstærkeren. Hvordan dette bestemmes følger senere i dette afsnit. Den bekæmper ulineariteter, afhængig af mængden af tilbagekobling\kilde{Palle Andersen, mm1 tilbagekoblingsteori}. Desuden sørger den for at det faste spændingsfald over $V_\mathrm{BE}$-multiplieren kommer til at ligge korrekt. Dette sker da $V_\mathrm{BE}$-multiplieren laver et DC-offset, som kan komme til at betyde at de to darlingtontransistorer i udgangstrinnet ikke vil være lige åbne. Dermed vil der være en forskel i strømmene igennem dem, hvilket kun kan komme gennem belastningen, hvormed der skabes et DC-offset på udgangen. Som det vises senere i dette afsnit, tilbagekobler tilbagekoblingen DC fuldt, hvormed differensforstærkeren vil sørge for at input signalet og outputtet til belastningen kommer til at ligge på samme DC-niveau, hvilket er det der menes med at spændingsfaldet over $V_\mathrm{BE}$-multiplieren ligger korrekt. 
+
 For at regne på tilbagekoblingen til effektforstærkeren er det nødvendigt at kende open-loop forstærkningen, $A$, som er givet ved udtrykket vist i formel (\ref{equ:a-openloop}).
 
 \begin{equation}
@@ -7,7 +9,7 @@ For at regne på tilbagekoblingen til effektforstærkeren er det nødvendigt at 
 A = A_\mathrm{diff.amp} \cdot A_\mathrm{vol.amp} \cdot A_\mathrm{cur.amp}
 \end{equation}
 
-Spændingsforstærkningen i differensforstærkeren, $A_\mathrm{diff.amp}$, er i afsnit \ref{effekt_differensforstaerker} fundet til XXXXXX, mens spændingsforstærkningen i spændingsforstærkeren, $A_\mathrm{vol.amp}$, i afsnit \ref{effekt_spaendingsforstaerker} er fundet til XXXXXX. Spændingsforstærkningen i strømforstærkeren, som er en common-collector, $A_\mathrm{cur.amp}$, er givet ved udtrykket i formel (\ref{equ:a-cc})\fixme{kilde: formel 4.96 i sedra smith}, hvor $R_L$ er belastningsmodstanden på 8 \ohm~ i serie med den termiske sikringsmodstand på 0,536 \ohm~ og $r_e$ er en T-model-parameter.
+Spændingsforstærkningen i differensforstærkeren, $A_\mathrm{diff.amp}$, er i afsnit \ref{effekt_differensforstaerker} fundet til 367,6 gange, mens spændingsforstærkningen i spændingsforstærkeren, $A_\mathrm{vol.amp}$, i afsnit \ref{effekt_spaendingsforstaerker} er fundet til 2225,75 gange. Spændingsforstærkningen i strømforstærkeren, som er en common-collector, $A_\mathrm{cur.amp}$, er givet ved udtrykket i formel (\ref{equ:a-cc})\fixme{kilde: formel 4.96 i sedra smith}, hvor $R_L$ er belastningsmodstanden på 8 \ohm~ i serie med den termiske sikringsmodstand på 0,536 \ohm~ og $r_e$ er en T-model-parameter.
 
 \begin{equation}
 \label{equ:a-cc}
@@ -46,7 +48,7 @@ Open-loop forstærkningen, $A$, kan nu bestemmes som vist i udregningen i formel
 
 \begin{equation}
 \label{equ:a-openloop-val}
-A = A_\mathrm{diff.amp} \cdot A_\mathrm{vol.amp} \cdot A_\mathrm{cur.amp} = XXXXXX \cdot XXXXXX \cdot 0,99 = XXXXXX
+A = A_\mathrm{diff.amp} \cdot A_\mathrm{vol.amp} \cdot A_\mathrm{cur.amp} = 367,6 \cdot 2225,75 \cdot 0,99 = 810004
 \end{equation}
 
 Closed-loop forstærkningen, $A_f$, som er givet ved udtrykket vist i formel (\ref{equ:af_def})\kilde{formel 9.4 i sedra smith}, ønskes til 8,95. Dette skyldes at der, som beregnet i afsnit \ref{valg_kortslutningssikring}, skal være 17,9 V over belastningen når der kommer 2 V som input til effektforstærkeren.
@@ -56,11 +58,25 @@ Closed-loop forstærkningen, $A_f$, som er givet ved udtrykket vist i formel (\r
 A_f = \frac{A}{1 + A \cdot \beta}
 \end{equation}
 
-Da $A$ er bestemt i formel (\ref{equ:a-openloop-val}), kan $\beta$ ud fra udtrykket i formel (\ref{equ:af_def}) bestemmes til XXXXXX. Med $\beta$ fastlagt, kan mængden af tilbagekobling bestemmes som vist i udregningen i formel (\ref{equ:amountfeedback}).
+Da $A$ er bestemt i formel (\ref{equ:a-openloop-val}), kan $\beta$ ud fra udtrykket i formel (\ref{equ:af_def}) bestemmes til 0,11. Med $\beta$ fastlagt, kan mængden af tilbagekobling bestemmes som vist i udregningen i formel (\ref{equ:amountfeedback}).
 
 \begin{equation}
 \label{equ:amountfeedback}
-1 + A \cdot \beta = XXXXXX
+1 + A \cdot \beta = 90503
+\end{equation}
+
+Med open-loop forstærkningen, $A$, og tilbagekoblingsfaktoren, $\beta$, bestemt, kan følsomheden overfor ændringer i $A$, $S_A^{~A_f}$, desuden bestemmes som vist i udregningen i formel (\ref{equ:a-sens-val}).
+
+\begin{equation}
+\label{equ:a-sens-val}
+S_A^{~A_f} = \frac{1}{1 + A \cdot \beta} = 0,000011
+\end{equation}
+
+Dette betyder at en tænkt ændring i $A$ på f.eks. 20 \% vil give en ændring på closed-loop forstærkning som beregnet i formel (\ref{equ:a-sens-val-diff}).
+
+\begin{equation}
+\label{equ:a-sens-val-diff}
+S_A^{~A_f} \cdot 20~\% = 0,00022~\%
 \end{equation}
 
 Tilbagekoblingskredsløbet opbygges som en spændingsdeler, som vist på figur \ref{fig:beta-clean}, hvormed closed-loop forstærkningen, $A_f$, bliver som vist i formel (\ref{equ:af-deler})\kilde{eksempel 9.1 i sedra smith}.
@@ -84,16 +100,18 @@ Dette er gældende så længe $A \cdot \beta >> 1$, hvilket er tilfældet. For a
 A_{f_\mathrm{dc}} = 1 + \frac{R_2}{\infty} \approx 1
 \end{equation}
 
-Kondensatoren giver altså den effekt at effektforstærkeren ikke forstærker DC. Størrelsen af kondensatoren beregnes så alle revelante frekvenser ser spændingsdelingen og dens værdi regnes derfor ved én dekade før 20 Hz, altså 2 Hz. Modstanden, $R$, der skal bruges til udregningen af kondensatoren er vist i formel (\ref{equ:r-kondensator}), hvor $R_{XXXXXX}$ er den modstand differensforstærkeren belaster spændingsdeleren med, som bestemt i afsnit \ref{effekt_differensforstaerker} og $R_L$ er belastningsmodstanden på 8 \ohm.
+Kondensatoren giver altså den effekt at effektforstærkeren ikke forstærker DC. Størrelsen af kondensatoren beregnes så alle revelante frekvenser ser spændingsdelingen og dens værdi regnes derfor ved én dekade før 20 Hz, altså 2 Hz. Modstanden, $R$, der skal bruges til udregningen af kondensatoren er vist i formel (\ref{equ:r-kondensator}), hvor $R_{i_{Q_2}}$ er den modstand differensforstærkeren belaster spændingsdeleren med, som bestemt i afsnit \ref{effekt_differensforstaerker} til 9,56 k\ohm~, og $R_L$ er belastningsmodstanden på 8 \ohm.
 
 \begin{equation}
 \label{equ:r-kondensator}
-R = R_1 + R_{XXXXXX}||(R_2 + R_L) = 
+R = R_1 + R_{i_{Q_2}}||(R_2 + R_L)
 \end{equation}
 
-Her ses det at $R_2$ skal være lille hvis betydningen af $R_{XXXXXX}$ skal formindskes. Med tommelfingerreglen om omkring en faktor 10, vælges $R_2$ til 795 \ohm, hvormed $R_1$ skal være 100 \ohm. Modstanden $R$ bliver dermed XXXXXX og kondensatorens størrelse bestemmes som vist i udregningen i formel (\ref{equ:kondensator-val}).
+Her ses det at $R_2$ skal være lille hvis betydningen af $R_{i_{Q_2}}$ skal formindskes. Med tommelfingerreglen om omkring en faktor 10, vælges $R_2$ til 795 \ohm, hvormed $R_1$ skal være 100 \ohm. Modstanden $R$ bliver dermed 840 \ohm~ og kondensatorens størrelse bestemmes som vist i udregningen i formel (\ref{equ:kondensator-val}).
 
 \begin{equation}
 \label{equ:kondensator-val}
-C = \frac{1}{2 \cdot \pi \cdot f \cdot R} = \frac{1}{2 \cdot \pi \cdot \mathrm{2~Hz} \cdot XXXXXX} = XXXXXX
+C = \frac{1}{2 \cdot \pi \cdot f \cdot R} = \frac{1}{2 \cdot \pi \cdot \mathrm{2~Hz} \cdot \mathrm{840~\ohm}} = \mathrm{95~\mu F}
 \end{equation}
+
+Med denne værdi på plads er alle værdierne til tilbagekoblingen beregnet.
