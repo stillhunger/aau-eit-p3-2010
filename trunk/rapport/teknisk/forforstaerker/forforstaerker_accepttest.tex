@@ -12,15 +12,15 @@ Dette krav betragtes derfor som opfyldt, hvilket kravet om forvrængning også g
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{maalerapporter/forforstaerker/thd-forforstaerker.png}
-\caption{Forvrængningsresultat}
+\includegraphics[scale=0.3]{maalerapporter/forforstaerker/thd-forforstaerker.png}
+\caption{Forvrængningsmåleresultat}
 \label{fig:accepttest-thdresultat-forforstaerker}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/forforstaerker/frekvensrespons-forforstaerker.png}
-\caption{Frekvensgangs- og forstærkningsresultater}
+\caption{Frekvensgangs- og forstærkningsmåleresultater}
 \label{fig:accepttest-fresultat-forforstaerker}
 \end{figure}
 
@@ -47,4 +47,20 @@ Dette opfylder ikke kravet på 69,7 gange, men resultaterne vurderes alligevel t
 \label{fig:accepttest-fres-125-20}
 \end{figure}
 
-Frekvensgangskravene er, som det kan ses på figur \ref{fig:accepttest-fresultat-forforstaerker}, figur \ref{fig:accepttest-fres-20-63} og figur \ref{fig:accepttest-fres-125-20}, opfyldt pånær kravet ved 12,5 kHz til 20 kHz, hvor den falder 0,8 dB. Dog udgør måleudstyret en kapacitiv belastning, som er vist på figur  i forhold til simuleringen  . Derfor betragtes alle kravene som værende opfyldt.
+Frekvensgangskravene er, som det kan ses på figur \ref{fig:accepttest-fresultat-forforstaerker}, figur \ref{fig:accepttest-fres-20-63} og figur \ref{fig:accepttest-fres-125-20}, opfyldt pånær kravet ved 12,5 kHz til 20 kHz, hvor den falder 0,8 dB. Dog udgør måleudstyret en kapacitiv belastning, som vist på figur \ref{fig:cap-error-diagram}, på 217 pF og coax-kablet der bruges udgør 101 pF i kapacitiv belastning\kilde{Ole Kiel Jensen, mm5 Måleteknik}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.35]{teknisk/forforstaerker/cap-error-diagram.png}
+\caption{Forforstærkerdiagram med kapacitiv belastning fra måleudstyr}
+\label{fig:cap-error-diagram}
+\end{figure}
+
+Belastningen er et lavpasfilter, hvilket viser sig tydeligt ved simulering af forforstærkeren med denne belastning, som det kan ses på figur \ref{fig:cap-error}. Alene i simuleringen betyder denne belastning et fald på omkring 0,5 dB, hvormed selve forforstærkeren vurderes til at leve op til kravet. Derfor betragtes alle kravene til forforstærkeren som værende opfyldt.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{teknisk/forforstaerker/cap-error.png}
+\caption{Simulering af forforstærkerens forstærkning med belastning fra måleudstyr}
+\label{fig:cap-error}
+\end{figure}
