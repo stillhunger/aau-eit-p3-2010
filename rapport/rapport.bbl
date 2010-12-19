@@ -26,13 +26,13 @@ Institut for Elektroniske Systemer Akustik sektionen,
 \bibitem{hertz}
 http://www.hoerelse.info/,
 \newblock $"$Hertz$"$.
-\newblock Bilags-CD $"$hertz.pdf$"$, ?? ??.
+\newblock Bilags-CD $"$hertz.pdf$"$, december 2010.
 \newblock
 
 \bibitem{elregler-b1101}
 AAU,
 \newblock $"$Regler vedrørende el-sikkerhed i forbindelse med øvelses- og projektarbejder i elektroniklaboratorium B1-101$"$.
-\newblock Bilags-CD $"$elregler\_b1101.pdf$"$, Måned ?? År ??.
+\newblock Bilags-CD $"$elregler\_b1101.pdf$"$, oktober 2010.
 \newblock
 
 %\bibitem{krav-fjernbetjening}
@@ -44,7 +44,7 @@ AAU,
 \bibitem{mic-datablad}
 Monacor,
 \newblock $"$MCE-4000 - Electret Mike Capsul$"$.
-\newblock Bilags-CD $"$mce-4000.pdf$"$, ?? ??.
+\newblock Bilags-CD $"$mce-4000.pdf$"$.
 \newblock
 
 \bibitem{ael-mm6}
@@ -74,7 +74,7 @@ Philips,
 \bibitem{1n4148-datablad}
 Fairchild Semiconductor,
 \newblock $"$Small Signal Diode$"$.
-\newblock Bilags-CD $"$1N4148.pdf$"$, ?? 2002.
+\newblock Bilags-CD $"$1N4148.pdf$"$, 2002.
 \newblock
 
 \bibitem{lm324-datablad}
@@ -129,6 +129,11 @@ Fischer elektronik,
 Jan H. Mikkelsen,
 \newblock $"$Effektforstærker – II$"$.
 \newblock Bilags-CD $"$ael\_mm19\_slides.pdf$"$, november 2010.
+\newblock
+
+\bibitem{sedra-smith-10}
+Adel Sedra, Kenneth C. Smith,
+\newblock $"$Microelectronic Circuits, 6. udgave$"$, eksempel 13.5. Oxford University Press, 2010.
 \newblock
 
 \bibitem{klasse-ab}
