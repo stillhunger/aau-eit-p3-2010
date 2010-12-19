@@ -51,14 +51,14 @@ Efter at have opstillet de forskellige modstandsværdier, er det muligt at udreg
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{teknisk/indgangsvaelger/hoejpasfilter.png}
-\caption{Et standard CR højpasled}
+\caption{Et standard CR højpas-filter}
 \label{crvd}
 \end{figure}
 I dette tilfælde vil $R_U$ være udgangsimpedansen på det foregående led, og $R_I$ være indgangsimpedansen på det efterfølgende. Impedansen i en kondensator, i frekvensdomænet er $\frac{1}{s\cdot C}$. Dette kan opstilles ifølge spændingsdelingsformel som udtrykket i ligning (\ref{eq:indganghoejpas}).
 
 \begin{equation}
 \label{eq:indganghoejpas}
-\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}=\frac{R_I}{R_I+\left(R_U+\frac{1}{s\cdot C}\right)}
+\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}=\frac{R_I}{R_I+\left(R_U + \frac{1}{s \cdot C}\right)}
 \end{equation}
 
 For at få en dæmpning på 3 dB, som er den ønskede dæmpning i knækfrekvensen, skal $\frac{V_{\mathrm{out}}}{V_{\mathrm{in}}}=10^{\frac{-3}{20}}\approx0,7$. 
@@ -66,7 +66,7 @@ Dette giver 2 ubekendte, $s$ og $C$. LaPlace variablen $s$ kan ses som $2\cdot \
 
 \begin{equation}
 \label{eq:indgang2pif}
-10^{\frac{-3~\mathrm{dB}}{20}}=\frac{R_I}{R_I+\left(R_U+\frac{1}{2\cdot\pi\cdot 2~\mathrm{Hz}\cdot C}\right)}
+10^{\frac{-3~\mathrm{dB}}{20}}=\frac{R_I}{R_I+\left(R_U + \frac{1}{2~\cdot~\pi~\cdot~2~\mathrm{Hz}~\cdot~ C}\right)}
 \end{equation}
 
 \begin{equation}
@@ -103,7 +103,7 @@ Impedansen, $C_1$ ser ind i, er fundet til 30,8 k\ohm . Indtastes dette i ovenn�
 %R_3 = \frac{1}{\frac{1}{\frac{\frac{1}{\frac{1}{R_1}+\frac{1}{R_2}}+R_4+R_5}{3}}+\frac{1}{R_7}}
 %\end{equation}
 
-Efter summationsforstærkeren sidder signaltilpasningen. Denne benyttes til at sørge for at ligegyldigt hvor mange af indgangene der er tændt for, vil signalet altid have en peakspænding mellem 0,2 og 2 V. Da de niveauer der er mulige at få enten er 6, 4 eller 2 V, vil det for at give 2 V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist under signaltilpasningsektionen af figur \ref{fig:indgangsvaelger-overordnet}. Værdierne af de forskellige modstande kan udregnes ud fra de givne modstandsforhold, som vist i ligning (\ref{eq:indgangsignal}). Modstande $R_9$ sættes til 10 k\ohm.
+Efter summationsforstærkeren sidder signaltilpasningen. Denne benyttes til at sørge for at ligegyldigt hvor mange af indgangene der er tændt for, vil signalet altid have en peakspænding mellem 0,2 og 2 V. Da de niveauer der er mulige at få enten er 6, 4 eller 2 V, vil det for at give 2 V output, være nødvendigt med en dæmpning på hhv. $\frac{1}{3}$, $\frac{1}{2}$ og 1. Dette muliggøres ved hjælp af en spændingsdeler med 3 modstande, som vist under signaltilpasningsektionen af figur \ref{fig:indgangsvaelger-overordnet}. Værdierne af de forskellige modstande kan udregnes ud fra de givne modstandsforhold, som vist i ligning (\ref{eq:indgangsignal}). Modstanden $R_9$ sættes til 10 k\ohm.
 \begin{equation}
 \label{eq:indgangsignal}
 \frac{R_9}{R_6+R_8+R_9}=\frac{1}{2} \;\;\;\;\;\;\;\;\;\;\;\;~~~~~~~~~~~~~~~~

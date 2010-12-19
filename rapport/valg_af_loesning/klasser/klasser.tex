@@ -1,6 +1,6 @@
 \section{Udgangstrinsklasser}
 \label{klasser}
-En HiFi-forstærkers udgangstrin kan designes på forskellige måder alt efter hvilken funktionalitet der ønskes. De forskellige designs er opdelt i klasser. Klasserne er bestemt ud fra trinnets karakteristika og ikke ud fra en bestemt opkobling af kredsløbet. Karakteristika, som er vigtige at tage i betragtning, for udgangstrinnet i en HiFi-forstærker er virkningsgrad, strømvinkel og forvrængning. Virkningsgrad er givet ved hvor stor en procentdel af den totale effekt leveret af forsyning, der bliver afsat i loaden, i dette tilfælde højtaleren.
+En HiFi-forstærkers udgangstrin kan designes på forskellige måder alt efter hvilken funktionalitet der ønskes. De forskellige designs er opdelt i klasser. Klasserne er bestemt ud fra trinnets karakteristika og ikke ud fra en bestemt opkobling af kredsløbet. Karakteristika, som er vigtige at tage i betragtning, for udgangstrinnet i en HiFi-forstærker er nyttevirkning, strømvinkel og forvrængning. Nyttevirkningen er givet ved hvor stor en procentdel af den totale effekt leveret af forsyning, der bliver afsat i belastningen, i dette tilfælde højtaleren.
 I dette afsnit vil der blive gjort rede for klasse A, B og AB samt forklaret hvilke fordele og ulemper der er med dem. Redegørelsen vil tage udgangspunkt i ovenstående karakteristika samt demonstrere en mulig opbygning af trinnet.
 Der vil, på baggrund af dette afsnit, blive valgt en endelig udgangstrinsklasse til dette projekts HiFi-forstærker hvilket vil blive et krav i kravspecifikationen.
 
@@ -25,10 +25,10 @@ Et klasse A udgangstrin har en strømkarakteristik på udgangen, som vist på fi
 \end{figure}
 
 
-Et klasse A udgangstrin kan opbygges af to NPN transistorer, Q1 og Q2, i en emitterfølgerkobling, som vist på figur \ref{fig:classa}. En konstant strøm løber gennem Q2, da $v_{BE2}$ er konstant. Inputsignalet kommer ind på Q1's base og styrer således strømmen der kan løbe gennem Q1 og loadmodstanden. 
+Et klasse A udgangstrin kan opbygges af to NPN transistorer, Q1 og Q2, i en emitterfølgerkobling, som vist på figur \ref{fig:classa}. En konstant strøm løber gennem Q2, da $v_{\mathrm{BE2}}$ er konstant. Inputsignalet kommer ind på Q1's base og styrer således strømmen der kan løbe gennem Q1 og belastningsmodstanden. 
 
 Et klasse A udgangstrin har en strømvinkel på udgangstransistoren på 360°. Dette viser sig nyttigt i det at indgangssignalet er repræsenteret på udgangen i sin komplette form, hvilket giver en lav forvrængning.
-I et klasse A udgangstrin løber altid en konstant strøm gennem Q2, hvis kredsløbet på figur \ref{fig:classa} benyttes. Dette gør at den maksimale teoretiske virkningsgrad kun er 25\%. \cite{sedra-smith}%\fixme{kilde: til sedra smith}
+I et klasse A udgangstrin løber altid en konstant strøm gennem Q2, hvis kredsløbet på figur \ref{fig:classa} benyttes. Dette gør at den maksimale teoretiske nyttevirkning kun er 25\%. \cite{sedra-smith}%\fixme{kilde: til sedra smith}
 
 \subsection{Klasse B}
 
@@ -51,7 +51,7 @@ Et klasse B udgangstrin har en strømkarakteristik på udgangen, som vist på fi
 \end{figure}
 
 
-I eksemplet på figur \ref{fig:classb} er klasse B udgangstrinnet opbygget af to transistorer, en NPN (Q1) og en PNP (Q2). Når input spændingen overstiger ca. 0,6 V vil Q1 begynde at lede strøm til loadmodstanden mens Q2 er lukket. Kommer input spændingen under -0,6 V vil Q2 lede, men da Q2 er en PNP vil den trække strøm mod -Vcc hvormed der trækkes strøm fra loadmodstanden. Når Q2 leder er Q1 lukket. 
+I eksemplet på figur \ref{fig:classb} er klasse B udgangstrinnet opbygget af to transistorer, en NPN (Q1) og en PNP (Q2). Når input spændingen overstiger ca. 0,6 V vil Q1 begynde at lede strøm til belastningsmodstanden mens Q2 er lukket. Kommer input spændingen under -0,6 V vil Q2 lede, men da Q2 er en PNP vil den trække strøm mod -Vcc hvormed der trækkes strøm fra belastningsmodstanden. Når Q2 leder er Q1 lukket. 
 
 Et klasse B udgangstrin overfører kun en halv periode af indgangssignalet til udgangen, altså er strømvinklen 180°. For at kunne gengive et udgangssignal similært til indgangssignalet er det derfor nødvendigt at sammensætte to klasse B udgangstrin således at det ene tager sig af den positive halvperiode og den anden den negative. Dette giver anledning til et fænomen kaldet crossoverdistortion. Dette fænomen optræder i dette tilfælde i overgangen fra den positive halvperiode til den negative og skyldes diodekarakteristikken i transistorernes base-emitter overgang. Crossoverdistortion for et klasse B udgangstrin er illustreret på figur \ref{fig:classbproblem}.
 Et klasse B udgangstrin har en maksimal nyttevirkning på 78,5 \%. \cite{sedra-smith}%\fixme{kilde: til sedra smith}
