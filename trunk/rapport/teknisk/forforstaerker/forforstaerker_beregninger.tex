@@ -4,16 +4,16 @@ I dette projekt er der valgt så vidt muligt at designe alle løsninger med disk
 \begin{figure}[h]
 \centering
 \includegraphics[scale=.6]{teknisk/forforstaerker/ceopkobling.png}
-\caption{Generel form på commonemitterkobling med uafkoblet emittermodstand}
+\caption{Typisk opbygning af en common-emitter-kobling med uafkoblet emittermodstand}
 \label{fig:cekobling}
 \end{figure}
 
 
-Argumentet for dette valg er, at det er det eneste trin, blandt common-emitter, -base og -collector, hvis spændingsforstærkning er betydeligt over én og ikke, under korrekte omstændigheder, afhænger af transistorparametre. Da transistorparametre blandt andet er afhængige af den anvendte transistors temperatur er det en betragtelig styrke ikke at skulle tage højde for dem. Spændingsforstærkningen i common-emitter-trinnet er dog kun uafhængig af transistorparametre så længe følgende er gældende: $r_o >>R_C \| R_L$, $gm \cdot R_E||R_e$ og $i_e \approx i_c$.
+Argumentet for dette valg er, at det er det eneste trin, blandt common-emitter, -base og -collector, hvis spændingsforstærkning er betydeligt over én og ikke, under korrekte omstændigheder, afhænger af transistorparametre. Da transistorparametre blandt andet er afhængige af den anvendte transistors temperatur er det en betragtelig styrke ikke at skulle tage højde for dem. Spændingsforstærkningen i common-emitter-trinnet er dog kun uafhængig af transistorparametre så længe følgende er gældende: $r_o >>R_C \| R_L$ og $i_e \approx i_c$.
 Dette skyldes at forstærkningen er givet ved ligning (\ref{eq:gmbevis}) \cite{ael-mm6}.
 
 \begin{equation}
-A_v =  \frac{-gm \cdot R'_L}{1+g_m \cdot R'_e} \approx  -\frac{R'_L}{R'_e} \Biggr\vert _{\frac{1}{g_m}<<R'_e}
+A_v =  \frac{-g_m \cdot R'_L}{1+g_m \cdot R'_e} \approx  -\frac{R'_L}{R'_e} \Biggr\vert _{\frac{1}{g_m}<<R'_e}
 \label{eq:gmbevis}
 \end{equation}
 
@@ -35,7 +35,7 @@ Det første trin vælges til at have en forstærkning på 10 gange og det andet 
 Begge trin designes efter maksimal forstærkning uden $R_e$. Denne forstærkning er givet ved ligning (\ref{eq:dcgain}).
 
 \begin{equation}
-|A_{\mathrm{vs}}|=\frac{1}{\left(\frac{V_T \cdot R_C}{V_{R_C}}+\frac{R'_S}{\beta}\right) \left(\frac{1}{R_C}+\frac{1}{R_L}\right)}
+|A_{\mathrm{vs}}|=\frac{1}{\left(\frac{V_T \cdot R_C}{V_{R_C}}+\frac{R'_S}{h_\mathrm{FE}}\right) \left(\frac{1}{R_C}+\frac{1}{R_L}\right)}
 \label{eq:dcgain}
 \end{equation}
 Hvor $R'_S = R_S||R_1||R_2$ og $V_T = 26~\mathrm{mV}$.
@@ -43,23 +43,23 @@ Hvor $R'_S = R_S||R_1||R_2$ og $V_T = 26~\mathrm{mV}$.
 For at designe et kredsløb med maksimal forstærkning justeres størrelsen af $R_C$ uden at variere spændingen over den, $V_{R_C}$. Den maksimale $R_C$ findes ved ligning (\ref{eq:rcmaks}).
 
 \begin{equation}
-R_{\mathrm{C,maks}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_C}}{\beta \cdot V_T}}
+R_{\mathrm{C,maks}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_C}}{h_\mathrm{FE} \cdot V_T}}
 \label{eq:rcmaks}
 \end{equation}
 
 I ligning (\ref{eq:rcmaks}) er $R'_S$ defineret som $R_1||R_2||R_S$. Modstanden $R_S$ er fastlagt til 2,2 k\ohm, hvilket er mikrofonens udgangsimpedans \cite{mic-datablad}. Parallelforbindelsen mellem $R_1$ og $R_2$ kan ikke beregnes men skal vælges. Indgangsimpedansen i kredsløbet, som netop er $R_1||R_2$, skal som hovedregel være meget større end udgangsimpedansen i den kreds den belaster. Belastningen, $R_L$, for det første trin bliver indgangsimpedansen i det andet. Indgangsimpedansen i det andet trin bliver $R_3||R_4$ og kan heller ikke beregnes. Da $R_C$ i det første trin ikke kendes endnu vælges indgangsimpedansen i det andet til at være den samme som i det første, altså 22 k\ohm. 
-Spændingen $V_{R_C}$ er defineret som værende $V_{CC} - V_{\mathrm{CE,sat}} - V_{R_E} - V_{\mathrm{o,peak}}$, hvor $V_{CC}$ vælges til 15 V så der sikres at der er plads til det ønskede spændingsudsving, $V_{R_E}$ vælges til 3 V og $V_{\mathrm{CE,sat}}$ aflæses i databladet for BC547B  til 0,2 V ved en collectorstrøm på 1 mA \cite{bc547b-datablad}. Der antages at collectorstrømmen cirka bliver 1 mA. Ligeledes aflæses $\beta$ til 250 ved 1 mA i databladet. Spændingen $V_{\mathrm{o,peak}}$ er peakspændingen på udgangen. Dermed bliver peakspændingen en faktor 10 højere end mikrofonens peakspænding på udgangen. Spændingen $V_{\mathrm{o,peak}}$ bliver derfor 316 mV. Modstanden $R_{C1}$ beregnes hermed i ligning (\ref{eq:rcforsteberegning}).
+Spændingen $V_{R_C}$ er defineret som værende $V_{CC} - V_{\mathrm{CE,sat}} - V_{R_E} - V_{\mathrm{o,peak}}$, hvor $V_{CC}$ vælges til 15 V så der sikres at der er plads til det ønskede spændingsudsving, $V_{R_E}$ vælges til 3 V og $V_{\mathrm{CE,sat}}$ aflæses i databladet for BC547B  til 0,2 V ved en collectorstrøm på 1 mA \cite{bc547b-datablad}. Der antages at collectorstrømmen cirka bliver 1 mA. Ligeledes aflæses $h_\mathrm{FE}$ til 250 ved 1 mA i databladet. Spændingen $V_{\mathrm{o,peak}}$ er peakspændingen på udgangen. Dermed bliver peakspændingen en faktor 10 højere end mikrofonens peakspænding på udgangen. Spændingen $V_{\mathrm{o,peak}}$ bliver derfor 316 mV. Modstanden $R_{C1}$ beregnes hermed i ligning (\ref{eq:rcforsteberegning}).
 
 \begin{equation}
-R_{\mathrm{C1}} = \sqrt{\frac{22~\mathrm{k}\ohm || 2,2~\mathrm{k}\ohm \cdot (15~\mathrm{V} - 0,2~\mathrm{V} - 3~\mathrm{V} - 0,287~\mathrm{V})}{250 \cdot 26 \cdot 10^{-3}~\mathrm{mV}}}=8,83~\mathrm{k}\ohm
+R_{\mathrm{C1}} = \sqrt{\frac{22~\mathrm{k}\ohm || 2,2~\mathrm{k}\ohm \cdot (15~\mathrm{V} - 0,2~\mathrm{V} - 3~\mathrm{V} - 0,287~\mathrm{V})}{250 \cdot 26~\mathrm{mV}}}=8,83~\mathrm{k}\ohm
 \label{eq:rcforsteberegning}
 \end{equation}
 
-Modstanden $R_{\mathrm{E1}}$ bestemmes i ligning (\ref{eq:beregningre1}) under antagelse at $i_e = i_c$.  Strømmen $i_c$ beregnes i ligning(\ref{eq:ff:ic}).
+Modstanden $R_{\mathrm{E1}}$ bestemmes i ligning (\ref{eq:beregningre1}) under antagelse at $I_e = I_C$.  Strømmen $I_C$ beregnes i ligning(\ref{eq:ff:ic}).
 
 \begin{equation}
 \label{eq:ff:ic}
-i_C=\frac{V_{R_C}}{R_C}=\frac{11,5~\mathrm{V}}{9,25~\mathrm{k}\ohm}=106,4~\mathrm{mA}
+I_C=\frac{V_{R_C}}{R_C}=\frac{11,5~\mathrm{V}}{9,25~\mathrm{k}\ohm}=106,4~\mathrm{mA}
 \end{equation}
 \begin{equation}
 R_{\mathrm{E1}}=\frac{V_{R_{E1}}}{\frac{V_{R_{C1}}}{R_{C1}}}  \Rightarrow R_{\mathrm{E1}}=\frac{3~\mathrm{V}}{106,4~\mathrm{mA}}=2,30~\mathrm{k}\ohm
@@ -77,7 +77,7 @@ A_v = -\frac{R'_L}{R'_e} \Rightarrow  R_{\mathrm{e1}} =-\frac{R_L \cdot R_{\math
 Biasnetværket, bestående af $R_1$ og $R_2$ beregnes ud fra den spænding, som er påkrævet på basen for at transistoren fungerer som ønsket. Spændingen over base-emitter, $V_{\mathrm{BE}}$, er i databladet aflæst til 0,6 V. Da potentialet på emitteren er 3 V skal potentialet på basen være 3,6 V. Modstandene $R_1$ og $R_2$ kan beregnes ud fra at $V_{R_2}$ skal være 3,6 V og parallelkoblingen $R_1||R_2$ skal være 22 k\ohm. Beregningen udføres i ligning (\ref{eq:r1r21}) og (\ref{eq:r1r22}).
 
 \begin{equation}
-\mathrm{3,6~mV} = \mathrm{15~V} \cdot \frac{R_2}{R_1+R_2} 
+\mathrm{3,6~V} = \mathrm{15~V} \cdot \frac{R_2}{R_1+R_2} 
 \label{eq:r1r21}
 \end{equation}
 \begin{equation}
@@ -97,7 +97,7 @@ C=\frac{1}{\omega \cdot R}=\frac{1}{2\cdot \pi \cdot f \cdot R}
 \label{eq:kondensatorknaek}
 \end{equation}
 
-I ligning \ref{eq:kondensatorknaek} er $C$ kondensatorens kapacitet og $R$ er den impedans kondensatoren ser ind i. Kondensatoren $C_1$ ser ind i forspændingskoblingen i det første forstærkertrin, altså 22 k\ohm. Kondensator $C_2$ ser ind i den AC-koblede emittermodstand, $Re1$, og $C_3$ ser ind i forspændingsnetværket i det andet forstærkertrin, altså 22 k\ohm. Dermed bliver kondensatorernes værdier som følger.
+I ligning (\ref{eq:kondensatorknaek}) er $C$ kondensatorens kapacitet og $R$ er den impedans kondensatoren ser ind i. Kondensatoren $C_1$ ser ind i forspændingskoblingen i det første forstærkertrin, altså 22 k\ohm. Kondensator $C_2$ ser ind i den AC-koblede emittermodstand, $Re1$, og $C_3$ ser ind i forspændingsnetværket i det andet forstærkertrin, altså 22 k\ohm. Dermed bliver kondensatorernes værdier som følger.
 
 \begin{equation}
 C_1=3,58~\mathrm{\my F}~\wedge ~C_2=91,9~\mathrm{\my F}~\wedge ~C_3=3,58~\mathrm{\my F}
@@ -118,7 +118,7 @@ Beregning af andet trin følger samme designprocedure som første trin. Kredslø
 Det andet trin skal forstærke et signal med en maksimal peakspænding på 287 mV op til 2 V, altså 6,97 gange. Belastningsmodstanden for dette forstærkertrin er bestemt af indgangsvælgeren, som er det næste trin efter forforstærkeren. Indgangsvælgerens indgangsimpedans er 30,8 k\ohm~som beregnet i ligning (\ref{eq:indgangrindgang}). Modstanden $R_S$ er i dette trin givet ved udgangsmodstanden for det første forstærkertrin, som er lig med $R_{\mathrm{C_1}}$, hvilket gør at $R'_S = R_{\mathrm{C_1}} || R_3 || R_4$ kan opstilles. Den maksimale $R_{\mathrm{C_2}}$ beregnes i ligning (\ref{eq:rc2maks}).
 
 \begin{equation}
-R_{\mathrm{C_2}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_\mathrm{C_2}}}{\beta \cdot V_T}} = 17,1~\mathrm{k}\ohm
+R_{\mathrm{C_2}} = \sqrt{\frac{R'_S \cdot R_L \cdot V_{R_\mathrm{C_2}}}{h_\mathrm{FE} \cdot V_T}} = 17,1~\mathrm{k}\ohm
 \label{eq:rc2maks}
 \end{equation}
 
@@ -133,7 +133,7 @@ Det endelige kredsløb er vist på figur \ref{fig:forforstaerkersimuleringkredsl
 
 \subsection*{Simulering}
 
-For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. De karakteristika som skal verificeres er spændingsforstærkningen, amplitudekarakteristikken samt harmonisk forvrængning. Kredsløbet der simuleres er vist på figur \ref{fig:forforstaerkersimuleringkredslob}. 
+For at verificere at kredsløbet fungerer som ønsket simuleres det i LTspice. De karakteristika som skal verificeres er spændingsforstærkningen, amplitudekarakteristikken samt THD. Kredsløbet der simuleres er vist på figur \ref{fig:forforstaerkersimuleringkredslob}. 
 
 \begin{figure}[h]
 \centering
@@ -152,10 +152,7 @@ Spændingsforstærkningen af hele trinnet skal være 69,7 gange svarende til 36,
 \label{fig:amplitude-forforstaerker}
 \end{figure}
 
-Simuleringen viser at forstærkningen ved 1 kHz, som er referencen jævnfør kravspecifikationen, er 35 dB hvor den skulle have være 36,9 dB. Dermed må det konkluderes at beregningen af forforstærkertrinnene indeholder usikkerheder. Usikkerhederne vurderes til at bestå i de antagelser som defineres før beregningerne: 
-\[ r_o >>R_C || R_L \]
-\[ g_m \cdot R_E||R_e\]
-\[i_e \approx i_c\]
+Simuleringen viser at forstærkningen ved 1 kHz, som er referencen jævnfør kravspecifikationen, er 35 dB hvor den skulle have være 36,9 dB. Dermed må det konkluderes at beregningen af forforstærkertrinnene indeholder usikkerheder. Usikkerhederne vurderes til at bestå i de antagelser som defineres før beregningerne: $r_o >>R_C || R_L$ og $I_e \approx I_C$.
 For at have en simulering der kan sammenlignes med de målte data er det valgt at korrigere forstærkningen i trinnene. Dette gøres ifølge ligning (\ref{eq:gmbevis}) ved justeres på den AC-koblede emittermodstand, $R_{e1}$ og $R_{e2}$. I ligning (\ref{eq:nyerevalues}) er de nye værdier for disse modstande anvist. Modstandsværdierne er fundet ved først at justere $R_{e1}$ til det første trin giver den korrekte forstærkning for derefter at gøre det samme med det andet trin.
 
 \begin{equation}
@@ -168,10 +165,10 @@ Med de nye modstandsværdier bliver amplituden som vist på figur \ref{fig:rigti
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{teknisk/forforstaerker/rigtigamplitude.png}
-\caption{Forforstærkerens amplitudekarakteristik efter korrektion af forstærkning}
+\caption{Simulering af forforstærkerens amplitudekarakteristik efter korrektion af forstærkning}
 \label{fig:rigtigamplitudeforforstaerker}
 \end{figure}
 
 På figur \ref{fig:rigtigamplitudeforforstaerker} ses det at forstærkningen nu er korrigeret. Derudover fremgår det at dæmpningen fra 20 kHz til 20 Hz er 0,2 dB. Dermed overholdes kravet om at dæmpningen i dette område, som skal være under 0,375 dB. 
 
-Den harmoniske forvrængning skal ifølge kravspecifikationen være under 0,5 \%. Ifølge LTspice er den harmoniske forvrængning, ved 1 kHz og maksimal peakspænding på indgangen, 0,2 \%. Forvrængningsmålingen er udført ved maksimal peakspænding, da forvrængningen i trinnet vil være højest ved denne situation. 
+THD skal ifølge kravspecifikationen være under 0,5 \%. Ifølge LTspice er THD, ved 1 kHz og maksimal peakspænding på indgangen, 0,2 \%. Forvrængningsmålingen er udført ved maksimal peakspænding, da forvrængningen i trinnet vil være højest ved denne situation. 

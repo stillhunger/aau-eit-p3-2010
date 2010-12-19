@@ -3,24 +3,24 @@
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{teknisk/indgangsvaelger/signal-taend-sluk.png}
-\caption{Opbygning af indgangsvælgeren}
+\caption{Opbygning af indgangsvælgerens kredsløb med markering af de enkelte dele}
 \label{fig:indgangsvaelger-overordnet}
 \end{figure}
 
 Indgangsvælgerkredsløbet kan opdeles i 3 sektioner: Dæmpningsblokke, summation og signaltilpasning. Diagrammet er vist på figur \ref{fig:indgangsvaelger-overordnet}. Dæmpningsblokkene sørger for at dæmpe signalet så meget som muligt, for at komme så tæt på en afkobling som muligt, når et signal skal slukkes. Summationssektionen lægger værdien af de foregående blokke sammen, mens signaltilpasningssektionen skifter mellem 3 forskellige niveauer, så det endelige output altid vil have et maksimalt peakniveau på 2 V.  
 
-For at slukke signalet, er der valgt at benytte transistorer, til at trække signalerne til stel. Da spændingssvinget kan gå ned til 0,2 V, er der mulighed for at der vil løbe nogle små strømme i transistorerne. Derfor vælges en FET-transistor, da denne, modsat en BiPolær transistor, er linæer ved meget små collector-strømme\fixme{Hvor hen?}. For at aktivere transistoren, sættes spændingen på Gate-benet højt. Dette opnåes ved hjælp af et gatekredsløb. To D-flipflops opsættes til, ved hjælp af tryk på én enkelt knap, at skifte mellem fire forskellige binære tilstande. Opbygningen er vist på figur \ref{fig:indgangsvaelger-flipflop}. Disse fire tilstande repræsenterer de fire tilstande indgangsvælgeren kan være i: Begge tændt, begge slukket eller kun det ene signal tændt.
+For at slukke signalet, er der valgt at benytte transistorer, til at trække signalerne til stel. Da spændingssvinget kan gå ned til 0,2 V, er der mulighed for at der vil løbe nogle små strømme i transistorerne. Derfor vælges en FET, da denne, modsat en BJT, er linæer ved meget små drain-strømme. For at aktivere transistoren, sættes spændingen på gaten højt. Dette opnåes ved hjælp af kontrollogikken. To D-flipflops opsættes til, ved hjælp af tryk på én enkelt knap, at skifte mellem fire forskellige binære tilstande. Opbygningen er vist på figur \ref{fig:indgangsvaelger-flipflop}. Disse fire tilstande repræsenterer de fire tilstande indgangsvælgeren kan være i: Begge tændt, begge slukket eller kun det ene signal tændt.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{teknisk/indgangsvaelger/flipflop.png}
-\caption{Opbygning af indgangsvælgeren}
+\caption{Opbygning af kontrollogik til valg af indgang}
 \label{fig:indgangsvaelger-flipflop}
 \end{figure}
 
 Optimalt ville en transistor uden reverse-diode være at foretrække, da dette vil tillade at source-spændingen er lavere end drainspændingen, som vil være tilfældet ved et AC-signal uden DC-offset. Da det ikke var muligt at fremskaffe en sådan, benyttes i stedet et DC-offset, til at sørge for at forskellen mellem DC-offsettet og AC-peakværdien er større end nul når transistoren er slukket, hvilket umuliggør at der kan løbe en reverse strøm i transistoren.
 
-Modstandene $R_1$ og $R_2$ er begge valgt til 100~k\ohm, for at give et DC-offset på ca 2,5~V, halvdelen af 5~V, som vist på figur \ref{fig:indgangsvaelger-overordnet}. Dette gælder dog kun når transistoren er slukket. Idet transistoren tændes, sættes $R_2$ parallelt med $R_4$, hvilket trækker DC-offsettet længere ned.
+Modstandene $R_1$ og $R_2$ er begge valgt til 100~k\ohm, for at give et DC-offset på 2,5~V, halvdelen af 5~V, som vist på figur \ref{fig:indgangsvaelger-overordnet}. Dette gælder dog kun når transistoren er slukket. Idet transistoren tændes, sættes $R_2$ parallelt med $R_4$, hvilket trækker DC-offsettet længere ned.
 %\begin{equation}
 %5V\cdot \frac{\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}{R_1+\frac{1}{\frac{1}{R_2}+\frac{1}{R_3}}}=1.11 V
 %\end{equation}
@@ -51,7 +51,7 @@ Efter at have opstillet de forskellige modstandsværdier, er det muligt at udreg
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{teknisk/indgangsvaelger/hoejpasfilter.png}
-\caption{Et standard CR højpas-filter}
+\caption{Et typisk CR højpas-filter}
 \label{crvd}
 \end{figure}
 I dette tilfælde vil $R_U$ være udgangsimpedansen på det foregående led, og $R_I$ være indgangsimpedansen på det efterfølgende. Impedansen i en kondensator, i frekvensdomænet er $\frac{1}{s\cdot C}$. Dette kan opstilles ifølge spændingsdelingsformel som udtrykket i ligning (\ref{eq:indganghoejpas}).
@@ -74,7 +74,7 @@ Dette giver 2 ubekendte, $s$ og $C$. LaPlace variablen $s$ kan ses som $2\cdot \
 C=\frac{-1}{2} \cdot 10^{\frac{-3~\mathrm{dB}}{20}} \pi \cdot f \cdot \left( 10^{\frac{-3~\mathrm{dB}}{20}} \cdot R_I + \frac{-3~\mathrm{dB}}{20} \cdot R_U - R_I \right)
 \end{equation}
 
-Frekvensen $f$ bestemmes til 2 Hz, én dekade før den ønskede, for at opnå en lav dæmpning ved de ønskede 20 Hz. Dæmpningen ved 20 Hz kan dermed udregnes. Formlen for et standard højpas-filter opstilles i formel (\ref{eq:indgangstandardhoejpas}). Denne omskrives så til $j\cdot\omega$-notation hvormed det ser ud som udtrykket i formel (\ref{eq:indgangjomega}).
+Frekvensen $f$ bestemmes til 2 Hz, én dekade før den ønskede, for at opnå en lav dæmpning ved de ønskede 20 Hz. Dæmpningen ved 20 Hz kan dermed udregnes. Formlen for et standard højpas-filter opstilles i formel (\ref{eq:indgangstandardhoejpas}). Denne omskrives til $j\cdot\omega$-notation hvormed det ser ud som udtrykket i formel (\ref{eq:indgangjomega}).
 
 \begin{equation}
 \label{eq:indgangstandardhoejpas}
@@ -87,7 +87,7 @@ H(s)=\frac{s\cdot\tau}{1+s\cdot\tau}
 \left| H(j\omega) \right| = \frac{\omega\cdot\tau}{\sqrt{1+(\omega\cdot\tau)^2)}}=\frac{1}{\sqrt{\frac{1}{(\omega\cdot\tau)^2}+1}}
 \end{equation}
 
-Ifølge dekadereglen\fixme{måske en lille kilde ??}, sættes $\omega\cdot\tau = 10$, som i ligning (\ref{eq:indgangjomega10}).
+Ifølge dekadereglen, sættes $\omega\cdot\tau = 10$, som i ligning (\ref{eq:indgangjomega10}).
 
 \begin{equation}
 \label{eq:indgangjomega10}
