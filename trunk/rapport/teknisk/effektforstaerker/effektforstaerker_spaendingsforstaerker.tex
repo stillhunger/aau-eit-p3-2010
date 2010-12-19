@@ -16,7 +16,8 @@ Forstærkningen i en common-emitter kobling er bestemt ved ligning (\ref{equ:spa
 A_v = -g_m \cdot || R'_L
 \end{equation}
 
-For at beregne $g_m$ bruges ligning (\ref{equ:spaendingsforstaerker2})\kilde{analog elektronik mm5}, hvor $I_C$ er den collectorstrøm som konstantstrømsgeneratoren trækker, og $V_T$ er sat til at være konstant $26~\mathrm{mV}$.
+For at beregne $g_m$ bruges ligning (\ref{equ:spaendingsforstaerker2}) \cite{ael-mm5}%\kilde{analog elektronik mm5}
+, hvor $I_C$ er den collectorstrøm som konstantstrømsgeneratoren trækker, og $V_T$ er sat til at være konstant $26~\mathrm{mV}$.
 \begin{equation}
 \label{equ:spaendingsforstaerker2}
 g_m = \frac{I_c}{V_T} = \frac{6~\mathrm{mA}}{26~\mathrm{mV}} = 230,8~\mathrm{mS}
@@ -31,7 +32,8 @@ r_o = \frac{1}{h_{\mathrm{oe}} - g_m \cdot h_{\mathrm{re}}} = \frac{1}{60~\mathr
 Modstanden $R'_L$ er defineret som den belastning spændingsforstærkeren ser. For at gøre det nemmere at beregne $R'_L$, er der gjort nogle antagelser. Første antagelse er at $V_\mathrm{BE}$-multiplieren kan betragtes som en AC-mæssig kortslutning. Dette kan gøres fordi $V_\mathrm{BE}$-multiplieren fungerer som et batteri der laver et DC-offset, mens AC potentialet  forbliver det samme på begge sider. Næste antagelse er at kortslutningskredsløbet kan ses bort fra, idet kredsløb ikke er aktuelt, når udgangen ikke er kortsluttet. Sidste antagelse er at den belastning, $R'_L$, som spændingsforstærkeren ser er den ene af de to darlingtontransistorer i parallel med konstantstrømsgeneratoren. Dette fremkommer fordi der ses bort fra hvileområdet, hvor begge darlingtontrasistorer er aktive og kun ses på situationen, hvor der er fuld udstyring på en af transistorerne.
 Med disse antagelser på plads kan impedansen $R'_L$ beregnes ud fra parallelkoblingen mellem konstantstrømsgeneratoren og en af darlingtontransistorerne.
 
-Idet at konstantstrømsgeneratoren er en BC547B koblet som en common-collector med uafkoblet emittermodstand, kan udgangsimpedansen beregnes ved ligning (\ref{equ:spaendingsforstaerker3})\fixme{Kilde: Analog elektronik mm7}.
+Idet at konstantstrømsgeneratoren er en BC547B koblet som en common-collector med uafkoblet emittermodstand, kan udgangsimpedansen beregnes ved ligning (\ref{equ:spaendingsforstaerker3}) \cite{ael-mm7}.%\fixme{Kilde: Analog elektronik mm7}
+
 \begin{equation}
 \label{equ:spaendingsforstaerker3}
 R_{\mathrm{oc}} = r_o + R'_e + h_{\mathrm{fe}} \cdot r_o \cdot \frac{R'_e}{r_{\pi} + R_s || R_b}
@@ -59,7 +61,7 @@ Darlingtontransistorerne der er valgt til projektet er opbygget som vist på fig
 \label{darlington_diagram}
 \end{figure}
 
-For at lette bestemmelsen af impedansen af darlingtontransistoren er det valgt at opfatte den som en enkelt supertransistor hvor $h_{\mathrm{fe}}= h_{\mathrm{fe}_1} \cdot h_{\mathrm{fe}_2}$ \fixme{Kilde: sedra/smidth sixth edition side 525}
+For at lette bestemmelsen af impedansen af darlingtontransistoren er det valgt at opfatte den som en enkelt supertransistor hvor $h_{\mathrm{fe}}= h_{\mathrm{fe}_1} \cdot h_{\mathrm{fe}_2}$ \cite{sedra-smith-1}. %\fixme{Kilde: sedra/smidth sixth edition side 525}
 Der er også valgt at se bort fra de indre modstande i darlingtontransistoren. Når dette er valgt kan darlingtontransistoren i dette tilfælde opfattes som en transistor koblet som en common-collector. Ud fra det kan der opstilles en forsimplet hybrid-$\pi$-model for supertransistoren som er vist i figur \ref{hybridpimodel_darlington}. Ud fra figur \ref{hybridpimodel_darlington} kan ligning (\ref{equ:spaendingsforstaerker6}) opsættes.
 
 \begin{figure}[h]
