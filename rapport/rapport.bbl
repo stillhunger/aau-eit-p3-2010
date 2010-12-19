@@ -149,22 +149,43 @@ Jan H. Mikkelsen og modificeret af Ole Kiel Jensen,
 \newblock Bilags-CD $"$ael\_mm19\_slides.pdf$"$, november 2010.
 \newblock
 
+\bibitem{bc557b-datablad}
+General semiconductor,
+\newblock $"$Small Signal Transistors (PNP)$"$.
+\newblock Bilags-CD $"$BC557.pdf$"$, april 1998.
+\newblock
+
 \bibitem{ael-mm7}
 Jan H. Mikkelsen,
 \newblock $"$BJT grundkoblinger - II$"$.
 \newblock Bilags-CD $"$ael\_mm7\_slides.pdf$"$, september 2010.
 \newblock
 
+\bibitem{ael-mm5}
+Jan H. Mikkelsen,
+\newblock $"$BJT Forstærkere og modeller$"$.
+\newblock Bilags-CD $"$ael\_mm5\_slides.pdf$"$, september 2010.
+\newblock
+
+\bibitem{sedra-smith-1}
+Adel Sedra, Kenneth C. Smith,
+\newblock $"$Microelectronic Circuits, 6. udgave$"$, side 525. Oxford University Press, 2010.
+\newblock
+
+\bibitem{sedra-smith-4}
+Adel Sedra, Kenneth C. Smith,
+\newblock $"$Microelectronic Circuits, 6. udgave$"$, side 734 figur 7.37b. Oxford University Press, 2010.
+\newblock
+
+\bibitem{sedra-smith-5}
+Adel Sedra, Kenneth C. Smith,
+\newblock $"$Microelectronic Circuits, 6. udgave$"$, side 618 eq 7.157. Oxford University Press, 2010.
+\newblock
+
 \bibitem{tilbage-mm1}
 Palle Andersen,
 \newblock $"$Tilbagekoblingsteori I$"$.
 \newblock Bilags-CD $"$tilbagekoblingsteori\_mm1\_slides.pdf$"$, Måned År.
-\newblock
-
-\bibitem{bc557b-datablad}
-General semiconductor,
-\newblock $"$Small Signal Transistors (PNP)$"$.
-\newblock Bilags-CD $"$BC557.pdf$"$, april 1998.
 \newblock
 
 \bibitem{maaling-mm4}
@@ -185,11 +206,6 @@ Ole Kiel Jensen,
 \newblock Bilags-CD $"$forforstaerker-31.6mvInputTHDogFrekvensRespons.pdf$"$, december 2010.
 \newblock
 
-\bibitem{sedra-smith-1}
-Adel Sedra, Kenneth C. Smith,
-\newblock $"$Microelectronic Circuits, 6. udgave$"$, side 525. Oxford University Press, 2010.
-\newblock
-
 \bibitem{sedra-smith-2}
 Adel Sedra, Kenneth C. Smith,
 \newblock $"$Microelectronic Circuits, 6. udgave$"$, side 618 eq 7.159. Oxford University Press, 2010.
@@ -198,16 +214,6 @@ Adel Sedra, Kenneth C. Smith,
 \bibitem{sedra-smith-3}
 Adel Sedra, Kenneth C. Smith,
 \newblock $"$Microelectronic Circuits, 6. udgave$"$, side 620 eq 7.165. Oxford University Press, 2010.
-\newblock
-
-\bibitem{sedra-smith-4}
-Adel Sedra, Kenneth C. Smith,
-\newblock $"$Microelectronic Circuits, 6. udgave$"$, side 734 figur 7.37b. Oxford University Press, 2010.
-\newblock
-
-\bibitem{sedra-smith-5}
-Adel Sedra, Kenneth C. Smith,
-\newblock $"$Microelectronic Circuits, 6. udgave$"$, side 618 eq 7.157. Oxford University Press, 2010.
 \newblock
 
 \bibitem{sedra-smith-6}
