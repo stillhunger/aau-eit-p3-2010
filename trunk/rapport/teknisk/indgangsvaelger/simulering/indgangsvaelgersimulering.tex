@@ -28,7 +28,8 @@ På figur \ref{indgangsvaelger_frekvenskarakteristik} er simuleringen af frekven
 \end{figure}
 
 \subsubsection*{Dæmpning af signal}
-På figur \ref{indgangsvaelger_daempniing} ses en graf over den simulerede dæmpning i kredsløbet. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved 5 V på transistoren. Fra kravspecifikationen er der opsat krav om at isoleringen af signaler skal være større end 50 dB, hvilket opnåes i simuleringen, da denne aflæses til at være ca. 94,3 dB .
+På figur \ref{indgangsvaelger_daempniing} ses en graf over den simulerede dæmpning i kredsløbet. Simuleringen er lavet ved en AC-Analyse fra 2 Hz til 200 kHz, og ved at sætte output over input ved 5 V på transistoren. Fra kravspecifikationen er der opsat krav om at isoleringen af signaler skal være større end 50 dB, hvilket opnåes i simuleringen, da denne aflæses til at være ca. 94,3 dB.
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{teknisk/indgangsvaelger/simulering/daempning_af_signal.png}
@@ -36,15 +37,15 @@ På figur \ref{indgangsvaelger_daempniing} ses en graf over den simulerede dæmp
 \label{indgangsvaelger_daempniing}
 \end{figure}
 
-\subsubsection*{Tænd og sluk af signal}
-På figur \ref{indgangsvaelger_taendsluk} er der simuleret at et signal bliver tændt og slukket. Simuleringen er lavet ved en transient analyse over 1,4 s og en peakspænding 2 V ved 100 Hz på indgangen. Først er signalet slukket i 100 ms, dernæst er signalet tændt i 700 ms og til sidst er signalet slukket i 600 ms. Som det ses er signalet når det bliver tændt først oppe på niveau efter det har været tændt i 700 ms. Det skyldes at der er brugt kondensatorer i kredsløbet, hvilket giver en længere indsvingningstid.\fixme{Jesper: Der skal ses på hvad denne graf egentlig betyder}
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{teknisk/indgangsvaelger/simulering/taend_sluk.png}
-\caption{Simulering af at tænde og slukke signalet.}
-\label{indgangsvaelger_taendsluk}
-\end{figure}
-\fixme{Der skal findes ud af hvorfor signalet buer! Tænd/sluk signalet skal også plottes}
+%\subsubsection*{Tænd og sluk af signal}
+%På figur \ref{indgangsvaelger_taendsluk} er der simuleret at et signal bliver tændt og slukket. Simuleringen er lavet ved en transient analyse over 1,4 s og en peakspænding 2 V ved 100 Hz på indgangen. Først er signalet slukket i 100 ms, dernæst er signalet tændt i 700 ms og til sidst er signalet slukket i 600 ms. Som det ses er signalet når det bliver tændt først oppe på niveau efter det har været tændt i 700 ms. Det skyldes at der er brugt kondensatorer i kredsløbet, hvilket giver en længere indsvingningstid.
+
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=\textwidth]{teknisk/indgangsvaelger/simulering/taend_sluk.png}
+%\caption{Simulering af at tænde og slukke signalet.}
+%\label{indgangsvaelger_taendsluk}
+%\end{figure}
 
 \subsubsection*{THD}
 Simuleringen er lavet ved en fourier-analyse ved 1 kHz og 2 V inputspænding som giver en THD på 0,062 \%. Der er dog ikke noget sammenligningsgrundlag fra beregningerne eller kravene, hvormed der først kan laves udtalelser på denne værdi under accepttesten. 
