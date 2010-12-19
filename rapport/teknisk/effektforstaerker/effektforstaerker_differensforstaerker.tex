@@ -24,7 +24,8 @@ R_3=\frac{0,7~\mathrm{V}}{2~\mathrm{mA}}=350~\ohm
 \end{equation}
 
 For at kunne beregne CMRR, som er et udtryk for forholdet mellem differensforstærkningen og common-mode-forstærkningen, er der behov for netop at beregne disse forstærkninger. 
-Differensforstærkningen, $A_d$, er et udtryk for hvor meget spændingsdifferensen mellem inputsignalet og det tilbagekoblede signal forstærkes. Ligning (\ref{eq:diffforstaerkning})\fixme{kilde til sedra s. 618 eq 7.159} er et udtryk for differensforstærkningen under antagelse af at hybrid-$\pi$~ parametrene for Q1, Q2, Q4 og Q5. Denne antagelse kan forekomme fordi strømmen i alle transistorerne er identisk når input1 = input2.
+Differensforstærkningen, $A_d$, er et udtryk for hvor meget spændingsdifferensen mellem inputsignalet og det tilbagekoblede signal forstærkes. Ligning (\ref{eq:diffforstaerkning}) \cite{sedra-smith-2} %\fixme{kilde til sedra s. 618 eq 7.159}
+er et udtryk for differensforstærkningen under antagelse af at hybrid-$\pi$~ parametrene for Q1, Q2, Q4 og Q5. Denne antagelse kan forekomme fordi strømmen i alle transistorerne er identisk når input1 = input2.
 
 \begin{equation}
 A_d=\frac{1}{2} \cdot g_m \cdot r_o
@@ -40,7 +41,8 @@ A_d=\frac{1}{2} \cdot \frac{i_C}{V_T} \cdot \frac{1}{h_\mathrm{oe} - \frac{i_C}{
 
 Differensforstærkningen ønskes høj så der er tilstrækkeligt at tilbagekoble. Givet at forstærkningen i spændingsforstærkeren er beregnet til 1964,44 gange anses $A_d$ for at være tilstrækkeligt. 
 
-Common-mode-forstærkningen, $A_\mathrm{cm}$, er et udtryk for hvor meget et identisk signal på input1 og input2 vil bliver forstærket. $A_\mathrm{cm}$ ønskes så lav som muligt for f. eks. effektivt at kunne undertrykke indstrålet støj og DC. $A_\mathrm{cm}$ er givet ved ligning (\ref{eq:acmligning})\fixme{kilde sedra s. 620 eq 7.165} under antagelse af at transistorerne er perfekt matchede og  at $r_{o,Q4}>>r_{\pi,Q4},~r_{\pi,Q5}$. 
+Common-mode-forstærkningen, $A_\mathrm{cm}$, er et udtryk for hvor meget et identisk signal på input1 og input2 vil bliver forstærket. $A_\mathrm{cm}$ ønskes så lav som muligt for f. eks. effektivt at kunne undertrykke indstrålet støj og DC. $A_\mathrm{cm}$ er givet ved ligning (\ref{eq:acmligning}) \cite{sedra-smith-3} %\fixme{kilde sedra s. 620 eq 7.165}
+under antagelse af at transistorerne er perfekt matchede og  at $r_{o,Q4}>>r_{\pi,Q4},~r_{\pi,Q5}$. 
 
 \begin{equation}
 A_\mathrm{cm} = -\frac{r_o}{h_\mathrm{fe} \cdot R_E}
@@ -67,14 +69,16 @@ For at have et grundlag for at vurdere den beregnede CMRR sammenlignes den med d
 
 \subsubsection*{Analyse af ind- og udgangsimpedanser}
 Til senere brug skal impedansen der kigges ind i på input2 samt impedansen der kigges ind i på output. 
-Impedansen der kigges ind i på input2 er givet ved ligning (\ref{eq:input2impedans})\kilde{sedra s. 734 figur 7.37b} under antagelse af at hybrid-$\pi$~ paramtrene er ens for Q4, Q5, Q1 og Q2 samt at disse er perfekt matchede. 
+Impedansen der kigges ind i på input2 er givet ved ligning (\ref{eq:input2impedans}) \cite{sedra-smith-4} %\kilde{sedra s. 734 figur 7.37b}
+under antagelse af at hybrid-$\pi$~ paramtrene er ens for Q4, Q5, Q1 og Q2 samt at disse er perfekt matchede. 
 
 \begin{equation}
 R_{i, input2}= r_\pi = \frac{h_\mathrm{fe}}{\frac{i_C}{V_T}} = 8,58~\mathrm{k}\ohm
 \label{eq:input2impedans}
 \end{equation}
 
-Impedansen der kigges ind i på output er givet ved ligning (\ref{eq:outputimpedansdiff})\kilde{sedra s. 618  eq 7.157} under samme antagelser som blev foretaget i ligning (\ref{eq:input2impedans}).
+Impedansen der kigges ind i på output er givet ved ligning (\ref{eq:outputimpedansdiff}) \cite{sedra-smith-5} %\kilde{sedra s. 618  eq 7.157}
+under samme antagelser som blev foretaget i ligning (\ref{eq:input2impedans}).
 
 \begin{equation}
 R_{o, output} = \frac{1}{2} \cdot r_o = \frac{1}{2} \cdot \frac{1}{h_\mathrm{oe} - \frac{i_C}{V_T} \cdot h_\mathrm{re}} = 9,56~\mathrm{k}\ohm
