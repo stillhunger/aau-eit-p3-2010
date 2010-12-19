@@ -10,14 +10,15 @@ For at regne på tilbagekoblingen til effektforstærkeren er det nødvendigt at 
 A = A_\mathrm{diff.amp} \cdot \frac{R_\mathrm{i,vol}}{R_\mathrm{o,diff} + R_\mathrm{i,vol}} \cdot \frac{}{} A_\mathrm{vol.amp} \cdot A_\mathrm{cur.amp}
 \end{equation}
 
-Spændingsforstærkningen i differensforstærkeren, $A_\mathrm{diff.amp}$, er i afsnit \ref{effekt_differensforstaerker} fundet til 367,6 gange, mens spændingsforstærkningen i spændingsforstærkeren, $A_\mathrm{vol.amp}$, i afsnit \ref{effekt_spaendingsforstaerker} er fundet til 1964,44 gange. Modstanden $R_\mathrm{o,diff}$ er udgangsmodstanden af differensforstærkeren, som i afsnit \ref{effekt_differensforstaerker} er beregnet til 9,56 k\ohm. Modstanden $R_\mathrm{i,vol}$ er indgangsmodstanden af spændingsforstærkeren som er givet ved $R_\mathrm{i,vol} = R_\pi = \frac{h_{fe}}{g_m} = 1,43~\mathrm{k}\ohm$. Denne spændingsdeling er med i formel (\ref{equ:a-openloop}), da der regnes med spændingsforstærkninger. Spændingsforstærkningen i strømforstærkeren, som er en common-collector, $A_\mathrm{cur.amp}$, er givet ved udtrykket i formel (\ref{equ:a-cc})\fixme{kilde: formel 4.96 i sedra smith}, hvor $R_L$ er belastningsmodstanden på 8 \ohm~ i serie med den termiske sikringsmodstand på 0,536 \ohm~ og $r_e$ er en T-model-parameter. Mellem spændingsforstærkeren og strømforstærkeren er der ingen spændingsdeling, da forstærkningen i spændingsforstærkeren, i afsnit \ref{effekt_spaendingsforstaerker}, er beregnet med belastningen fra strømforstærkeren.
+Spændingsforstærkningen i differensforstærkeren, $A_\mathrm{diff.amp}$, er i afsnit \ref{effekt_differensforstaerker} fundet til 367,6 gange, mens spændingsforstærkningen i spændingsforstærkeren, $A_\mathrm{vol.amp}$, i afsnit \ref{effekt_spaendingsforstaerker} er fundet til 1964,44 gange. Modstanden $R_\mathrm{o,diff}$ er udgangsmodstanden af differensforstærkeren, som i afsnit \ref{effekt_differensforstaerker} er beregnet til 9,56 k\ohm. Modstanden $R_\mathrm{i,vol}$ er indgangsmodstanden af spændingsforstærkeren som er givet ved $R_\mathrm{i,vol} = R_\pi = \frac{h_{fe}}{g_m} = 1,43~\mathrm{k}\ohm$. Denne spændingsdeling er med i formel (\ref{equ:a-openloop}), da der regnes med spændingsforstærkninger. Spændingsforstærkningen i strømforstærkeren, som er en common-collector, $A_\mathrm{cur.amp}$, er givet ved udtrykket i formel (\ref{equ:a-cc}) \cite{sedra-smith-6}%\fixme{kilde: formel 4.96 i sedra smith}
+, hvor $R_L$ er belastningsmodstanden på 8 \ohm~ i serie med den termiske sikringsmodstand på 0,536 \ohm~ og $r_e$ er en T-model-parameter. Mellem spændingsforstærkeren og strømforstærkeren er der ingen spændingsdeling, da forstærkningen i spændingsforstærkeren, i afsnit \ref{effekt_spaendingsforstaerker}, er beregnet med belastningen fra strømforstærkeren.
 
 \begin{equation}
 \label{equ:a-cc}
 A_\mathrm{cur.amp} = \frac{R_L}{R_L+r_e}
 \end{equation}
 
-T-model-parameteren $r_e$ er givet ved udtrykket i formel (\ref{equ:beta-re})\kilde{afsnit 4.5.7 i sedra smith}.
+T-model-parameteren $r_e$ er givet ved udtrykket i formel (\ref{equ:beta-re}) \cite{sedra-smith-7}%\kilde{afsnit 4.5.7 i sedra smith}.
 
 \begin{equation}
 \label{equ:beta-re}
@@ -52,7 +53,8 @@ Open-loop forstærkningen, $A$, kan nu bestemmes som vist i udregningen i formel
 A = A_\mathrm{diff.amp} \cdot \frac{R_\mathrm{i,vol}}{R_\mathrm{o,diff} + R_\mathrm{i,vol}} \cdot \frac{}{} A_\mathrm{vol.amp} \cdot A_\mathrm{cur.amp} = 93022
 \end{equation}
 
-Closed-loop forstærkningen, $A_f$, som er givet ved udtrykket vist i formel (\ref{equ:af_def})\kilde{formel 9.4 i sedra smith}, ønskes til 8,95. Dette skyldes at der, som beregnet i afsnit \ref{valg_kortslutningssikring}, skal være 17,9 V over belastningen når der kommer 2 V som input til effektforstærkeren.
+Closed-loop forstærkningen, $A_f$, som er givet ved udtrykket vist i formel (\ref{equ:af_def}) \cite{sedra-smith-8}%\kilde{formel 9.4 i sedra smith}
+, ønskes til 8,95. Dette skyldes at der, som beregnet i afsnit \ref{valg_kortslutningssikring}, skal være 17,9 V over belastningen når der kommer 2 V som input til effektforstærkeren.
 
 \begin{equation}
 \label{equ:af_def}
@@ -80,7 +82,7 @@ Dette betyder at en tænkt ændring i $A$ på f.eks. 20 \% vil give en ændring 
 S_A^{~A_f} \cdot 20~\% = 0,00002~\%
 \end{equation}
 
-Tilbagekoblingskredsløbet opbygges som en spændingsdeler, som vist på figur \ref{fig:beta-clean}, hvormed closed-loop forstærkningen, $A_f$, bliver som vist i formel (\ref{equ:af-deler})\kilde{eksempel 9.1 i sedra smith}.
+Tilbagekoblingskredsløbet opbygges som en spændingsdeler, som vist på figur \ref{fig:beta-clean}, hvormed closed-loop forstærkningen, $A_f$, bliver som vist i formel (\ref{equ:af-deler}) \cite{sedra-smith-9}.%\kilde{eksempel 9.1 i sedra smith}
 
 \begin{figure}[h]
 \centering
