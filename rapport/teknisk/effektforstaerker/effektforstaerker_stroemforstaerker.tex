@@ -50,7 +50,7 @@ Desuden opstilles udfra sikkerhedshensyn et krav om at kølepladen maksimalt må
 40~\celsius = 2 \cdot P_D \cdot R_{\mathrm{sa}}
 \end{equation}
 
-Det ses at formel (\ref{equ:smax}) bliver den afgørende betingelse og at $R_{\mathrm{sa}}$ maksimalt må være $2,99~\tfrac{\celsius}{\mathrm{W}}$. I databladet for kølepladen ses at en $R_{\mathrm{sa}}$ på $2,9~\tfrac{\celsius}{\mathrm{W}}$ kan opnåes ved en køleplade på 110 mm, hvilket derfor vælges. Størrelsen af $R_E$ kan nu bestemmes ved formel (\ref{equ:rebestem}) \cite{ael-mm19} \fixme{kilde: Jan Mikkelsen, mm19, modificeret af Ole Kiel Jensen}
+Det ses at formel (\ref{equ:smax}) bliver den afgørende betingelse og at $R_{\mathrm{sa}}$ maksimalt må være $2,99~\tfrac{\celsius}{\mathrm{W}}$. I databladet for kølepladen ses at en $R_{\mathrm{sa}}$ på $2,9~\tfrac{\celsius}{\mathrm{W}}$ kan opnåes ved en køleplade på 110 mm, hvilket derfor vælges. Størrelsen af $R_E$ kan nu bestemmes ved formel (\ref{equ:rebestem}) \cite{ael-mm19-ole-mod}% \fixme{kilde: Jan Mikkelsen, mm19, modificeret af Ole Kiel Jensen}
 , hvor $K = - 2~\tfrac{\mathrm{mV}}{\celsius}$, $V_{CC} = 23$ V, $V_T = 26$ mV og $I_C = 2,24$ A.
 
 \begin{equation}
@@ -78,7 +78,7 @@ Som et forsøg på at forbedre situationen beskrevet på figur \ref{fig:term-run
 \label{fig:term-runaway1}
 \end{figure}
 
-Ved en omgivelsestemperatur på 35~\celsius~ betyder denne ændring, at darlingtontransistoren vil opnå en hviletemperatur som er over 10~\celsius~ lavere, hvilket derfor er at foretrække. Til at lave opstillingerne på figur \ref{fig:term-runaway} og \ref{fig:term-runaway1} er der antaget en hvilestrøm gennem transistoren på 45 mA. Hvilestrømmens størrelse er antaget ud fra 2 \% af peakstrømmen på udgangen, som i eksempel 13.5 i Sedra-Smith \fixme{sedra smith}.
+Ved en omgivelsestemperatur på 35~\celsius~ betyder denne ændring, at darlingtontransistoren vil opnå en hviletemperatur som er over 10~\celsius~ lavere, hvilket derfor er at foretrække. Til at lave opstillingerne på figur \ref{fig:term-runaway} og \ref{fig:term-runaway1} er der antaget en hvilestrøm gennem transistoren på 45 mA. Hvilestrømmens størrelse er antaget ud fra 2 \% af peakstrømmen på udgangen, som i eksempel 13.5 i Sedra-Smith \cite{sedra-smith}.%\fixme{sedra smith}
 
 
 \subsubsection*{$V_\mathrm{BE}$-multiplier}
