@@ -1,16 +1,16 @@
 \section{Design}
-En udbredt metode, at udvikle en effektforstærker efter, er LIN 3-stage topologien \cite{ael-mm20}. Efter den topologi opbygges en effektforstærker som en kæde bestående af en differensforstærker efterfulgt af en spændingsforstærker, igen efterfulgt af en strømforstærker. Der er desuden et tilbagekoblingsnetværk også. 
+En udbredt metode, at udvikle en effektforstærker efter, er LIN 3-stage topologien \cite{ael-mm20}. Efter den topologi opbygges en effektforstærker som en kæde bestående af en differensforstærker efterfulgt af en spændingsforstærker, igen efterfulgt af en strømforstærker. Der er desuden et tilbagekoblingsnetværk, som tilbagekobler udgangssignalet til differensforstærkeren. 
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.5]{teknisk/effektforstaerker/blokdiagram-effektforstaerker.png}
-\caption{Blokdiagram af effektforstærkeren.}
+\caption{Blokdiagram af effektforstærker, som følger LIN-topologien}
 \label{fig:lin_effektforstaerker}
 \end{figure}
 
-Som vist på figur \ref{fig:lin_effektforstaerker}, er det ene signal i differensforstærkeren inputtet til effektforstærkeren, mens det andet er en tilbagekobling af outputtet. LIN 3-stage topologien vil blive benyttet i denne designproces, som vil starte bagfra i forhold til opbygningen på figur \ref{fig:lin_effektforstaerker}. Der er desuden en kortslutningssikring efter strømforstærkeren.
+Som vist på figur \ref{fig:lin_effektforstaerker}, er det ene signal i differensforstærkeren inputtet til effektforstærkeren, mens det andet er en tilbagekobling af outputtet. LIN 3-stage topologien vil blive benyttet i denne designproces, som vil starte bagfra i forhold til opbygningen på figur \ref{fig:lin_effektforstaerker}. Der designes desuden en kortslutningssikring efter strømforstærkeren.
 
-Ud fra LIN topologien er der bygget et diagram for effektforstærkeren vist på figur \ref{fig:effektkredsloeb}.
+Ud fra LIN topologien er der bygget et diagram for effektforstærkeren som vist på figur \ref{fig:effektkredsloeb}.
 
 \begin{figure}[h]
 \centering
