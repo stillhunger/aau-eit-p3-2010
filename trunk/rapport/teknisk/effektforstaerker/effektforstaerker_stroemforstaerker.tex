@@ -9,7 +9,14 @@ Strømforstærkeren opbygges som vist på figur \ref{fig:blokdiagram-stroem}. Do
 \label{fig:blokdiagram-stroem}
 \end{figure}
 
-Som vist, i afsnit \ref{valg_kortslutningssikring}, skal der igennem $R_{\mathrm{load}}$ løbe en $I_{\mathrm{peak}}$ på 2,24 A for at opnå en udgangseffekt på 20 W. Dette betyder desuden, som det også er vist i afsnit \ref{valg_kortslutningssikring}, at der skal være en $V_{\mathrm{peak}}$ på 17,9 V over belastningen. Da de valgte darlingtontransistorer har en $V_{\mathrm{BE}}$ på op til 2,5 V, vælges forsyningsspændingen til $\pm$23 V, hvormed der også er plads til et spændingsfald over $R_E$ og en transistor i konstantstrømsgeneratoren.
+Som vist, i afsnit \ref{valg_kortslutningssikring}, skal der igennem $R_{\mathrm{load}}$ løbe en $I_{\mathrm{peak}}$ på 2,24 A for at opnå en udgangseffekt på 20 W. Dette betyder desuden, som vist i udregningen i formel \ref{equ:vpeak}, at der skal være en $V_{\mathrm{peak}}$ på 17,9 V over belastningen for at afsætte 20 W. 
+
+\begin{equation}
+\label{equ:vpeak}
+V_{\mathrm{peak}} = I_{\mathrm{peak}} \cdot R_{\mathrm{load}} = \mathrm{2,24~A \cdot 8~\ohm = 17,9~V}
+\end{equation}
+
+Ideelt vil en spændingsforsyning på 18 V altså være tilstrækkelig, dog er der rent praktisk behov for en større. Da de valgte darlingtontransistorer har en $V_{\mathrm{BE}}$ på op til 2,5 V, vælges forsyningsspændingen til $\pm$23 V, hvormed der også er plads til et spændingsfald over $R_E$ og en transistor i konstantstrømsgeneratoren.
 
 \subsubsection*{Termiske forhold}
 Størrelsen af $R_E$ bestemmes med udgangspunkt i at den skal skabe termisk stabilitet og til bestemmelsen af denne startes der derfor med at kigge på et termisk ekvivalentdiagram for de valgte darlingtontransistorer og de tilgængelige køleplader \cite{koeleplade-datablad}. 
