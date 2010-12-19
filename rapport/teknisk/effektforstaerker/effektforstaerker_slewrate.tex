@@ -1,0 +1,38 @@
+\subsection{Slew Rate}
+\label{effekt_slewrate}
+Det er med indsættelsen af $C_2$ interessant at kigge på Slew Rate, forkortet SR, med henblik på at bestemme om dette er et emne der bør tages højde for i designet. Kravet til SR er bestemt af den ønskede afsatte effekt i belastningen og frekvensgangen. SR er et udtryk for ændringen i spænding per tid, som vist i formel (\ref{equ:sr-def})\kilde{afsnit 2.8.3 i sedra smith}. 
+
+\begin{equation}
+\label{equ:sr-def}
+SR = \frac{d~v_o(t)}{dt} \Biggr\vert _\mathrm{max}
+\end{equation}
+
+Den største spændingsændring i effektforstærkeren sker over $Q_6$ og kan regnes ved at betragte spændingsændringen over belastningen, når spændingsforstærkningen i strømforstærkeren er kendt. Peakspændingen over belastningen er, som vist i afsnit \ref{effekt_stroemforstaerker}, 17,9 V og spændingsforstærkningen i strømforstærkeren er, som beregnet i afsnit \ref{effekt_kortslutningssikring}, 0,99. Dette giver en maksimal peakspænding over $Q_6$ på 18,1 V. Signalet er desuden sinusformet, hvorved $v_o(t)$ kan skrives som i formel (\ref{equ:vomax}).
+
+\begin{equation}
+\label{equ:vomax}
+v_o(t) = 18,1~\mathrm{V} \cdot sin\left( 2 \cdot \pi \cdot f \cdot t \right) 
+\end{equation}
+
+Ændringen i $v_o(t)$ er størst til tiderne $t$ som beskrevet i formel (\ref{equ:tmaks}), hvor $n \in \mathbb{Z}$.
+
+\begin{equation}
+\label{equ:tmaks}
+t = \frac{\pi \cdot n}{2 \cdot \pi \cdot f}
+\end{equation}
+
+Frekvensen, $f$, der er interessant er 20 kHz, hvorved kravet til SR kan bestemmes som vist i udregningen i formel 
+
+\begin{equation}
+\label{equ:}
+SR_\mathrm{krav} = 18,1~\mathrm{V} \cdot 2 \cdot \pi \cdot 20~\mathrm{kHz} =  2,27\frac{\mathrm{V}}{\mu\mathrm{s}}
+\end{equation}
+
+Det eventuelle problem med at leve op til dette krav er hvis strømmen til $C_2$ ikke er tilstrækkelig. Spændingsfaldet over $C_2$ er ikke nævneværdigt anderledes end spændingsfaldet over $Q_2$, hvorved den nedre grænse for strømmen gennem $C_2$ kan beregnes, som vist i udregningen i formel (\ref{equ:icmin})\kilde{Jan Mikkelsen, mm20 AEL}, da kondensatorværdien kendes.
+
+\begin{equation}
+\label{equ:icmin}
+i_{C_2} = C_2 \cdot SR_\mathrm{krav} = 0,33~\mu \mathrm{A}
+\end{equation}
+
+Denne strøm skal kunne leveres af differensforstærkeren, hvis der ikke skal opstå problemer. Differensforstærkeren kan maksimalt levere 2 mA og selvom der også løber en strøm ind i $Q_2$'s base så vurderes der ikke at der vil opstå problemer med SR.
