@@ -1,63 +1,50 @@
 %\input{../../preamble/preamble_ida.tex}
 %\begin{document}
-\chapter{Appendiks X}
-\label{maalejournal}
-\section*{Målerapport}
-Målejournalen skal dukumentere en måling\\
-Når en fagmand M/K har læst målejournalen skal han være i stand til at gentage målingen\\
-Navn \& Dato
+\chapter{Måling på HiFi-forstærker}
+\label{maaling_hifi}
+Denne målerapport dokumenterer målinger foretaget på projektets effektforstærker, opbygget som beskrevet i kapitel \ref{effektforstaerker}. Målingerne er foretaget på Fredrik Bajers Vej 7 i lokale B1-104 på Aalborg Universitet den 20. december 2010 af gruppe 311.
 
-\subsection*{Formål}
-Målingens formål (kan være):\\
-At kontrollere den kvalitative funktion af testobjektet og finde evt. fejl\\
-At indstille justerbare komponenter \\
-At måle de specificerede parametre for måleobjektet \\
-At vurdere usikkerheden på de målte parametre\\
-Eksempler \\
-- At måle/indstille frekvensen af AMV’en\\
-- At måle forstærkning som funktion af frekvensen for universalforstærkeren\\
-Formålet er ikke at ”vise at målingerne giver samme resultat som beregnet” - målingen skal være objektiv!!\\
+\section*{Formål}
+Målingernes formål er at teste:
 
-\subsection*{Testobjekt}
-Her skal testobjektet defineres entydigt. Der kan evt. henvises til diagrammer i rapporten.\\
-Det er vigtigt, at alle målepunkter er veldefinerede.\\
+\begin{itemize}
+\item Frekvensgangen fra 20 Hz - 20 kHz
+\item Forvrængningen
+\end{itemize}
 
-\subsection*{Teori}
-Hvis de ønskede parametre fremkommer indirekte ud fra målingen, kan det være nødvendigt at beskrive teorien.\\
+\section*{Testobjekt}
+Målingerne udføres på projektets samlede HiFi-forstærkeren. Diagrammet for denne findes i bilag \kilde{bilag med high-def diagram af det hele}.
 
-\subsection*{Måleopstilling}
-Her skal vises en tegning over måleopstillingen, så man klart kan se, hvordan udstyret er tilsluttet.\\
-Hvis der bruges flere forskellige tilslutninger under målingen, kan der vises flere forskellige opstillinger, eller der kan skrives en forklarende tekst.\\
+\section*{Måleopstilling}
+Målingerne foretages   ved en opstilling, der laver forstærkning-, frekvensgang- og forvrængningsmåling. Opstillingen er vist på figur \ref{fig:maaleop-hifi}.
 
-\subsection*{Anvendt udstyr}
-Alt væsentligt udstyr skal beskrives entydigt.\\
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.3]{maalerapporter/forforstaerker/maaleopstilling-thd-forforstaerker.png}
+\caption{Måleopstilling for forstærkning-, frekvensgang- og forvrængningsmåling \cite{maaling-mm5}}
+\label{fig:maaleop-hifi}
+\end{figure}
 
-\subsection*{Måleprocedure}
-Her beskrives klart og entydigt, hvordan målingen er foretaget inkl. alle ikke indlysende indstillinger af apparater. Eks.: \\
-1. Spændingsforsyningen tilsluttes og indstilles til 15 V (måles med voltmeteret) \\
-2. Generatoren indstilles til at give en sinusspænding med en amplitude på 14 mV (måles med oscilloskopet) \\
-3. ....\\
+\section*{Anvendt udstyr}
 
-\subsection*{Resultater}
-Nogle resultater kan med fordel flyttes (eller kopieres) til rapporten – husk henvisning \\
-Ofte angives tabeller i målejournalen og grafer i rapporten \\
-Brug tabeller – resultater blandet med tekst bliver rodet\\
-Datafiler bør (desuden) vedlægges rapporten på en CD – husk henvisning\\
-Præcis formulering er vigtig!!\\
-Angiv enheder - DC, RMS, amplitude, eller spids-spids værdier?\\
+\begin{table}[h]
+\centering
+\begin{tabular}{l|c|l}
+\hline\hline
+Instrument & AAU-nr. & Fabrikant, type m.v. \\
+\hline\hline
+Oscilloskop &  & Agilent 54621A \\[4pt]
+Oscillator &  & B\&O RC-oscillator TG7 \\[4pt]
+Spændingsforsyning &  & HAMEG HM7042 \\[4pt]
+Multimeter &  & Fluke and Philips FLUKE 37 \\[4pt]
+Audioanalysator &  & National Instruments NI-PCI-4461 \\
+\hline\hline
+\end{tabular}
+\label{tab:maaleudstyr_forforstaerker}
+\end{table}
 
-\subsection*{Måleusikkerheder}
-Her angives væsentlige fejlkilder og usikkerheder i.f.b. med målingen. \\
-Principielt skal man medtage alle usikkerheder og lave en samlet usikkerhedsberegning, men oftest nævnes kun de mest væsentlige. \\
-Det er vigtigt at forklare uoverensstemmelser mellem beregnede, simulerede og målte data, men det hører hjemme i hovedrapporten – ikke i målejournalen. \\
-I rapporten kan man evt. henvise til usikkerheder beskrevet i målejournalen.\\
-Typiske årsager til måleunøjagtighed:\\
-Måleinstrumenter påvirker (belaster) måleobjektet\\
-Aflæsningsunøjagtighed\\
-Analoge (antikke) viserinstrumenter	\\
-Oscilloscop-cursor (pas på støj i ”auto-peak-peak”)\\
-Støj, 50 Hz (100 Hz) brum, switch-mode spændingsforsyninger m.v.\\
-Instrumentets unøjagtighed: Se manualen! \\
-Multimetre: Frekvensafhængig måleusikkerhed \\
-Oscilloscop: Både horisontal (lille) og vertikal usikkerhed\\
-%\end{document}
+\section*{Måleprocedure}
+
+\section*{Resultater}
+
+\section*{Måleusikkerheder}
