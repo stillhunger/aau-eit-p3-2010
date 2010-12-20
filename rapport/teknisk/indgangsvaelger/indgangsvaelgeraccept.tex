@@ -27,3 +27,23 @@ THD simuleres til 0,062 \% ved en peakspænding på 2 V, ved 1 kHz. Ved en THD m
 \label{fig:accind:thd2v}
 \end{figure}
 Det kan dog konkluderes at THD ikke er lav nok. Dette kan delvist løses ved at benytte en anden operationsforstærker, f.eks. OPA27 i stedet for LM324. Det er dog tydeligt, ud fra Appendiks F, at transistorerne ikke afbryder helt, når signalet ikke skal slukkes og at de derfor har en indflydelse. Dette er ikke optimalt og det ville derfor være smart at benytte en transistor, som afkobler bedre i slukket tilstand.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r|r}
+\hline\hline
+Område & Krav & Status \\
+\hline\hline
+Antal trin i & 4 & \checkmark \\
+indgangsvælgeren & \\[4pt]
+Indgangsimpedans & > 22 k\ohm & \checkmark \\[4pt]
+Frekvensgang & $\pm$ 0,375 dB ved 20 Hz - 20 kHz, ref. 1 kHz & \checkmark \\
+& $\pm$ 0,75 dB fra 20 Hz til 63 Hz & \checkmark\\
+& $\pm$ 0,75 dB fra 12,5 kHz til 20 kHz & \checkmark\\[4pt]
+Dæmpning af slukket & > 50 dB ved 1 kHz & \checkmark \\
+indgangssignal & \\
+\hline\hline
+\end{tabular}
+\caption{Oversigt over status af krav til indgangsvælgeren}
+\label{tab:krav_indgangsvaelger}
+\end{table}
