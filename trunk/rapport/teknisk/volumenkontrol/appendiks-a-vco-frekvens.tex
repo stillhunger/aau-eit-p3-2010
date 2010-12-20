@@ -51,7 +51,7 @@ V_U = \frac{R \cdot (R \cdot V_{CC} + 1,5~\mathrm{V} \cdot R + R \cdot V_{CC})}{
 \end{equation}
 
 \subsection*{Integrator}
-Integratoren op- og aflader kondensatoren $C_1$, dette bliver gjort gennem de to modstande $R_1$ og $R_4$. Med udgangspunkt i den ideelle operationsforstærker, er det klar at spændingen på de to indgange er ens og at operationsforstærkeren vil sikre dette. Det betyder at spændingen på de to indgange kan beregnes med udgangspunkt i $V_+$, se ligning (\ref{equ:appendiks-vco5}).
+Integratoren op- og aflader kondensatoren, $C_1$, gennem de to modstande $R_1$ og $R_4$. Med udgangspunkt i den ideelle operationsforstærker, er det klart at spændingen på de to indgange er ens og at operationsforstærkeren vil sikre dette. Det betyder at spændingen på de to indgange kan beregnes med udgangspunkt i $V_+$, se ligning (\ref{equ:appendiks-vco5}).
 
 \begin{equation}
 \label{equ:appendiks-vco5}
@@ -72,7 +72,7 @@ Strømmen gennem $R_1$ kan beregnes udfra $V_C$, $V_-$, den ohmske modstand og O
 V_C - V_- = I_{R_1} \cdot R_1 \Rightarrow I_{R_1} = \frac{V_C - V_-}{R_1} = \frac{V_C - \frac{V_C}{2}}{R_1} = \frac{\frac{V_C}{2}}{R_1} = \frac{V_C}{2 \cdot R_1}
 \end{equation}
 
-Når udgangen på $U_6$ er lav vil transistoren $Q_1$ ikke være ledende og der vil ikke løbe strøm gennem $R_4$. Dette vil betyde at al den strøm der løber gennem $R_1$ vil lade $C_1$ op. Altså er $I_{R_1} = I_{\mathrm{op}}$. Når udgangen på $U_6$ er høj vil transistoren $Q_1$ være ledende og der vil løbe en strøm gennem $R_4$. Dette vil betyde at al den strøm der løber gennem $R_1$ vil løbe til stel gennem $R_4$. Da strømmen gennem $R_4$ større end strømmen gennem $R_1$, dette skyldes at der også løber strøm fra kondensatoren til stel, det er denne strøm der aflader kondensatoren. For at beregne strømmen $I_{R_4}$ bruges $V_-$ igen, se ligning (\ref{equ:appendiks-vco8}).
+Når udgangen på $U_6$ er lav vil transistoren, $Q_1$, ikke være ledende og der vil ikke løbe strøm gennem $R_4$. Dette vil betyde at alt den strøm der løber gennem $R_1$ vil lade $C_1$ op. Altså er $I_{R_1} = I_{\mathrm{op}}$. Når udgangen på $U_6$ er høj vil transistoren, $Q_1$, være ledende og der vil løbe en strøm gennem $R_4$. Dette vil betyde at alt den strøm der løber gennem $R_1$ vil løbe til stel gennem $R_4$, da strømmen gennem $R_4$ er større end strømmen gennem $R_1$. Dette skyldes at der også løber strøm fra kondensatoren til stel, som aflader kondensatoren. For at beregne strømmen $I_{R_4}$ bruges $V_-$ igen, se ligning (\ref{equ:appendiks-vco8}).
 
 \begin{equation}
 \label{equ:appendiks-vco8}
@@ -93,7 +93,7 @@ Den spænding kondensatoren skal op- og aflade er forskellen mellem $V_U$ og $V_
 V_d = \left(\frac{2}{3} \cdot V_{CC} - 0,5~\mathrm{V}\right) - \frac{1}{3} \cdot V_{CC} = \frac{1}{3} \cdot V_{CC} - 0,5~\mathrm{V}
 \end{equation}
 
-Tiden det tager at op og aflade kondensatoren beregnes ud fra ligning (\ref{equ:appendiks-vco11}).
+Tiden det tager at op- og aflade kondensatoren beregnes ud fra ligning (\ref{equ:appendiks-vco11}).
 
 \begin{equation}
 \label{equ:appendiks-vco11}
@@ -119,7 +119,7 @@ Periode tiden, $T$, er summen af op- og afladningstiden, se ligning (\ref{equ:ap
 T = t_{\mathrm{op}} + t_{\mathrm{af}} = \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_1}{3 \cdot V_C} + \frac{(2 \cdot V_{CC} - 3~\mathrm{V}) \cdot C \cdot R_4 \cdot R_1}{3 \cdot V_C \cdot (R_1 - R_4)}
 \end{equation}
 
-Udtrykkket i ligning (\ref{equ:appendiks-vco14a}), kan reduceres til udtrykket vist i ligning (\ref{equ:appendiks-vco14b}).
+Udtrykket i ligning (\ref{equ:appendiks-vco14a}), kan reduceres til udtrykket vist i ligning (\ref{equ:appendiks-vco14b}).
 
 \begin{equation}
 \label{equ:appendiks-vco14b}
