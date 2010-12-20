@@ -1,6 +1,7 @@
 \chapter{Samlet accepttest}
 \label{acceptest}
-Efter systemet implementeredes, blev der udført målinger, som vist i appendiks \ref{maaling_hifi}. Resultaterne af THD-målingerne viser, som det kan ses på figur \ref{maalerapport_final1} til figur \ref{maalerapport_final4}, desværre at kravene ikke er opfyldt for nogle af situationerne pånær stereo-indgangen med 200 mV. Resultaterne for frekvensgangen fra mikrofonindgangen viser, som det kan ses på figur \ref{maalerapport_final5} og figur \ref{maalerapport_final6}, at forstærkningen er for stor i frekvensområdet fra 20 Hz til 500 Hz, hvorefter den er for lav i resten af frekvensgangen. Forstærkningen skulle have været ca. 56 dB, hvilket der er en for stor afvigelse fra i forhold til kravene. Resultaterne for frekvensgangen fra stereo-indgangen viser, som det kan ses på figur \ref{maalerapport_final7} og figur \ref{maalerapport_final8}, at forstærkningen er omkring de ønskede 19 dB i frekvensområdet fra 200 Hz til 20 kHz. Dog falder forstærkningen mere end kravene tillader fra 20 Hz til 200 Hz. Resultaterne af dæmpningsmålingerne viser, som kan ses på figur \ref{maalerapport_final9} til \ref{maalerapport_final16}, at kravene ikke 
+Efter systemet implementeredes, blev der udført målinger, som vist i appendiks \ref{maaling_hifi}. Resultaterne af THD-målingerne viser, som det kan ses på figur \ref{maalerapport_final1} til figur \ref{maalerapport_final4}, desværre at kravene ikke er opfyldt for nogle af situationerne pånær stereo-indgangen med 200 mV. Resultaterne for frekvensgangen fra mikrofonindgangen viser, som det kan ses på figur \ref{maalerapport_final5} og figur \ref{maalerapport_final6}, at forstærkningen er for stor i frekvensområdet fra 20 Hz til 500 Hz, hvorefter den er for lav i resten af frekvensgangen. Forstærkningen skulle have været ca. 56 dB, hvilket der er en for stor afvigelse fra i forhold til kravene. Resultaterne for frekvensgangen fra stereo-indgangen viser, som det kan ses på figur \ref{maalerapport_final7} og figur \ref{maalerapport_final8}, at forstærkningen er omkring de ønskede 19 dB i frekvensområdet fra 200 Hz til 20 kHz. Dog falder forstærkningen mere end kravene tillader fra 20 Hz til 200 Hz. Resultaterne af dæmpningsmålingerne viser, som kan ses på figur \ref{maalerapport_final9} til \ref{maalerapport_final16}, at kravene ikke er opfyldt da dæmpningen skulle være minimum 50 dB for et slukket signal. Alle målingerne for dæmpning viser dæmpninger som svinger og som i større eller mindre dele af frekvensgangen fra 20 Hz til 20 kHz er under 50 dB.\\\\
+Hvordan HiFi-forstærkeren lever op til de samlede krav, stillet i kravspecifikationen i tabel \ref{tab:kravspec}, kan ses i tabel \ref{tab:kravspec:accept}.
 
 \begin{table}[h]
 \centering
@@ -17,20 +18,20 @@ Distortion & & $\circ$ < 0,5 \% i forforstærker & \checkmark\\
 & & ~~~fra 0 til -26 dB & \\[4pt]
 Frekvensgang & 20 Hz - 20 kHz & $\circ$ $\pm$ 1,5 dB ved ref. 1 kHz & \checkmark\\
 & & $\circ$ < 3 dB dæmpning & \\
-& & ~~~fra 20 Hz til 63 Hz og  & \\
-& & ~~~fra 12,5 kHz til 20 kHz & \\[4pt]
+& & ~~~fra 20 Hz til 63 Hz og  & $\mathcal{X}$ \\
+& & ~~~fra 12,5 kHz til 20 kHz & $\mathcal{X}$ \\[4pt]
 Indgangstyper & Linie og mikrofon & $\circ$ Med $"$Monacor & \checkmark \\
 & & ~~~MCE-4000$"$ mikrofon & \\[4pt]
 Antal trin i & 4 & & \checkmark\\
 indgangsvælger & & & \\[4pt]
-Dæmpning af slukket & > 50 dB & $\circ$ Ved 20 Hz - 20 kHz & \\
+Dæmpning af slukket & > 50 dB & $\circ$ Ved 20 Hz - 20 kHz & $\mathcal{X}$ \\
 indgangssignal & & & \\[4pt]
 Indgangsimpedans i & > 22 k\ohm & & \checkmark \\
 liniesignalsindgang & & &\\[4pt]
 Indgangsimpedans i & > 5 k\ohm & & \checkmark \\
 mikrofonsignalsindgang & & & \\[4pt]
 Equalizer-bånd & 3 & & $\mathcal{X}$ \\[4pt]
-Styring af volumen- & Digital & & $\mathcal{X}$\\
+Styring af volumen- & Digital & & \checkmark \\
 kontrol & & &\\[4pt]
 Dæmpningsområde i & 0 dB - 50 dB & $\circ$ 1 dB per niveau & \checkmark \\
 volumenkontrol & & & \\[4pt]
