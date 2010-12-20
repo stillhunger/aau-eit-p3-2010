@@ -17,7 +17,7 @@ Målingens formål er at:
 \subsection*{Testobjekt}
 \label{maalejournal_testobjekt}
 Der vil i denne målerapport blive udført tests af indgangsvælgeren, som vist på figur \ref{maalerap-diagram_simulering}. Indgangsimpedansen måles for alle indgangene: De to stereo indgange og mikrofon indgangen. Alle indgangsimpedanserne måles for både en tændt og en slukket indgang.
-Til frekvensmåling \fixme{Nogle ville mene dette ikke er fuldendt}
+Til frekvensmåling sendes signalet ind på en tændt indgang, medmindre andet er markeret. Indgangen der ikke benyttes vil så være slukket.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{maalerapporter/indgangsvaelger/indgangvaelger_ltspice_diagram.png}
@@ -165,14 +165,12 @@ Slukket: $R_\mathrm{i,forforstaerker}$ & & 22,62 & k\ohm \\
 
 Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vist i figur \ref{fig:apind:frek200mv} til figur \ref{fig:apind:thd2vslukket}. Resten af resultaterne kan findes på CD'en\fixme{henvisning}. Spændingsniveauer angivet i V og mV er amplitude værdier. 
 
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-200mv-frek.png}
 \caption{Frekvensgangen for mikrofonindgangen på indgangsvælgeren ved 200 mV}
 \label{fig:apind:frek200mv}
 \end{figure}
-
 
 \begin{figure}[h]
 \centering
@@ -181,14 +179,12 @@ Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vi
 \label{fig:apind:thd200mv}
 \end{figure}
 
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-2v-frek.png}
 \caption{Frekvensgangen for mikrofonindgangen på indgangsvælgeren ved 2V}
 \label{fig:apind:frek2v}
 \end{figure}
-
 
 \begin{figure}[h]
 \centering
@@ -197,14 +193,12 @@ Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vi
 \label{fig:apind:thd2v}
 \end{figure}
 
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-2v-slukket-frek.png}
 \caption{Frekvensgangen og fasedrejet for mikrofonindgangen for et slukket signal, på indgangsvælgeren ved 2V}
 \label{fig:apind:frek2vslukket}
 \end{figure}
-
 
 \begin{figure}[h]
 \centering

@@ -13,7 +13,7 @@ Målingens formål er at måle:
 \subsection*{Testobjekt}
 Der vil i denne målerapport blive udført tests af indgangsvælgeren, som vist på figur \ref{maalerap_diagram_simulering}. Testene vil tage udgangspunkt i én indgang; mikrofonindgangen. Dette skyldes at indgangene menes at være så ens, at de vil give samme output som fundet i Appendiks \ref{maalejournal_indgangsvaelger}. Der vil i stedet for en LM324 blive benyttet en OPA27\kilde{OPA27.pdf}.
 
-Til frekvensmåling 
+Til frekvensmåling sendes signalet ind på en tændt indgang, medmindre andet er markeret. Indgangen der ikke benyttes vil så være slukket.
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{maalerapporter/indgangsvaelger/indgangvaelger_ltspice_diagram.png}
@@ -30,7 +30,6 @@ Måleopstillingen er vist på figur \ref{fig:indgangthd:maaleop-thd}.
 \caption{Måleopstilling for forstærkning-, frekvensgang- og forvrængningsmåling \cite{maaling-mm5}}
 \label{fig:indgangthd:maaleop-thd}
 \end{figure}
-
 
 \subsection*{Anvendt udstyr}
 \fixme{clearpage?}
@@ -78,7 +77,6 @@ THD blev målt for de forskellige opsætninger. Resultaterne vises i figur \ref{
 \label{fig:apind:200mvm}
 \end{figure}
 
-
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/maalinger/opa/mic-200mv-opa-muxudgang-uden-transistor thd.png}
@@ -92,7 +90,6 @@ THD blev målt for de forskellige opsætninger. Resultaterne vises i figur \ref{
 \caption{THD ved 2 V med transistorer}
 \label{fig:apind:2vm}
 \end{figure}
-
 
 \begin{figure}[h]
 \centering
