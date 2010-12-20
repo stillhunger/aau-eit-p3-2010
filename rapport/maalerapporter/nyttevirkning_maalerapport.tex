@@ -36,7 +36,7 @@ For at finde nyttevirkningen for effektforstærkeren skal den samlede effekt afs
 \label{eq:nyttevirkning_beregning}
 \end{equation}
 
-For at finde den samlede effekt måles spændingsfaldet over $R_15$ for at finde den strøm der løber. Denne strøm anses for at være den samlede strøm tilført effektforstærkeren. Der ses bort fra strømmen som løber i differensforstærkeren og spændingsforstærkeren grundet deres lille størrelse. Strømmen gennem $R_15$ beregnes med Ohms lov og effekten afsat i hele effektforstærkeren beregnes med formel \ref{eq:effekt_beregning}.
+For at finde den samlede effekt måles spændingsfaldet over $R_{15}$ for at finde den strøm der løber. Denne strøm anses for at være den samlede strøm tilført effektforstærkeren. Der ses bort fra strømmen som løber i differensforstærkeren og spændingsforstærkeren grundet deres lille størrelse. Strømmen gennem $R_{15}$ beregnes med Ohms lov og effekten afsat i hele effektforstærkeren beregnes med formel \ref{eq:effekt_beregning}.
 
 \begin{equation}
 P=V \cdot I_\mathrm{rms}
@@ -68,26 +68,16 @@ Proceduren for at måle nyttevirkning er som følger:
 \item Spændingsforsyningen indstilles $\pm$ 23 V og tilsluttes
 \item Testobjektet tilsluttes som på figur \ref{fig:maaleop-nytte}
 \item Oscillatoren indstilles til 2 V peakspænding og 1 kHz
-\item Spændingsfaldet over $R_L$ og $R_15$ noteres
+\item Spændingsfaldet over $R_L$ og $R_{15}$ noteres
 \end{enumerate}
 
 \subsection*{Resultater}
 
-Peakspændingen over $R_15$ blev målt til 1,5 V og over $R_L$ til 17,5 V. Dermed kan nyttevirkningen beregnes ud fra formlerne i teoriafsnittet.
+Peakspændingen over $R_{15}$ blev målt til 1,5 V og over $R_L$ til 17,5 V. Dermed kan nyttevirkningen beregnes ud fra formlerne i teoriafsnittet.
 
-\[ I_{R_15}=\frac{\frac{1,5~V}{\sqrt{2}}}{0,68~\ohm}=1,56~A \]
+\[ I_{R_{15}}=\frac{\frac{1,5~V}{\sqrt{2}}}{0,68~\ohm}=1,56~A \]
 \[ P_\mathrm{samlet} = 23~V \cdot 1,56~A=35,9~W \]
 \[ I_{R_L}= \frac{\frac{17,5~V}{\sqrt{2}}}{8,2~\ohm}=1,51~A \]
 \[ P_{R_L} = 17,5~V \cdot 1,51~A=18,7~W \]
 \[ \eta = \frac{18,7~W}{35,9~W}=53,4~\% \]
 
-%\subsection*{Måleusikkerheder}
-%De væsentligste usikkerheder er:
-%\begin{itemize}
-%\item Komponent tolerancer
-%\item Påvirkning fra måleinstrument
-%\item Måleinstrument unøjagtighed
-%\item Støj, 50 Hz brum
-%\item Anden indstråling
-%\end{itemize}
-%\fixme{Kig på de her fejlkilder, i alle målerapporter}
