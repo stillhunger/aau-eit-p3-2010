@@ -57,7 +57,7 @@ UP/$\overline{\mathrm{DN}}$ & D & C & B & A & $\overline{\mathrm{CE}}$ \\ \hline
 \label{tab:taeller2}
 \end{table}
 
-Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Der konverteres fra tællerens binære output til BCD, Binary-coded decimal, for så at konvertere det til et signal de to 7-segment displays kan vise. Der benyttes en SN74185A \cite{sn74185a-datablad} til konverteringen fra binær til BCD. Fordelen ved at konvertere til BCD først er at denne konvertering også deler det binære tal op i to, en'ere og ti'ere. Disse to binære tal sendes igennem en 7-segmentsdriver, HEF4511 \cite{hef4511-datablad}, som er valgt pga. mangel på tid, for at få et output der fungerer med 7-segmenterne. Displaydriveren er også vist på figur \ref{fig:taeller}.
+Displaydriveren konverterer signalet fra tælleren til et signal der kan vises på de to 7-segment displays. Der konverteres fra tællerens binære output til BCD, Binary-coded decimal, for så at konvertere det til et signal de to 7-segment displays kan vise. Der benyttes en SN74185A \cite{sn74185a-datablad} til konverteringen fra binær til BCD. Fordelen ved at konvertere til BCD først er at denne konvertering også deler det binære tal op i to, en'ere og ti'ere. Disse to binære tal sendes igennem en 7-segmentsdriver, HEF4511 \cite{hef4511-datablad}, som er valgt, fremfor selv at lave driverne med gates, pga. mangel på tid, for at få et output der fungerer med 7-segmenterne. Displaydriveren er også vist på figur \ref{fig:taeller}.
 
 \subsection*{Display}
 \label{volumenkontrol-design-display}
