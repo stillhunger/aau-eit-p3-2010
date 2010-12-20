@@ -45,10 +45,10 @@ f_p=\frac{1}{(r_\pi \cdot (C_\pi + C_\mu \cdot \left( 1-K \right)) + R_L \cdot C
 \end{equation}
 
 Knækfrekvensen er på simuleringen aflæst til 20 kHz hvormed det vurderes at beregningen på 22 kHz er tæt nok på til at blive anset som værende korrekt. 
-Da den dominerende pol nu er identificeret vides nu at capaciteten $C_\mu$ skal ændres i størrelse for at flytte knækfrekvensen, for dermed at opnå en højere fasemargin. Ved at resonere over simuleringsresultaterne er det bestemt at knækfrekvensen skal flyttes til 200 Hz for at opnå tilstrækkeligt fasemargin. I formel \ref{knaekberegning} beregnes capaciteten som $C_\mu$ skal hæves med ved at isolere $C6$. I formlen er $f_\mathrm{p1}$ sat til 200 Hz. 
+Da den dominerende pol nu er identificeret vides nu at capaciteten $C_\mu$ skal ændres i størrelse for at flytte knækfrekvensen, for dermed at opnå en højere fasemargin. Ved at resonere over simuleringsresultaterne er det bestemt at knækfrekvensen skal flyttes til 200 Hz for at opnå tilstrækkeligt fasemargin. I formel \ref{knaekberegning} beregnes capaciteten som $C_\mu$ skal hæves med ved at isolere $C2$. I formlen er $f_\mathrm{p1}$ sat til 200 Hz. 
 
 \begin{equation}
-f_\mathrm{p1}=\frac{1}{(r_\pi \cdot (C_\pi + (C_\mu + C6) \cdot \left( 1-K \right)) + R_L \cdot (C_\mu + C6) \cdot \left( 1-\frac{1}{K} \right)) \cdot 2 \cdot \pi} \Rightarrow C6=144~\mathrm{pF}
+f_\mathrm{p1}=\frac{1}{(r_\pi \cdot (C_\pi + (C_\mu + C2) \cdot \left( 1-K \right)) + R_L \cdot (C_\mu + C2) \cdot \left( 1-\frac{1}{K} \right)) \cdot 2 \cdot \pi} \Rightarrow C2=144~\mathrm{pF}
 \label{knaekberegning}
 \end{equation}
 
