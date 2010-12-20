@@ -1,7 +1,7 @@
 \chapter{Beregning af analog attenuator}
 \label{beregning-af-analog-attenuator}
 
-Den analoge attenuator der benyttes i volumenkontrollen består af to attenuatorer, adskilt af en buffer. Der sidder desuden en buffer efter det andet dæmpningstrin, for at garantere at trinet har en fast udgangsimpedans. Den første dæmper i syv trin med 8 dB mellem hvert trin, startende fra 0 dB. Der tages i beregningerne udgangspunkt i formlen for en ubelastet spændingsdeler, hvor forholdet mellem ind- og udgangsspænding er noteret som dæmpningen i dB omregnet til antal gange. Beregningerne for den første attenuatorer er opstillet i ligningerne (\ref{beregning-af-analog-attenuator-ligning1}) til (\ref{beregning-af-analog-attenuator-ligning5}).
+Den analoge attenuator, der benyttes i volumenkontrollen, består af to attenuatorer, adskilt af en buffer. Der sidder desuden en buffer efter det andet dæmpningstrin, for at garantere at trinet har en fast udgangsimpedans. Den første attenuator dæmper i syv trin med 8 dB mellem hvert trin, startende fra 0 dB. Der tages i beregningerne udgangspunkt i formlen for en ubelastet spændingsdeler, hvor forholdet mellem ind- og udgangsspænding er noteret som dæmpningen i dB omregnet til antal gange. Beregningerne for den første attenuatorer er opstillet i ligningerne (\ref{beregning-af-analog-attenuator-ligning1}) til (\ref{beregning-af-analog-attenuator-ligning5}).
 
 \begin{equation}
 \label{beregning-af-analog-attenuator-ligning1}
@@ -29,10 +29,10 @@ Den analoge attenuator der benyttes i volumenkontrollen består af to attenuator
 \frac{R_7 + R_6 + R_5 + R_4 + R_3 + R_2}{R_1 + R_2 + R_3 + R_4 + R_5 + R_6 + R_7} = 10^{\frac{-8}{20}}
 \end{equation}
 
-Da der er seks ligninger med syv ubekendte bestemmes $R_7$ til 1 k\ohm, det resultere i følgende værdier 
+Da der er seks ligninger med syv ubekendte bestemmes $R_7$ til 1 k\ohm, det resulterer i følgende værdier 
 $R_1 = 162 ~\mathrm{k}\ohm, R_2 = 48,8 ~\mathrm{k}\ohm, R_3 = 24,0 ~\mathrm{k}\ohm, R_4 = 9,54 ~\mathrm{k}\ohm, R_5 = 3,80  ~\mathrm{k}\ohm, R_6 = 1,51 ~\mathrm{k}\ohm$ og $R_7 = 1,00 ~\mathrm{k}\ohm$.
 
-Den anden dæmper i otte trin med 1 dB mellem hvert trin, startende fra 0 dB. Bregningerne for den første attenuatorer er opstillet i ligningerne (\ref{beregning-af-analog-attenuator-ligning6}) til (\ref{beregning-af-analog-attenuator-ligning12}).
+Den anden attenuator dæmper i otte trin med 1 dB mellem hvert trin, startende fra 0 dB. Beregningerne for den første attenuatorer er opstillet i ligningerne (\ref{beregning-af-analog-attenuator-ligning6}) til (\ref{beregning-af-analog-attenuator-ligning12}).
 
 \begin{equation}
 \label{beregning-af-analog-attenuator-ligning6}
@@ -64,5 +64,5 @@ Den anden dæmper i otte trin med 1 dB mellem hvert trin, startende fra 0 dB. Br
 \frac{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8}}{R_{14} + R_{13} + R_{12} + R_{11} + R_{10} + R_{9} + R_{8} + R_{7}} = 10^{\frac{-1}{20}}
 \end{equation}
 
-Da der er syv ligninger med otte ubekendte bestemmes $R_{14}$ til 10 k\ohm, det resultere i følgende værdier 
+Da der er syv ligninger med otte ubekendte bestemmes $R_{14}$ til 10 k\ohm, hvilket resulterer i følgende værdier 
 $R_{8} = 2,43 ~\mathrm{k}\ohm, R_{9} = 2,16 ~\mathrm{k}\ohm, R_{10} = 1,93 ~\mathrm{k}\ohm, R_{11} = 1,72 ~\mathrm{k}\ohm, R_{12} = 1,53 ~\mathrm{k}\ohm, R_{13} = 1,36 ~\mathrm{k}\ohm, R_{14} = 1,22 ~\mathrm{k}\ohm$ og $R_{15} = 10,0 ~\mathrm{k}\ohm$.
