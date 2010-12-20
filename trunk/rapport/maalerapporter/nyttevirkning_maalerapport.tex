@@ -12,24 +12,41 @@ Målingernes formål er at teste effektforstærkerens:
 %Ydermere vil alle tests blive gentaget efter at forstærkeren har været tændt ved maksimal effekt i 10 minutter.
 
 \subsection*{Testobjekt}
-Der testes i disse målinger på effektforstærkeren, som beskrevet i kapitel \ref{effektforstaerker}. På figur \ref{fig:testob_efforstaerker} er denne vist, med angivelse af terminaler.
+Der testes i disse målinger på effektforstærkeren, som beskrevet i kapitel \ref{effektforstaerker}. På figur \ref{fig:testob_efforstaerker_nytte} er denne vist, med angivelse af terminalerne anvendt i målingen.
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{maalerapporter/effektforstaerker/effektforstaerker_maelerapport.png}
-\caption{Effektforstærker med angivelser af terminaler}
-\label{fig:testob_efforstaerker}
+\includegraphics[width=\textwidth]{maalerapporter/effektforstaerker/effektforstaerker_nyttevirkning_test.png}
+\caption{Effektforstærker med angivelser af de anvendte terminaler}
+\label{fig:testob_efforstaerker_nytte}
 \end{figure}
 
 \subsection*{Måleopstilling}
-Målingerne foretages   ved en opstilling, der laver forstærkning-, frekvensgang- og forvrængningsmåling. Opstillingerne er vist på figur \ref{fig:maaleop-thd}.
+Målingerne foretages  ved en opstilling, der måler spændingsfaldet over $R_15$ og $R_L$ for at kunne bestemme nyttevirkningen. Opstillingerne er vist på figur \ref{fig:maaleop-nytte}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.3]{maalerapporter/forforstaerker/maaleopstilling-thd-forforstaerker.png}
-\caption{Måleopstilling for forstærkning-, frekvensgang- og forvrængningsmåling \cite{maaling-mm5}}
-\label{fig:maaleop-thd}
+\includegraphics[scale=0.3]{maalerapporter/effektforstaerker/opstilling_nyttevirkning.png}
+\caption{Måleopstilling for måling af nyttevirkning i effektforstærkeren}
+\label{fig:maaleop-nytte}
 \end{figure}
+
+\subsection*{Teori}
+For at finde nyttevirkningen for effektforstærkeren skal den samlede effekt afsat i effektforstærkeren samt effekten afsat i $R_L$ findes. Dette skyldes at nyttevirkningen er givet ved formel \ref{eq:nyttevirkning_beregning}.
+
+\begin{equation}
+\eta = \frac{P_{R_L}}{P_\mathrm{samlet}}
+\label{eq:nyttevirkning_beregning}
+\end{equation}
+
+For at finde den samlede effekt måles spændingsfaldet over $R_15$ for at finde den strøm der løber. Denne strøm anses for at være den samlede strøm tilført effektforstærkeren. Der ses bort fra strømmen som løber i differensforstærkeren og spændingsforstærkeren grundet deres lille størrelse. Strømmen gennem $R_15$ beregnes med Ohms lov og effekten afsat i hele effektforstærkeren beregnes med formel \ref{eq:effekt_beregning}.
+
+\begin{equation}
+P=V \cdot I_\mathrm{rms}
+\label{eq:effekt_beregning}
+\end{equation}
+
+Den samme måling og beregning udføres for $R_L$ for derefter at beregne nyttevirkningen med formel \ref{eq:nyttevirkning_beregning}.
 
 \subsection*{Anvendt udstyr}
 \begin{table}[h]
@@ -38,81 +55,34 @@ Målingerne foretages   ved en opstilling, der laver forstærkning-, frekvensgan
 \hline\hline
 Instrument & AAU-nr. & Fabrikant, type m.v. \\
 \hline\hline
-Oscilloskop & 33851 & Agilent 54621A \\[4pt]
-Oscillator & 07997 & B\&O RC-oscillator TG7 \\[4pt]
-Spændingsforsyning & 33907& HAMEG HM7042 \\[4pt]
-Multimeter & 33048 & Fluke and Philips FLUKE 37 \\[4pt]
-Multimeter & 08518 & Fluke and Philips FLUKE 37 \\[4pt]
-Effektmodstand 8,2~\ohm & 2159 & Ikke Angivet \\[4pt]
-Audioanalysator & 76986 & National Instruments NI-PCI-4461 \\
+Oscilloskop & 33843 & Agilent 54621A \\[4pt]
+Oscillator & 07995 & B\&O RC-oscillator TG7 \\[4pt]
+Spændingsforsyning & 33896 & HAMEG HM7042 \\[4pt]
+Effektmodstand 8,2~\ohm & 215901 & Ikke Angivet \\[4pt]
 \hline\hline
 \end{tabular}
-\label{tab:maaleudstyr_forforstaerker}
+\label{tab:maaleudstyr_effektforstaerker_nytte}
 \end{table}
 \clearpage
 \subsection*{Måleprocedure}
-Proceduren for forstærkning-, frekvensgang- og forvrængningsmålingen er:
+Proceduren for at måle nyttevirkning er som følger:
 
 \begin{enumerate}
-\item Spændingsforsyningen indstilles $\pm$ 23 V (indstilles med multimeteret) og tilsluttes
-\item Testobjektet tilsluttes som på figur \ref{fig:maaleop-thd}
-\item Programmet $"$Swept Sine - Linear Response and Harmonic Distortion (DAQmx)$"$ startes
-\item $"$Start frequency$"$ under Source settings sættes til 10 Hz
-\item $"$Stop frequency$"$ under Source settings sættes til 92 kHz
-\item $"$Amplitude$"$ under Source settings sættes til 200 mV
-\item $"$THD units$"$ sættes til \%
-\item $"$AI Range$"$ for Stimulus channel sættes til $\pm$ 3,16 V
-\item $"$AI Range$"$ for Respons channel sættes til $\pm$ 31,6 V
-\item $"$Sampling frequency$"$ sættes til 204,8 kHz
+\item Spændingsforsyningen indstilles $\pm$ 23 V og tilsluttes
+\item Testobjektet tilsluttes som på figur \ref{fig:maaleop-nytte}
+\item Oscillatoren indstilles til 2 V peakspænding og 1 kHz
+\item Spændingsfaldet over $R_L$ og $R_15$ noteres
 \end{enumerate}
 
-Samme procedure gennemføres, hvor amplituden i punkt 6 i stedet sættes til 2 V. Dermed opnåes resultater for både maksimums- og minimumsinput. 
-
-
 \subsection*{Resultater}
-THD, forstærkning og frekvensgang blev målt for effektforstærkeren, resultaterne kan aflæses i figur \ref{fig:apeff:frek200mv} til figur \ref{fig:apeff:thd200mv} 
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{maalerapporter/effektforstaerker/200mV-45mA-uden-modstand-frek.png}
-\caption{Frekvensgangen for effektforstærkeren ved 200 mV.}
-\label{fig:apeff:frek200mv}
-\end{figure}
+Peakspændingen over $R_15$ blev målt til 1,5 V og over $R_L$ til 17,5 V. Dermed kan nyttevirkningen beregnes ud fra formlerne i teoriafsnittet.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{maalerapporter/effektforstaerker/200mV-45mA-uden-modstand-thd.png}
-\caption{THD for effektforstærkeren ved 200 mV.}
-\label{fig:apeff:thd200mv}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{maalerapporter/effektforstaerker/2V-45mA-uden-modstand-frek.png}
-\caption{Frekvensgangen for effektforstærkeren ved 2 V.}
-\label{fig:apeff:frek2v}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=\textwidth]{maalerapporter/effektforstaerker/2V-45mA-uden-modstand-thd.png}
-\caption{THD for effektforstærkeren ved 2 V.}
-\label{fig:apeff:thd2v}
-\end{figure}
-
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=\textwidth]{maalerapporter/effektforstaerker/thd_effekt_fuldudstyring_10min.png}
-%\caption{THD for effektforstærkeren ved 2 V  efter maksimal effekt i 10 minutter}
-%\label{fig:apeff:thd2v}
-%\end{figure}
-
-%\begin{figure}[h]
-%\centering
-%\includegraphics[width=\textwidth]{maalerapporter/effektforstaerker/gain_effekt_fuldudstyring_10min.png}
-%\caption{ Frekvensgangen for effektforstærkeren ved 2 V efter maksimal effekt i 10 minutter.}
-%\label{fig:apeff:thd2v}
-%\end{figure}
+\[ I_{R_15}=\frac{\frac{1,5~V}{\sqrt{2}}}{0,68~\ohm}=1,56~A \]
+\[ P_\mathrm{samlet} = 23~V \cdot 1,56~A=35,9~W \]
+\[ I_{R_L}= \frac{\frac{17,5~V}{\sqrt{2}}}{8,2~\ohm}=1,51~A \]
+\[ P_{R_L} = 17,5~V \cdot 1,51~A=18,7~W \]
+\[ \eta = \frac{18,7~W}{35,9~W}=53,4~\% \]
 
 %\subsection*{Måleusikkerheder}
 %De væsentligste usikkerheder er:
