@@ -1,41 +1,41 @@
 \chapter{Måling på indgangsvælger}
 \label{maalejournal_indgangsvaelger}
 
-Denne målerapport dokumenterer målinger foretaget på projektets indgangsvaelger, opbygget som beskrevet i kapitel \ref{forforstaerker}. Målingen er foretaget på Fredrik Bajers Vej 7 i lokale B1-104 på Aalborg Universitet den 14. december 2010 af gruppe 311.
+Denne målerapport dokumenterer målinger foretaget på projektets indgangsvaelger, opbygget som beskrevet i kapitel \ref{indgangsvaelger}. Målingen er foretaget på Fredrik Bajers Vej 7 i lokale B1-104 på Aalborg Universitet den 14. december 2010 af gruppe 311.
 
 \subsection*{Formål}
 \label{maalejournal_formaal}
 Målingens formål er at:
 \begin{itemize}
-\item Kontrollere funktionen af indgangsvælgeren og finde evt. fejl
-\item Måle dæmpningen for en tændt samt en slukket indgang i indgangsvælgeren.
-\item Måle outputtet i forhold til hvor mange indgange der er valgt .
-\item Måle indgangsimpedansen for indgangene, tændt og slukket.
-\item Måle at frekvensgangen ved 20 Hz - 20 kHz 
+\item Kontrollere funktionen af indgangsvælgeren
+\item Måle dæmpningen for en tændt samt en slukket indgang i indgangsvælgeren
+\item Måle outputtet i forhold til hvor mange indgange der er valgt
+\item Måle indgangsimpedansen for indgangene, tændt og slukket
+\item Måle frekvensgangen ved 20 Hz - 20 kHz 
 \end{itemize}
 
 \subsection*{Testobjekt}
 \label{maalejournal_testobjekt}
 Der vil i denne målerapport blive udført tests af indgangsvælgeren. Indgangsimpedansen måles for alle indgangene: De to stereo indgange og mikrofon indgangen. Alle indgangsimpedanserne måles for både en tændt og en slukket indgang.
-Til frekvensmåling 
+Til frekvensmåling \fixme{Nogle ville mene dette ikke er fuldendt}
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.8]{maalerapporter/indgangsvaelger/indgangvaelger_ltspice_diagram.png}
-\caption{Diagram over kredsløbet der testes.}
+\caption{Diagram over kredsløbet der testes}
 \label{maalerap-diagram_simulering}
 \end{figure}
 
 \subsection*{Teori}
 \label{maalejournal_teori}
-Teorien bag en impedansmåling, er at der skabes en spændingsdeling mellem en kendt reference modstand og indgangsmodstanden i det testede. Forholdet af spændingerne som ligger over modstandene svarer til forholdet mellem modstandene.
+Teorien bag en impedansmåling er, at der skabes en spændingsdeling mellem en kendt reference modstand og indgangsmodstanden i testobjektet. Forholdet af spændingerne som ligger over modstandene svarer til forholdet mellem modstandene.
 
 \subsection*{Måleopstilling}
 \label{maalejournal_maaleopstilling}
-Måleopstillingerne er vist på figur \ref{fig:indgang:maaleop-thd} .
+Måleopstillingerne er vist på figur \ref{fig:indgang:maaleop-imp} og \ref{fig:indgang:maaleop-thd}.
 
 \begin{figure}[h]
 \centering
-\includegraphics[scale=0.4]{maalerapporter/indgangsvaelger/impedansopstilling-forforstaerker.png}
+\includegraphics[scale=0.4]{maalerapporter/forforstaerker/impedansopstilling-forforstaerker.png}
 \caption{Måleopstilling for impedansmåling}
 \label{fig:indgang:maaleop-imp}
 \end{figure}
@@ -75,8 +75,8 @@ Proceduren for impedansmålingen er:
 \begin{enumerate}
 \item Generatoren, kaldet $V_\mathrm{SINE}$ på figur \ref{fig:indgang:maaleop-imp}, indstilles til en effektivspænding på 21,1 mV (indstilles med oscilloskop) ved 1 kHz og tilsluttes
 \item Reference modstanden, kaldet $R_\mathrm{ref}$ på figur \ref{fig:indgang:maaleop-imp}, vælges til 10 k\ohm~ og tilsluttes
-\item Spændingsfaldet fra terminal A til terminal B, som på figur \ref{fig:fig:indgang:maaleop-imp}, måles
-\item Spændingsfaldet fra terminal B til terminal C, som på figur \ref{fig:fig:indgang:maaleop-imp}, måles
+\item Spændingsfaldet fra terminal A til terminal B, som på figur \ref{fig:indgang:maaleop-imp}, måles
+\item Spændingsfaldet fra terminal B til stel, som på figur \ref{fig:indgang:maaleop-imp}, måles
 \end{enumerate}
 Herefter slukkes for indgang, og målingen foretages igen. Dette gentages for hver indgang.
 
@@ -97,12 +97,12 @@ Proceduren for forstærkning-, frekvensgang- og forvrængningsmålingen er:
 \item $"$Sampling frequency$"$ sættes til 204,8 kHz
 \end{enumerate}
 
-Samme procedure gennemføres, hvor amplituden i punkt 7 i stedet sættes til 200 mV. Dermed opnåes resultater for både maksimums- og minimumsinput. 
+Samme procedure gennemføres, hvor amplituden i punkt 8 i stedet sættes til 200 mV. Dermed opnåes resultater for både maksimums- og minimumsinput. 
 
 \subsection*{Resultater}
 \label{maalejournal_resultater}
 
-Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:resultatimpedans_indgang}. Disse spændinger bruges til at regne testobjektets indgangsimpedans, med formel (\ref{equ:zresultat-indgang}) \cite{maaling-mm4}.%\fixme{kilde: Ole Kiel Jensen, mm4 Maaleteknik}.
+Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:indgang-zres-micin}, tabel \ref{tab:indgang-zres-stereol} og tabel \ref{tab:indgang-zres-stereor}. Disse spændinger bruges til at regne testobjektets indgangsimpedans, med formel (\ref{equ:zresultat-indgang}) \cite{maaling-mm4}.%\fixme{kilde: Ole Kiel Jensen, mm4 Maaleteknik}.
 
 \begin{equation}
 \label{equ:zresultat-indgang}
@@ -111,36 +111,7 @@ Impedansmålingen gav effektivspændingerne vist i tabel \ref{tab:resultatimpeda
 
 \begin{table}[h]
 \centering
-\begin{tabular}{l|c|c|l}
-
-\hline\hline
-\multicolumn{4}{c}{\textbf{Mikrofon Indgang}} \\
-\hline\hline
-& Målt værdi & Beregnet værdi & Enhed \\
-\hline\hline
-Tændt: $V_{R_\mathrm{ref}}$ & 5,1& & mV effektiv\\[4pt]
-Tændt: $V_Z$ & 16,1 & & mV effektiv\\[4pt]
-Tændt: $R_\mathrm{i,forforstaerker}$ & & 31,56 & k\ohm \\
-Slukket: $V_{R_\mathrm{ref}}$ & 6,5& & mV effektiv\\[4pt]
-Slukket: $V_Z$ & 14,7 & & mV effektiv\\[4pt]
-Slukket: $R_\mathrm{i,forforstaerker}$ & & 22,62 & k\ohm \\
-\hline\hline
-\multicolumn{4}{c}{} \\
-\hline\hline
-\multicolumn{4}{c}{\textbf{Stereo L}} \\
-\hline\hline
-& Målt værdi & Beregnet værdi & Enhed \\
-\hline\hline
-Tændt: $V_{R_\mathrm{ref}}$ & 5,1& & mV effektiv\\[4pt]
-Tændt: $V_Z$ & 16,1 & & mV effektiv\\[4pt]
-Tændt: $R_\mathrm{i,forforstaerker}$ & & 31,56 & k\ohm \\
-Slukket: $V_{R_\mathrm{ref}}$ & 6,5& & mV effektiv\\[4pt]
-Slukket: $V_Z$ & 14,7 & & mV effektiv\\[4pt]
-Slukket: $R_\mathrm{i,forforstaerker}$ & & 22,62 & k\ohm \\
-\hline\hline
-\multicolumn{4}{c}{} \\
-\hline\hline
-\multicolumn{4}{c}{\textbf{Stereo R}} \\
+\begin{tabular}{l|r|r|l}
 \hline\hline
 & Målt værdi & Beregnet værdi & Enhed \\
 \hline\hline
@@ -152,8 +123,44 @@ Slukket: $V_Z$ & 14,7 & & mV effektiv\\[4pt]
 Slukket: $R_\mathrm{i,forforstaerker}$ & & 22,62 & k\ohm \\
 \hline\hline
 \end{tabular}
-\caption{Resultater af impedansmåling}
-\label{tab:resultatimpedans_indgang}
+\caption{Resultater af impedansmåling på mikrofonindgang}
+\label{tab:indgang-zres-micin}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r|r|l}
+\hline\hline
+& Målt værdi & Beregnet værdi & Enhed \\
+\hline\hline
+Tændt: $V_{R_\mathrm{ref}}$ & 5,1& & mV effektiv\\[4pt]
+Tændt: $V_Z$ & 16,1 & & mV effektiv\\[4pt]
+Tændt: $R_\mathrm{i,forforstaerker}$ & & 31,56 & k\ohm \\[4pt]
+Slukket: $V_{R_\mathrm{ref}}$ & 6,5& & mV effektiv\\[4pt]
+Slukket: $V_Z$ & 14,7 & & mV effektiv\\[4pt]
+Slukket: $R_\mathrm{i,forforstaerker}$ & & 22,62 & k\ohm \\
+\hline\hline
+\end{tabular}
+\caption{Resultater af impedansmåling på Stereo L}
+\label{tab:indgang-zres-stereol}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r|r|l}
+\hline\hline
+& Målt værdi & Beregnet værdi & Enhed \\
+\hline\hline
+Tændt: $V_{R_\mathrm{ref}}$ & 5,1& & mV effektiv\\[4pt]
+Tændt: $V_Z$ & 16,1 & & mV effektiv\\[4pt]
+Tændt: $R_\mathrm{i,forforstaerker}$ & & 31,56 & k\ohm \\[4pt]
+Slukket: $V_{R_\mathrm{ref}}$ & 6,5& & mV effektiv\\[4pt]
+Slukket: $V_Z$ & 14,7 & & mV effektiv\\[4pt]
+Slukket: $R_\mathrm{i,forforstaerker}$ & & 22,62 & k\ohm \\
+\hline\hline
+\end{tabular}
+\caption{Resultater af impedansmåling på Stereo R}
+\label{tab:indgang-zres-stereor}
 \end{table}
 
 Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vist i figur \ref{fig:apind:frek200mv} til figur \ref{fig:apind:thd2vslukket}. Resten af resultaterne kan findes på CD'en\fixme{henvisning}. Spændingsniveauer angivet i V og mV er amplitude værdier. 
@@ -162,7 +169,7 @@ Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vi
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-200mv-frek.png}
-\caption{Frekvensgangen for mikrofonindgangen på indgangsvælgeren ved 200 mV.}
+\caption{Frekvensgangen for mikrofonindgangen på indgangsvælgeren ved 200 mV}
 \label{fig:apind:frek200mv}
 \end{figure}
 
@@ -170,7 +177,7 @@ Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vi
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-200mv-thd.png}
-\caption{THD for mikrofonindgangen på indgangsvælgeren ved 200 mV.}
+\caption{THD for mikrofonindgangen på indgangsvælgeren ved 200 mV}
 \label{fig:apind:thd200mv}
 \end{figure}
 
@@ -178,7 +185,7 @@ Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vi
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-2v-frek.png}
-\caption{Frekvensgangen for mikrofonindgangen på indgangsvælgeren ved 2V.}
+\caption{Frekvensgangen for mikrofonindgangen på indgangsvælgeren ved 2V}
 \label{fig:apind:frek2v}
 \end{figure}
 
@@ -186,7 +193,7 @@ Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vi
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-2v-thd.png}
-\caption{THD for mikrofonindgangen på indgangsvælgeren ved 2 V.}
+\caption{THD for mikrofonindgangen på indgangsvælgeren ved 2 V}
 \label{fig:apind:thd2v}
 \end{figure}
 
@@ -194,7 +201,7 @@ Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vi
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-2v-slukket-frek.png}
-\caption{Frekvensgangen og fasedrejet for mikrofonindgangen for et slukket signal, på indgangsvælgeren ved 2V.}
+\caption{Frekvensgangen og fasedrejet for mikrofonindgangen for et slukket signal, på indgangsvælgeren ved 2V}
 \label{fig:apind:frek2vslukket}
 \end{figure}
 
@@ -202,7 +209,7 @@ Frekvensgangen og THD blev målt for de forskellige indgange. Resultaterne er vi
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-2v-slukket-thd.png}
-\caption{THD for mikrofonindgangen for et slukket signal, på indgangsvælgeren ved 2 V.}
+\caption{THD for mikrofonindgangen for et slukket signal, på indgangsvælgeren ved 2 V}
 \label{fig:apind:thd2vslukket}
 \end{figure}
 
