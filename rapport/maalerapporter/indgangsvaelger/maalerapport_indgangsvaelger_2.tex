@@ -11,7 +11,7 @@ Målingens formål er at måle:
 \end{itemize}
 
 \subsection*{Testobjekt}
-Der vil i denne målerapport blive udført tests af indgangsvælgeren, som vist på figur \ref{maalerap_diagram_simulering}. Testene vil tage udgangspunkt i én indgang; mikrofonindgangen. Dette skyldes at indgangene menes at være så ens, at de vil give samme output som fundet i Appendiks \ref{maalejournal_indgangsvaelger}. Der vil i stedet for en LM324 blive benyttet en OPA27\kilde{OPA27.pdf}.
+Der vil i denne målerapport blive udført tests af indgangsvælgeren, som vist på figur \ref{maalerap_diagram_simulering}. Testene vil tage udgangspunkt i én indgang; mikrofonindgangen. Dette skyldes at indgangene menes at være så ens, at de vil give samme output som fundet i Appendiks \ref{maalejournal_indgangsvaelger}. Der vil i stedet for en LM324 blive benyttet en OPA27 \cite{opa27-datablad}.%\kilde{OPA27.pdf}
 
 Til frekvensmåling sendes signalet ind på en tændt indgang, medmindre andet er markeret. Indgangen der ikke benyttes vil så være slukket.
 \begin{figure}[h]
@@ -32,7 +32,7 @@ Måleopstillingen er vist på figur \ref{fig:indgangthd:maaleop-thd}.
 \end{figure}
 
 \subsection*{Anvendt udstyr}
-\fixme{clearpage?}
+
 \begin{table}[h]
 \centering
 \begin{tabular}{l|c|l}
@@ -59,8 +59,8 @@ Audioanalysator & 76986 & National Instruments NI-PCI-4461 \\
 \item $"$Stop frequency$"$ under Source settings sættes til 20 kHz
 \item $"$Amplitude$"$ under Source settings sættes til 2 V
 \item $"$THD units$"$ sættes til \%
-\item $"$AI Range$"$ for Stimulus channel sættes til $\pm$ 0,316 V\fixme{Check}
-\item $"$AI Range$"$ for Respons channel sættes til $\pm$ 3,16 V\fixme{dem her}
+\item $"$AI Range$"$ for Stimulus channel sættes til $\pm$ 3,16 V
+\item $"$AI Range$"$ for Respons channel sættes til $\pm$ 3,16 V
 \item $"$Sampling frequency$"$ sættes til 204,8 kHz
 \end{enumerate}
 
@@ -68,7 +68,8 @@ Den første test foretages normalt, som vist på opstillingen. Ved testen uden t
 
 \subsection*{Resultater}
 
-THD blev målt for de forskellige opsætninger. Resultaterne vises i figur \ref{fig:apind:200mvm} til figur \ref{fig:apind:2vu}. Resten af resultaterne kan findes på CD'en\fixme{henvisning}. Værdier angivet i V og mV er amplitudespændinger.
+THD blev målt for de forskellige opsætninger. Resultaterne vises i figur \ref{fig:apind:200mvm} til figur \ref{fig:apind:2vu}. Resten af resultaterne kan findes på bilags-CD'en \cite{indgangsvaelger-maalinng}%\fixme{henvisning}
+. Værdier angivet i V og mV er amplitudespændinger.
 
 \begin{figure}[h]
 \centering
