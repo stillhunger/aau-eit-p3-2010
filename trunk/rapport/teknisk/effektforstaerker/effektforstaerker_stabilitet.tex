@@ -1,7 +1,8 @@
 \subsection{Stabilitet}
 \label{effektforstaerker-stabilitet}
 
-For at sikre at effektforstærkeren ikke er ustabil skal en fasemargin på mindst 45\degree~ opnås. For at kunne vurdere hvorvidt der er et problem i det nuverænde kredsløb, vel at mærke uden C2 vist på figur \ref{fig:effektkredsloeb}, simuleres kredsløbet uden AC-tilbagekobling men med DC. Måden hvorpå dette gøres i LTspice er vist i bilag \kilde{til billede af openloop effektforstærker fra LTspice}. Simuleringen viser at der, ved 0 dB er en fasemargin på -33\degree~. For at opnå en acceptabel fasemargin identificeres det trin som indeholder den dominerende pol for derefter at flytte polen. På figur \ref{fig:frek_openloop_ukorigeret} vises open-loop frekvenskarakteristikken for differensforstærkeren, blå, spændingsforstærkeren, rød, og hele effektforstærkeren, grøn. 
+For at sikre at effektforstærkeren ikke er ustabil skal en fasemargin på mindst 45\degree~ opnås. For at kunne vurdere hvorvidt der er et problem i det nuverænde kredsløb, vel at mærke uden C2 vist på figur \ref{fig:effektkredsloeb}, simuleres kredsløbet uden AC-tilbagekobling men med DC. Måden hvorpå dette gøres i LTspice er vist i bilag \cite{effektforstaerker-openloop-simulering}%\kilde{til billede af openloop effektforstærker fra LTspice}
+. Simuleringen viser at der, ved 0 dB er en fasemargin på -33\degree~. For at opnå en acceptabel fasemargin identificeres det trin som indeholder den dominerende pol for derefter at flytte polen. På figur \ref{fig:frek_openloop_ukorigeret} vises open-loop frekvenskarakteristikken for differensforstærkeren, blå, spændingsforstærkeren, rød, og hele effektforstærkeren, grøn. 
 
 
 \begin{figure}[h]
@@ -11,7 +12,8 @@ For at sikre at effektforstærkeren ikke er ustabil skal en fasemargin på minds
 \label{fig:frek_openloop_ukorigeret}
 \end{figure}
 
-Her kan det ses at den dominerende pol skyldes spændingsforstærkeren. Det vurderes at denne knækfrekvens skyldes parasitkapaciteten, $C_\mu$, i transistor Q6. Ved at ændre værdien på $C_\mu$ kan polen flyttes. For at verificere at knækfrekvens som ses på simuleringen bliver lavet af $C_\mu$ beregnes den med tidskonstantmetoden vist i formel \ref{eq:knaekberegning_openloop} \kilde{mm11 notes i bilag} hvor $C_1$ og $C_2$ er henholdsvis den millertransformerede $C_\mu$ på indgang og udgangen.
+Her kan det ses at den dominerende pol skyldes spændingsforstærkeren. Det vurderes at denne knækfrekvens skyldes parasitkapaciteten, $C_\mu$, i transistor Q6. Ved at ændre værdien på $C_\mu$ kan polen flyttes. For at verificere at knækfrekvens som ses på simuleringen bliver lavet af $C_\mu$ beregnes den med tidskonstantmetoden vist i formel \ref{eq:knaekberegning_openloop} \cite{tidskonstantmetoden} %\kilde{mm11 notes i bilag}
+hvor $C_1$ og $C_2$ er henholdsvis den millertransformerede $C_\mu$ på indgang og udgangen.
 
 \begin{equation}
 f_p=\frac{1}{(r_\pi \cdot (C_\pi + C_1) + R_L \cdot C_2) \cdot 2 \cdot \pi}
