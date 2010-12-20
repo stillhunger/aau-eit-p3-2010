@@ -44,6 +44,23 @@ Effektmodstand & 2159-04 & 8,2 \ohm \\
 \end{table}
 
 \section*{Måleprocedure}
+Proceduren for forstærkning-, frekvensgang- og forvrængningsmålingen er:
+
+\begin{enumerate}
+\item En spændingsforsyning indstilles til $\pm$23 V (indstilles med multimeteret) og tilsluttes.
+\item En spændingsforsyning indstilles til $\pm$15 V (indstilles med multimeteret) og tilsluttes.
+\item En spændingsforsyning indstilles til 5 V (indstilles med multimeteret) og tilsluttes.
+\item Testobjektet tilsluttes som på figur \ref{fig:indgang:maaleop-thd}
+\item Kanalen der måles på, indstilles ved hjælp af trykknappen.
+\item Programmet $"$Swept Sine - Linear Response and Harmonic Distortion (DAQmx)$"$ startes
+\item $"$Start frequency$"$ under Source settings sættes til 20 Hz
+\item $"$Stop frequency$"$ under Source settings sættes til 20 kHz
+\item $"$Amplitude$"$ under Source settings sættes til 2 V
+\item $"$THD units$"$ sættes til \%
+\item $"$AI Range$"$ for Stimulus channel sættes til $\pm$3,16 V
+\item $"$AI Range$"$ for Respons channel sættes til $\pm$3,16 V
+\item $"$Sampling frequency$"$ sættes til 204,8 kHz
+\end{enumerate}
 
 \section*{Resultater}
 
