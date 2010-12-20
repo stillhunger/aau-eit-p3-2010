@@ -68,7 +68,7 @@ Konstantstrømsgeneratoren er designet med udgangspunkt i at der vil være et sp
 R_{12} = \frac{V_{CC} - 2 \cdot V_D}{I_F} = \mathrm{\frac{5~V - 2 \cdot 0,5~V}{0,1~mA} = 40~k\ohm}
 \end{equation}
 
-Da der nu ligger en konstant spænding over begge dioder, kan man opfatte dioden i transistoren som siddende parallelt med $D_2$ og $D_3$ og dermed have det samme spændingsfald som $D_2$. Dette giver, at der findes det samme, konstante, spændingsfald over $R_{11}$ som over $D_3$, hvilket giver en konstant strøm gennem $R_{11}$.
+Da der nu ligger en konstant spænding over begge dioder, kan dioden i transistoren opfattes som siddende parallelt med $D_2$ og $D_3$ og dermed have det samme spændingsfald som $D_2$. Dette giver, at der findes det samme, konstante, spændingsfald over $R_{11}$ som over $D_3$, hvilket giver en konstant strøm gennem $R_{11}$.
 Kondensatoren, $C_2$, kaldes ladekondensatoren og har en kapacitet på 5 $\mu$F.  Den oplades fra 0 V til $V_{CC} - V_D - V_{\mathrm{CEsat}}$ = 4,4 V, hvor $V_D$ er spændingen over én diode og $V_{\mathrm{CEsat}}$ er collector-emitter saturationspændingen på 0,1 V. Opladetiden er desuden valgt til at skulle være 3 sekunder. Udfra disse to ting kan den konstante strøm, $I_{\mathrm{const}}$, nu beregnes ved udregningen i formel (\ref{equ:konstantstroemsgenerator3}).
 
 \begin{equation}
