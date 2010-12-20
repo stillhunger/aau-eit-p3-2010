@@ -4,18 +4,14 @@
 Denne målerapport dokumenterer målinger foretaget på projektets indgangsvaelger, opbygget som beskrevet i kapitel \ref{indgangsvaelger}. Målingen er foretaget på Fredrik Bajers Vej 7 i lokale B1-104 på Aalborg Universitet den 15. december 2010 af gruppe 311.
 
 \subsection*{Formål}
-Målingens formål er at:
+Målingens formål er at måle:
 \begin{itemize}
-\item Måle THD ved benyttelse af anden operationsforstærker
-\item Måle indvirkningen af transistorerne på THD
+\item THD ved benyttelse af anden operationsforstærker
+\item Indvirkningen af transistorerne på THD
 \end{itemize}
 
 \subsection*{Testobjekt}
-Der vil i denne målerapport blive udført tests af indgangsvælgeren. Testene vil tage udgangspunkt i én indgang; mikrofonindgangen. Dette skyldes at indgangene menes at være så ens, at de vil give samme output \ref{maalejournal_indgangsvaelger}. Der vil i stedet for en LM324 blive benyttet en OPA27.
-\begin{itemize}
-\item THD måling med transistore.
-\item THD måling uden transistore.
-\end{itemize}
+Der vil i denne målerapport blive udført tests af indgangsvælgeren, som vist på figur \ref{maalerap_diagram_simulering}. Testene vil tage udgangspunkt i én indgang; mikrofonindgangen. Dette skyldes at indgangene menes at være så ens, at de vil give samme output som fundet i Appendiks \ref{maalejournal_indgangsvaelger}. Der vil i stedet for en LM324 blive benyttet en OPA27\kilde{OPA27.pdf}.
 
 Til frekvensmåling 
 \begin{figure}[h]
@@ -26,18 +22,18 @@ Til frekvensmåling
 \end{figure}
 
 \subsection*{Måleopstilling}
-Måleopstillingen er vist på figur \ref{fig:indgang:maaleop-thd} .
+Måleopstillingen er vist på figur \ref{fig:indgangthd:maaleop-thd}.
 
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{maalerapporter/indgangsvaelger/maaleopstilling-thd-forforstaerker.png}
 \caption{Måleopstilling for forstærkning-, frekvensgang- og forvrængningsmåling \cite{maaling-mm5}}
-\label{fig:indgang:maaleop-thd}
+\label{fig:indgangthd:maaleop-thd}
 \end{figure}
 
 
 \subsection*{Anvendt udstyr}
-
+\fixme{clearpage?}
 \begin{table}[h]
 \centering
 \begin{tabular}{l|c|l}
@@ -55,9 +51,9 @@ Audioanalysator & 76986 & National Instruments NI-PCI-4461 \\
 
 \subsection*{Måleprocedure}
 \begin{enumerate}
-\item En spændingsforsyning indstilles til $\pm15~V$ (indstilles med multimeteret) og tilsluttes.
+\item En spændingsforsyning indstilles til $\pm$15 V (indstilles med multimeteret) og tilsluttes.
 \item En spændingsforsyning indstilles til 5 V (indstilles med multimeteret) og tilsluttes.
-\item Testobjektet tilsluttes som på figur \ref{fig:indgang:maaleop-thd}
+\item Testobjektet tilsluttes som på figur \ref{fig:indgangthd:maaleop-thd}
 \item Kanalen der måles på, indstilles ved hjælp af trykknappen.
 \item Programmet $"$Swept Sine - Linear Response and Harmonic Distortion (DAQmx)$"$ startes
 \item $"$Start frequency$"$ under Source settings sættes til 20 Hz
@@ -69,7 +65,7 @@ Audioanalysator & 76986 & National Instruments NI-PCI-4461 \\
 \item $"$Sampling frequency$"$ sættes til 204,8 kHz
 \end{enumerate}
 
-Den første test foretages normalt, som vist på opstillingen. Ved testen uden transistore fjernes transistorerne.	
+Den første test foretages normalt, som vist på opstillingen. Ved testen uden transistorer fjernes transistorerne.	
 
 \subsection*{Resultater}
 
@@ -78,7 +74,7 @@ THD blev målt for de forskellige opsætninger. Resultaterne vises i figur \ref{
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/maalinger/opa/mic-200mv-opa-muxudgang-thd.png}
-\caption{THD ved 200 mV med transistore}
+\caption{THD ved 200 mV med transistorer}
 \label{fig:apind:200mvm}
 \end{figure}
 
@@ -86,14 +82,14 @@ THD blev målt for de forskellige opsætninger. Resultaterne vises i figur \ref{
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/maalinger/opa/mic-200mv-opa-muxudgang-uden-transistor thd.png}
-\caption{THD ved 200 mV uden transistore}
+\caption{THD ved 200 mV uden transistorer}
 \label{fig:apind:200mvu}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/maalinger/opa/mic-2v-opa-muxudgang-thd.png}
-\caption{THD ved 2 V med transistore}
+\caption{THD ved 2 V med transistorer}
 \label{fig:apind:2vm}
 \end{figure}
 
@@ -101,10 +97,11 @@ THD blev målt for de forskellige opsætninger. Resultaterne vises i figur \ref{
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/maalinger/opa/mic-2v-opa-muxudgang-uden-transistor-thd.png}
-\caption{THD ved 2 V uden transistore}
+\caption{THD ved 2 V uden transistorer}
 \label{fig:apind:2vu}
 \end{figure}
 
+\clearpage
 \subsection*{Måleusikkerheder}
 \begin{itemize}
 \item Komponent tolerancer
