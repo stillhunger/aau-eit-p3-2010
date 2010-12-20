@@ -246,10 +246,16 @@ Adel Sedra, Kenneth C. Smith,
 \newblock $"$Microelectronic Circuits, 6. udgave$"$, afsnit 2.8.3. Oxford University Press, 2010.
 \newblock
 
-\bibitem{label}
-Forfatter,
-\newblock $"$Titel$"$.
-\newblock Bilags-CD $"$Filnavn$"$, Måned År.
+\bibitem{indgangsvaelger-maalinng}
+311,
+\newblock $"$Måling på indgangsvælger$"$.
+\newblock Bilags-CD $"$indgangsvaelger.zip$"$, december 2010.
+\newblock
+
+\bibitem{opa27-datablad}
+Burr-Brown,
+\newblock $"$Ultra-Low Noise Precision OPERATIONAL AMPLIFIERS$"$.
+\newblock Bilags-CD $"$OPA27.pdf$"$, marts 1998.
 \newblock
 
 \end{thebibliography}
