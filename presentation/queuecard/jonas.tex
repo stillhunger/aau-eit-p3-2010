@@ -1,0 +1,76 @@
+\documentclass{beamer}
+\usetheme{Goettingen}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{pstricks}
+\usepackage{xmpmulti}
+\usepackage{multimedia}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MODUL 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Modul 1}
+\begin{frame}{Modul 1}
+\begin{itemize}
+\item Hvad er kravene til RFID?
+\begin{itemize}
+\item Læse RFID tags
+\item Undgå uønsket aktivering
+\item \textbf{Lås}
+\end{itemize}
+
+\item Parallax RFID Card Reader er valgt
+\begin{itemize}
+\item Aktivering af RFID
+\item \textbf{Låse skuffen}
+\item Seriel interface til microcontrolleren
+\item \textbf{Serielt kommunikation med RS232 syntax og TTL-niveauer}
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MODUL 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Modul 2}
+\begin{frame}{Modul 2}
+
+\begin{itemize}
+\item Hvad er kravene til det virtuelle håndtag?
+\begin{itemize}
+%Skuffen skal kunne åbnes og lukkes uden at brugeren berører den
+%Skuffen skal automatisk lukke og låse efter 30 sek., hvis skuffen ikke er aktiv
+\item Registrere hvornår skuffen er i brug, og ikke i brug
+\item \textbf{30 sek. krav}
+%Skuffen skal være i stand til kun at reagere efter tiltænkt anvendelse
+\item Undgå uønsket aktivering
+\item \textbf{Forbi passerende}
+\end{itemize}
+
+\item Der er valgt en IR-dioden som LED
+\begin{itemize}
+\item Udsender den infrarøde stråle
+\item \textbf{Har en meget smal spredning}
+\item \textbf{LED = 880$\pm$20 nm. Øje = 400 - 700 nm}
+\end{itemize}
+
+\item Der er valgt en phototransistoren som modtager
+\begin{itemize}
+\item Modtager den infrarøde stråle
+\item \textbf{Har en meget smal spredning}
+\item \textbf{Har daylight filter}
+\end{itemize}
+
+\item Moduldesign
+\begin{itemize}
+\item Der er valgt en operationsforstærker er valgt som komperator
+\item \textbf{Komperatoren gør programmeringen lettere}
+\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+\end{document}
