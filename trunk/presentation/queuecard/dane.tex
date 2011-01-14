@@ -1,0 +1,44 @@
+\documentclass{beamer}
+\usetheme{Goettingen}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{pstricks}
+\usepackage{xmpmulti}
+\usepackage{multimedia}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Accepttest %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Accepttest}
+\begin{frame}{Accepttest}
+\begin{itemize}
+\item Det er vores måde at tjekke om produktet lever op til de forventinger vi havde i begyndelsen af projektet
+\item Tests skal være enkle og målbare og skal helst kunne laves af hvem som helst. Skal ikke være abstrakt og indviklet.
+\item Alle tests er baseret på primære krav fra kravspec og ikke sekundære krav da disse ville være til produktions produkt.
+\item Alle tests skal opfylde krav for at bestå, 3 gange 100%
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Accepttest}
+\begin{itemize}
+\item Skuffen er berøringsfri udefra alle de andre tests.
+\item Hastighedstest, vi trækker skuffen ud og skubber skuffen ind så hurtigt som muligt. Kravet var 0,93 sekunder, hurtigeste ud tid var 1,24 sek og hurtigeste ind tid var 1,16 sek
+\item Oplåsning uden berøring, skuffen blev lukket op uden at rør med RFID tagget og lukket automatisk efter 31 sekunder af inaktivitet.
+\item Automatisk lukning, skuffen lukkede automatisk men ikke på 30 sekunder som var kravet men på 31 sekunder.
+\item Indikator diode, det er hvor at vi tester RFID modulet for at se om den giver en indikation på om brugeren har adgang eller ej.  Det er bestået da den lyste rigtigt 6 gange.  3 gange grøn, 3 gange rød
+\item Position, skuffen skulle stoppe indenfor 1 cm af hvor brugeren gav slip.  Testen var 5, 3,5 og 4 cm fra positionen.
+\end{itemize}
+\end{frame}
+
+\section{Konklusion}
+\begin{frame}{Konklusion}
+\begin{itemize}
+\item Havde sigtede på at reducere antallet af sygehuserhvervede infektioner.  Ved ikke om den gør det men spare en spritning.
+\item Vi har lavet en prototype som har god funktionalitet som vist i vores accepttest
+\item Produktet er proof of concept og ikke klar til produktion eller salg
+\end{itemize}
+\end{frame}
+\end{document}
