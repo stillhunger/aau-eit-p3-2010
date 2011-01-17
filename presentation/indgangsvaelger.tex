@@ -1,4 +1,64 @@
 \section{Indgangsvælger}
 \begin{frame}{Indgangsvælger}
+Opsatte krav til indgangsvælgeren
 
+\scriptsize{
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r}
+\hline\hline
+Område & Krav \\
+\hline\hline
+Antal trin i & 4 \\
+indgangsvælgeren & \\[4pt]
+Indgangsimpedans & > 22 k\ohm \\[4pt]
+Frekvensgang & < 0,375 dB ved 20 Hz - 20 kHz, ref. 1 kHz \\
+& < 0,75 dB fra 20 Hz til 63 Hz \\
+& < 0,75 dB fra 12,5 kHz til 20 kHz \\[4pt]
+Dæmpning af slukket & > 50 dB ved 1 kHz \\
+indgangssignal & \\
+\hline\hline
+\end{tabular}
+\label{tab:krav_indgangsvaelger}
+\end{table}
+}
 \end{frame}
+
+\begin{frame}
+Opbygning af indgangsvælgeren
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../rapport/teknisk/indgangsvaelger/signal-taend-sluk.png}
+\label{fig:indgangsvaelger-overordnet}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.4]{../teknisk/indgangsvaelger/flipflop.png}
+\caption{Opbygning af kontrollogik til valg af indgang}
+\label{fig:indgangsvaelger-flipflop}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../maalerapporter/indgangsvaelger/Indgangsvlger-mic-200mv-frek.png}
+\caption{Målt frekvensgang for mikrofonindgangen på indgangsvælgeren ved 200 mV inputspænding}
+\label{fig:indacc:frek200mv}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{maalerapporter/indgangsvaelger/Indgangsvlger-mic-2v-thd.png}
+\caption{Målt THD for mikrofonindgangen på indgangsvælgeren ved 2 V inputspænding}
+\label{fig:accind:thd2v}
+\end{figure}
+\end{frame}
+
