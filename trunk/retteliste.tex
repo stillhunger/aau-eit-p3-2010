@@ -1,0 +1,43 @@
+\input{preamble/preamble_ida.tex}
+
+\begin{document}
+\section*{Retteliste}
+
+\begin{enumerate}
+\item S. 3 - Færdiggørelse af sætning i resumé : "Der konkluderes......." rettes til: "Der konkluderes at moduler seperat lever op til kravene mens det samlede system ikke lever op til kravene."
+\item S. 11 - Figur 2.1 - Den nederste "input fra bruger" skal pege på "tonekontrol" og ikke "volumenkontrol"
+\item S. 15 - "En HiFi-forstærker må maksimalt forvrænge 1,0\%" er ikke fra den angivede "IEC581 Part 6" men derimod fra "DIN 45500 normen"
+\item S. 17 - Figur 3.2 - Ved "Q3" mangles en "-Vcc"
+\item S. 30 - Figur 4.4 - "C5" skal slettes.
+\item S. 32 - Afsnit 4.3 - Første linie - "Tabel 7.2" rettes til "Tabel 4.2"
+\item S. 39 - Figur 5.3 - "R2" er "RU" og "R1" er "RI"
+\item S. 47 - "De samlede krav til volumenkontrollen er opstillet i tabel 6.4" rettes til  "De samlede krav til volumenkontrollen er opstillet i tabel 6.1" 
+\item S. 67 - "Dette giver at der findes det samme, konstante, spændingsfald over $D_2$ og $R_10$......" rettes til "Dette giver at der findes det samme, konstante, spændingsfald over $D_2$ og $R_11$......"
+\item S. 68 - Ligning (7.12) - Rettes til: $A_v = -gm \cdot r_o||R'_L$
+\item S. 72 - "...under antagelse af at hybrid-$\pi$ parametrene for Q1, Q2, Q4 og Q5." rettes til "...under antagelse af at hybrid-$\pi$ parametrene for Q1, Q2, Q4 og Q5 er matchede."
+\item S. 73 - "Til senere brug skal impedansen der kigges ind i på input2 samt impedansen der kigges ind i på output." rettes til "Til senere brug skal impedansen der kigges ind i på input2 samt impedansen der kigges ind i på output beregnes."
+\item S. 77-78 - "Q1" skal i teksten rettes til "Q6"
+\item S. 82 nederst - "SR kan bestemmes som vist i udregningen i formel" rettes til "SR kan bestemmes som vist i udregningen i formel (7.61)"
+\item S. 85 - Tabel 7.2 - Ændres til følgende tabel:
+\end{enumerate} 
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r|r}
+\hline\hline
+Område & Krav & Status \\
+\hline\hline
+Klasse & AB & \checkmark \\[4pt]
+Nyttevirkning & $\>$ 25 \%  & \checkmark \\[4pt]
+Forvrængning & $\<$ 0,5 \% & \checkmark \\[4pt]
+Udgangseffekt & $\>$ 20 W ved 2 V input & $\mathcal{X}$ \\[4pt]
+Frekvensgang & $\<$ 0,375 dB ved 20 Hz - 20 kHz, ref. 1 kHz & $\mathcal{X}$ \\
+& $\<$ 0,75 dB fra 20 Hz til 63 Hz & $\mathcal{X}$ \\
+& $\<$ 0,75 dB fra 12,5 kHz til 20 kHz & \checkmark \\[4pt]
+Belastningsimpedans & 8 \ohm & \checkmark \\[4pt]
+Udgangssignaltype & Mono & \checkmark \\[4pt]
+Kortslutningsstrøm (peak) & 3 A & $\mathcal{X}$ \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\end{document}
