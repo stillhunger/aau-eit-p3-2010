@@ -11,21 +11,28 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Forforstærker - krav}
-\begin{itemize}
-\item Indgangsimpedans: 22 k\ohm
-\item Frekvensgang: 
-\begin{itemize}
-\item  under 0,375 dB ved 20 Hz - 20 kHz, ref. 1 kHz 
-\item  under 0,75 dB fra 20 Hz til 63 Hz 
-\item  under 0,75 dB fra 12,5 kHz til 20 kHz
-\end{itemize}
-\item Forvrængning: < 0,5 \%
-\item Forstærkning: 69,7 gange ved 22k\ohm indgangsimpedans og ved 1 kHz
-\end{itemize}
+\begin{frame}{Forforstærker - Krav}
+
+\scriptsize{
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r}
+\hline\hline
+Område & Krav \\
+\hline\hline
+Indgangsimpedans & 22 k\ohm \\[4pt]
+Frekvensgang & < 0,375 dB ved 20 Hz - 20 kHz, ref. 1 kHz \\
+& < 0,75 dB fra 20 Hz til 63 Hz \\
+& < 0,75 dB fra 12,5 kHz til 20 kHz \\[4pt]
+Forvrængning & < 0,5 \% \\[4pt]
+Forstærkning & 69,7 gange ved 22 k\ohm~ indgangsimpedans og ved 1 kHz \\
+\hline\hline
+\end{tabular}
+\end{table}}
+
 \end{frame}
 
-\begin{frame}{Forforstærker - opbygning}
+\begin{frame}{Forforstærker - Opbygning}
 \begin{itemize}
 \item To common-emitter forstærkere med uafkoblet emittermodstand
 \item Der vælges to trin for at opnå en stor mængde tilbagekobling
@@ -69,8 +76,21 @@
 \end{frame}
 
 \begin{frame}{Forforstærker - Accepttest}
-\begin{figure}[h]
+
+\scriptsize{\begin{table}[h]
 \centering
-\includegraphics[scale=.3]{images/forforstaerker-konklusion.png}
-\end{figure}
+\begin{tabular}{l|r|r}
+\hline\hline
+Område & Krav & Status \\
+\hline\hline
+Indgangsimpedans & 22 k\ohm & \checkmark\\[4pt]
+Frekvensgang & < 0,375 dB ved 20 Hz - 20 kHz, ref. 1 kHz & \checkmark\\
+& < 0,75 dB fra 20 Hz til 63 Hz & \checkmark\\
+& < 0,75 dB fra 12,5 kHz til 20 kHz & \checkmark \\[4pt]
+Forvrængning & < 0,5 \% & \checkmark\\[4pt]
+Forstærkning & 69,7 gange ved 22 k\ohm~ indgangsimpedans og ved 1 kHz & \checkmark\\
+\hline\hline
+\end{tabular}
+\end{table}}
+
 \end{frame}
