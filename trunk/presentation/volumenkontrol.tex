@@ -1,6 +1,6 @@
 \section{Volumenkontrol}
 
-\begin{frame}{Volumenkontrol}
+\begin{frame}{Volumenkontrol - Krav}
 \scriptsize{
 \begin{table}[h]
 \centering
@@ -28,16 +28,14 @@ Output til brugeren & To 7-segmenter \\
 \end{table}}
 \end{frame}
 
-\begin{frame}{Volumenkontrol}
+\begin{frame}{Volumenkontrol - Blokdiagram}
 \begin{figure}[h]
 \centering
 \includegraphics[scale=0.4]{images/blokdiagram-volumenkontrol.png}
 %\caption{Overordnet blokdiagram over volumenkontrollen}
 %\label{fig:blokdiagram_volumenkontrol}
 \end{figure}
-%\end{frame}
 
-%\begin{frame}{Volumenkontrol}
 \begin{itemize}
 \item Kontrolspændingsgenerator
 \item VCO
@@ -45,4 +43,32 @@ Output til brugeren & To 7-segmenter \\
 \item Display
 \item Dæmper
 \end{itemize}
+\end{frame}
+
+\begin{frame}{Volumenkontrol - Accepttest}
+\scriptsize{
+\begin{table}[h]
+\centering
+\begin{tabular}{l|r|r}
+\hline\hline
+Område & Krav & Status \\
+\hline\hline
+Frekvensgang & < 0,375 dB ved 20 Hz - 20 kHz, ref. 1 kHz & \checkmark \\
+& < 0,75 dB fra 20 Hz til 63 Hz & \checkmark \\
+& < 0,75 dB fra 12,5 kHz til 20 kHz & \checkmark \\[4pt]
+Dæmpningsområde i & 0 - 50 dB ved 1 kHz & \checkmark \\
+volumenkontrol && \\[4pt]
+Styring af volumen- & Digital & \checkmark \\
+kontrol && \\[4pt]
+Antal niveauer i & 51 & $\mathcal{X}$ \\
+volumenkontrollen && \\[4pt]
+Dæmpning per & 1 dB & \checkmark \\
+niveau && \\[4pt]
+Input fra brugeren & To trykknapper & \checkmark \\[4pt]
+Output til brugeren & To 7-segmenter & \checkmark \\
+\hline\hline
+\end{tabular}
+%\caption{Oversigt over status af krav til volumenkontrollen}
+%\label{tab:krav_volumenkontrol}
+\end{table}}
 \end{frame}
