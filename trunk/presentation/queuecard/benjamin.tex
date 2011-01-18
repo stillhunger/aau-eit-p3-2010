@@ -1,0 +1,109 @@
+\documentclass{beamer}
+\usetheme{Goettingen}
+\usepackage[danish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{pstricks}
+\usepackage{xmpmulti}
+\usepackage{multimedia}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Kravspec %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Forforstærker}
+\begin{frame}{formål}
+\begin{itemize}
+\item Forstærke signal fra mic op til linjeniveau
+\item Mic out: 0,8-200 mV
+\item Opnåes: 200 mV - 2 V
+\item Forholdet mellem høj og lav ikke ens
+\item Dermed valgt out for alm tale tættere på som midt
+\item 60 - 80 dB(A)
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Løsningsdesign %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Krav}
+\begin{itemize}
+\item Indgangsimpedans bestemt ud fra tommelfingerregel
+\item Forstærkningen er beregnet ud fra de fundne spændingsniveauer 
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Samlet accepttest %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Opbygning}
+\begin{itemize}
+\item Op-amp foreslag - pga. så meget muligt diskret
+\item To common-emitter med uafkoblet
+\item I modsætning til common base og collector er spændingsforstærkning næsten ikke afhængig af trans parametrer
+\item Dog stor udgangsimpedans, men den beregnes belastet
+\item Designes uden AC-koblet emittermodstand til maks forstærkning 
+\item Tilbagekobles gennem emittermodstand
+\item trin har endelig forstærkning
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Konklusion %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Simulering amplitude}
+\begin{itemize}
+\item Der ønskes 69,7 gange = 36,9 dB
+\item Simuleret til 35 dB
+\item For at rette op på det justeres emittermodstanden
+\item Implementering: Indsættes pot metre
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Simulering korrigeret}
+\begin{itemize}
+\item Efter korrektion opnåes korrekt forstærkning
+\item Maksimal dæmpning på 0,2 dB relativ 1 kHz
+\item THD: 0.2 \% sammenlign med 0,5
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Accepttest amplitude}
+\begin{itemize}
+\item Indgangsimpedansen måltes til 22,1 k, hvor afvigelsen forklares med 1 \% modstande
+\item Forstærkningen er indstillet og dermed korrekt
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Accepttest 20-63 Hz}
+\begin{itemize}
+\item Forskel 0,2 dB
+\item Krav: Under 0,75 dB
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Accepttest 12 kHz-20 kHz}
+\begin{itemize}
+\item Forskel 0,8 dB
+\item Krav: Under 0,75 dB
+\item Fejlen tilskrives testudstyrets kapacitive belastning
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Simuleret 12 kHz-20 kHz fejl}
+\begin{itemize}
+\item Før simuleres den til 0,2 dB
+\item Med belastning: 0,6 dB
+\item Kapacitiv belastning bidrager med 0,4 dB
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Accepttest THD}
+\begin{itemize}
+\item Målt ved maks udsving: Maksimal 0,22 \%
+\item Krav: Under 0,5
+\item simuleret 0,2
+\end{itemize}
+\end{frame}
+
+\end{document}
