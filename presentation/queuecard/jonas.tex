@@ -1,3 +1,4 @@
+%preamble
 \documentclass{beamer}
 \usetheme{Goettingen}
 \usepackage[danish]{babel}
@@ -10,64 +11,60 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MODUL 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Volumenkontrol}
+\begin{frame}{Volumenkontrol}
+\begin{itemize}
 
-\section{Modul 1}
-\begin{frame}{Modul 1}
+\item Krav
 \begin{itemize}
-\item Hvad er kravene til RFID?
-\begin{itemize}
-\item Læse RFID tags
-\item Undgå uønsket aktivering
-\item \textbf{Lås}
+\item Samme krav til frekvensgang som til de andre moduler
+\item Digital styring med gates
+\item Én knap til op og én knap til ned
+\item Display der viser hvor mange dB signalet er dæmpet
 \end{itemize}
 
-\item Parallax RFID Card Reader er valgt
+\item Alternativer
 \begin{itemize}
-\item Aktivering af RFID
-\item \textbf{Låse skuffen}
-\item Seriel interface til microcontrolleren
-\item \textbf{Serielt kommunikation med RS232 syntax og TTL-niveauer}
+\item Digital = mulighed for fjerbetjening
+\item Potentiometer / processer var for simpelt
 \end{itemize}
 
+\item Blokdiagram
+\begin{itemize}
+\item Kontrolspændingsgenerator er en rampe generator
+\item VCO - Spændingsstyret oscillator
+\item Tæller er inklusiv tæller logik
+\item Display er inklusiv display driver
+\item Dæmper er multiplekser og modstandsrækker
+\end{itemize}
 \end{itemize}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MODUL 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Modul 2}
-\begin{frame}{Modul 2}
-
+\begin{frame}{Volumenkontrol}
 \begin{itemize}
-\item Hvad er kravene til det virtuelle håndtag?
+\item Brug
 \begin{itemize}
-%Skuffen skal kunne åbnes og lukkes uden at brugeren berører den
-%Skuffen skal automatisk lukke og låse efter 30 sek., hvis skuffen ikke er aktiv
-\item Registrere hvornår skuffen er i brug, og ikke i brug
-\item \textbf{30 sek. krav}
-%Skuffen skal være i stand til kun at reagere efter tiltænkt anvendelse
-\item Undgå uønsket aktivering
-\item \textbf{Forbi passerende}
+\item Tre hurtige tryk
+\item Ét langt tryk
+\item To hurtige tryk
+\item Ét meget langt tryk
 \end{itemize}
 
-\item Der er valgt en IR-dioden som LED
+\item Frekvensgang
 \begin{itemize}
-\item Udsender den infrarøde stråle
-\item \textbf{Har en meget smal spredning}
-\item \textbf{LED = 880$\pm$20 nm. Øje = 400 - 700 nm}
+\item God frekvensgang
+\item Korrekt dæmpning pr. niveau
 \end{itemize}
 
-\item Der er valgt en phototransistoren som modtager
+\item THD
 \begin{itemize}
-\item Modtager den infrarøde stråle
-\item \textbf{Har en meget smal spredning}
-\item \textbf{Har daylight filter}
+\item Stort set ingen THD - 0,01 \%
 \end{itemize}
 
-\item Moduldesign
+\item Accepttest
 \begin{itemize}
-\item Der er valgt en operationsforstærker er valgt som komperator
-\item \textbf{Komperatoren gør programmeringen lettere}
+\item 8 ud af 9 krav opfyldt
+\item 52 niveauer...
 \end{itemize}
 
 \end{itemize}
