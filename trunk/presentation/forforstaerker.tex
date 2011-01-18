@@ -7,7 +7,8 @@
 \item Mikrofons output spænding: 0,8 - 200 mV
 \item Output som skal opnås: 200 mV - 2 V
 \item Lineær forstærkning ikke muligt
-\item Valgte peakspændinger beregnet ud fra forventeligt lydtryk
+\item Valgte peakspændinger beregnet ud fra forventeligt lydtryk 
+\item 60 dB(A) - almindelig tale
 \end{itemize}
 \end{frame}
 
@@ -33,12 +34,38 @@ Forstærkning & 69,7 gange ved 22 k\ohm~ indgangsimpedans og ved 1 kHz \\
 
 \begin{frame}{Forforstærker - Opbygning}
 \begin{itemize}
+\item Kunne have været bygget med op-amp
 \item To common-emitter forstærkere med uafkoblet emittermodstand
+\item Argument: Spændingsforstærkning uafhængig af transistorparametre
 \item Der vælges to trin for at opnå en stor mængde tilbagekobling
 \item Trin 1: 10 ganges forstærkning
 \item Trin 2: 6,97 ganges forstærkning
+\item Trinenne designes efter maksimal spændingsforstærkning uden Re for derefter at tilbagekoble igennem Re
 \end{itemize}
 \end{frame}
+
+\begin{frame}{Forforstærker - Simulering}
+Amplitudekarakteristik med beregnede værdier.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.23]{images/amplitudeforforstaerkerberegnet.png}
+\end{figure}
+
+Ønsket forstærkning: 69,7 gange = 36,9 dB
+\end{frame}
+
+\begin{frame}{Forforstærker - Simulering}
+Amplitudekarakteristik med korrigerede værdier.
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.23]{images/amplitudeforforstaerkerkorrigeret.png}
+\end{figure}
+Ønsket forstærkning: 69,7 gange = 36,9 dB
+
+Største dæmpning i frekvensområdet: 0,2 dB relativ til 1 kHz
+
+\end{frame}
+
 
 \begin{frame}{Forforstærker - Accepttest}
 \begin{itemize}
@@ -55,6 +82,7 @@ Forstærkning & 69,7 gange ved 22 k\ohm~ indgangsimpedans og ved 1 kHz \\
 \begin{frame}{Forforstærker - Accepttest}
 \begin{itemize}
 \item Fra 20 Hz til 63 Hz
+\item Forskel: 0,2 dB 
 \end{itemize}
 \begin{figure}[h]
 \centering
@@ -65,10 +93,34 @@ Forstærkning & 69,7 gange ved 22 k\ohm~ indgangsimpedans og ved 1 kHz \\
 \begin{frame}{Forforstærker - Accepttest}
 \begin{itemize}
 \item Fra 12 kHz til 20 kHz
+\item Forskel: 0,8 dB
 \end{itemize}
 \begin{figure}[h]
 \centering
 \includegraphics[scale=.3]{images/fr12-20k.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Forforstærker - Accepttest}
+\begin{itemize}
+\item Simulering med kapacitiv belastning
+\item Fra 12 kHz til 20 kHz 
+\item Forskel: 0,6 dB
+\end{itemize}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.4]{images/fr12-20k-sim.png}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Forforstærker - Accepttest}
+\begin{itemize}
+\item Måling af THD
+\item Maksimal: 0,22 \%
+\end{itemize}
+\begin{figure}[h]
+\centering
+\includegraphics[scale=.25]{images/thd-forforstaerker.png}
 \end{figure}
 \end{frame}
 
